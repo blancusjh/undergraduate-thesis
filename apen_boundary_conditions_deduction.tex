@@ -1,0 +1,127 @@
+\section{Condiciones de Frontera de las ecuaciones de Maxwell en dieléctricos}
+
+\begin{figure}[h!]
+    \centering
+    % Placeholder for the image of the diagram. The actual image would be inserted here.
+\end{figure}
+
+Partamos de las ecuaciones de Maxwell para un dieléctrico caracterizado por 
+las constantes dieléctricas $(\epsilon, \mu)$ 
+
+\begin{equation}
+    \begin{gathered}
+        \div \mathbf{E} = \frac{\rho}{\epsilon} \\
+        \curl \mathbf{E} = -\pdv{\mathbf{B}}{t}
+    \end{gathered}
+    \qquad
+    \begin{gathered}
+        \div \mathbf{B} = 0 \\
+        \curl \mathbf{B} = \mu \mathbf{J} + \frac{1}{v^2}\pdv{\mathbf{E}}{t}
+    \end{gathered}
+    \qquad
+    v = \sqrt{\frac{1}{\mu\epsilon}}
+    \label{eq:maxwell_dielectric_basic}
+\end{equation}
+
+O más apropiadamente para este análisis en términos de los campos auxiliares $\mathbf D$ y $\mathbf H$ definidos como 
+
+\begin{align}
+\mathbf{D} &= \varepsilon \mathbf{E}, \\[6pt]
+\mathbf{B} &= \mu \mathbf{H},
+\end{align}
+
+las ecuaciones de Maxwell quedan como 
+
+\begin{align}
+\nabla \cdot \mathbf{D} &= \rho_f, 
+&\qquad \nabla \cdot \mathbf{B} &= 0, \\[6pt]
+\nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t}, 
+&\qquad \nabla \times \mathbf{H} &= \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}.
+\label{eq:maxwell_aux_dielectric}
+\end{align}
+
+Sea un medio $M$ y otro $M'$ separados por una interfaz $\Sigma: \{ (x,y,z) | z=0 \}$, donde $M$ es el medio en $z<0$ y el medio $M'$ es el medio en $z>0$. Estamos interesados en relacionar el campo $\mathbf{E}$ y $\mathbf{H}$ en el medio $M'$ a partir de los campos $\mathbf{E}$ y $\mathbf{B}$ en el medio $M$. 
+
+Para facilitar nuestro análisis, definimos este campo arbitrario $\mathbf{F}(\mathbf r,t)$ de la forma:
+
+\begin{equation}
+    \mathbf{F}(\mathbf r,t) = \mathbf{F}(\mathbf r,t)\Theta(-z) + \mathbf{F}'(\mathbf r,t)\Theta(z)
+    \label{eq:field_piecewise}
+\end{equation}
+
+donde
+
+\begin{equation}
+    \Theta(z) =
+    \begin{cases}
+        1 & z>0 \\
+        0 & \text{altura}
+    \end{cases}, 
+\end{equation}
+
+de donde se sigue que el campo sin prima representa el campo en el medio $M$ y el primado el campo en el medio $M'$. 
+
+\text{Calculamos ahora el $\div$ y el $\curl$ del campo $\mathbf{F}$.}
+
+\begin{equation} 
+    \div \mathbf{F}(\mathbf r,t) = \nabla \cdot \mathbf{F}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        &= [\nabla \cdot \mathbf{F}(\mathbf r,t)] \Theta(-z) + \mathbf{F}(\mathbf r,t) \cdot \nabla \Theta(-z) \\
+        &+ [\nabla \cdot \mathbf{F}'(\mathbf r,t)] \Theta(z) + \mathbf{F}'(\mathbf r,t) \cdot \nabla \Theta(z)
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \nabla \cdot \mathbf{F} = [\nabla \cdot \mathbf{F}] + \delta(z) [\mathbf{F}'_z - \mathbf{F}_z]
+    \label{eq:div_field}
+\end{equation}
+
+\pagebreak
+
+Para el rotacional:
+
+\begin{equation}
+    \nabla \times \mathbf{F} = [\nabla \times \mathbf{F}] + \delta(z) \hat{n} \times (\mathbf{F}' - \mathbf{F})
+    \label{eq:curl_field}
+\end{equation}
+
+Escribimos ahora las fuentes en una descomposición para la superficie
+y para fuera de esta como
+
+\begin{equation}
+    \rho = \rho_f + \sigma(x,y,t)\delta(z), 
+    \qquad 
+    \mathbf{J} = \mathbf{J}_f + \mathbf{K}(x,y,t)\delta(z)
+    \label{eq:surface_sources}
+\end{equation}
+
+Escribimos las ecuaciones de Maxwell en la forma:
+
+\begin{equation}
+    \begin{gathered}
+        \div \mathbf{D} = \rho_f \\
+        \curl \mathbf{E} = -\pdv{\mathbf{B}}{t}
+    \end{gathered}
+    \qquad
+    \begin{gathered}
+        \div \mathbf{B} = 0 \\
+        \curl \mathbf{H} = \mathbf{J}_f + \pdv{\mathbf{D}}{t}
+    \end{gathered}
+    \label{eq:maxwell_form_expanded}
+\end{equation}
+
+Podemos entonces, por ejemplo, usar las expresiones \eqref{eq:div_field}, \eqref{eq:curl_field} y \eqref{eq:surface_sources} en las ecuaciones \eqref{eq:maxwell_form_expanded}.  
+Al cancelar los términos proporcionales a $\delta(z)$, se obtienen las condiciones de frontera para que se cumplan las ecuaciones de Maxwell. Con lo que se llega a:
+
+\begin{equation}
+    \begin{gathered}
+        \hat{n} \cdot (\mathbf{D}_2 - \mathbf{D}_1) = \sigma_f \\
+        \hat{n} \cdot (\mathbf{B}_2 - \mathbf{B}_1) = 0 \\
+        \hat{n} \times (\mathbf{E}_2 - \mathbf{E}_1) = 0 \\
+        \hat{n} \times (\mathbf{H}_2 - \mathbf{H}_1) = \mathbf{K}_f
+    \end{gathered}
+    \label{eq:boundary_conditions}
+\end{equation}

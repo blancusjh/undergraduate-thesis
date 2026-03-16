@@ -1,0 +1,216 @@
+\section{Transferencia del campo incidente sobre la esféra al plano tangente}
+\label{sec:transferencia_campo_esfera_plano}
+
+La representación de un campo definido sobre la superficie esférica en un plano tangente permite relacionar su distribución angular con una distribución espacial plana equivalente. Este proceso, conocido como \emph{transferencia de curvatura}, se compone de dos etapas: la proyección geométrica de los puntos del campo sobre la esféra al plano tangente, y la corrección en amplitud necesaria para conservar el flujo energético a lo largo de los rayos.
+
+% ================================================================
+\subsection{Proyección esférica al plano tangente}
+\label{subsec:proyeccion_esfera_plano}
+
+Sea el punto del campo sobre la esféra
+
+\begin{equation}
+\vb{Q} = R \sin\theta(\cos\phi\,\uvec{\imath} + \sin\phi\,\uvec{\jmath}) + R\cos\theta\,\uvec{k},
+\label{eq:Q_vector}
+\end{equation}
+
+y el punto interior a la esféra que actúa como centro de proyección
+
+\begin{equation}
+\vb{A} = R\eta\,\uvec{k}.
+\label{eq:A_vector}
+\end{equation}
+
+El punto correspondiente sobre el plano tangente \(z=-R\) se representa por
+
+\begin{equation}
+\vb{q} = r(\cos\phi\,\uvec{\imath} + \sin\phi\,\uvec{\jmath}) - R\,\uvec{k}.
+\label{eq:q_vector}
+\end{equation}
+
+El rayo que une \(A\), \(Q\) y \(q\) define la condición de colinealidad
+
+\begin{equation}
+\vb{Q} - \vb{q} = \lambda \, \frac{\vb{q} - \vb{A}}{||\vb{q} - \vb{A}||},
+\label{eq:colinealidad}
+\end{equation}
+
+de la cual se obtienen, resolviendo en coordenadas cilíndricas \((r,\phi)\), las relaciones
+
+\begin{align}
+r(\theta) &= R\,\frac{(1+\eta)\sin\theta}{\eta - \cos\theta}, 
+\label{eq:r_de_theta}\\[6pt]
+\lambda(\theta) &= -\,R\,\frac{1+\cos\theta}{|\eta-\cos\theta|}
+\,\sqrt{1+\eta^2 - 2\eta\cos\theta}.
+\label{eq:lambda_de_theta}
+\end{align}
+
+La primera expresión determina la correspondencia entre un punto sobre la esféra \(\theta, \phi \) y un punto sobre el plano tangente \(r(\theta), \phi\).  
+La segunda describe la distancia que hay entre estos puntos $q$ y $Q$ conjugados por la proyección.  
+
+Invirtiendo \eqref{eq:r_de_theta} se obtiene la dependencia explícita \(\theta = \theta(r)\) que se usa en el operador de transferencia:
+\begin{equation}
+    \theta(r)
+    =
+    2 \arctan\!\left(
+    \frac{
+        1 - \sqrt{1 - \dfrac{\eta-1}{\eta+1}\left(\dfrac{r}{R}\right)^2}
+    }{\dfrac{r}{R}}
+    \right),
+    \label{eq:theta_de_r}
+\end{equation}
+donde se ha elegido la rama que satisface $\theta \to 0$ cuando $r \to 0$.
+
+\vspace{0.5em}
+
+% ================================================================
+\subsection{Corrección en la amplitud para asegurar conservación de la energía}
+\label{subsec:correccion_amplitud}
+
+El paso de la esféra al plano debe preservar el flujo energético transportado por los rayos. Para ello se incluye un factor de oblicuidad y el jacobiano de la transformación de área.  
+
+Sea $\uvec u$ la dirección de propagación del rayo, $\uvec{n}_S = \uvec{N}$ la normal unitaria a la esféra y $\uvec{n}_P = \uvec{k}$ la normal al plano tangente.
+
+La conservación del flujo a lo largo de cada rayo se expresa como
+
+\begin{equation}
+|\vb{E}_P|^2 (\uvec{u}\cdot\uvec{n}_P)\, dS_P
+=
+|\vb{E}_S|^2 (\uvec{u}\cdot\uvec{n}_S)\, dS_S,
+\label{eq:flux_conservation_sphere}
+\end{equation}
+
+donde los elementos de área están dados por
+
+\begin{equation}
+dS_P = r\,dr\,d\phi, \qquad dS_S = R^2 \sin\theta\, d\theta\, d\phi.
+\end{equation}
+
+De la ecuación \eqref{eq:flux_conservation_sphere} se deduce el factor de amplitud que asegura la conservación del flujo entre ambas superficies,
+
+\begin{equation}
+T(\theta) = \frac{|\eta - \cos\theta|}{1 + \eta}.
+\label{eq:factor_amplitud}
+\end{equation}
+
+Este factor incorpora simultáneamente la proyección oblicua y el jacobiano geométrico de la transformación entre coordenadas esféricas y planas.
+
+% ================================================================
+\subsection{Operador de transferencia}
+\label{subsec:operador_transferencia}
+
+Combinando la proyección geometrica central por el rayo en dirección $\uvec u$ junto con la fase de propagación por el trayecto recorrido, dada por \(\lambda(\theta)\), y la corrección de amplitud \(T(\theta)\), se define el operador de transferencia que lleva el campo escalar \(U_S(Q) = U_S(\theta,\phi)\) definido sobre la esféra al campo \(U_P(q) = U_P(r(\theta),\phi)\) sobre el plano tangente (\(r(\theta)\) es justamente la función que caracteriza la proyección geometrica \eqref{eq:r_de_theta}):
+
+\begin{equation}
+U_P(r(\theta),\phi)
+=
+T(\theta)\,
+e^{i k \lambda(\theta)}\,
+U_S(\theta,\phi),
+\qquad
+r = r(\theta),
+\label{eq:transferencia_campo_esfera_plano}
+\end{equation}
+
+donde \(r(\theta)\) y \(\lambda(\theta)\) están dados por las ecuaciones \eqref{eq:r_de_theta} y \eqref{eq:lambda_de_theta}, respectivamente, y \(T(\theta)\) por \eqref{eq:factor_amplitud}.  
+
+De modo compacto, el \emph{operador de transferencia de curvatura} se escribe como
+
+\begin{equation}
+\boxed{
+\mcal{M}_{S\to P}[U_S](r,\phi)
+=
+\frac{|\eta-\cos\theta|}{1+\eta}\,
+e^{i k \lambda(\theta)}\,
+U_S(\theta,\phi)
+},
+\label{eq:operador_transferencia_final}
+\end{equation}
+
+donde el ángulo polar \(\theta\) debe entenderse como función de \(r\) dada por \eqref{eq:theta_de_r}.  
+Este operador establece la correspondencia unívoca entre la distribución angular del campo incidente sobre la esféra y su distribución espacial sobre el plano tangente, conservando el flujo y la fase óptica a lo largo de los rayos.
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=3.1, line cap=round, line join=round, >=latex]
+  %-----------------------------
+  % Parámetros
+  %-----------------------------
+  \pgfmathsetmacro{\R}{1.25}           % radio de la esfera
+  \pgfmathsetmacro{\eta}{1.0/1.6}      % A = R*eta
+  \pgfmathsetmacro{\thp}{40}           % theta' (grados) en [0,90]
+  % theta = 180 - theta'
+  \pgfmathsetmacro{\costh}{-cos(\thp)} % cos(theta)
+  \pgfmathsetmacro{\sinth}{ sin(\thp)} % sin(theta)
+  %-----------------------------
+  % Coordenadas
+  %-----------------------------
+  \pgfmathsetmacro{\Qx}{\R*\costh}
+  \pgfmathsetmacro{\Qy}{\R*\sinth}
+  \pgfmathsetmacro{\qy}{\R*(1+\eta)*\sinth/(\eta-\costh)}
+  \pgfmathsetmacro{\Ax}{\R*\eta}
+  \pgfmathsetmacro{\Ay}{0}
+  \pgfmathsetmacro{\kx}{\Qx-\Ax}
+  \pgfmathsetmacro{\ky}{\Qy-\Ay}
+  \pgfmathsetmacro{\k}{0.6}
+  \pgfmathsetmacro{\Px}{\Qx+\k*\kx}
+  \pgfmathsetmacro{\Py}{\Qy+\k*\ky}
+  \coordinate (C) at (0,0);
+  \coordinate (A) at (\Ax,\Ay);
+  \coordinate (Q) at (\Qx,\Qy);
+  \coordinate (q) at ({-\R},\qy);
+  \coordinate (Pout) at (\Px,\Py);
+  %-----------------------------
+  % Plano z = -R
+  %-----------------------------
+  \draw[line width=1pt, black!80] (-\R,-1.35*\R) -- (-\R,1.35*\R);
+  \node[rotate=90, anchor=south] at (-\R,-0.45*\R) {Plano $z{=}{-}R$};
+  %-----------------------------
+  % Eje z
+  %-----------------------------
+  \draw[->, line width=0.7pt, black!70] (-1.4*\R,0) -- (1.45*\R,0) node[right] {$z$};
+  %-----------------------------
+  % Esfera
+  %-----------------------------
+  \draw[line width=0.8pt, black!80] (C) circle (\R);
+  %-----------------------------
+  % Radio C->Q (tenue)
+  %-----------------------------
+  \draw[line width=0.4pt, black!80, densely dotted] (C)--(Q);
+  %-----------------------------
+  % Ángulo theta'
+  %-----------------------------
+  \pgfmathsetmacro{\rtheta}{0.4}
+  \draw[line width=0.6pt, black!70] ({-\rtheta},0) arc (180:{180-\thp}:\rtheta);
+  \node at ({1.6*\rtheta*cos(180 - \thp/2)},{1.6*\rtheta*sin(180 - \thp/2)}) {$\theta'$};
+  %-----------------------------
+  % Puntos
+  %-----------------------------
+  \fill (C) circle (0.4pt) node[below=3pt]{$C$};
+  \fill (A) circle (0.5pt) node[below right=1pt]{$A$};
+  \fill (Q) circle (0.5pt) node[below=5pt]{$Q$};
+  \fill (q) circle (0.5pt) node[below=4pt, left=1pt]{$q$};
+  %-----------------------------
+  % Rayo exterior
+  %-----------------------------
+  \draw[line width=1.2pt, ->, black] (Pout)--(Q) node[pos=0.25, above left, sloped] {$\uvec{u}$};
+  %-----------------------------
+  % Prolongación interior
+  %-----------------------------
+  \draw[line width=0.8pt, densely dashed] (Q)--(A);
+  %-----------------------------
+  % Normal esférica n_S en Q (color azul)
+  %-----------------------------
+  \pgfmathsetmacro{\nslength}{0.18}
+  \draw[->, line width=0.7pt, blue!70!black] (Q)--++({(\nslength)*\costh},{(\nslength)*\sinth}) 
+        node[pos=0, above=14pt, right=-9pt]{$\hat{n}_S$};
+  %-----------------------------
+  % Normal al plano n_P en q (color rojo)
+  %-----------------------------
+  \pgfmathsetmacro{\nplength}{0.18}
+  \draw[->, line width=0.7pt, red!70!black] (q)--++(\nplength,0) 
+        node[pos=0, above=8pt, right=-3pt]{$\hat{n}_P$};
+\end{tikzpicture}
+\caption{Proyección al plano tangente con \(z\) horizontal y uso de \(\theta' \in [0,\pi/2]\) (\(\theta=\pi-\theta'\)).
+El rayo llega desde el exterior (línea continua) hasta \(Q\) y se prolonga (línea discontinua) hacia $A=R(n_0/n_i)$. El plano \(z=-R\) es la recta vertical a la izquierda.}
+\label{fig:sphere_to_plane_projection_final}
+\end{figure}

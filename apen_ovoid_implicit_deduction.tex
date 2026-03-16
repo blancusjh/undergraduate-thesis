@@ -1,0 +1,134 @@
+\section{Deducción de la ecuación implícita y paramétrica del dioptrio estigmático}
+
+
+
+El principio de Fermat aplicado a los rayos que emerguen de $A$ hasta un punto $I$ en el dioptrio $\Sigma$ y se refractan hasta $A'$ que vive en el medio que encierra el dioptrio se escribe como
+
+\begin{equation}
+    L(A, I, A') = n_0 \overline{AI} + n_1 \overline{IA'} = k
+    \label{eq:fermat_principle_for_dioptrique}
+\end{equation}
+
+la condición estigmatica, es la condición matemática para que todos los rayos que emergan de $A$ lleguen a $A'$ independientemente del punto intermedio $I$. 
+
+
+Elevando al cuadrado ambos miembros 
+
+\begin{equation}
+n_0^2 \overline{AI}^2 + n_1^2 \overline{A'I}^2 + 2n_0n_1 \overline{AI} \overline{A'I} = k^2, 
+\end{equation}
+
+organizando 
+
+\begin{equation}
+2n_0n_1 \overline{AI} \overline{A'I} = K^2 - n_0^2\overline{AI}^2 - n_1^2\overline{A'I}^2, 
+\end{equation}
+
+elevando al cuadrado 
+
+\begin{equation}
+4n_0^2n_1^2 \overline{AI}^2 \overline{A'I}^2 = [k^2 - n_0^2\overline{AI}^2 - n_1^2\overline{A'I}^2]^2
+\end{equation}
+
+\begin{equation}
+4n_0^2n_1^2 (\rho^2 - 2\rho z_0 + z_0^2) (\rho^2 - 2\rho z_1 + z_1^2) = [(n_0z_0 + n_iz_i)^2 - n_0^2(\rho^2 - 2\rho z_0 + z_0^2) - n_1^2(\rho^2 - 2\rho z_1 + z_1^2)]^2
+\end{equation}
+
+
+
+$\sqrt{RHS}$
+
+
+\begin{equation}
+\begin{aligned}
+&\cancel{n_0^2z_0^2} + \cancel{n_i^2z_i^2} + 2n_0n_iz_0z_i 
+- \cancel{n_0^2z_0^2} - n_0^2(\rho^2 - 2zz_0) 
+- \cancel{n_i^2z_i^2} - n_i^2(\rho^2 - 2zz_i) \\
+&= 2n_0n_iz_0z_i - n_0^2(\rho^2 - 2zz_0) - n_i^2(\rho^2 - 2zz_i)
+\end{aligned}
+\end{equation}
+
+remplazando en la ecuación original $(LHS = RHS)$
+
+
+\begin{equation}
+\begin{aligned}
+4 n_0^2 n_i^2 (\rho^2 - 2\rho z_0 + z_0^2)(\rho^2 - 2\rho z_i + z_i^2)
+&= [ 2 n_0 n_i z_0 z_i 
+- n_0^2 (\rho^2 - 2\rho z_0)
+- n_i^2 (\rho^2 - 2\rho z_i) ]^2
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&4n_0^2n_i^2[(\rho^2 2zz_0)(\rho^2 - 2zz_i) + (\rho^2 - 2zz_0)z_i^2 + (\rho^2 - 2zz_i)z_0^2 + \cancel{z_0^2z_i^2}  ] 
+\\
+&= \cancel{4n_0^2n_i^2z_0^2z_i^2} + [n_o^2(\rho^2  - 2zz_0) + n_i^2(\rho^ 2 - 2zz_i)]^2 - 4n_0n_iz_0z_i [n_0^2 (\rho^2 - 2zz_0) + n_i^2(\rho^2 - 2zz_i)]
+\end{aligned}
+\end{equation}
+
+
+
+
+Finalmente
+
+
+\begin{equation}
+[n_0^2(\rho^2-2\rho z_0) - n_1^2(\rho^2-2\rho z_1)]^2 = 4n_0n_1(n_1z_1-n_0z_0)[n_1z_0(\rho^2-2\rho z_1) - n_0z_1(\rho^2-2\rho z_0)]  
+\label{eq:stigmatic_polynomial}
+\end{equation}
+
+
+
+Dividiendo la ecuación \eqref{eq:stigmatic_polynomial} por el factor
+\[
+4n_i n_o z_i z_o (n_i - n_o)(n_i z_i - n_o z_o),
+\]
+se obtiene una forma cuadrática en $z$:
+
+\begin{equation}
+f(z, \rho) = O G z^2 - 2(1 + S\rho^2)z + (O + T\rho^2)\rho^2 = 0,
+\label{eq:stigmatic_canonical}
+\end{equation}
+donde los parámetros $G, O, T, S$ están definidos por
+
+\begin{align}
+G &= \frac{(n_i^2 z_i - n_o^2 z_o)^2}{n_i n_o (n_i z_i - n_o z_o)(n_i z_o - n_o z_i)}, \label{eq:def_G} \\
+O &= \frac{n_i z_o - n_o z_i}{z_i z_o (n_i - n_o)}, \label{eq:def_O} \\
+T &= \frac{(n_i - n_o)(n_i + n_o)^2}{4n_i n_o z_i z_o (n_i z_i - n_o z_o)}, \label{eq:def_T} \\
+S &= \frac{(n_i + n_o)(n_i^2 z_i - n_o^2 z_o)}{2n_i n_o z_i z_o (n_i z_i - n_o z_o)}. \label{eq:def_S}
+\end{align}
+
+
+
+
+
+
+\subsubsection{Forma parametrica del ovoide}
+
+La ecuación cuadrática \eqref{eq:stigmatic_canonical} se puede resolver para $z$ en función de $\rho$, resultando:
+
+\begin{equation}
+z(\rho) = \frac{(O + T\rho^2)\rho^2}
+{1 + S\rho^2 + \sqrt{1 + (2S - O^2 G)\rho^2}}.
+\label{eq:z_rho_parametric}
+\end{equation}
+
+Esta expresión representa la forma explícita del perfil del dioptrio estigmático.
+
+
+
+El radio vector asociado se obtiene de la relación geométrica
+\[
+\rho^2 = r^2 + z^2(\rho),
+\]
+de modo que
+
+\begin{equation}
+r(\rho) = \pm \sqrt{\rho^2 - z^2(\rho)}.
+\label{eq:r_rho}
+\end{equation}
+
+Las ecuaciones \eqref{eq:z_rho_parametric} y \eqref{eq:r_rho} constituyen la \emph{forma paramétrica del dioptrio estigmático}, completamente determinada por los índices de refracción $n_i$, $n_o$ y las posiciones de los puntos estigmáticos $z_i$, $z_o$.
+

@@ -1,0 +1,1836 @@
+\documentclass[12pt, a4paper]{book}
+\usepackage{parskip}
+\usepackage{iftex}
+
+% ======================
+% Language
+% ======================
+%\usepackage{babel}
+%\babelprovide[main, import]{spanish}
+%\ifPDFTeX
+%  \usepackage[utf8]{inputenc}
+%  \usepackage[T1]{fontenc}
+%\else
+%  \usepackage{fontspec}
+%  \setmainfont{EB Garamond}
+%  % \setmainfont{Libertinus Serif}
+%\fi
+
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+  \setmainfont[
+    Path = /Users/blancus/Library/Fonts/,
+    Extension = .ttf,
+    UprightFont = EBGaramond-VariableFont_wght,
+    ItalicFont = EBGaramond-Italic-VariableFont_wght,
+    BoldFont = EBGaramond-VariableFont_wght,
+    BoldItalicFont = EBGaramond-Italic-VariableFont_wght
+  ]{EBGaramond-VariableFont_wght}
+\fi
+
+\usepackage{csquotes}
+\usepackage{cancel}
+
+
+
+% ======================
+% Page Layout
+% ======================
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+% ======================
+% Hyperlinks & TOC
+% ======================
+\usepackage[hidelinks]{hyperref}
+\hypersetup{unicode=true}
+\setcounter{tocdepth}{2}
+\usepackage{enumitem}
+
+% ======================
+% Mathematics
+% ======================
+\usepackage{amsmath, amssymb, mathtools, bm}
+\usepackage{mathrsfs}   % for \mathscr
+\usepackage{physics}
+
+
+\usepackage{lettrine}
+
+
+% Numeración de ecuaciones por capítulo
+\numberwithin{equation}{chapter}
+
+% Capítulos en números romanos
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% ======================
+% Graphics
+% ======================
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ======================
+% Bibliography
+% ======================
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+
+% Commands  
+\newcommand{\uvec}[1]{\bm{\hat{\mathbf{#1}}}}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\lvec}[1]{\overrightarrow{#1}} 
+
+
+% ======================
+% Document
+% ======================
+\begin{document}
+
+% ===== Title Page =====
+\begin{titlepage}
+\begin{center}
+\vspace*{2.0cm}
+{\LARGE \bfseries ESTUDIO DE LAS ABERRACIONES}\\[0.3cm]
+{\LARGE \bfseries VECTORIALES EN SISTEMAS}\\[0.3cm]
+{\LARGE \bfseries ESTIGMÁTICOS}\\[0.3cm]
+
+\vspace{3.5cm}
+
+{\large Jhonatan S. Blanco}\\
+{\large Estudiante de pregrado en Física}
+
+\vspace{2cm}
+{\large \textit{Trabajo de grado para optar el título de físico}}\\
+
+\vspace{2.5cm}
+{\large \bfseries Director}\\
+{\large Rafael Ángel Torres Amarís}\\
+{\large Físico, Mg., Dr.}
+
+\vspace{1cm}
+{\large \bfseries Codirector}\\
+{\large Cristian Hernández Celis}\\
+{\large Físico, Mg.}
+
+\vspace{2.5cm}
+{\large Universidad Industrial de Santander}\\
+{\large Facultad de Ciencias}\\
+{\large Escuela de Física}\\
+{\large Bucaramanga}\\
+{\large 2025}
+\end{center}
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% ======================
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+
+\lettrine[lines=2]{E}{n} el libro presente, se obtiene una representación integral del campo eléctrico en el plano focal de los \emph{sistemas estigmáticos} formados de una superficie dioptrica. En la primera parte se da una presentación breve pero rigurosa de la óptica geoemétrica, con el objetivo proncipal de definir el concepto de estigmátismo que son los sistemas de interes de este trabajo al estar libres de \emph{aberración geométrica}. En la segunda parte, se presentara la teoría ondulatoria/electrogmanética de la luz de la cual se deriva la \emph{teoría escalar de la difracción} y las leyes de transformación del campo eléctrico al cambiar de medio, que son las bases de nuestra teoría para abordar \emph{la propagación electromagnética de la luz}. En la tercera parte, se calculan los \emph{coeficientes de Fresnel} en las \emph{Superficies Cartesianas} y los operadores transversales de fase, que son los recursos necesarios para aplicar la teoría a los sistemas de nuestro interés.
+
+
+
+
+
+La teoria ondulatoria de la luz tomo considerable tiempo y esfuerzo para ser aceptada ampliamente, Fresnel, Franhoufer, ..., Defendieron la Teoria y la formularón matemáticamente. Para ellos 
+el estado de la luz podía ser descrito por un \emph{campo escalar}. Y fueron exitosos en el calculo del patrón de intensidad que se observaba en una pantalla luego de que la luz atravezará aperturas circulares, estructuras con bordes definidos, etc. Llamamos a esta doctrina, la teoría escalar de la luz o teoría escalar de la radiación.
+
+Por las investigaciones de James Clerk Maxwell (1831-1879) y la posterior comprobación experimental realizada por Heinrich Hertz (1857-1894) se nos dio a conocer que \emph{la luz} puede ser entendida como una \emph{onda electromagnética}. 
+
+Este nuevo entendimiento de la naturaleza de la luz permitio explicar fenomenos como la polarización, y la interacción de la luz con la materia. 
+
+Es entonces, para esta nueva y refinada visión acerca de la naturaleza de la luz, insuficiente describir el estado de la luz mediante una función escalar, sino que es necesario describirla mediante al menos una función de campo vectorial.
+
+Conociendo la teoría electromagnética de la radiación, incluso hoy en día son ampliamente utilizados las teorias escalares para computar como la luz se propaga en los sistemas ópticos, porque esta aproximación es suficiente cuando estamos solo interesados en el patrón de intensidad y el sistema no tiene una resolución descomunal. 
+
+El interés de este trabajo son los sistemas estigmáticos, porque asegura una correspondencia punto a punto entre el objeto y su imagen al menos para un par de ellos en el regimen geoemetrico, y es de esperar que conserven buenas propiedades en las teorias ondulatorias porque la condicion de mismo camino óptico, es equivalente a que en el trayecto, todos los rayos emitidos desde unos de los puntos estigmáticos acumulan exactamente la misma fase en su trayecto hasta su convergencia en el punto estigmático conjugado al primero. 
+
+
+
+La óptica moderna ha perfeccionado los instrumentos que empleamos para resolver tanto las estructuras más pequeñasrácticas muy extendidas en el campo de la óptica —tales como las aproximaciones paraxiales en óptica geométrica y ondulatoria, y el ignorar la naturaleza vectorial de la radiación— han sido suficientes para la gran mayoría de las aplicaciones, al costo de limitar la apertura numérica. Como es bien conocido por los instruidos en la ciencia de la luz, esta limitación restringe tanto la resolución alcanzable como la luminosidad captada por los sistemas ópticos. Si bien estas aproximaciones aportan cierta simplicidad calculacional, cada vez más los modelos se sustentan en aproximaciones sobre aproximaciones, de modo que un sentimiento de arbitrariedad perturba el intelecto—perturbación que ignoramos bajo el popular lema de «callar y calcular».
+
+El presente trabajo no busca revolucionar nuestro entendimiento de la luz, sino respetar rigurosamente los principios fundamentales con los que comprendemos la radiación electromagnética, desarrollando un nuevo método para trabajar en óptica. Presentamos un método para calcular cómo se propaga la radiación desde las fuentes (el objeto), cómo se transforma al atravesar sistemas ópticos compuestos de lentes y espejos, y cómo obtener el resultado matemático riguroso de la imagen del sistema en la superficie donde se desee medir la radiación. Desarrollamos aquí la teoría ultraxial de la óptica.
+
+
+
+\chapter{Óptica Geométrica} 
+\section{Principio de Fermat} 
+
+
+\begin{center}
+\textit{«Natura nihil agit frustra»}
+\end{center}
+
+
+La trayectoria $\Gamma$ que toma la luz para viajar de un punto $A$ a un punto $B$, de todas las posibles, es solo aquella que extrema el tiempo de trayecto
+
+
+
+\begin{equation}
+    \Gamma = \left\{ \Phi \mid \delta t(\Phi; A, B) = 0 \right\}        
+    \label{eq:fermat_principle}
+\end{equation}
+
+donde $(\Phi, A, B)$ denota cualquier trayectoria $\Phi$ que une $A$ con $B$.
+
+
+\section{Ley Vectorial de Snell–Descartes} 
+
+
+\begin{equation}
+  \mathbf{k}_t = \frac{n_1}{n_2} \left\{ \mathbf{k}_i - (\mathbf{k}_i \cdot \mathbf{n})\mathbf{n} \right\} - \mathbf{n} \sqrt{ 1 - \left( \frac{n_1}{n_2} \right)^2 \left\{ 1 - (\mathbf{k}_i \cdot \mathbf{n})^2 \right\} }
+  \label{eq:vectorial_law_of_snell_descartes}
+\end{equation}
+
+
+
+\section{Ovoides de Descartes} 
+
+
+Para que los rayos lúminosos que emerguen simultaneamente desde un punto $A$ convergan simultaniamente a otro punto $A'$, el tiempo que le toma a los rayos tomar el trayecto de $A$ hasta $A'$ debe ser el mismo. Cuando esta condición se cumple, se llama el par $(A, A')$ como \emph{par conjugado}. 
+
+En general, la condición de que los rayos lúminosos converjan todos simultaneamente en un mismo punto, se le conoce como \emph{condicición estigmática}.
+%TODO : CITAR!. 
+
+Considerando los rayos que emerguiendo de $A$ se refractan o se reflejan en cierta superficie $\Sigma$, y converguen todos al mismo punto $A'$, denotamos $\overline{AIA'}$ como el trayecto que realizan los rayos, siendo $I$ un punto de la superficie $\Sigma$.  Con $A$ y $A'$ fijos, solo los puntos de la superficie $\Sigma$ pueden ser seleccionados para cumplir la condición estigmatica. 
+
+De tal manera, que exiguiendo matemáticamente la condicion estigmática para los rayos que siguen el trayecto anteriormente mencionado, se determina la familia de superficies $\Sigma$ que la satisfacen.  
+
+
+
+Tales superficios son conocidas ampliamente en la literatura \emph{Ovoide de Descartes}, en atribución a el filosofo francés Rene Descartes, que escribio sobre ellas en la DIOPTRIQUE. 
+
+La búsqueda matemática de esta superficie se hace exigiendo a la superficie que los rayos emitidos desde un punto $A$ lleguen todos al mismo tiempo a $A'$ independientemente del punto de la superficie que se tome como intermedio. Llamando al punto intermedio $I$ 
+
+
+
+\begin{equation}
+    n_0\ || AQ || + n' || QA' || = k,
+    \label{eq:maxwell_condition_of_stigmatism}
+\end{equation}
+
+
+\begin{equation}
+   f_\Sigma =  n_0\ || AQ || + n' || QA' || - k = 0,
+\end{equation}
+
+
+\begin{equation}
+  f_{\Sigma}(x,y,z) = O G z^2 - 2(1 + S\varphi^2)z + (O + T\varphi^2)\varphi^2 = 0 
+  \label{eq:implicit_ovoid_GOTS}
+\end{equation}
+
+\begin{equation}
+  z(\varphi) = \frac{(O + T\varphi^2)\varphi^2}{1 + S\varphi^2 + \sqrt{1 + (2S - O^2G)\varphi^2}}
+  \label{eq:parametrical_ovoid_z}
+\end{equation}
+
+\begin{equation}
+  r(\varphi) = \sqrt{\varphi^2 - z^2(\varphi)} 
+  \label{eq:parametrical_ovoid_r}
+\end{equation}
+
+
+La manera de referirse a un punto $Q$ de $\Sigma$ desde el punto $O$, se hace mediante el vector $\lvec{OQ}$, que junto con las ecuaciones paramétricas \ref{eq:parametrical_ovoid_z} y \ref{eq:parametrical_ovoid_r} se puede expresar en la forma: 
+
+
+\begin{equation}
+  \lvec{OQ} = z(\rho)\uvec{z} + r(\rho)\uvec{r}(\varphi),
+  \label{eq:OQ_vector}
+\end{equation}
+
+
+Las leyes de la óptica geométrica permiten determinar, a partir de la dirección del rayo incidente y el punto de intersección del rayo con la superficie, la dirección del rayo transmitido o reflejado en dicho punto.  Y no depende del punto en sí, sino de la normal de la superficie en ese punto como es manifiesto de la ley vectorial \ref{eq:vectorial_law_of_snell_descartes} hallada desde el \emph{principio de Fermat}. %TODO : Referenciar ecuación. 
+
+Así, procedemos a escribir el vector normal de incidencia para un punto cualesquiera $Q \in \Sigma$ parametrizado por $(\rho, \phi)$. 
+
+Sea $P$ el origen de el rayo incidente y $Q(\rho, \phi)$ el punto de intersección del rayo con la superficie $\Sigma$, es manifiesto que el vector unitario de incidencia $\uvec{u}$ es el vector unitario de $\lvec{AQ}$, es decir 
+
+
+
+\begin{equation}
+  \uvec{u} = \frac{\lvec{PQ}}{\lVert \lvec{PQ} \rVert}.
+  \label{eq:def_of_u}
+\end{equation}
+
+Sean $(z_0, r_0, \varphi_0)$ las coordenadas de $P$, de modo que 
+
+\begin{equation}
+  \lvec{OP} = z_0\uvec{z} + r_0 \uvec{r}(\varphi_0)
+  \label{eq:def_OP_where_P_is_any_point_of_space}
+\end{equation}
+
+
+Contruimos pues el vector $\lvec{OQ}$, 
+
+\begin{equation}
+  \lvec{PQ} = \lvec{OQ} - \lvec{OP}
+\end{equation}
+
+\begin{equation}
+ \lvec{PQ} = (z(\rho) - z_0)\,\uvec{z}
++ \bigl(r(\rho) - r_0 \cos\Delta\varphi\bigr)\,\uvec{r}(\varphi)
++ r_0 \sin\Delta\varphi\,\uvec{\varphi}(\varphi), 
+  \label{eq:explicit_PQ}
+\end{equation}
+
+donde $\Delta \varphi$ es la diferencia $\varphi - \varphi_0$. 
+
+
+Calculamos la norma de $\lvec{PQ}$
+
+
+\begin{equation}
+  \lVert \lvec{PQ} \rVert^2
+= \rho^2 - 2 z(\rho) z_0 + z_0^2
++ r_0^2 - 2 r(\rho) r_0 \cos\Delta\varphi,
+\end{equation}
+
+y finalmente obtenemos el vector normal de incidencia
+
+
+% Vecotres u y u'.
+
+\begin{equation}
+   \uvec{u}
+  =
+  \frac{
+  (z(\rho) - z_0)\,\uvec{z}
+  + \bigl(r(\rho) - r_0 \cos\Delta\varphi\bigr)\,\uvec{r}(\varphi)
+  + \bigl(r_0 \sin\Delta\varphi\bigr)\,\uvec{\varphi}(\varphi)
+  }{
+  \sqrt{(z(\rho) - z_0)^2 + r(\rho)^2 + r_0^2 - 2 r(\rho) r_0 \cos\Delta\varphi}
+  }.
+  \label{eq:u_for_any_P}
+\end{equation}
+
+
+\begin{equation}
+   \uvec{u}'
+  =
+  \frac{
+  (z(\rho) - z_i)\,\uvec{z}
+  + \bigl(r(\rho) - r_i \cos\Delta\varphi\bigr)\,\uvec{r}(\varphi)
+  + \bigl(r_i \sin\Delta\varphi\bigr)\,\uvec{\varphi}(\varphi)
+  }{
+  \sqrt{(z(\rho) - z_i)^2 + r(\rho)^2 + r_i^2 - 2 r(\rho) r_i \cos\Delta\varphi}
+  }.
+  \label{eq:u_prime_for_any_P}
+\end{equation}
+
+
+Si los puntos $P$ y $P'$ viven en el eje óptico, la expresión para $\uvec{u}$ se simplifica como: 
+
+\begin{equation}
+  \uvec{u} = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}  
+  \label{eq:u_for_P_in_optical_axis}
+\end{equation}
+
+
+
+\begin{equation}
+  \uvec{u}' = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}}  
+  \label{eq:u_prime_for_P_in_optical_axis}
+\end{equation}
+
+
+Cuando $P$ esta en el plano $(z, r)$, se cumple que $\Delta \varphi = 0$, de tal manera que $\uvec{u}$ toma la forma 
+
+
+
+
+
+Procedemos ahora con el cálculo de la normal, en un punto $Q$ parametrizado por  $(\rho, \phi)$, denotemos al vector normal en el punto $Q=Q(\rho, \varphi)$ como $\uvec{n}$, y construyamos un vector $\vec{N}$ proporcional a $\uvec{n}$ 
+
+
+
+
+\[ 
+  \vec{N} = \frac{\partial \vb{r}_\Sigma}{\partial \rho} \times \frac{\partial \vb{r}_\Sigma}{\partial \phi}
+\]
+
+
+\[
+\vec{N}(\rho,\varphi)
+=\frac{\partial \lvec{OQ}}{\partial \rho}\times \frac{\partial \lvec{OQ}}{\partial \varphi}
+= r(\rho)\,r'(\rho)\,\uvec{z}-r(\rho)\,z'(\rho)\,\uvec{r}(\varphi)
+= r(\rho)\Bigl(r'(\rho)\,\uvec{z}-z'(\rho)\,\uvec{r}(\varphi)\Bigr),
+\]
+
+donde hemos usado el hecho de que
+
+
+\[
+\frac{\partial \lvec{OQ}}{\partial \rho}
+= z'(\rho)\,\uvec{z}+r'(\rho)\,\uvec{r}(\varphi),
+\qquad
+\frac{\partial \lvec{OQ}}{\partial \varphi}
+= r(\rho)\,\uvec{\varphi}(\varphi).
+\]
+
+La norma de $\vec{N}$ esta dada por
+
+\[
+|\lvec{N}|
+= r(\rho)\sqrt{(r'(\rho))^2+(z'(\rho))^2}
+\]
+
+
+
+De esta manera, obtenemos el vector unitario $\uvec{N}$, desde la definición:
+
+\[
+\uvec{n}(\rho,\varphi)=\frac{\lvec{N}}{|\lvec{N}|},
+\]
+
+por lo tanto,
+
+\begin{equation}
+\uvec{N}(\rho,\varphi) = \frac{r'(\rho)\,\uvec{z}-z'(\rho)\,\uvec{r}(\varphi)}{\sqrt{(r'(\rho))^2+(z'(\rho))^2}}.
+  \label{eq:N_ovoid_rho_and_phi}
+\end{equation}
+
+
+\begin{equation}
+    \uvec N(Q) = \frac{\bm \nabla f_\Sigma(Q)}{|| f_\Sigma(Q)||}
+\end{equation}
+
+
+% =========ÓPTICA ONDULATORIA =============
+
+\chapter{Óptica Ondulatoria} 
+
+
+La visión geométrica de la luz, si bien elegante, y suficiente para muchas de las aplicaciones elementales, no captan por completo la verdader naturaleza de la luz, pues bien se vio acorralada este modelo teórico frente a fenomenos como la interferencia, la diffracción, la birrefrigencia, por mencionar algunos. Estos problemas, hacian temblar este modo de entender la luz, se fue acumulando las experincias que contradecian este modelo, hasta que la paradoja se hizo inegable. Por otro lado, las investigaciones concernientes a los fenomenos electricos y magnéticos, dio fruto a grandes avances en el entendimiento de estas fuerzas de la naturaleza, fue Faraday el que entendio como se influian mutuamente lo que sugeria una misma naturaleza, tambien observo experimentalmente como la luz era influido por estas fuerzas ahora mejor entendidas. James Clerk Maxwell en una tarea verdaderamente unificadora, y excelsa matematicamente, sinteizo las ideas de su epoca en las ecuaciones que lleva su nombre, y por una necesidad física de conservación y el conocimiento matematico de las ecuaciones que la aseguraban, fue mas alla que sus predeceseres postulando las ondas como consecuencia de respetar este principio de conservación para la carga electrica.
+
+En su forma general, las ecuaciones de Maxwell pueden escribirse como
+\begin{align}
+\nabla \cdot \mathbf{E}(\mathbf r, t) &= \frac{\rho(\mathbf r, t)}{\epsilon_0} 
+& \qquad 
+\nabla \cdot \mathbf{B}(\mathbf r, t) &= 0, \\
+\nabla \times \mathbf{E}(\mathbf r, t) &= -\,\frac{\partial \mathbf B(\mathbf r, t)}{\partial t}
+& \qquad
+\nabla \times \mathbf B(\mathbf r, t) &= \mu_0\,\mathbf J(\mathbf r, t) 
++ \mu_0\epsilon_0\,\frac{\partial \mathbf E(\mathbf r, t)}{\partial t},
+\label{eq:maxwell_equaitons}
+\end{align}
+
+y, en el caso particular del \emph{vacío}, donde no existen cargas ni corrientes libres,
+\[
+\rho(\mathbf r,t) = 0, \qquad \mathbf J(\mathbf r,t) = \mathbf 0,
+\]
+las ecuaciones toman la forma
+
+
+\begin{align}
+\nabla \cdot \mathbf{E}(\mathbf r, t) &= 0 
+& \qquad 
+\nabla \cdot \mathbf{B}(\mathbf r, t) &= 0, 
+\\
+\nabla \times \mathbf{E}(\mathbf r, t) &= -\,\frac{\partial \mathbf B(\mathbf r, t)}{\partial t}
+& \qquad
+\nabla \times \mathbf B(\mathbf r, t) &= \mu_0\epsilon_0\,\frac{\partial \mathbf E(\mathbf r, t)}{\partial t},
+\label{eq:maxwell_equation_vacuum}
+\end{align}
+
+
+De la combinación adecuada de estas ecuaciones se concluye que los campos satisfacen ecuaciones de onda de la forma
+
+\begin{align}
+\nabla^2 \mathbf E(\mathbf r, t) - \frac{1}{c^2}\frac{\partial^2 \mathbf E(\mathbf r, t)}{\partial t^2} &= 0,
+\label{eq:wave_equation_E} 
+\\
+\nabla^2 \mathbf B(\mathbf r, t) - \frac{1}{c^2}\frac{\partial^2 \mathbf B(\mathbf r, t)}{\partial t^2} &= 0,
+\label{eq:wave_equation_B}
+\end{align}
+donde
+\[
+c = \frac{1}{\sqrt{\mu_0 \epsilon_0}}
+\]
+es la velocidad característica de propagación de la onda electromagnética en el vacío.
+
+
+Por el teorema de Fourier sabemos que toda función admite una representación armonica de la forma, de modo que podemos escribir el campo électrico en dicha representación como se sigue 
+
+\begin{equation}
+    \vb{E}(\vb r, t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \vb{E}_\omega(\vb r) e^{-i\omega t} dt
+    \label{eq:E_field_harmonic_representation}
+\end{equation}
+
+En la representación armonica el campo magnético se optiene fácilmente, como 
+
+
+\begin{equation}
+    \vb{B}_\omega = \frac{1}{i\omega} \nabla \times \vb{E}_\omega,
+    \label{eq:B_harmonic_func_of_E_harmonic}
+\end{equation}
+
+por lo que en lo sucesivo omitiremos el campo magnético en nuestro anális, pues la información del campo eléctrico nos es suficiente. Siendo de este como  
+
+\begin{equation}
+    \nabla^2 \vb{E}(\vb r) + k^2 \vb E = 0, 
+    \label{eq:E_field_wave_equation}
+\end{equation}
+
+donde $k = \omega/c$, la ecuación fundamental para la propagación de el campo armonico. 
+
+La ecuación \ref{eq:E_field_wave_equation} es equivalenete a una ecuación de Helmholtz escalar para cada una de sus componentes cartesianas, sea $\Psi(\vb r)$ una de esas componentes, escribimos 
+
+\begin{equation}
+    \nabla^2 \Psi (\vb r) + k^2 \Psi (\vb r) = 0 
+    \label{eq:Helmholtz_equation}
+\end{equation}
+
+
+
+\section{Límites de resolución} 
+
+El campo escalar en el medio se escribe como superposición de ondas planas en el plano de referencia \(z=0\):
+
+\begin{equation}
+\begin{aligned}
+\Psi(\mathbf r)
+&= \frac{1}{(2\pi)^2}
+\int_{-\infty}^{\infty}\!\!\int_{-\infty}^{\infty}
+\tilde\Psi(k_x,k_y,0)\,
+e^{i(k_x x + k_y y + k_z z)}\, dk_x\,dk_y .
+\end{aligned}
+\end{equation}
+
+donde
+
+\begin{equation}
+k_z = \sqrt{k^2 - k_x^2 - k_y^2},
+\qquad
+k = \lvert\mathbf k\rvert = \frac{2\pi n}{\lambda},
+\end{equation}
+
+con \(n\) el índice de refracción del medio y \(\lambda\) la longitud de onda en el vacío.
+
+La dirección de propagación de cada onda plana viene dada por
+
+\begin{equation}
+\frac{\mathbf k\cdot\hat{\mathbf z}}{k} = \cos\theta
+\qquad\Rightarrow\qquad
+\frac{k_z}{k} = \cos\theta .
+\end{equation}
+
+De donde se obtiene
+
+\begin{equation}
+\sin\theta
+= \frac{k_\perp}{k}
+= \frac{\sqrt{k_x^2 + k_y^2}}{k},
+\end{equation}
+
+con \(k_\perp = \sqrt{k_x^2 + k_y^2}\).
+
+La apertura numérica del sistema es
+
+\begin{equation}
+\mathrm{NA} = n \sin\theta ,
+\end{equation}
+
+y la condición geométrica considerada es
+
+\begin{equation}
+n\sin\alpha \le n\sin\theta = \mathrm{NA}.
+\end{equation}
+
+Para que una componente espacial dada sea transmitida por la pupila, se requiere
+
+\begin{equation}
+k_\perp \le k \sin\theta_{\max}
+= k\,\frac{\mathrm{NA}}{n}.
+\end{equation}
+
+En términos de frecuencias espaciales
+
+\begin{equation}
+\begin{aligned}
+f_\perp &= \frac{k_\perp}{2\pi}
+\le \frac{k}{2\pi}\,\frac{\mathrm{NA}}{n}
+= \frac{n/\lambda}{1}\,\frac{\mathrm{NA}}{n}
+= \frac{\mathrm{NA}}{\lambda}.
+\end{aligned}
+\end{equation}
+
+Por tanto, el sistema transmite frecuencias espaciales hasta
+
+\begin{equation}
+f_{\max} = \frac{\mathrm{NA}}{\lambda}.
+\end{equation}
+
+Considérese ahora un objeto (o patrón) limitado a una extensión \(d\) en la dirección \(x\). Su desarrollo en serie de Fourier contiene armónicas con números de onda
+
+\begin{equation}
+\begin{aligned}
+k_x &= \frac{n\pi}{d},
+\\
+n &= 0,1,2,\dots
+\end{aligned}
+\end{equation}
+
+y por tanto
+
+\begin{equation}
+f_x = \frac{k_x}{2\pi} = \frac{n}{2d}.
+\end{equation}
+
+Para que la estructura correspondiente sea resoluble, al menos el primer armónico \(n=1\) debe ser transmitido por el sistema:
+
+\begin{equation}
+\frac{1}{2d} \le f_{\max} = \frac{\mathrm{NA}}{\lambda}.
+\end{equation}
+
+De aquí se obtiene el límite de resolución de Abbe:
+
+\begin{equation}
+d \ge \frac{\lambda}{2\,\mathrm{NA}}.
+\end{equation}
+
+En la forma más habitual se escribe
+
+\begin{equation}
+d = \frac{\lambda}{2\,\mathrm{NA}} ,
+\end{equation}
+
+donde \(\lambda\) es siempre la longitud de onda en el vacío.
+% ======================
+\section{Propagación de los campos}
+
+\subsection{Método de espectro angular}
+
+El método de espectro angular (ASM) es un método que permite, dado el campo en un plano $(z=0)$ determinarlo luego en un plano paralelo al primero. Es una solución exacta a la ecuación de Helmholtz \eqref{eq:Helmholtz_equation}. 
+
+
+
+
+
+\subsection{Par de Fourier en el plano transversal}
+
+Definimos la transformada de Fourier bidimensional sobre las coordenadas transversales $(x,y)$ en términos de las frecuencias espaciales $(f_x, f_y)$ medidas en ciclos por metro:
+
+\begin{equation}
+\tilde{\Psi}(f_x,f_y;z) = \iint_{\mathbb{R}^2} \Psi(x,y,z)\, e^{-i\,2\pi\,(f_x x + f_y y)}\, dx\, dy,
+\label{eq:fourier_2d_forward}
+\end{equation}
+
+\begin{equation}
+\Psi(x,y,z) = \iint_{\mathbb{R}^2} \tilde{\Psi}(f_x,f_y;z)\, e^{i\,2\pi\,(f_x x + f_y y)}\, df_x\, df_y.
+\label{eq:fourier_2d_inverse}
+\end{equation}
+
+Esta convención mantiene todos los factores $2\pi$ dentro de las exponenciales, haciendo explícita la geometría del problema.
+
+\subsection{Relación de dispersión}
+
+Para un campo armónico en el tiempo con número de onda $k = 2\pi/\lambda$ en el espacio libre (donde $f = 1/\lambda$ es la frecuencia espacial característica), la ecuación de Helmholtz impone la relación de dispersión:
+
+\begin{equation}
+k^2 = (2\pi f)^2 = (2\pi f_x)^2 + (2\pi f_y)^2 + (2\pi f_z)^2
+\quad \Longleftrightarrow \quad
+f^2 = f_x^2 + f_y^2 + f_z^2.
+\label{eq:helmholtz_dispersion_spatial_freq}
+\end{equation}
+
+De aquí se obtiene la componente longitudinal de la frecuencia espacial. Eligiendo la rama con $\operatorname{Im} f_z \geq 0$ para garantizar campos propagantes o evanescentes (sin crecimiento exponencial hacia $z > 0$):
+
+\begin{equation}
+f_z(f_x,f_y) =
+\begin{cases}
+\sqrt{f^2 - f_x^2 - f_y^2}, & f_x^2 + f_y^2 \leq f^2 \quad \text{(propagante)} \\[4pt]
+i\,\sqrt{f_x^2 + f_y^2 - f^2}, & f_x^2 + f_y^2 > f^2 \quad \text{(evanescente)}.
+\end{cases}
+\label{eq:fz_definition}
+\end{equation}
+
+Las componentes con $f_x^2 + f_y^2 \leq f^2$ corresponden a ondas planas propagantes que transportan energía en la dirección $+z$, mientras que aquellas con $f_x^2 + f_y^2 > f^2$ son campos evanescentes que decaen exponencialmente con la distancia.
+
+\subsection{Ley de propagación del espectro angular}
+
+En el dominio espectral, la propagación a lo largo de $z$ se reduce a una simple multiplicación por un factor de fase:
+
+\begin{equation}
+\tilde{\Psi}(f_x,f_y;z) = \tilde{\Psi}(f_x,f_y;0)\, e^{i\,2\pi\,f_z(f_x,f_y)\,z}.
+\end{equation}
+
+Sustituyendo en la transformada inversa \eqref{eq:fourier_2d_inverse}, obtenemos la representación del espectro angular:
+
+\begin{equation}
+\Psi(x,y,z) = \iint_{\mathbb{R}^2} \tilde{\Psi}(f_x,f_y;0)\,
+\exp\!\left[i\,2\pi\left(f_x x + f_y y + f_z(f_x,f_y)\,z\right)\right] df_x\, df_y
+\label{eq:angular_spectrum_propagation}
+\end{equation}
+
+Esta fórmula expresa el campo en cualquier plano $z > 0$ como una superposición de ondas planas, cada una caracterizada por su vector de onda transversal $(2\pi f_x, 2\pi f_y)$ y su evolución longitudinal determinada por $f_z$.
+
+\subsection{Forma operacional}
+
+Es conveniente expresar la propagación en forma de operador. Definimos el operador de propagación:
+
+\begin{equation}
+\mathcal{U}(z) := \mathcal{F}^{-1}_{xy} \left\{ e^{i\,2\pi\,z\,\sqrt{f^2 - f_x^2 - f_y^2}} \right\} \mathcal{F}_{xy},
+\label{eq:propagation_operator}
+\end{equation}
+
+donde $\mathcal{F}_{xy}$ y $\mathcal{F}^{-1}_{xy}$ denotan las transformadas \eqref{eq:fourier_2d_forward} y \eqref{eq:fourier_2d_inverse} respectivamente. Entonces:
+
+\begin{equation}
+\Psi(x,y,z) = \mathcal{U}(z)\, \Psi(x,y,0).
+\label{eq:field_propagation_operator_form}
+\end{equation}
+
+El operador $\mathcal{U}(z)$ diagonaliza el laplaciano transversal $\nabla_\perp^2 = \partial_x^2 + \partial_y^2$, transformando la ecuación diferencial parcial de Helmholtz en una simple multiplicación espectral. Esta representación es la base de los métodos numéricos de propagación por FFT (Fast Fourier Transform) y se conecta naturalmente con las aproximaciones de Fresnel y Fraunhofer cuando $f_x, f_y \ll f$.
+
+
+\section{Transformación que sufre el campo eléctrico al cambiar de medio} 
+\subsection{Coeficientes de Fresnel}
+
+
+\begin{equation}
+\Pi = \operatorname{span}\{\hat{\mathbf{k}}, \hat{\mathbf{N}}\}
+\label{eq:pi}
+\end{equation}
+
+\begin{equation}
+\hat{\mathbf{p}} \in \Pi, 
+\qquad \hat{\mathbf{p}} \perp \hat{\mathbf{k}}
+\label{eq:pdef}
+\end{equation}
+
+\begin{equation}
+\hat{\mathbf{s}} \perp \Pi
+\label{eq:sdef}
+\end{equation}
+
+Para polarización $s$:
+\begin{equation}
+r_s = \frac{n_1 \cos \theta_i - n_2 \cos \theta_t}{n_1 \cos \theta_i + n_2 \cos \theta_t}
+\label{eq:rs}
+\end{equation}
+
+\begin{equation}
+t_s = \frac{2 n_1 \cos \theta_i}{n_1 \cos \theta_i + n_2 \cos \theta_t}
+\label{eq:ts}
+\end{equation}
+
+Para polarización $p$:
+\begin{equation}
+r_p = \frac{n_2 \cos \theta_i - n_1 \cos \theta_t}{n_2 \cos \theta_i + n_1 \cos \theta_t}
+\label{eq:rp}
+\end{equation}
+
+\begin{equation}
+t_p = \frac{2 n_1 \cos \theta_i}{n_2 \cos \theta_i + n_1 \cos \theta_t}
+\label{eq:tp}
+\end{equation}
+
+
+Se determina el campo transmito a partir de el incidente, como sigue
+
+\begin{align}
+    E'_s &= t_s E_s \\
+    E'_p &= t_p E_p.
+\end{align}
+
+Es decir 
+
+
+\begin{equation}
+    \vb E = t_p E_p \uvec p' + t_s E_s \uvec s 
+    \label{eq:transmited_field_on_sigma_from_incident_field_on_sigma_in_ps_basis_alt}
+\end{equation}
+
+
+\begin{equation}
+  \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}' 
+  \label{eq:Transmited_E_field_in_Sigma}
+\end{equation}
+
+
+
+\begin{equation}
+  \vb{E}_{\Sigma}' 
+  = t_p \ket{\uvec{p}'} \bra{\uvec{p}} \ket{\vb{E}_\Sigma}
+  + t_s \ket{\uvec{s}'} \bra{\uvec{s}} \ket{\vb{E}_\Sigma}
+\end{equation}
+
+
+\begin{equation}
+  \mathscr{P} = t_p \ket{\uvec{p}'} \bra{\uvec{p}}
+  + t_s \ket{\uvec{s}'} \bra{\uvec{s}}
+\end{equation}
+
+\begin{equation}
+  \vb{E}'_\Sigma = \mathscr{P}\{\vb{E}_{\Sigma}\}
+\end{equation}
+
+
+
+
+
+
+
+
+% chapter  (end)
+\chapter{Aplicación a las Superficies Cartesianas}
+
+
+% TODO: agrupar z y r en un entorno Align.
+\begin{equation}
+  z(\rho) = \frac{(O + T\rho^2)\rho^2}{1 + S\rho^2 + \sqrt{1 + (2S - O^2G)\rho^2}}
+  \label{eq:parametrical_ovoid_z}
+\end{equation}
+
+\begin{equation}
+  r(\rho) = \sqrt{\rho^2 - z^2(\rho)} 
+  \label{eq:parametrical_ovoid_r}
+\end{equation}
+
+\begin{equation}
+  \mathbf{\hat N}(\rho,\varphi)=
+  \frac{r'(\rho)\,\mathbf{\hat z}-z'(\rho)\,\mathbf{\hat r}(\varphi)}
+  {\sqrt{(r'(\rho))^2+(z'(\rho))^2}}  
+  \label{eq:N_ovoid_rho_phi}
+\end{equation} %TODO: Citarla de la ya enteriormente escrita en † óptica geométrica. (eq:N_ovoid_rho_phi)
+
+
+\begin{equation}
+  \uvec{u} = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}}  
+  \label{eq:u_for_P_in_optical_axis_app}
+\end{equation}
+
+\begin{equation}
+  \uvec{u}' = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}  
+  \label{eq:u_prime_for_P_in_optical_axis_app}
+\end{equation}
+
+
+De la teoria electromagnética, sabemos que para sistemas axialmente simetricos el campo sobre la interfaz $\Sigma$ que se transmite, se calcula como 
+
+\begin{equation}
+  \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}, 
+  \label{eq:Transmited_E_field_in_Sigma_app}
+\end{equation}
+
+donde $\uvec s$, $\uvec p$ y $\uvec p'$ se definen como
+
+\begin{equation}
+    \uvec s = \frac{\uvec N \times \uvec u}{\lvert  \uvec N \times \uvec u \rvert},
+    \label{eq:s_hat_def_app}
+\end{equation}
+
+
+\begin{equation}
+    \uvec p = \uvec s \times \uvec u   
+    \label{eq:p_hat_def_app}.
+\end{equation}
+
+\begin{equation}
+    \uvec p' = \uvec s \times \uvec u'  
+    \label{eq:p_prime_hat_def}.
+\end{equation}
+
+
+que remplazando por las ecuaciones \ref{eq:N_ovoid_rho_phi}, \ref{eq:u_for_P_in_optical_axis} y \ref{eq:u_prime_for_P_in_optical_axis} 
+
+\begin{equation}
+  \uvec p = \frac{1}{\sqrt{\rho^2 - 2zz_0 + z_0^2}} \left\{(z(\rho) - z_0)\uvec{r}(\phi) - r(\rho)\uvec{z} \right\} 
+  \label{eq:}
+\end{equation}
+
+
+\begin{equation}
+  \uvec{p}' = \frac{1}{\sqrt{\rho^2 - 2zz_i + z_i^2}} \left\{(z(\rho) - z_i)\uvec{r}(\phi) - r(\rho)\uvec{z} \right\} 
+  \label{eq:}
+\end{equation}
+
+\begin{equation}
+  \uvec{s} = \uvec{\phi}(\phi)
+  \label{eq:}
+\end{equation}
+
+
+
+Y los coeficientes de Fresnel de transmición, se definen en funcion de los cosenos de los ángulos de incidencia y de refracción como:  
+
+
+\begin{equation}
+t_s = \frac{2 n_1 \cos \theta_i}{n_1 \cos \theta_i + n_2 \cos \theta_t}
+\label{eq:ts}
+\end{equation}
+
+
+\begin{equation}
+t_p = \frac{2 n_1 \cos \theta_i}{n_2 \cos \theta_i + n_1 \cos \theta_t}
+\label{eq:tp}
+\end{equation}
+
+
+Los cosenos $\cos \theta_i$  y $\cos \theta_t$ los obtenemos a partir de las siguientes expresiones 
+
+
+\begin{align}
+  \cos\theta_i &= -\uvec{N} \cdot \uvec{u} \\
+  \cos\theta_t &= -\uvec{N} \cdot \uvec{u}'
+\end{align}
+
+
+% ----------------
+
+
+\begin{equation}
+  \uvec N(\rho,\varphi)=
+  \frac{r'(\rho)\,\uvec z-z'(\rho)\,\uvec r(\varphi)}
+  {\sqrt{(r'(\rho))^2+(z'(\rho))^2}}
+  \label{eq:N_ovoid_rho_phi}
+\end{equation}
+
+
+\begin{align}
+\cos\theta_i(\rho)
+&= -\,\uvec N(\rho,\varphi)\cdot\uvec u(\rho,\varphi)
+\label{eq:cos_theta_i_def_app}
+\\[2mm]
+&= -\;
+\frac{
+\big(r'(\rho)\uvec z-z'(\rho)\uvec r(\varphi)\big)\cdot\big((z(\rho)-z_i)\uvec z+r(\rho)\uvec r(\varphi)\big)
+}{
+\sqrt{(r'(\rho))^2+(z'(\rho))^2}\;
+\sqrt{\rho^2-2z(\rho)z_i+z_i^2}
+}
+\label{eq:cos_theta_i_closed_app}
+\end{align}
+
+\begin{equation}
+  \cos\theta_i(\rho) = \frac{
+z'(\rho)\,r(\rho)\;-\;r'(\rho)\,\big(z(\rho)-z_i\big)
+}{
+\sqrt{(r'(\rho))^2+(z'(\rho))^2}\;
+\sqrt{\rho^2-2z(\rho)z_i+z_i^2}
+}.
+  \label{eq:cos_theta_i_ovoid_z_and_r}
+\end{equation}
+
+
+\begin{equation}
+\cos\theta_i(\rho)
+=
+\frac{
+z'(\rho)\,\big(\rho^2-z(\rho)z_0\big)-\rho\big(z(\rho)-z_0\big)
+}
+{
+\sqrt{\rho^2\big(1+z'(\rho)^2\big)-2\rho z(\rho)z'(\rho)}\;
+\sqrt{\rho^2-2z(\rho)z_0+z_0^2}
+}.
+\label{eq:cos_theta_i_ovoid}
+\end{equation}
+
+
+Luego, $cos\theta_t$ se obtiene simplemente remplazando $z_0$ por $z_i$: 
+
+\begin{equation}
+\cos\theta_t(\rho)
+=
+\frac{
+z'(\rho)\,\big(\rho^2-z(\rho)z_i\big)-\rho\big(z(\rho)-z_i\big)
+}
+{
+\sqrt{\rho^2\big(1+z'(\rho)^2\big)-2\rho z(\rho)z'(\rho)}\;
+\sqrt{\rho^2-2z(\rho)z_i+z_i^2}
+}.
+\label{eq:cos_theta_t_ovoid}
+\end{equation}
+
+
+Así pues, los cosenos de incidencia y transmisión son
+
+
+\begin{equation}
+\left\{
+\begin{aligned}
+\cos\theta_i &=
+\frac{
+z'\,\big(\rho^2 - z\,z_0\big) - \rho\big(z - z_0\big)
+}
+{
+\sqrt{\rho^2\big(1+z'^2\big) - 2\rho z z'}\;
+\sqrt{\rho^2 - 2 z z_0 + z_0^2}
+}
+\\[8pt]
+\cos\theta_t &=
+\frac{
+z'\,\big(\rho^2 - z\,z_i\big) - \rho\big(z - z_i\big)
+}
+{
+\sqrt{\rho^2\big(1+z'^2\big) - 2\rho z z'}\;
+\sqrt{\rho^2 - 2 z z_i + z_i^2}
+}
+\end{aligned}
+\right.
+\label{cosines_ovoid}
+\end{equation}
+
+
+Usando las definiciones 
+
+\begin{align*}
+l_0 &= \sqrt{\rho^2 - 2zz_0 + z_0^2} \\ 
+l_i &= \sqrt{\rho^2 - 2zz_i + z_i^2} 
+\end{align*}
+
+que son las distancias $\overline{AQ}$ y $\overline{A'Q}$ respectivamente. 
+
+y definiendo tambien 
+
+\begin{equation}
+  s' := \frac{ds}{d\rho} = \sqrt{(z')^2 + (r')^2},
+  \label{eq:ds_drho}
+\end{equation}
+
+
+los cosenos de incidencia y transmisión quedan expresados como: 
+
+
+\begin{equation}
+\begin{aligned}
+  \cos\theta_i &= \frac{1}{s'l_0}\big\{z'\big(\rho^2 - z z_0\big) - \rho\big(z - z_0\big)
+\big\} \\[8pt]
+ \cos\theta_t &= \frac{1}{s'l_i}\big\{z'\big(\rho^2 - z z_i\big) - \rho\big(z - z_i\big)
+\big\} \\[8pt]
+\end{aligned}
+\label{cosines_ovoid}
+\end{equation}
+
+Remplazando \ref{cosines_ovoid} en \ref{eq:ts} y en \ref{eq:tp}, obtene os los coeficientes de fresnel para la transmisión para la superficie cartesiana parametrizada por los parametros $G, O, T, S$ 
+
+$$
+t_s = \frac{2 \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\}}{ \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\} + \eta \frac{l_0}{l_i} \left\{ z'(\rho^2 - zz_i) - \rho(z - z_i) \right\} }
+$$
+
+$$
+t_p = \frac{2 \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\}}{ \eta \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\} + \frac{l_0}{l_i} \left\{ z'(\rho^2 - zz_i) - \rho(z - z_i) \right\} }
+$$
+
+
+\section{Campo Eléctrico en el plano Focal}
+
+Sea $\vb{E}_p(\vb{r})$ el campo eléctrico en el plano $P$ $\{\vb{E}_p' := \vb{E}(P)\}$.
+Calcúlese el campo en $P'$ a una distancia $d$ del plano $P$.
+
+\subsection*{Solución}
+
+Transfiérase $\vb{E}_p$ a la superficie $\Sigma$ adicionando la fase que acumula el campo en su trayecto.
+Considerar que el campo describe una línea recta en su recorrido de $p$ a $q$ y asumir que dicho recorrido es aproximadamente horizontal, justificando esto porque consideraremos como primera aproximación un ángulo $\alpha$ moderado.
+
+Con tales consideraciones, el campo $\vb{E}_{\Sigma}$, sobre $\Sigma$ estará dado por
+
+\begin{equation}
+    \vb{E}_{\Sigma}(\vb{r}) = e^{ikz(\vb{r})} \vb{E}_p(\vb{r})
+\end{equation}
+
+\begin{equation}
+    \vb{E}_{\Sigma}(r,\phi,z(r)) = e^{ikz(r)} \vb{E}_p(r,\phi,z=0)
+\end{equation}
+
+Así, calculamos el campo transmitido sobre la interfaz $\Sigma$
+
+\begin{equation}
+    \vb{E}'_{\Sigma}(\vb{q}) = t_p (\vb{E}_{\Sigma} \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_{\Sigma} \cdot \uvec{s}) \uvec{s}
+\end{equation}
+
+Descomponiendo el campo en la interfaz en sus componentes cilíndricas:
+
+\begin{equation}
+    \vb{E}_{\Sigma} = E_r \uvec{r} + E_{\phi} \uvec{\phi} + E_z \uvec{z}
+\end{equation}
+
+Calculamos las proyecciones sobre los vectores de la base de Fresnel $\uvec{p}$ y $\uvec{\phi}$ (donde $\uvec{s} = \uvec{\phi}$):
+
+\begin{equation}
+    \vb{E}_{\Sigma} \cdot \uvec{p} = \frac{1}{\sqrt{\rho^2 - 2zz_0 + z_0^2}} \big\{ (z(\rho) - z_0) E_r - r(\rho) E_z \big\}
+\end{equation}
+
+\begin{equation}
+    \vb{E}_{\Sigma} \cdot \uvec{\phi} = E_{\phi}
+\end{equation}
+
+Sustituyendo en la expresión del campo transmitido:
+
+\begin{equation}
+    \vb{E}'_{\Sigma} = t_p \frac{ \big\{ (z(\rho) - z_0) E_r - r(\rho) E_z \big\} }{\sqrt{\rho^2 - 2zz_0 + z_0^2} \sqrt{\rho^2 - 2zz_i + z_i^2}} \big\{ (z(\rho) - z_i) \uvec{r} - r(\rho) \uvec{z} \big\} + t_s E_{\phi} \uvec{\phi}
+\end{equation}
+
+Reemplazando los coeficientes de Fresnel explícitamente:
+
+\begin{align}
+    \vb{E}'_{\Sigma} &= 2 \frac{ \{ r'(z_i-z) + r z' \} }{ \{ r'(z_0-z) + r z' \} + \eta \{ r'(z_i-z) + r z' \} \frac{l_0}{l_i} } E_{\phi} \uvec{\phi} \nonumber \\[8pt]
+    &\quad + 2 \frac{ \{ r'(z_i-z) + r z' \} }{ \eta \{ r'(z_0-z) + r z' \} + \{ r'(z_i-z) + r z' \} \frac{l_i}{l_0} } \big\{ (z(\rho) - z_0) E_r - r(\rho) E_z \big\} \uvec{p}'
+\end{align}
+
+Transfiérase el campo de vuelta a $P$ para hacer uso de los métodos de propagación, llamamos a este ``campo virtual'' en $P$ como $\vb{E}_P'$.
+
+\begin{equation}
+    \vb{E}_p' = e^{-inkz(r)} \vb{E}_{\Sigma}'
+\end{equation}
+
+Expresando el campo virtual en el plano focal considerando la fase acumulada:
+
+\begin{align}
+    \vb{E}_p' &= e^{-inkz(r)} \big\{ t_p (\vb{E}_{\Sigma} \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_{\Sigma} \cdot \uvec{\phi}) \uvec{\phi} \big\} \nonumber \\[6pt]
+    &= e^{-inkz(r)} \big\{ t_p (e^{ikz(r)} \vb{E}_p \cdot \uvec{p}) \uvec{p}' + t_s (e^{ikz(r)} \vb{E}_p \cdot \uvec{\phi}) \uvec{\phi} \big\}
+\end{align}
+
+\begin{equation}
+    \vb{E}_p' = e^{ik(1-n)z(r)} \big\{ t_p (\vb{E}_p \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_p \cdot \uvec{\phi}) \uvec{\phi} \big\}
+\end{equation}
+
+Definimos el campo inicial en el plano $z=0$:
+
+\begin{equation}
+    \vb{E}(r, z=0) := \vb{E}_p(r)
+\end{equation}
+
+Y lo propagamos hasta el plano focal $z=f$:
+
+\begin{equation}
+    \vb{E}(r, z=f) = \mathcal{R}_n [f] \big\{ \vb{E}_p'(r) \big\}
+\end{equation}
+
+Donde, asumiremos válido el Régimen de Fresnel, para lo que el operador de propagación está dado por:
+
+\begin{equation}
+    \mathcal{R}_n [f] \{ U(x,y) \} = \frac{e^{ikf}}{i \lambda f} \iint_{-\infty}^{\infty} U(x',y') e^{\frac{ik}{2z} \lVert \vb{r}-\vb{r}' \rVert^2} d\vb{r}'
+\end{equation}
+
+Por lo tanto, el campo eléctrico en el plano focal resulta ser:
+
+\begin{equation}
+    \vb{E}(r, z=f) = \frac{e^{ikf}}{i \lambda f} \iint_{-\infty}^{\infty} \vb{E}_p'(r') e^{\frac{ik}{2z} \lVert \vb{r}-\vb{r}' \rVert^2} d\vb{r}'
+\end{equation}
+
+\begin{equation}
+    \vb{E}(r, z=f) = \frac{e^{ikf}}{i \lambda f} \iint_{-\infty}^{\infty} e^{\frac{ik}{2z} \lVert \vb{r}-\vb{r}' \rVert^2 + ik(1-n)z(r')} \big\{ t_p (\vb{E}_P \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_P \cdot \uvec{\phi}) \uvec{\phi} \big\} dx'dy'
+\end{equation}
+
+
+
+\begin{equation}
+\mathbf{E}(\mathbf r,f)
+=
+\frac{e^{ikf}}{i\lambda f}\,
+e^{\frac{ik}{2f}\|\mathbf r\|^2}
+\,
+\mathcal F\{\mathbf P\}
+\!\left(
+\frac{\mathbf r}{\lambda f}
+\right)
+\end{equation}
+
+\begin{equation}
+\mathbf P(\|\mathbf r'\|)
+=
+\exp\!\left[
+\frac{ik}{2f}\|\mathbf r'\|^2
++
+ik(1-n)z(\|\mathbf r'\|)
+\right]
+\left\{
+t_p (\mathbf{E}_P\cdot \hat{\boldsymbol p}) \hat{\boldsymbol p}'
++
+t_s (\mathbf{E}_P\cdot \hat{\boldsymbol\phi}) \hat{\boldsymbol\phi}
+\right\}
+\end{equation}
+
+\begin{equation}
+\mathcal F\{\mathbf P\}(\boldsymbol{\nu})
+=
+\iint_{-\infty}^{\infty}
+\mathbf P(\mathbf r')\,
+e^{-i2\pi\,\boldsymbol{\nu}\cdot\mathbf r'}\,
+dx'\,dy',
+\qquad
+\boldsymbol{\nu}=\frac{\mathbf r}{\lambda f}.
+\end{equation}
+
+
+\chapter{Aplicaciones al dioptrio esférico} 
+
+El caso más simple de los dioptrios estigmáticos es el de la esfera en los llamados puntos de Young-Weierstrass $A$ y $A'$ con $A$ siendo un punto dentro de la esfera y $A'$ uno fuera de esta pero en un medio con el mismo índice de refracción que el del medio que el dioptrio esférico encierra. 
+
+
+%TODO: CITAR. 
+
+Empezamos el estudio de este dioptrio especial por la simpleza de su geometria.
+
+Matemáticamente la superficie dioptrica $\Sigma$ se define como
+
+\begin{equation}
+\Sigma=\{(x,y,z)\,|\,x^2+y^2+z^2=R^2\},
+\label{eq:sigma_spherical}
+\end{equation}
+
+Centrado el sistema de coordenadas en el centro $C$ de la esfera, escribimos el vector que apunta a un punto $Q$ del dioptrio. 
+
+\begin{equation}
+    \lvec{CQ} = R\sin\theta \left( \cos\phi \uvec x + \sin \phi \uvec y \right)  + R\cos\theta \uvec z,
+    \label{eq:CQ_def}
+\end{equation}
+
+Sean $A$ y $A'$ los puntos estigmáticos del sistema, tenemos que los vectores 
+$\vb A = CA$ y $\vb A' = CA'$ estan dados por %esto acorde a la teoria de los dioptrios estimaticos (ovoides de descartes).
+
+
+
+\begin{equation}
+    \vb{A} = R\left(\frac{n_0}{n_i}\right),
+    \quad
+    \vb{A'} = R\left(\frac{n_i}{n_0}\right)
+    \label{eq:young-weierstrass}
+\end{equation}
+
+definimos
+
+\begin{equation}
+    \eta_0 = n_0/n_i, \qquad \eta_i = n_i/n_0
+\end{equation}
+
+
+
+
+
+% Definiciones de puntos
+\begin{equation}
+\vb{A} = R\,\eta_0\,\uvec{z}, \qquad
+\vb{Q} = R\Big[\sin\theta(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})+\cos\theta\,\uvec{z}\Big]
+\label{eq:def_A_Q}
+\end{equation}
+
+Calculamos el vector que apunta desde el punto objeto hasta un punto del dioptrio
+
+\begin{equation}
+\vb{u} = \vb{A}-\vb{Q}
+= R\Big[-\sin\theta\cos\phi\,\uvec{x}
+        -\sin\theta\sin\phi\,\uvec{y}
+        +(\eta_0-\cos\theta)\,\uvec{z}\Big]
+\label{eq:u_vec}
+\end{equation}
+
+\begin{equation}
+\|\vb{u}\|
+= R\,\sqrt{1+\eta_0^2-2\eta_0\cos\theta} 
+\label{eq:u_norm}
+\end{equation}
+
+de modo que los vectores unitarios de incidencia y de transmición son los siguientes
+
+\begin{equation}
+\uvec{u}
+= -\,\frac{1}{\sqrt{1+\eta_0^2-2\eta_0\cos\theta}}
+\Big[\sin\theta(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})
++(\cos\theta - \eta_0)\,\uvec{z}\Big]
+\label{eq:u_hat}
+\end{equation}
+
+\begin{equation}
+\uvec{u}'
+= -\,\frac{1}{\sqrt{1+\eta_i^2-2\eta_i\cos\theta}}
+\Big[\sin\theta(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})
++(\cos\theta - \eta_i)\,\uvec{z}\Big], 
+\label{eq:u_hat_prime}
+\end{equation} 
+
+
+o de forma más compacta usando las definiciones 
+
+
+\begin{equation}
+    l_0(\theta) = \sqrt{1 + \eta_0^2 - 2\eta_0 \cos \theta} 
+    \label{eq:def_l0}
+\end{equation}
+
+\begin{equation}
+    l_i(\theta) = \sqrt{1 + \eta_i^2 - 2\eta_i \cos \theta}, 
+    \label{eq:def_li}
+\end{equation}
+
+escribimos 
+
+
+\begin{equation}
+  \uvec{u} = -\frac{1}{l_0}\left[\sin\theta\,\uvec{r} +
+(\cos\theta - \eta_0)\,\uvec{z}\right]
+\end{equation}
+
+\begin{equation}
+  \uvec{u}' = -\frac{1}{l_i}\left[\sin\theta\,\uvec{r} +
+(\cos\theta - \eta_i)\,\uvec{z}\right]
+\end{equation}
+
+
+de las definiciones \ref{eq:def_l0} y \ref{eq:def_li} notamos la propiedad 
+$\eta_0 l_i = l_0$, así podemos prescindir en lo que sigue de escribir $l_i$, escribimos por lo tanto
+
+
+\begin{equation}
+\uvec{u} = -\frac{1}{l_0}\left[\sin\theta\,\uvec{r} +
+(\cos\theta - \eta_0)\,\uvec{z}\right]
+\end{equation}
+
+\begin{equation}
+  \uvec{u}' = -\frac{1}{l_0}\left[\eta_0\sin\theta\,\uvec{r} +
+(\eta_0\cos\theta - 1)\,\uvec{z}\right]
+\end{equation}
+
+
+
+Dado que eligimos el centro de la esfera como nuestro origen, la normal de la superficie es simplemente 
+
+\begin{equation}
+    \uvec N = \sin \theta \uvec r(\phi) + \cos \theta \uvec k 
+    \label{eq:normal_sphere}
+\end{equation}
+
+Con los vectores unitarios de incidencia y de transmición \ref{eq:u_hat}, \ref{eq:u_hat_prime} y el vector unitario normal a la suprficie \ref{eq:normal_sphere} podemos hallar por sustitución directa los cosenos de los angulos de incidencia y de transmisión como se sigue de 
+
+\begin{align}
+    \cos\theta_i &= -\uvec N \cdot \uvec u \\
+    \cos\theta_t &= -\uvec N \cdot \uvec u',
+    \label{eq:cos_i_cos_t}
+\end{align}
+
+remplazando se llega a 
+
+\begin{align}
+    \cos\theta_i &= \frac{1}{l_0}(1-\eta_0\cos\theta) \\
+    \cos\theta_t &= \frac{1}{l_0}(\eta_0 - \cos\theta).
+    \label{eq:cos_i_cos_t_theta}
+\end{align}
+
+Con los cosenos calculados, procedemos a remplazarlos en los coeficientes de Fresnel de transmisión \ref{eq:ts}, \ref{eq:tp} quedando así 
+
+
+\begin{equation}
+\begin{aligned}
+    t_s &= \frac{2\eta_0\left(1 - \eta_0 \cos\theta\right)}
+                 {\,2\eta_0 - (1 + \eta_0^2)\cos\theta\,}, \\[6pt]
+    t_p &= \frac{2\eta_0\left(1 - \eta_0 \cos\theta\right)}
+                 {\, (1 + \eta_0^2) - 2\eta_0\cos\theta\,}.
+\end{aligned}
+\label{eq:dioptrique_spherical_fresnel_coeffs}
+\end{equation}
+
+
+Equivalentemente, en forma matricial escribimos
+
+
+\begin{equation}
+    \mathcal T = \begin{bmatrix}
+                t_p & 0 \\
+                0 & t_s 
+            \end{bmatrix}.
+    \label{eq:T_matrix_def}
+\end{equation}
+
+\begin{equation}
+    \mathcal{T}
+    = 2\eta_0 \bigl(1 - \eta_0 \cos\theta\bigr)
+    \begin{bmatrix}
+    \dfrac{-1}{2\eta_0\cos\theta - (1 + \eta_0^2)} & 0 \\
+    0 & \dfrac{1}{2\eta_0 - (1+\eta_0^2)\cos\theta}
+    \end{bmatrix}.
+    \label{eq:T_matrix_spherical_dioptrique}
+\end{equation}
+
+Así, mediante la aplicación de la matriz \ref{eq:T_matrix_spherical_dioptrique} se determina el campo transmitido, sin embargo la aplicación debe hacerse en el campo expresado en la base $\uvec s, \uvec p$ para que $\mathcal T$ tenga la forma diagonal que tiene en \ref{eq:T_matrix_spherical_dioptrique} y da el campo en la base $\uvec s, \uvec p'$, también mencionar que en todo caso el campo incidente y transmitido están definidos sobre la esfera, de modo que si el campo es conocido en cualquier otra superficie se debe hacer la \emph{transparencia de curvatura} correspondiente
+
+
+
+Pasemos pues a calcular los vectores $\uvec s$ y $\uvec p$ para poder hacer los cambios de base necesarios para la obtención del campo transmitido, para ello partimos de las definiciones 
+
+\begin{equation}
+    \uvec s = \frac{\uvec N \times \uvec u}{\lvert  \uvec N \times \uvec u \rvert},
+    \label{eq:s_hat_def}
+\end{equation}
+
+
+\begin{equation}
+    \uvec p = \uvec s \times \uvec u   
+    \label{eq:p_hat_def}.
+\end{equation}
+
+Remplazando se llega a 
+
+
+%añadir procedimiento. 
+\begin{equation}
+    \uvec{s} = \uvec{\phi}  
+    \label{eq:s_mode}
+\end{equation}
+
+\begin{equation}
+    \uvec{p} = \frac{1}{\sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}} (\eta_0\uvec{r} - \uvec{\theta})
+    \label{eq:p_mode}
+\end{equation}
+
+\begin{equation}
+    \uvec{p'} = \frac{1}{\sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}}(\uvec r - \eta_0\uvec \theta),
+    \label{eq:p_prime_mode}
+\end{equation}
+
+donde 
+
+\begin{equation}
+    \uvec \theta = \cos\theta \uvec r - \sin\theta\uvec z
+    \label{eq:unit_theta_def}
+\end{equation}
+
+
+Escribiendo estos resultados en coordenadas cilíndricas, tenemos
+
+\begin{equation}
+    \uvec{s} = \uvec{\phi}
+    \label{eq:s_mode_cyl}
+\end{equation}
+
+\begin{equation}
+    \uvec{p} = \frac{1}{\ell_0} \left( \left( \eta_0 - \cos\theta \right)\uvec{r} + \sin\theta \,\uvec{k} \right)
+    \label{eq:p_cyl}
+\end{equation}
+
+\begin{equation}
+    \uvec{p'} = \frac{1}{\ell_0} \left( \left( 1 - \eta_0 \cos\theta \right)\uvec{r} + \eta_0 \sin\theta \,\uvec{k} \right)
+    \label{eq:p_prime_cyl}
+\end{equation}
+
+
+
+Pasemos ahora a transformar el campo incidente segun los coeficientes de Fresnel, 
+notar que las transformaciones mediante estos coeficientes solo tiene sentido 
+en la superficie del dioptrio $\Sigma$, el campo incidente debe estar en tal lugar geometrico y el campo transmitido que obtengamos estara tambien allí. 
+
+Sea $\vb E_\Sigma$ y $\vb E'_{\Sigma}$ los campos incidentes y transmitidos en $\Sigma$ respectivamente. 
+
+Escribiendo estos campos en la bases de Fresnel, tenemos 
+
+
+\begin{equation}
+    \vb E^i = E^i_s \uvec s + E^i_p \uvec p 
+    \label{eq:E_incidente}
+\end{equation}
+
+\begin{equation}
+    \vb E^t = E^t_s \uvec s + E^t_p \uvec p',
+    \label{eq:E_transmitido}
+\end{equation}
+
+donde hemos suprimido el subíndice $\Sigma$ por que de aqui en adelante vamos a enter a los campos siempre en la superficie del dioptrio $\Sigma$ hasta que se indique lo contrario
+
+Se determina el campo transmito a partir de el incidente, como sigue
+
+\begin{align}
+    E'_s &= t_s E_s \\
+    E'_p &= t_p E_p.
+\end{align}
+
+Es decir 
+
+
+\begin{equation}
+    \vb E = t_p E_p \uvec p' + t_s E_s \uvec s 
+    \label{eq:transmited_field_on_sigma_from_incident_field_on_sigma_in_ps_basis}
+\end{equation}
+
+
+% TODO: Algunos comentarios que serán luego mejor escritos en una sección mas arriba donde se describa el problema general, donde usaremos los analisis generales para resolver el caso carticular esférico y los que siguen 
+Así el problema de el calculo del campo transmitido en una cierta superficie $\Sigma$ se basa en la construcción de las matrices $P$ y $P'$, como de los coeficientes $t_s$ y $t_p$ apartir de la geometria de la superficie que es la geometria conjunta de la superficie y como los rayos son emitidos
+
+
+La transformación que sufre el campo incidente se aplica facilmente cuando el 
+campo incidente nos es dado en la base $s$ y $p$ y queremos el campo transmitido en la base $s$ y $p'$, sin embargo, si nuestra campo incidente es conocido en otra base, habrá que hacer la transformación correspondiente. 
+
+Las matrices de transformación para dar el campo en la base $s$ y $p$ en las bases: cartesiana, cilindrica y esférica se escriben como sigue
+
+Expresamos \ref{eq:E_transmitido} en sus componentes cartesianas escribiendo $\uvec u$ y $\uvec p'$ en su descomposición en la base $xyz$. 
+
+
+\begin{align} \vb{E}^T &= \biggl[ -\,t_s E^{(i)}_s \sin\phi + (1+\eta_0\cos\theta)\,\frac{t_p}{l}\,E^{(i)}_p \biggr] \uvec{\imath} \\[6pt] &\quad + \biggl[ \;t_s E^{(i)}_s \cos\phi + (1+\eta_0\cos\theta)\,\frac{t_p}{l}\,E^{(i)}_p \sin\phi \biggr] \uvec{\jmath} \\[6pt] &\quad + \biggl[ \frac{t_p}{l}\,\eta_0 E^{(i)}_p \biggr] \uvec{k}. \end{align}
+
+
+En forma matricial
+
+\[
+\vb{E'} = 
+G(\phi,\theta)\;\mathcal T\;
+\begin{bmatrix}E^{(i)}_s\\[4pt]E^{(i)}_p\end{bmatrix},
+\]
+
+donde 
+
+\[
+G(\phi,\theta)=
+\begin{bmatrix}
+-\sin\phi & \dfrac{1+\eta_0\cos\theta}{\,l\,}\\[8pt]
+\cos\phi  & \dfrac{1+\eta_0\cos\theta}{\,l\,}\sin\phi\\[8pt]
+0         & \dfrac{\eta_0}{\,l\,}
+\end{bmatrix}.
+\]
+
+
+    
+
+
+
+
+
+
+
+\begin{align}
+E_x &= -\,\frac{2\eta_0(1+\eta_0\cos\theta)}{2\eta_0+(1+\eta_0^2)\cos\theta}\,E_i^{s}\,\sin\phi
+     + \frac{2(1+\eta_0\cos\theta)(\eta_0+\cos\theta)}{\bigl(1+\eta_0^2+2\eta_0\cos\theta\bigr)^{3/2}}\,E_i^{p}\,\cos\phi, \\[6pt]
+E_y &= \phantom{-}\frac{2\eta_0(1+\eta_0\cos\theta)}{2\eta_0+(1+\eta_0^2)\cos\theta}\,E_i^{s}\,\cos\phi
+     + \frac{2(1+\eta_0\cos\theta)(\eta_0+\cos\theta)}{\bigl(1+\eta_0^2+2\eta_0\cos\theta\bigr)^{3/2}}\,E_i^{p}\,\sin\phi, \\[6pt]
+E_z &= \frac{2\eta_0(1+\eta_0\cos\theta)}{\bigl(1+\eta_0^2+2\eta_0\cos\theta\bigr)^{3/2}}\,E_i^{p}\,\sin\theta.
+\end{align}
+
+
+Es de apreciar que el modo $p$ del campo decae siempre
+más rápido que el modo perpendicular $s$, siendo el
+campo en $z$ el que más rápido decae con la distancia
+del rayo desde el punto objeto, decae más rápido cuando se aleja el punto objeto $A$ del punto de intersección $I$, pero aumenta más rápido conforme este se acerca. 
+
+
+% ======================
+
+
+\section[Campo incidente general emitido desde A en función de dos funciones escalares]{Campo incidente general emitido desde $A$ en función de dos funciones escalares}
+
+
+Si bien se puede pensar que para hallar el campo transmitido, 
+el procedimiento es escribir el campo incidente en una base en la que no 
+es conocido y transformarlo debidamente a la base s y p. Tal procedimiento es incorrecto porque no todos los campos incidentes son admisibles, sino que se 
+ha de satisfacer la condición de que los campos oscilan transversalemente a su dirección de propagación. 
+
+Para este caso, el campo incidente a de ser tangente en todo punto a la superficie esférica centrada en $A$, pues es el punto donde le campo se emite, y se lo exiguimos de la siguiente manera 
+
+
+\begin{equation}
+   \vb u \cdot \vb E  = 0
+\end{equation}
+
+
+Sea $\vb E$ un campo dado en coordenadas cilíndricas 
+
+
+\begin{equation}
+    \vb E = E_r \uvec r + E_\phi \uvec \phi + E_z \uvec z
+\end{equation}
+
+
+
+\begin{equation}
+   \vb u \cdot \vb E = -\sin\theta E^i_r + (\eta_0 - \cos\theta) E^i_z = 0
+\end{equation}
+
+
+quedando así la condición como 
+
+\begin{equation}
+    E^{(i)}_z = -\frac{\sin\theta}{\cos\theta - \eta_0} E^{(i)}_r
+\end{equation}
+
+Vemos como la condición de oscilación transversal de los campos,
+exige que la componente longitudinal al eje óptico sea no nula, en particular
+es nula en el eje y va creciendo a medida que uno se aleja de este, 
+la dependencia es casi lineal para aperturas de moderadas a bajas, 
+por lo que ni aun en esas aproximaciones el campo longitudinal puede despreciarse. 
+
+No hay forma de que los campos que inciden a un sistema óptico por su púpila y tienen cierta curvatura no den lugar a oscilaciones longitudinales del campo, siendo estas consecuencias de la curvatura, y solo realmente nulas cuando los frentes son planos.
+
+Escribimos entonces la manera más general del campo incidente que es emitido desde el punto $A$, en función de las componentes $E_r$ y $E_\phi$.
+
+
+
+\begin{equation}
+    \vb E = E_r \uvec r + E_\phi \uvec \phi + E_z \uvec z  
+\end{equation}
+
+
+\begin{equation}
+    \vb E = \left(\uvec r - \frac{\sin\theta}{\cos\theta - \eta_0} \uvec z \right)E_r^{(i)} + E_\phi^{(i)} \uvec \phi
+\end{equation}
+
+
+\begin{equation}
+    \vb E = \frac{1}{\eta_0 - \cos\theta} \big[ (\eta_0 - \cos\theta)\uvec r + \sin\theta \uvec z  \big] E_r + E_\phi \uvec \phi
+\end{equation}
+
+
+\begin{equation}
+    \vb E = \frac{l}{\eta_0 - \cos\theta} E_r \uvec p + E_\phi \uvec \phi.
+    \label{eq:permisible_incident_field_given_Er_Ephi}
+\end{equation}
+
+En forma matricial escribimos este resultado cómo 
+
+
+\begin{equation}
+\vb E = 
+\begin{pmatrix}
+\uvec p & \uvec s
+\end{pmatrix}
+\begin{pmatrix}
+\dfrac{l}{\eta_0 - \cos\theta} & 0 \\[8pt]
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+E_r \\[4pt]
+E_\phi
+\end{pmatrix}, 
+\end{equation}
+
+esto es 
+
+\begin{equation}
+\begin{pmatrix}
+E_p \\[4pt]
+E_s
+\end{pmatrix}
+=
+\begin{pmatrix}
+\dfrac{l}{\eta_0 - \cos\theta} & 0 \\[4pt]
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+E_r \\[4pt]
+E_\phi
+\end{pmatrix}
+\end{equation}
+
+De esta manera quedó escrito el campo incidente en la base en la que la matriz de Fresnel opera de manera diagonal en función de una base que es independiente de la geometría del problema. 
+
+La base elegida es conveniente porque podemos conocer el campo en esa base por medio de un sensor plano, comunes en la instrumentación óptica actual, y con esta información nos es suficiente para determinar todo el campo incidente. Si bien, admitimos que los modos radiales y azimutales pueden no ser cómodos en algunas situaciones, por lo que dedicamos un apéndice para dar resultados para las bases cartesianas $xy$ y circulares derecha e izquierda $LR$ (ver \S\ref{subsec:matricial_ErEphi}).
+
+Ahora bien, si el campo incidente es conocido en un plano, no podemos aplicar la matriz de Fresnel directamente, pues esta transformación es formulada para el campo sobre el dioptrio y da el campo transmitido sobre el dioptrio también, de manera que se hace necesario hacer una \emph{transferencia de curvatura}.
+
+% TODO: TEMPORAL (Mejorar la redacción y completar)  
+
+
+\section{Campo transmitido en el plano tangente desde un campo incidente en el mismo plano}
+\label{subsec:campo_plano_a_plano}
+
+Estudiamos ahora la propagación completa del campo desde el plano tangente $P$ de entrada $z = -R$ hasta el plano a una distancia $d$ de el plano $P$, considerando la trnasmición por el dioptrio esférico $\Sigma$. 
+
+Este proceso puede pensarse en tres etapas: (1) transferencia del plano de entrada al dioptrio mediante proyección central desde el punto objeto $A$, (2) transmisión a través del dioptrio según los coeficientes de Fresnel, y (3) transferencia del dioptrio al plano $P$ mediante proyección central desde el punto imagen $A'$.
+
+Es importante notar que las dos transferencias geométricas utilizan centros de proyección diferentes: la primera sigue los rayos incidentes que convergen hacia $A$, mientras que la segunda sigue los rayos transmitidos que divergen desde $A'$ y que la primera de las trasnmiciones ocurre en en el medio de indice de refracción $n_0$ mientras que la segunda en el indice de refracción $n_i$. 
+
+\subsection{Transferencia del plano de entrada al dioptrio}
+
+Sea $\vb{E}_P(r,\phi)$ el campo incidente en el plano tangente $z = -R$. Para transferir este campo a la superficie esférica $\Sigma$, utilizamos el operador de transferencia de curvatura deducido en el apéndice \S\ref{subsec:operador_transferencia}. Los rayos incidentes se propagan en la dirección del punto objeto $A = R\eta_0\,\uvec{z}$, de modo que la proyección geométrica se parametriza mediante $\eta_0 = n_0/n_i$.
+
+El campo sobre el dioptrio se obtiene como (ver ecuación \eqref{eq:transferencia_campo_esfera_plano}):
+
+\begin{equation}
+\vb{E}_\Sigma(\theta,\phi) = T_0(\theta)\, e^{-i k_0 \lambda_0(\theta)}\, \vb{E}_P\bigl(r_0(\theta), \phi\bigr),
+\label{eq:transferencia_plano_a_sigma}
+\end{equation}
+
+donde $k_0 = 2\pi n_0/\lambda$ es el número de onda en el medio de incidencia, y según las ecuaciones \eqref{eq:factor_amplitud} y \eqref{eq:lambda_de_theta}:
+
+\begin{equation}
+T_0(\theta) = \frac{|\eta_0 - \cos\theta|}{1 + \eta_0},
+\label{eq:T0_definicion}
+\end{equation}
+
+\begin{equation}
+\lambda_0(\theta) = -R\,\frac{1+\cos\theta}{|\eta_0-\cos\theta|}
+\sqrt{1+\eta_0^2 - 2\eta_0\cos\theta},
+\label{eq:lambda0_definicion}
+\end{equation}
+
+\begin{equation}
+r_0(\theta) = R\,\frac{(1+\eta_0)\sin\theta}{\eta_0 - \cos\theta}.
+\label{eq:r0_proyeccion}
+\end{equation}
+
+La función $r_0(\theta)$ establece la correspondencia entre la coordenada angular $\theta$ sobre el dioptrio y la coordenada radial en el plano de entrada (ecuación \eqref{eq:r_de_theta}).
+
+\subsection{Transmisión a través del dioptrio}
+
+Una vez conocido el campo sobre $\Sigma$, aplicamos la matriz de transmisión de Fresnel. Dado que $\mathcal{T}(\theta)$ (ecuación \eqref{eq:T_matrix_spherical_dioptrique}) opera en la base $(\uvec{p}, \uvec{s})$ de Fresnel, mientras que el campo está expresado en coordenadas espaciales, necesitamos un operador que deterimine la transmición independiente de la base incorporando los cambios de base necesarios:
+
+\begin{equation}
+\vb{E}'_\Sigma(\theta,\phi) = \bar{\mathcal{T}}(\theta)\, \vb{E}_\Sigma(\theta,\phi),
+\label{eq:transmision_fresnel_sigma}
+\end{equation}
+
+donde $\bar{\mathcal{T}}$ es el operador de transmisión sobre $\Sigma$ definido como 
+
+\begin{equation}
+\bar{\mathcal{T}}(\theta)
+=
+[\,\uvec{p}' \quad \uvec{s}\,]^{\!\top}
+\mathcal{T}(\theta)
+[\,\uvec{p} \quad \uvec{s}\,],
+\label{eq:T_bar}
+\end{equation}
+
+con $\mathcal{T}(\theta)$ dada por \eqref{eq:T_matrix_spherical_dioptrique}, y los vectores $\uvec{p}$, $\uvec{p}'$, $\uvec{s}$ definidos por las ecuaciones \eqref{eq:p_mode}, \eqref{eq:p_prime_mode} y \eqref{eq:s_mode} respectivamente. Esta matriz transforma el campo de la base espacial a la base de Fresnel, aplica los coeficientes de transmisión, y devuelve el resultado a la base espacial.
+
+
+\subsection{Transferencia del dioptrio al plano de salida}
+
+Finalmente, transferimos el campo transmitido desde $\Sigma$ al plano tangente de salida $z' = R$. Ahora los rayos transmitidos divergen desde el punto imagen $A' = R\eta_i\,\uvec{z}$ (donde $\eta_i = n_i/n_0 = 1/\eta_0$), de modo que la proyección geométrica se parametriza mediante $\eta_i$.
+
+Aplicando nuevamente el operador de transferencia del apéndice, pero con $\eta \to \eta_i$ y número de onda $k_i = 2\pi n_i/\lambda$ en el medio de transmisión:
+
+\begin{equation}
+\vb{E}'_P\bigl(r_i(\theta),\phi\bigr) = T_i(\theta)\, e^{i k_i \lambda_i(\theta)}\, \vb{E}'_\Sigma(\theta,\phi),
+\label{eq:transferencia_sigma_a_plano}
+\end{equation}
+
+donde
+
+\begin{equation}
+T_i(\theta) = \frac{|\eta_i - \cos\theta|}{1 + \eta_i} = \frac{|1 - \eta_0 \cos\theta|}{1 + \eta_0},
+\label{eq:Ti_definicion}
+\end{equation}
+
+\begin{equation}
+\lambda_i(\theta) = -R\,\frac{1+\cos\theta}{|\eta_i-\cos\theta|}
+\sqrt{1+\eta_i^2 - 2\eta_i\cos\theta},
+\label{eq:lambdai_definicion}
+\end{equation}
+
+\begin{equation}
+r_i(\theta) = R\,\frac{(1+\eta_i)\sin\theta}{\eta_i - \cos\theta} = R\,\frac{(1+\eta_0)\sin\theta}{1 - \eta_0\cos\theta}.
+\label{eq:ri_proyeccion}
+\end{equation}
+
+\subsection{Operador de propagación plano a plano}
+
+Combinando las tres etapas \eqref{eq:transferencia_plano_a_sigma}, \eqref{eq:transmision_fresnel_sigma} y \eqref{eq:transferencia_sigma_a_plano}, obtenemos el operador completo de propagación entre planos tangentes:
+
+\begin{equation}
+\vb{E}'_P\bigl(r_i(\theta),\phi\bigr)
+= \mathcal{A}(\theta)\, e^{i\Delta\Phi(\theta)}\, \mathcal{\bar{T}}(\theta)\, \vb{E}_P\bigl(r_0(\theta),\phi\bigr)
+\label{eq:operador_plano_a_plano}
+\end{equation}
+
+donde el factor de amplitud geométrico total es:
+
+\begin{equation}
+\mathcal{A}(\theta) = T_0(\theta)\, T_i(\theta) = \frac{|\eta_0 - \cos\theta|\,|1 - \eta_0\cos\theta|}{(1+\eta_0)^2},
+\label{eq:amplitud_geometrica_total}
+\end{equation}
+
+y la fase óptica acumulada en las dos transferencias de curvatura es:
+
+\begin{equation}
+\Delta\Phi(\theta) = k_0 \lambda_0(\theta) + k_i \lambda_i(\theta).
+\label{eq:fase_optica_total}
+\end{equation}
+
+Esta fase puede también expresarse de forma explícita como:
+
+\begin{equation}
+\Delta\Phi(\theta)
+=
+-\,kR n_0\,l_0(\theta)\,(1-\cos\theta)
+\left[
+\frac{1}{\eta_0(1+\eta_0\cos\theta)}
+-
+\frac{1}{\eta_0+\cos\theta}
+\right],
+\label{eq:delta_phi_explicita}
+\end{equation}
+
+donde $k = 2\pi/\lambda$ es el número de onda en el vacío y
+
+\begin{equation}
+l_0(\theta) = \sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}.
+\label{eq:l0_definition_reminder}
+\end{equation}
+
+
+\section{...}
+
+El enfoque de planos trabajado con anterioridad, si bien es teoricamente correcto, no es la manera más natural de trabajar, un enfoque alternativo que tambien usa el método de espectro angular para propagar el campo transmito puede formularse con la ventaja de que nos ahorramos una de las transferencias al evaluar directamente el campo esférico en $\Sigma$. 
+
+De manera general, el campo esférico converguente a $A$ se puede escribir como 
+
+\begin{equation}
+    \vb E (\vb r) = \frac{e^{-ik \lVert \vb r - \vb r_A \rVert}}{\lVert \vb r - \vb r_A \rVert} \uvec e (\vb r - \vb r_A).
+    \label{eq:spherical_incident_field}
+\end{equation}
+
+El campo incidente en $\Sigma$ se obtiene facilmente por sustitución directa $\vb r \rightarrow \vb r_\Sigma$, es decir 
+
+\begin{equation}
+    \vb E_{\Sigma} (Q) =  \frac{e^{-ik l_0(Q)}}{l_0(Q)} \vb e(Q),
+\end{equation}
+
+o de forma equivalente 
+
+\begin{equation}
+    \vb E_{\Sigma} (\theta, \phi) = A(\theta, \phi) \frac{e^{-ik l_0(\theta)}}{l_0(\theta)} \uvec e (\theta, \phi).
+\end{equation}
+
+El estado de polarización no es arbitrario, sino que debe satisfacer la condición de ser transversal al frente de onda, de manera de que si construimos un sistema esférico $(\theta_A, \phi)$ centrado en $A$, tenemos que el estado polarizacion se puede escribir como 
+
+\begin{equation}
+   \uvec e = e_\theta \uvec \theta_A + e_\phi \uvec \phi 
+\end{equation}
+
+
+se hace necesario buscar la ley de transformación entre esta base y la base de Fresnel (p, s).
+
+
+
+
+
+
+% ==== APENDICES ======
+\appendix
+
+\renewcommand{\thechapter}{\Alph{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\chapter{Apéndices}
+
+
+\input{apen_polar_fourier_transform.tex}
+
+\input{apen_geometria_esferica.tex}
+
+\input{apen_basis_transformations.tex}
+
+\input{apen_boundary_conditions_deduction.tex}
+
+\section{Apéndices Geométricos} 
+
+
+\input{apen_ovoid_implicit_deduction.tex}
+
+\input{apen_transfer_plane_to_sphere.tex}
+
+
+
+
+
+\printbibliography
+
+\end{document}

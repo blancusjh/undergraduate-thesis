@@ -1,0 +1,143 @@
+\section{Transformada de Fourier bidimensional en coordenadas polares}
+\label{sec:fourier_2d_polar}
+
+En este apéndice se presenta la forma polar de la transformada de Fourier bidimensional y su descomposición modal en armónicos angulares. Esta formulación separa de manera natural la dependencia angular de la dependencia radial, y conduce a transformadas de Hankel modo a modo.
+
+
+Sea $f=f(r,\theta)$ una función escalar definida en el plano, con
+
+\begin{equation}
+  x=r\cos\theta, \qquad y=r\sin\theta,
+\end{equation}
+
+y sea su variable espectral dada por
+
+\begin{equation}
+  k_x=k\cos\phi, \qquad k_y=k\sin\phi.
+\end{equation}
+
+Con estas definiciones, los vectores de posición y frecuencia son
+
+\begin{equation}
+  \vb{r}=(r\cos\theta,r\sin\theta), \qquad \vb{k}=(k\cos\phi,k\sin\phi),
+\end{equation}
+
+y su producto escalar toma la forma
+
+\begin{equation}
+  \vb{k}\cdot\vb{r}=kr\cos(\theta-\phi).
+\end{equation}
+
+Usando la convención
+
+\begin{equation}
+  \hat f(k_x,k_y)=\iint_{\mathbb{R}^2} f(x,y)e^{-i(k_xx+k_yy)}\,dx\,dy,
+\end{equation}
+
+la transformada directa en coordenadas polares queda
+
+\begin{equation}
+  \hat f(k,\phi)=
+  \int_0^\infty \int_0^{2\pi}
+  f(r,\theta)e^{-ikr\cos(\theta-\phi)}\,r\,d\theta\,dr.
+  \label{eq:fourier_2d_polar_directa}
+\end{equation}
+
+La transformada inversa correspondiente es
+
+\begin{equation}
+  f(r,\theta)=
+  \frac{1}{(2\pi)^2}
+  \int_0^\infty \int_0^{2\pi}
+  \hat f(k,\phi)e^{ikr\cos(\theta-\phi)}\,k\,d\phi\,dk.
+  \label{eq:fourier_2d_polar_inversa}
+\end{equation}
+
+\subsection{Descomposición angular}
+\label{subsec:fourier_2d_polar_modal}
+
+La dependencia angular de $f$ se expande como serie de Fourier:
+
+\begin{equation}
+  f(r,\theta)=\sum_{m\in\mathbb{Z}} f_m(r)e^{im\theta},
+  \label{eq:expansion_angular_f}
+\end{equation}
+
+con coeficientes
+
+\begin{equation}
+  f_m(r)=\frac{1}{2\pi}\int_0^{2\pi} f(r,\theta)e^{-im\theta}\,d\theta.
+  \label{eq:coeficientes_angulares_f}
+\end{equation}
+
+Análogamente, para el espectro,
+
+\begin{equation}
+  \hat f(k,\phi)=\sum_{m\in\mathbb{Z}} \hat f_m(k)e^{im\phi}.
+  \label{eq:expansion_angular_fhat}
+\end{equation}
+
+La onda plana se escribe mediante la identidad de Jacobi--Anger,
+
+\begin{equation}
+  e^{-ikr\cos(\theta-\phi)}=
+  \sum_{n\in\mathbb{Z}}(-i)^nJ_n(kr)e^{in(\phi-\theta)},
+  \label{eq:jacobi_anger}
+\end{equation}
+
+donde $J_n$ es la funci\'on de Bessel de primera especie de orden $n$.
+
+Al sustituir \eqref{eq:expansion_angular_f} y \eqref{eq:jacobi_anger} en \eqref{eq:fourier_2d_polar_directa}, y usar la ortogonalidad angular
+
+\begin{equation}
+  \int_0^{2\pi} e^{i(m-n)\theta}\,d\theta=2\pi\,\delta_{mn},
+\end{equation}
+
+se obtiene
+
+\begin{equation}
+  \hat f(k,\phi)=2\pi\sum_{m\in\mathbb{Z}}(-i)^m e^{im\phi}
+  \int_0^\infty f_m(r)J_m(kr)\,r\,dr.
+\end{equation}
+
+Identificando coeficientes de $e^{im\phi}$, resulta la relación modal principal:
+
+\begin{equation}
+  \hat f_m(k)=2\pi(-i)^m\int_0^\infty f_m(r)J_m(kr)\,r\,dr.
+  \label{eq:fourier_modal_directa}
+\end{equation}
+
+La relación inversa para cada modo angular está dada por
+
+\begin{equation}
+  f_m(r)=\frac{i^m}{2\pi}\int_0^\infty \hat f_m(k)J_m(kr)\,k\,dk.
+  \label{eq:fourier_modal_inversa}
+\end{equation}
+
+De esta manera, la reconstrucción completa se expresa como
+
+\begin{equation}
+  f(r,\theta)=\sum_{m\in\mathbb{Z}} f_m(r)e^{im\theta}.
+\end{equation}
+
+En consecuencia, la transformada de Fourier 2D en polares se desacopla en una serie angular y, para cada $m$, en una transformada de Hankel de orden $m$ entre \eqref{eq:fourier_modal_directa} y \eqref{eq:fourier_modal_inversa}.
+
+
+
+
+\subsection{Caso axialmente simétrico}
+\label{subsec:fourier_2d_polar_axial_symmetric}
+
+
+
+Cuando $f$ es radial, es decir, $f(r,\theta)=f(r)$, solo contribuye el modo $m=0$. Entonces,
+
+\begin{align}
+  \hat f(k)&=2\pi\int_0^\infty f(r)J_0(kr)\,r\,dr,
+  \label{eq:hankel_orden_cero_directa}\\
+  f(r)&=\frac{1}{2\pi}\int_0^\infty \hat f(k)J_0(kr)\,k\,dk.
+  \label{eq:hankel_orden_cero_inversa}
+\end{align}
+
+Estas expresiones corresponden a la transformada de Hankel de orden cero.
+De esta manera, en los problemas con simétria axial, la solución se reduce a una integral en vez de dos.

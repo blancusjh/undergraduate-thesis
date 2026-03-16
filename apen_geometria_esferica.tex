@@ -1,0 +1,45 @@
+\section{Geometría esférica}
+
+\begin{equation*}
+\vb{r} = r \sin\theta \cos\phi \uvec{\imath}
+       + r \sin\theta \sin\phi \uvec{\jmath}
+       + r \cos\theta \uvec{k}
+\end{equation*}
+
+\begin{equation*}
+\hat{\vb{r}} = \frac{1}{h_r}\pdv{\vb{r}}{r}, \qquad
+\hat{\vb{\theta}} = \frac{1}{h_\theta}\pdv{\vb{r}}{\theta}, \qquad
+\hat{\vb{\phi}} = \frac{1}{h_\phi}\pdv{\vb{r}}{\phi}
+\end{equation*}
+
+\begin{align*}
+\uvec{r} &= \sin\theta \cos\phi \uvec{\imath}
+         + \sin\theta \sin\phi \uvec{\jmath}
+         + \cos\theta \uvec{k}, \\
+\uvec{\theta} &= \cos\theta \cos\phi \uvec{\imath}
+              + \cos\theta \sin\phi \uvec{\jmath}
+              - \sin\theta \uvec{k}, \\
+\uvec{\phi} &= -\sin\phi \uvec{\imath}
+             + \cos\phi \uvec{\jmath}.
+\end{align*}
+
+\begin{equation}
+    \uvec r = \cos\phi \uvec x  + \sin\phi \uvec y 
+    \label{eq:unit_r_def}
+\end{equation}
+
+\begin{equation}
+    \uvec \phi = -\sin\phi \uvec x + \cos\phi \uvec y 
+    \label{eq:unit_phi_def}
+\end{equation}
+
+\begin{equation}
+    \Psi(x,y) = \frac{e^{ikz}}{i\lambda z} 
+e^{i\frac{k}{2z}(x^2+y^2)} 
+\iint_{-\infty}^{\infty} 
+\Psi(x',y') e^{i\frac{k}{2z}(x'^2+y'^2)} 
+e^{-i\frac{2\pi}{\lambda z}(xx' + yy')} 
+\, dx' dy' .
+    \label{eq:}
+\end{equation}
+

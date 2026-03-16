@@ -1,0 +1,90 @@
+
+\subsection{Transformaciones de base: cilíndricas, cartesianas y circulares}
+\label{subsec:matricial_ErEphi}
+
+En el desarrollo de la teoría de difracción vectorial sobre dioptrías estigmáticas, es conveniente trabajar con las componentes cilíndricas del campo eléctrico $(E_r, E_\phi)$, pues estas se relacionan directamente con los modos de Fresnel a través de expresiones analíticas compactas (ver ecuación \eqref{eq:permisible_incident_field_given_Er_Ephi}).
+
+Sin embargo, en la práctica experimental, las mediciones del campo eléctrico suelen realizarse en bases distintas: ya sea en componentes cartesianas $(E_x, E_y)$ mediante sensores planos orientados en coordenadas rectangulares, o en componentes circulares $(E_R, E_L)$ cuando se emplea polarimetría de luz polarizada circularmente.
+
+En esta sección presentamos las transformaciones matriciales necesarias para expresar las componentes cilíndricas $(E_r, E_\phi)$ a partir de mediciones realizadas en estas bases alternativas.
+
+\subsubsection{Transformación desde la base cartesiana}
+
+La relación entre las componentes cartesianas $(E_x, E_y)$ y las componentes cilíndricas $(E_r, E_\phi)$ está dada por la matriz de rotación asociada al ángulo azimutal $\phi$:
+
+\begin{equation}
+\begin{bmatrix}
+E_r \\[4pt]
+E_\phi
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos\phi & \sin\phi \\[4pt]
+-\sin\phi & \cos\phi
+\end{bmatrix}
+\begin{bmatrix}
+E_x \\[4pt]
+E_y
+\end{bmatrix}.
+\label{eq:Er_Ephi_from_cartesian}
+\end{equation}
+
+Esta transformación es particularmente útil cuando el campo se mide en un plano perpendicular al eje óptico mediante detectores alineados con los ejes $x$ e $y$.
+
+\subsubsection{Transformación desde la base circular}
+
+Las componentes de polarización circular se definen mediante los vectores de base:
+
+\begin{equation}
+\uvec{e}_R = \frac{1}{\sqrt{2}}(\uvec{x} - i\,\uvec{y}),
+\qquad
+\uvec{e}_L = \frac{1}{\sqrt{2}}(\uvec{x} + i\,\uvec{y}),
+\label{eq:circular_basis_vectors}
+\end{equation}
+
+donde $\uvec{e}_R$ corresponde a la polarización circular derecha (right-handed) y $\uvec{e}_L$ a la polarización circular izquierda (left-handed).
+
+La transformación desde componentes circulares $(E_R, E_L)$ a componentes cilíndricas $(E_r, E_\phi)$ está dada por:
+
+\begin{equation}
+\begin{bmatrix}
+E_r \\[6pt]
+E_\phi
+\end{bmatrix}
+=
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+e^{-i\phi} & e^{i\phi} \\[6pt]
+-i\,e^{-i\phi} & i\,e^{i\phi}
+\end{bmatrix}
+\begin{bmatrix}
+E_R \\[6pt]
+E_L
+\end{bmatrix}.
+\label{eq:Er_Ephi_from_circular}
+\end{equation}
+
+Esta relación resulta especialmente relevante en el análisis de estados de polarización mediante la esfera de Poincaré y en experimentos donde se emplean láminas retardadoras de cuarto de onda para generar o analizar luz circularmente polarizada.
+
+\subsubsection{Transformación inversa: de cilíndricas a cartesianas}
+
+Por completitud, presentamos también la transformación inversa, que permite obtener las componentes cartesianas a partir de las cilíndricas:
+
+\begin{equation}
+\begin{bmatrix}
+E_x \\[4pt]
+E_y
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos\phi & -\sin\phi \\[4pt]
+\sin\phi & \cos\phi
+\end{bmatrix}
+\begin{bmatrix}
+E_r \\[4pt]
+E_\phi
+\end{bmatrix}.
+\label{eq:cartesian_from_Er_Ephi}
+\end{equation}
+
+Estas transformaciones, en conjunto con la ecuación \eqref{eq:permisible_incident_field_given_Er_Ephi}, permiten determinar el campo incidente admisible en la base de Fresnel independientemente de la representación experimental empleada para su medición.
