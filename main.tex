@@ -5,35 +5,9 @@
 % ======================
 % Language
 % ======================
-%\usepackage{babel}
-%\babelprovide[main, import]{spanish}
-%\ifPDFTeX
-%  \usepackage[utf8]{inputenc}
-%  \usepackage[T1]{fontenc}
-%\else
-%  \usepackage{fontspec}
-%  \setmainfont{EB Garamond}
-%  % \setmainfont{Libertinus Serif}
-%\fi
+\usepackage{fontspec}
+\setmainfont{EB Garamond}
 
-\ifPDFTeX
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
-  \usepackage{lmodern}
-\else
-  \usepackage{fontspec}
-  \setmainfont[
-    Path = /Users/blancus/Library/Fonts/,
-    Extension = .ttf,
-    UprightFont = EBGaramond-VariableFont_wght,
-    ItalicFont = EBGaramond-Italic-VariableFont_wght,
-    BoldFont = EBGaramond-VariableFont_wght,
-    BoldItalicFont = EBGaramond-Italic-VariableFont_wght
-  ]{EBGaramond-VariableFont_wght}
-\fi
-
-\usepackage{csquotes}
-\usepackage{cancel}
 
 
 
@@ -41,6 +15,21 @@
 % Page Layout
 % ======================
 \usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[R]{\nouppercase{\leftmark}}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
 
 % ======================
 % Hyperlinks & TOC
@@ -140,8 +129,6 @@
 
 
 
-
-
 La teoria ondulatoria de la luz tomo considerable tiempo y esfuerzo para ser aceptada ampliamente, Fresnel, Franhoufer, ..., Defendieron la Teoria y la formularón matemáticamente. Para ellos 
 el estado de la luz podía ser descrito por un \emph{campo escalar}. Y fueron exitosos en el calculo del patrón de intensidad que se observaba en una pantalla luego de que la luz atravezará aperturas circulares, estructuras con bordes definidos, etc. Llamamos a esta doctrina, la teoría escalar de la luz o teoría escalar de la radiación.
 
@@ -164,8 +151,23 @@ El presente trabajo no busca revolucionar nuestro entendimiento de la luz, sino 
 
 
 \chapter{Óptica Geométrica} 
-\section{Principio de Fermat} 
 
+
+La óptica geométrica fue la primera imagen conceptual que la humanidad elaboró para comprender la naturaleza de la luz. En esta concepción, la luz se entiende como compuesta de rayos que se propagan en línea recta a gran velocidad. 
+
+En algún momento se llegó a pensar que dicha velocidad era infinita; sin embargo, a partir de las observaciones de los eclipses de Júpiter \cite{Romer1676} y de numerosos experimentos posteriores, sabemos, que la velocidad de la luz es finita.
+
+Sin embargo, la propagación rectilínea de losrayos luminicos se ve modificada cuando la luz interactúa con los cuerpos materiales o, más precisamente, cuando atraviesa la frontera entre dos medios distintos. Como es manifiesto de la experiencia diaria en donde se observa como la luz se refleja en la superficies del agua, de los espejos, de los metales, &c, y que también cambia de dirección al pasar de un medio a otro, como se observa en los objetos que se sumergidos en el agua y en los lentes. En general, cuando la luz experimenta un cambio de medio, se divide en una parte que retorna al medio de procedencia, y otra que se transmite al nuevo medio, dando lugar a los rayos transmitidos. Estos dos fenómenos se conocen como \textit{reflexión} y \textit{refracción} respectivamente.
+
+La \emph{ley de la reflexión} fue conocida primero y mucho antes que la ley para la \emph{ley de la refracción}, siendo concebidas como leyes separadas y \texit{ad hoc}, en vez de responder a un principio natural. Definitivamente esta fue una gran incomodidad para los filosofos natirales que buscaban comprender la naturaleza de la luz, por la que la busqueda de un principio que explicara el comportamiento de la luz. 
+
+Las investigaciones de Fermat dieron como resultado un principio natural por el cual se deducia las ya conocidas por encontes, leyes de reflexión y refracción, así como la propagación rectinilinea. 
+
+%TODO : CITA e investigación al respeto. 
+
+
+
+\section{Principio de Fermat} 
 
 \begin{center}
 \textit{«Natura nihil agit frustra»}
@@ -183,6 +185,11 @@ La trayectoria $\Gamma$ que toma la luz para viajar de un punto $A$ a un punto $
 
 donde $(\Phi, A, B)$ denota cualquier trayectoria $\Phi$ que une $A$ con $B$.
 
+\begin{equation}
+    n_0\ || AQ || + n' || QA' || = k,
+    \label{eq:maxwell_condition_of_stigmatism}
+\end{equation}
+
 
 \section{Ley Vectorial de Snell–Descartes} 
 
@@ -196,8 +203,12 @@ donde $(\Phi, A, B)$ denota cualquier trayectoria $\Phi$ que une $A$ con $B$.
 
 \section{Ovoides de Descartes} 
 
+Las superficies cartesianas fueron introducidas por primera vez por el filósofo frances Rene Descartes en la \emph{DIOPTRIQUE} \cite{dioptrique}, como solución al problema del estigmátismo. 
 
-Para que los rayos lúminosos que emerguen simultaneamente desde un punto $A$ convergan simultaniamente a otro punto $A'$, el tiempo que le toma a los rayos tomar el trayecto de $A$ hasta $A'$ debe ser el mismo. Cuando esta condición se cumple, se llama el par $(A, A')$ como \emph{par conjugado}. 
+Para que los rayos lúminosos que emerguen desde un punto $A$ convergan a otro punto $A'$, 
+el tiempo que le toma a los rayos recorrer el trayecto de $A$ hasta $A'$ ha de ser el mismo, 
+para que coincidad en lugar y tiempo. 
+Cuando esta condición se cumple, al par $(A, A')$ se le conoce como \emph{par conjugado}. 
 
 En general, la condición de que los rayos lúminosos converjan todos simultaneamente en un mismo punto, se le conoce como \emph{condicición estigmática}.
 %TODO : CITAR!. 
@@ -208,7 +219,7 @@ De tal manera, que exiguiendo matemáticamente la condicion estigmática para lo
 
 
 
-Tales superficios son conocidas ampliamente en la literatura \emph{Ovoide de Descartes}, en atribución a el filosofo francés Rene Descartes, que escribio sobre ellas en la DIOPTRIQUE. 
+Tales superficies son conocidas ampliamente en la literatura \emph{Ovoide de Descartes}, en atribución a el filosofo francés Rene Descartes, que escribio sobre ellas en la DIOPTRIQUE. 
 
 La búsqueda matemática de esta superficie se hace exigiendo a la superficie que los rayos emitidos desde un punto $A$ lleguen todos al mismo tiempo a $A'$ independientemente del punto de la superficie que se tome como intermedio. Llamando al punto intermedio $I$ 
 
@@ -411,7 +422,7 @@ por lo tanto,
 \chapter{Óptica Ondulatoria} 
 
 
-La visión geométrica de la luz, si bien elegante, y suficiente para muchas de las aplicaciones elementales, no captan por completo la verdader naturaleza de la luz, pues bien se vio acorralada este modelo teórico frente a fenomenos como la interferencia, la diffracción, la birrefrigencia, por mencionar algunos. Estos problemas, hacian temblar este modo de entender la luz, se fue acumulando las experincias que contradecian este modelo, hasta que la paradoja se hizo inegable. Por otro lado, las investigaciones concernientes a los fenomenos electricos y magnéticos, dio fruto a grandes avances en el entendimiento de estas fuerzas de la naturaleza, fue Faraday el que entendio como se influian mutuamente lo que sugeria una misma naturaleza, tambien observo experimentalmente como la luz era influido por estas fuerzas ahora mejor entendidas. James Clerk Maxwell en una tarea verdaderamente unificadora, y excelsa matematicamente, sinteizo las ideas de su epoca en las ecuaciones que lleva su nombre, y por una necesidad física de conservación y el conocimiento matematico de las ecuaciones que la aseguraban, fue mas alla que sus predeceseres postulando las ondas como consecuencia de respetar este principio de conservación para la carga electrica.
+La visión geométrica de la luz, si bien elegante, y suficiente para muchas de las aplicaciones elementales, no captan por completo la verdader naturaleza de la luz, pues bien se vio acorralada este modelo teórico frente a fenomenos como la interferencia, la diffracción, la birrefrigencia, por mencionar algunos. Estos problemas, hacian temblar este modo de entender la luz, se fue acumulando las experincias que contradecian este modelo, hasta que la paradoja se hizo inegable. Por otro lado, las investigaciones concernientes a los fenomenos electricos y magnéticos, dio fruto a grandes avances en el entendimiento de estas fuerzas de la naturaleza, fue Faraday el que entendio como se influian mutuamente lo que sugeria una misma naturaleza, tambien observo experimentalmente como la luz era influido por estas fuerzas ahora mejor entendidas. James Clerk Maxwell en una tarea verdaderamente unificadora, y excelsa matematicamente, sinteizo las ideas de su epoca en las ecuaciones que lleva su nombre, y por una necesidad física de conservación y el conocimiento matematico de las ecuaciones que la aseguraban, fue mas alla que sus predeceseres postulando las ondas como consecuencia de respetar este principio de conservación para la carga electrica \cite{maxwell1865}.
 
 En su forma general, las ecuaciones de Maxwell pueden escribirse como
 \begin{align}
@@ -695,87 +706,101 @@ El operador $\mathcal{U}(z)$ diagonaliza el laplaciano transversal $\nabla_\perp
 
 
 \section{Transformación que sufre el campo eléctrico al cambiar de medio} 
-\subsection{Coeficientes de Fresnel}
 
+Cuando la radiación se encuentra con una interfaz que separa dos medios, sufre transformaciones debido a la diferencia entre las propiedades de los medios. 
+Al ser las ecuaciones que rigen la propagación dependientes de las propiedades del medio, en cada región son ligeramente distintas las ecuaciones que se han de satisfacer en la sección~\ref{sec:boundary_conditions_in_dielectrics}.
+
+Estas condiciones de frontera, permiten conocer el campo que se transmite dado el incidente, ambos sobre la interfaz $\Sigma$ que separa los dos medios. 
+
+Escribiendo el campo por su espectro 
+
+\begin{equation*} 
+  \vb{E}(\vb r) = \frac{1}{(2\pi)^3} \int_{\mathbb K^3} \widehat{\vb{E}} (\vb{k}) e^{i\vb k \cdot \vb x} d^3x,
+\end{equation*}
+
+al remplazarlo en las condiciones de frontera, se encuentra la ley de transformación para cada componente $\vb k$ del campo. 
+
+El campo incidente $\widehat{\vb E}(\vb k)$ se transforma de forma diferente en cada punto de la interfaz, y de manera diferente en dos polarizaciones principales $\uvec s$ y $\uvec p$.
+
+Para definir las polarizaciones $\uvec s$ y $\uvec p$ primero hay que definir el plano $\Pi$ de incidencia
 
 \begin{equation}
-\Pi = \operatorname{span}\{\hat{\mathbf{k}}, \hat{\mathbf{N}}\}
+\Pi = \operatorname{span}\{\hat{\mathbf{k}}, \hat{\mathbf{N}}\},
 \label{eq:pi}
 \end{equation}
 
+definimos así entonces los vectores unitarios $\uvec s$ y $\uvec p$ según
+
 \begin{equation}
 \hat{\mathbf{p}} \in \Pi, 
-\qquad \hat{\mathbf{p}} \perp \hat{\mathbf{k}}
+\qquad \hat{\mathbf{p}} \perp \hat{\mathbf{k}},
 \label{eq:pdef}
 \end{equation}
 
 \begin{equation}
-\hat{\mathbf{s}} \perp \Pi
+\hat{\mathbf{s}} \perp \Pi.
 \label{eq:sdef}
 \end{equation}
 
-Para polarización $s$:
+Así el campo transmitido $\vb{E}'_{\Sigma}$ sobre la interfaz $\Sigma$, dado el campo incidente $\vb{E}_\Sigma$ sobre $\Sigma$ tambien, esta dado por
+
+
 \begin{equation}
-r_s = \frac{n_1 \cos \theta_i - n_2 \cos \theta_t}{n_1 \cos \theta_i + n_2 \cos \theta_t}
-\label{eq:rs}
+  \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}',
+  \label{eq:Transmited_E_field_in_Sigma}
 \end{equation}
+
+\textit{(veáse \eqref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
+
+
+El resultado puede ser escrito en notacion bra-ket de la forma
+
+
+\begin{equation}
+  \vb{E}_{\Sigma}' 
+  = t_p \ket{\uvec{p}'} \bra{\uvec{p}} \ket{\vb{E}_\Sigma}
+  + t_s \ket{\uvec{s}'} \bra{\uvec{s}} \ket{\vb{E}_\Sigma}.
+\end{equation}
+
+Definimos el operador $\mathscr{P}$, que aplicado sobre el campo sobre una interfaz $\Sigma$ da el campo transmitido sobre esa misma interfaz. Es decir 
+
+\begin{equation}
+  \vb{E}'_\Sigma = \mathscr{P}\{\vb{E}_{\Sigma}\}
+\end{equation}
+
+
+Matemáticamente, el operador $\mathscr{P}$ se puede representar como
+
+\begin{equation}
+  \mathscr{P} = t_p \ket{\uvec{p}'} \bra{\uvec{p}}
+  + t_s \ket{\uvec{s}'} \bra{\uvec{s}}.
+\end{equation}
+
+
+Los coeficientes $t_s$, $t_p$ se conocen como coeficientes de Fresnel para la transmisión, y estan dados por
+
 
 \begin{equation}
 t_s = \frac{2 n_1 \cos \theta_i}{n_1 \cos \theta_i + n_2 \cos \theta_t}
 \label{eq:ts}
 \end{equation}
 
-Para polarización $p$:
-\begin{equation}
-r_p = \frac{n_2 \cos \theta_i - n_1 \cos \theta_t}{n_2 \cos \theta_i + n_1 \cos \theta_t}
-\label{eq:rp}
-\end{equation}
 
 \begin{equation}
 t_p = \frac{2 n_1 \cos \theta_i}{n_2 \cos \theta_i + n_1 \cos \theta_t}
 \label{eq:tp}
 \end{equation}
 
-
-Se determina el campo transmito a partir de el incidente, como sigue
-
-\begin{align}
-    E'_s &= t_s E_s \\
-    E'_p &= t_p E_p.
-\end{align}
-
-Es decir 
+donde los cosenos $\cos \theta_i$ y $\cos \theta_t$ son los cosenos de incidencia y de refracción respectivamente y se definen como 
 
 
 \begin{equation}
-    \vb E = t_p E_p \uvec p' + t_s E_s \uvec s 
-    \label{eq:transmited_field_on_sigma_from_incident_field_on_sigma_in_ps_basis_alt}
-\end{equation}
-
-
-\begin{equation}
-  \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}' 
-  \label{eq:Transmited_E_field_in_Sigma}
-\end{equation}
-
-
-
-\begin{equation}
-  \vb{E}_{\Sigma}' 
-  = t_p \ket{\uvec{p}'} \bra{\uvec{p}} \ket{\vb{E}_\Sigma}
-  + t_s \ket{\uvec{s}'} \bra{\uvec{s}} \ket{\vb{E}_\Sigma}
-\end{equation}
-
-
-\begin{equation}
-  \mathscr{P} = t_p \ket{\uvec{p}'} \bra{\uvec{p}}
-  + t_s \ket{\uvec{s}'} \bra{\uvec{s}}
+  \cos \theta_i = - \uvec N \cdot \uvec k
 \end{equation}
 
 \begin{equation}
-  \vb{E}'_\Sigma = \mathscr{P}\{\vb{E}_{\Sigma}\}
+  \cos \theta_t = - \uvec N \cdot \uvec{k}'
 \end{equation}
-
 
 
 
@@ -784,40 +809,56 @@ Es decir
 
 
 % chapter  (end)
-\chapter{Aplicación a las Superficies Cartesianas}
+\chapter{Campo en el plano focal en un sistema estigmático simple refractivo}
 
+
+En la sección presente, se cálcula el campo en el plano focal en un sistema estigmático simple (formado por una sola superficie dioptrica). Asumimos que incide un campo esférico desde uno de los puntos estigmáticos $A$ y calcularemos el campo refractado en un plano perpendicular al eje óptico que contenga a el otro punto estigmático $A'$.
+
+Partimos primero, por escribir las cantidades geometricas relevantes de las superficies cartesianas para nuestro problema: 
+
+Las ecuaciónes parametricas de las superficies dioptricas 
 
 % TODO: agrupar z y r en un entorno Align.
 \begin{equation}
-  z(\rho) = \frac{(O + T\rho^2)\rho^2}{1 + S\rho^2 + \sqrt{1 + (2S - O^2G)\rho^2}}
+  z(\rho) = \frac{(O + T\rho^2)\rho^2}{1 + S\rho^2 + \sqrt{1 + (2S - O^2G)\rho^2}},
   \label{eq:parametrical_ovoid_z}
 \end{equation}
 
+
+
+
 \begin{equation}
-  r(\rho) = \sqrt{\rho^2 - z^2(\rho)} 
+  r(\rho) = \sqrt{\rho^2 - z^2(\rho)}.
   \label{eq:parametrical_ovoid_r}
 \end{equation}
+
+El vecotor normal unitario en cada punto de la superficie considerada
 
 \begin{equation}
   \mathbf{\hat N}(\rho,\varphi)=
   \frac{r'(\rho)\,\mathbf{\hat z}-z'(\rho)\,\mathbf{\hat r}(\varphi)}
-  {\sqrt{(r'(\rho))^2+(z'(\rho))^2}}  
+  {\sqrt{(r'(\rho))^2+(z'(\rho))^2}}.
   \label{eq:N_ovoid_rho_phi}
 \end{equation} %TODO: Citarla de la ya enteriormente escrita en † óptica geométrica. (eq:N_ovoid_rho_phi)
 
 
+Los vectores unitarios de incidencia y transmisión del sistema 
+
 \begin{equation}
-  \uvec{u} = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}}  
+  \uvec{u} = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}},
   \label{eq:u_for_P_in_optical_axis_app}
 \end{equation}
 
 \begin{equation}
-  \uvec{u}' = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}  
+  \uvec{u}' = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}.
   \label{eq:u_prime_for_P_in_optical_axis_app}
 \end{equation}
 
 
 De la teoria electromagnética, sabemos que para sistemas axialmente simetricos el campo sobre la interfaz $\Sigma$ que se transmite, se calcula como 
+
+
+
 
 \begin{equation}
   \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}, 
@@ -1029,7 +1070,6 @@ $$
 Sea $\vb{E}_p(\vb{r})$ el campo eléctrico en el plano $P$ $\{\vb{E}_p' := \vb{E}(P)\}$.
 Calcúlese el campo en $P'$ a una distancia $d$ del plano $P$.
 
-\subsection*{Solución}
 
 Transfiérase $\vb{E}_p$ a la superficie $\Sigma$ adicionando la fase que acumula el campo en su trayecto.
 Considerar que el campo describe una línea recta en su recorrido de $p$ a $q$ y asumir que dicho recorrido es aproximadamente horizontal, justificando esto porque consideraremos como primera aproximación un ángulo $\alpha$ moderado.
@@ -1627,7 +1667,7 @@ Ahora bien, si el campo incidente es conocido en un plano, no podemos aplicar la
 % TODO: TEMPORAL (Mejorar la redacción y completar)  
 
 
-\section{Campo transmitido en el plano tangente desde un campo incidente en el mismo plano}
+\section[Campo transmitido en plano tangente]{Campo transmitido en el plano tangente desde un campo incidente en el mismo plano}
 \label{subsec:campo_plano_a_plano}
 
 Estudiamos ahora la propagación completa del campo desde el plano tangente $P$ de entrada $z = -R$ hasta el plano a una distancia $d$ de el plano $P$, considerando la trnasmición por el dioptrio esférico $\Sigma$. 
@@ -1805,13 +1845,6 @@ se hace necesario buscar la ley de transformación entre esta base y la base de 
 % ==== APENDICES ======
 \appendix
 
-\renewcommand{\thechapter}{\Alph{chapter}}
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-
-\chapter{Apéndices}
-
-
 \input{apen_polar_fourier_transform.tex}
 
 \input{apen_geometria_esferica.tex}
@@ -1820,8 +1853,7 @@ se hace necesario buscar la ley de transformación entre esta base y la base de 
 
 \input{apen_boundary_conditions_deduction.tex}
 
-\section{Apéndices Geométricos} 
-
+\input{apen_maxwell_frontera_fresnel.tex}
 
 \input{apen_ovoid_implicit_deduction.tex}
 
@@ -1831,6 +1863,6 @@ se hace necesario buscar la ley de transformación entre esta base y la base de 
 
 
 
-\printbibliography
+\printbibliography[heading=bibintoc,title={Referencias}]
 
 \end{document}

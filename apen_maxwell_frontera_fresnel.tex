@@ -1,0 +1,198 @@
+\section{Condiciones de frontera y coeficientes de Fresnel en dieléctricos}
+\label{sec:appendix_maxwell_frontera_fresnel}
+
+En este apéndice se deducen las condiciones de frontera de Maxwell en una interfaz dieléctrica y las expresiones de reflexión/transmisión para ondas planas en polarizaciones $s$ y $p$.
+
+\subsection{Condiciones de frontera en una interfaz dieléctrica}
+\label{subsec:apx_condiciones_frontera}
+
+Partimos de las ecuaciones de Maxwell en medios materiales,
+\begin{equation}
+\begin{aligned}
+\nabla \cdot \mathbf{D} &= \rho_f, & \nabla \cdot \mathbf{B} &= 0, \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t},
+& \nabla \times \mathbf{H} &= \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}.
+\end{aligned}
+\label{eq:apx_maxwell_materiales}
+\end{equation}
+
+Sea la interfaz
+\begin{equation}
+\Sigma = \{(x,y,z)\mid z=0\},
+\end{equation}
+que separa dos medios ($z<0$ y $z>0$). Para un campo vectorial genérico,
+\begin{equation}
+\tilde{\mathbf F}(\mathbf r,t)
+=
+\mathbf F(\mathbf r,t)\,\Theta(-z)
++
+\mathbf F'(\mathbf r,t)\,\Theta(z),
+\label{eq:apx_campo_partido}
+\end{equation}
+con
+\begin{equation}
+\Theta(z)=
+\begin{cases}
+1, & z>0,\\
+0, & z\le 0.
+\end{cases}
+\end{equation}
+
+La divergencia y el rotacional toman la forma distribucional:
+\begin{align}
+\nabla\cdot\tilde{\mathbf F}
+&=
+\left[\nabla\cdot\mathbf F\right]_H
++
+\delta(z)\,\hat{\mathbf n}\cdot\left(\mathbf F'-\mathbf F\right),
+\label{eq:apx_div_partida}\\
+\nabla\times\tilde{\mathbf F}
+&=
+\left[\nabla\times\mathbf F\right]_H
++
+\delta(z)\,\hat{\mathbf n}\times\left(\mathbf F'-\mathbf F\right).
+\label{eq:apx_rot_partida}
+\end{align}
+
+Descomponemos fuentes volumétricas y superficiales como
+\begin{equation}
+\rho_f = \tilde\rho_f + \sigma_f(x,y,t)\,\delta(z),
+\qquad
+\mathbf J_f = \tilde{\mathbf J}_f + \mathbf K_f(x,y,t)\,\delta(z).
+\label{eq:apx_fuentes_partidas}
+\end{equation}
+
+Sustituyendo \eqref{eq:apx_div_partida}, \eqref{eq:apx_rot_partida} y \eqref{eq:apx_fuentes_partidas} en \eqref{eq:apx_maxwell_materiales}, y agrupando términos proporcionales a $\delta(z)$, se obtienen las condiciones de frontera:
+\begin{equation}
+\begin{aligned}
+\hat{\mathbf n}\cdot(\mathbf D_2-\mathbf D_1) &= \sigma_f,\\
+\hat{\mathbf n}\cdot(\mathbf B_2-\mathbf B_1) &= 0,\\
+\hat{\mathbf n}\times(\mathbf E_2-\mathbf E_1) &= 0,\\
+\hat{\mathbf n}\times(\mathbf H_2-\mathbf H_1) &= \mathbf K_f.
+\end{aligned}
+\label{eq:apx_condiciones_frontera_finales}
+\end{equation}
+
+\subsection{Ondas planas y relaciones de dispersión}
+\label{subsec:apx_ondas_planas}
+
+En ausencia de fuentes libres ($\rho=0$, $\mathbf J=0$):
+\begin{equation}
+\begin{aligned}
+\nabla \cdot \mathbf E &= 0, & \nabla \cdot \mathbf B &= 0,\\
+\nabla \times \mathbf E &= -\frac{\partial \mathbf B}{\partial t},
+& \nabla \times \mathbf B &= \frac{1}{c^2}\frac{\partial \mathbf E}{\partial t},
+\end{aligned}
+\label{eq:apx_maxwell_vacio_local}
+\end{equation}
+con
+\begin{equation}
+c = \frac{1}{\sqrt{\mu\epsilon}}.
+\label{eq:apx_c_medio}
+\end{equation}
+
+Para una onda plana armónica,
+\begin{equation}
+\mathbf E = \mathbf E_0 e^{i(\mathbf k\cdot\mathbf r-\omega t)},
+\qquad
+\mathbf B = \mathbf B_0 e^{i(\mathbf k\cdot\mathbf r-\omega t)},
+\label{eq:apx_ansatz_onda_plana}
+\end{equation}
+se obtiene
+\begin{equation}
+\begin{aligned}
+i\,\mathbf k\cdot\mathbf E &= 0,
+& i\,\mathbf k\cdot\mathbf B &= 0,\\
+i\,\mathbf k\times\mathbf E &= i\omega\mathbf B,
+& \mathbf k\times\mathbf B &= -\frac{\omega}{c^2}\mathbf E.
+\end{aligned}
+\label{eq:apx_maxwell_k_omega}
+\end{equation}
+
+Aplicando $\mathbf k\times(\mathbf k\times\mathbf E)=\mathbf k(\mathbf k\cdot\mathbf E)-k^2\mathbf E$ y usando \eqref{eq:apx_maxwell_k_omega}, resulta
+\begin{equation}
+k^2 = \frac{\omega^2}{c^2},
+\qquad
+\omega = ck,
+\qquad
+v = \frac{\omega}{k}.
+\label{eq:apx_dispersion}
+\end{equation}
+
+\subsection{Interfaz plana y coeficientes de Fresnel}
+\label{subsec:apx_fresnel}
+
+Consideramos tres ondas planas en la interfaz $\Sigma$: incidente, reflejada y transmitida,
+\begin{equation}
+\mathbf E_j = \mathbf E_j^0 e^{i(\mathbf k_j\cdot\mathbf r-\omega t)},
+\qquad j\in\{i,R,T\}.
+\label{eq:apx_campos_iRT}
+\end{equation}
+
+De \eqref{eq:apx_condiciones_frontera_finales} se obtiene el sistema base:
+\begin{equation}
+\begin{aligned}
+\bigl(\epsilon(\mathbf E_i^0+\mathbf E_R^0)-\epsilon'\mathbf E_T^0\bigr)\cdot\hat{\mathbf n} &= 0,\\
+\bigl[(\mathbf k_i\times\mathbf E_i^0+\mathbf k_R\times\mathbf E_R^0)-(\mathbf k_T\times\mathbf E_T^0)\bigr]\cdot\hat{\mathbf n} &= 0,\\
+(\mathbf E_i+\mathbf E_R-\mathbf E_T)\times\hat{\mathbf n} &= 0,\\
+\left[\frac{1}{\mu}(\mathbf k_i\times\mathbf E_i^0+\mathbf k_R\times\mathbf E_R^0)-\frac{1}{\mu'}(\mathbf k_T\times\mathbf E_T^0)\right]\times\hat{\mathbf n} &= 0.
+\end{aligned}
+\label{eq:apx_sistema_frontera_iRT}
+\end{equation}
+
+Descomponemos
+\begin{equation}
+\mathbf E_0 = E_s^0\,\hat{\mathbf s}+E_p^0\,\hat{\mathbf p},
+\label{eq:apx_descomposicion_sp}
+\end{equation}
+y para el modo $s$ se usa además
+\begin{equation}
+E_i^0+E_R^0=E_T^0,
+\label{eq:apx_continuidad_tangencial_s}
+\end{equation}
+junto con
+\begin{equation}
+(\mathbf k\times\mathbf E)\times\hat{\mathbf n}
+=
+(\mathbf k\cdot\hat{\mathbf n})\mathbf E
+-
+(\hat{\mathbf n}\cdot\mathbf E)\mathbf k.
+\label{eq:apx_identidad_triple}
+\end{equation}
+
+Definiendo
+\begin{equation}
+R=\frac{E_R^0}{E_i^0},
+\qquad
+T=\frac{E_T^0}{E_i^0},
+\qquad
+Z=\sqrt{\frac{\epsilon}{\mu}},
+\qquad
+Z'=\sqrt{\frac{\epsilon'}{\mu'}},
+\label{eq:apx_def_R_T_Z}
+\end{equation}
+los coeficientes de Fresnel para polarización $s$ quedan:
+\begin{align}
+R_s
+&=
+\frac{Z\cos\theta_i - Z'\cos\theta_T}{Z\cos\theta_i + Z'\cos\theta_T},
+\label{eq:apx_fresnel_rs}\\
+T_s
+&=
+\frac{2Z\cos\theta_i}{Z\cos\theta_i + Z'\cos\theta_T}.
+\label{eq:apx_fresnel_ts}
+\end{align}
+
+Para polarización $p$:
+\begin{align}
+R_p
+&=
+\frac{Z\cos\theta_T - Z'\cos\theta_i}{Z\cos\theta_T + Z'\cos\theta_i},
+\label{eq:apx_fresnel_rp}\\
+T_p
+&=
+\frac{2Z'\cos\theta_i}{Z\cos\theta_T + Z'\cos\theta_i}.
+\label{eq:apx_fresnel_tp}
+\end{align}
+
+Las expresiones \eqref{eq:apx_fresnel_rp} y \eqref{eq:apx_fresnel_tp} condensan los resultados finales para el modo $p$ en incidencia oblicua entre dieléctricos.

@@ -1,0 +1,18 @@
+# LaTeX build cache and auxiliary files
+.tex-cache/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*-SAVE-ERROR
+
+# macOS metadata
+.DS_Store
