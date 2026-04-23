@@ -45,6 +45,7 @@
 \usepackage{amsmath, amssymb, mathtools, bm}
 \usepackage{mathrsfs}   % for \mathscr
 \usepackage{physics}
+\usepackage{cancel}
 
 
 \usepackage{lettrine}
@@ -157,9 +158,9 @@ La óptica geométrica fue la primera imagen conceptual que la humanidad elabor�
 
 En algún momento se llegó a pensar que dicha velocidad era infinita; sin embargo, a partir de las observaciones de los eclipses de Júpiter \cite{Romer1676} y de numerosos experimentos posteriores, sabemos, que la velocidad de la luz es finita.
 
-Sin embargo, la propagación rectilínea de losrayos luminicos se ve modificada cuando la luz interactúa con los cuerpos materiales o, más precisamente, cuando atraviesa la frontera entre dos medios distintos. Como es manifiesto de la experiencia diaria en donde se observa como la luz se refleja en la superficies del agua, de los espejos, de los metales, &c, y que también cambia de dirección al pasar de un medio a otro, como se observa en los objetos que se sumergidos en el agua y en los lentes. En general, cuando la luz experimenta un cambio de medio, se divide en una parte que retorna al medio de procedencia, y otra que se transmite al nuevo medio, dando lugar a los rayos transmitidos. Estos dos fenómenos se conocen como \textit{reflexión} y \textit{refracción} respectivamente.
+Sin embargo, la propagación rectilínea de losrayos luminicos se ve modificada cuando la luz interactúa con los cuerpos materiales o, más precisamente, cuando atraviesa la frontera entre dos medios distintos. Como es manifiesto de la experiencia diaria en donde se observa como la luz se refleja en la superficies del agua, de los espejos, de los metales, \&c, y que también cambia de dirección al pasar de un medio a otro, como se observa en los objetos que se sumergidos en el agua y en los lentes. En general, cuando la luz experimenta un cambio de medio, se divide en una parte que retorna al medio de procedencia, y otra que se transmite al nuevo medio, dando lugar a los rayos transmitidos. Estos dos fenómenos se conocen como \textit{reflexión} y \textit{refracción} respectivamente.
 
-La \emph{ley de la reflexión} fue conocida primero y mucho antes que la ley para la \emph{ley de la refracción}, siendo concebidas como leyes separadas y \texit{ad hoc}, en vez de responder a un principio natural. Definitivamente esta fue una gran incomodidad para los filosofos natirales que buscaban comprender la naturaleza de la luz, por la que la busqueda de un principio que explicara el comportamiento de la luz. 
+La \emph{ley de la reflexión} fue conocida primero y mucho antes que la ley para la \emph{ley de la refracción}, siendo concebidas como leyes separadas y \textit{ad hoc}, en vez de responder a un principio natural. Definitivamente esta fue una gran incomodidad para los filosofos natirales que buscaban comprender la naturaleza de la luz, por la que la busqueda de un principio que explicara el comportamiento de la luz. 
 
 Las investigaciones de Fermat dieron como resultado un principio natural por el cual se deducia las ya conocidas por encontes, leyes de reflexión y refracción, así como la propagación rectinilinea. 
 
@@ -1151,7 +1152,7 @@ Y lo propagamos hasta el plano focal $z=f$:
 Donde, asumiremos válido el Régimen de Fresnel, para lo que el operador de propagación está dado por:
 
 \begin{equation}
-    \mathcal{R}_n [f] \{ U(x,y) \} = \frac{e^{ikf}}{i \lambda f} \iint_{-\infty}^{\infty} U(x',y') e^{\frac{ik}{2z} \lVert \vb{r}-\vb{r}' \rVert^2} d\vb{r}'
+    \mathcal{R}_n [f] \{ U(x,y) \} = n\frac{e^{inkf}}{i \lambda f} \iint_{-\infty}^{\infty} U(x',y') e^{\frac{ink}{2z} \lVert \vb{r}-\vb{r}' \rVert^2} d\vb{r}'
 \end{equation}
 
 Por lo tanto, el campo eléctrico en el plano focal resulta ser:
@@ -1162,8 +1163,10 @@ Por lo tanto, el campo eléctrico en el plano focal resulta ser:
 
 \begin{equation}
     \vb{E}(r, z=f) = \frac{e^{ikf}}{i \lambda f} \iint_{-\infty}^{\infty} e^{\frac{ik}{2z} \lVert \vb{r}-\vb{r}' \rVert^2 + ik(1-n)z(r')} \big\{ t_p (\vb{E}_P \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_P \cdot \uvec{\phi}) \uvec{\phi} \big\} dx'dy'
+\label{eq:E_field_at_z_3D}
 \end{equation}
 
+En terminos de una transformada de Fourier el campo $\vb E$ queda expresado como
 
 
 \begin{equation}
@@ -1175,8 +1178,11 @@ e^{\frac{ik}{2f}\|\mathbf r\|^2}
 \mathcal F\{\mathbf P\}
 \!\left(
 \frac{\mathbf r}{\lambda f}
-\right)
+\right).
+\label{E_in_focal_plane_as_FT_3D} 
 \end{equation}
+
+Donde, 
 
 \begin{equation}
 \mathbf P(\|\mathbf r'\|)
@@ -1190,8 +1196,11 @@ ik(1-n)z(\|\mathbf r'\|)
 t_p (\mathbf{E}_P\cdot \hat{\boldsymbol p}) \hat{\boldsymbol p}'
 +
 t_s (\mathbf{E}_P\cdot \hat{\boldsymbol\phi}) \hat{\boldsymbol\phi}
-\right\}
+\right\},
+\label{eq:P_definition}
 \end{equation}
+
+y 
 
 \begin{equation}
 \mathcal F\{\mathbf P\}(\boldsymbol{\nu})
@@ -1199,11 +1208,240 @@ t_s (\mathbf{E}_P\cdot \hat{\boldsymbol\phi}) \hat{\boldsymbol\phi}
 \iint_{-\infty}^{\infty}
 \mathbf P(\mathbf r')\,
 e^{-i2\pi\,\boldsymbol{\nu}\cdot\mathbf r'}\,
-dx'\,dy',
+dx'\,dy'.
 \qquad
 \boldsymbol{\nu}=\frac{\mathbf r}{\lambda f}.
 \end{equation}
 
+
+Definase un sistema coordenado esférico centrado en el foco del sistema, que es el punto $A'$ , llámese por $\uvec R_{A'}, \uvec \theta_{A'}, \uvec \phi$ los vectores curvilíneos asociados al sistema. 
+
+
+Los estados de polarización $\uvec p'$  y $\uvec s$, son la polarización definida por $\uvec \theta_{A'}$ y $\uvec \phi$ respectivamente. 
+
+De modo que en el sistema esférico centrado en $A'$ la base de polarizacion $\hat s$, $\hat p$ queda escrita como 
+
+% Base de polarización
+\begin{align}
+\uvec{s} &= \uvec{\phi}
+= -\sin\phi\,\uvec{x} + \cos\phi\,\uvec{y}, \\[6pt]
+\uvec{p}' &= \uvec{\theta}_{A'}
+= \cos\theta_{A'}(\cos\phi\,\uvec{x} +
+\sin\phi\,\uvec{y}) -
+\sin\theta_{A'}\,\uvec{z}.
+\label{s_p_in_A_prime_system}
+\end{align}
+
+Si bien esta base de polarización sugiere que de manera general el campo tiene una naturaleza trimidensional, el problema puede restringirse al plano perpendicular al eje óptico debido a que la componente en z puede ser reconstruida a partir del plano $xy$ haciendo uso de la condidicón de transversalidad
+
+\begin{equation}
+\vb{E}\cdot\uvec{R}_{A'}=0,
+\end{equation}
+
+que implica que
+
+\begin{equation}
+E_r\sin\theta_{A'} + E_z\cos\theta_{A'} = 0,
+\end{equation}
+
+
+donde \(E_r\) es la componente del campo sobre \(\uvec{p}_\perp\). Por tanto,
+
+\begin{equation}
+E_z = -\tan\theta_{A'}\,E_r.
+\label{eq:Ez_de_la_transversalidad}
+\end{equation}
+
+Así, la información del campo sobre un plano perpendicular al eje óptico determina completamente el campo vectorial, quedando la componente longitudinal fijada por la geometría local de propagación.
+
+De tal manera que el problema que se resume en la ecuación  \ref{E_in_focal_plane_as_FT_3D}, puede reducirse a 
+
+
+
+\begin{equation}
+\mathbf{E}_\perp(\mathbf r,f)
+=
+\frac{e^{ikf}}{i\lambda f}\,
+e^{\frac{ik}{2f}\|\mathbf r\|^2}
+\,
+\mathcal F\{\mathbf P_\perp\}
+\!\left(
+\frac{\mathbf r}{\lambda f}
+\right), 
+\label{E_in_focal_plane_as_FT_3D} 
+\end{equation}
+
+donde 
+
+
+\begin{equation}
+  \mathbf P_\perp(\|\mathbf r'\|)
+=
+\exp\!\left[
+\frac{ik}{2f}\|\mathbf r'\|^2
++
+ik(1-n)z(\|\mathbf r'\|)
+\right]
+\left\{
+  t_p \mathbf{E}_{P,p} \uvec p'_\perp
++
+t_s \mathbf{E}_{P,\phi} \uvec \phi
+\right\},
+\end{equation}
+
+
+
+
+Proyectando esta base sobre el plano perpendicular al eje óptico, se obtiene
+\begin{align}
+\uvec{s}_\perp &= \uvec{\phi}
+= -\sin\phi\,\uvec{x} + \cos\phi\,\uvec{y} = \uvec s, \\
+\uvec{p}_\perp &= \cos\phi\,\uvec{x} + \sin\phi\,\uvec{y}.
+\end{align}
+
+
+
+Definamos entonces los siguientes estados de polarización en el plano transversal
+\begin{equation}
+\uvec{e}_\pm
+=
+\frac{1}{\sqrt{2}}
+\left(
+\uvec{p}_\perp \pm i\,\uvec{s}_\perp
+\right).
+\label{eq:epm_def}
+\end{equation}
+
+Sustituyendo las expresiones explícitas de \(\uvec{p}_\perp\) y \(\uvec{s}_\perp\), se sigue que
+\begin{align}
+\uvec{e}_+
+&=
+\frac{1}{\sqrt{2}}
+\left[
+(\cos\phi - i\sin\phi)\uvec{x}
++
+(\sin\phi + i\cos\phi)\uvec{y}
+\right], \\[6pt]
+\uvec{e}_-
+&=
+\frac{1}{\sqrt{2}}
+\left[
+(\cos\phi + i\sin\phi)\uvec{x}
++
+(\sin\phi - i\cos\phi)\uvec{y}
+\right].
+\end{align}
+
+Usando las identidades
+\[
+\cos\phi - i\sin\phi = e^{-i\phi},
+\qquad
+\sin\phi + i\cos\phi = i\,e^{-i\phi},
+\]
+y
+\[
+\cos\phi + i\sin\phi = e^{i\phi},
+\qquad
+\sin\phi - i\cos\phi = -i\,e^{i\phi},
+\]
+se obtiene finalmente
+\begin{align}
+\uvec{e}_+
+&=
+
+\frac{\uvec{x} + i\,\uvec{y}}{\sqrt{2}},
+\\[6pt]
+\uvec{e}_-
+&=
+e^{i\phi}
+\frac{\uvec{x} - i\,\uvec{y}}{\sqrt{2}}.
+\label{eq:epm_usual_circular}
+\end{align}
+
+De esta manera, las bases \(\uvec{e}_+\) y \(\uvec{e}_-\) se expresan en términos de la base circular derecha e izquierda usual, salvo por un factor de fase azimutal \(e^{\mp i\phi}\), asociado a la rotación local de la base cilíndrica respecto de la base cartesiana.
+
+En esta representación, el campo eléctrico se escribe como
+\begin{equation}
+\vb{E} = E_+ \uvec{e}_+ + E_- \uvec{e}_- + E_z \uvec{z}.
+\label{eq:E_in_e_+-_basis}.
+\end{equation}
+
+
+\begin{equation}
+\end{equation}
+
+% --- Problem In Terms of | L >, |R > Basis. 
+
+Por conveniencia usaremos la base circular derecha e izquierda usuales definidas sobre el plano $xy$, las bases $\uvec s, \uvec p_\perp$ queda en esos terminos expresada como  
+
+
+\begin{align}
+\uvec{s} &=
+\frac{i}{\sqrt{2}}\left(
+e^{i\phi}\ket{L} - e^{-i\phi}\ket{R}
+\right), 
+\\
+\uvec{p}_\perp &=
+\frac{1}{\sqrt{2}}\left(
+e^{-i\phi}\ket{L} + e^{i\phi}\ket{R}
+\right).
+\end{align}
+
+
+Remplazando en la ecuación $\eqref{eq:P_definition}$ %NOTE : REFERENCIAR.
+
+\begin{equation}
+  \vb{P}_\perp = \frac{1}{\sqrt{2}}e^{\,ik\left(\frac{r'^2}{2f} + (1-n)z(r')\right)}
+\Big\{ 
+    (t_p E_p + i t_s E_\phi)e^{i\phi}\ket{L} 
+    + (t_p E_p - i t_s E_\phi)e^{-i\phi}\ket{R}
+  \Big\}
+  \label{eq:P_perp}
+\end{equation}
+
+\begin{equation}
+\mathbf E(\mathbf r,f)=
+\frac{e^{ikf}}{i\lambda f}
+e^{i\frac{k}{2f}\|\mathbf r\|^2}
+\frac{1}{\sqrt{2}}
+\mathcal F\left\{
+e^{ik\left(\frac{r'^2}{2f}+(1-n)z(r')\right)}
+\left[
+(t_pE_p+i t_sE_\phi)e^{i\phi}\ket L
++
+(t_pE_p-i t_sE_\phi)e^{-i\phi}\ket R
+\right]
+\right\}
+\left(\frac{\mathbf r}{\lambda f}\right).
+\end{equation}
+
+\begin{align}
+\mathbf E(\mathbf r,f)=
+\frac{e^{ikf}}{i\lambda f}
+e^{i\frac{k}{2f}\|\mathbf r\|^2}
+\frac{1}{\sqrt{2}}
+\Bigg[
+&\mathcal F\left\{
+e^{ik\left(\frac{r'^2}{2f}+(1-n)z(r')\right)}
+(t_pE_p+i t_sE_\phi)e^{i\phi}
+\right\}
+\left(\frac{\mathbf r}{\lambda f}\right)\ket L \\
++ \;
+&\mathcal F\left\{
+e^{ik\left(\frac{r'^2}{2f}+(1-n)z(r')\right)}
+(t_pE_p-i t_sE_\phi)e^{-i\phi}
+\right\}
+\left(\frac{\mathbf r}{\lambda f}\right)\ket R
+\Bigg].
+\end{align}
+
+
+
+
+
+
+
+% === APLICACIÓN ESPECIAL AL DIOPTRIO ESFÉRICO ===
 
 \chapter{Aplicaciones al dioptrio esférico} 
 
@@ -1845,19 +2083,19 @@ se hace necesario buscar la ley de transformación entre esta base y la base de 
 % ==== APENDICES ======
 \appendix
 
-\input{apen_polar_fourier_transform.tex}
+\input{appendices/apen_polar_fourier_transform.tex}
 
-\input{apen_geometria_esferica.tex}
+\input{appendices/apen_geometria_esferica.tex}
 
-\input{apen_basis_transformations.tex}
+\input{appendices/apen_basis_transformations.tex}
 
-\input{apen_boundary_conditions_deduction.tex}
+\input{appendices/apen_boundary_conditions_deduction.tex}
 
-\input{apen_maxwell_frontera_fresnel.tex}
+\input{appendices/apen_maxwell_frontera_fresnel.tex}
 
-\input{apen_ovoid_implicit_deduction.tex}
+\input{appendices/apen_ovoid_implicit_deduction.tex}
 
-\input{apen_transfer_plane_to_sphere.tex}
+\input{appendices/apen_transfer_plane_to_sphere.tex}
 
 
 
