@@ -1,0 +1,40 @@
+\begin{tikzpicture}[>=stealth,
+    ray/.style={color=black!80!black, thick},
+    optaxis/.style={dash dot, gray!80}]
+
+    % --- Parámetros geométricos ---
+    \def\distLente{5}
+    \def\altLente{2}
+    \def\altObjeto{1.5}
+
+    % --- Coordenadas ---
+    \coordinate (O) at (0,0);
+    \coordinate (L) at (\distLente,0);
+    \coordinate (TopL) at (\distLente, \altLente);
+    \coordinate (EjeEnd) at (\distLente + 2, 0);
+
+    % --- Eje óptico ---
+    \draw[optaxis] (-1,0) -- (EjeEnd) node[right, black] {Eje óptico};
+
+    % --- Objeto (plano) ---
+    \draw[thick] (0,-\altObjeto) -- (0,\altObjeto);
+    \fill[gray!10] (-0.15,-\altObjeto) rectangle (0,\altObjeto);
+    \node[below=2pt] at (0,-\altObjeto) {Objeto};
+
+    % --- Sistema óptico (lente) ---
+    \begin{scope}[shift={(L)}]
+        \draw[fill=gray!5, thick]
+            (0, \altLente) .. controls (-0.4, 0.5) and (-0.4, -0.5) .. (0, -\altLente)
+            .. controls (0.4, -0.5) and (0.4, 0.5) .. (0, \altLente) -- cycle;
+        \node[below=2.2cm] at (0,0) {Sistema Óptico};
+    \end{scope}
+
+    % --- Rayo marginal y ángulo alpha ---
+    \draw[ray, ->] (O) -- (TopL);
+
+    \coordinate (Ref) at (1,0);
+    \pic [draw, "$\alpha$", angle eccentricity=1.4, angle radius=1.2cm] {angle = Ref--O--TopL};
+
+    \fill (O) circle (1.5pt);
+
+\end{tikzpicture}

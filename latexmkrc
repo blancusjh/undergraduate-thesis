@@ -1,5 +1,6 @@
-# Use LuaLaTeX by default (works with fontspec + biblatex workflows).
-$pdf_mode = 4;
+# Build PDF through XeLaTeX even when invoking latexmk with -pdf.
+$pdf_mode = 1;
+$pdflatex = 'xelatex -interaction=nonstopmode -halt-on-error %O %S';
 
 # Keep generated compilation artifacts in a dedicated cache folder.
 $aux_dir = '.tex-cache';

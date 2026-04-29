@@ -1,6 +1,9 @@
 \chapter{Transformada de Fourier bidimensional en coordenadas polares}
 \label{sec:fourier_2d_polar}
 
+
+\section{Caso general}
+
 En este apéndice se presenta la forma polar de la transformada de Fourier bidimensional y su descomposición modal en armónicos angulares. Esta formulación separa de manera natural la dependencia angular de la dependencia radial, y conduce a transformadas de Hankel modo a modo.
 
 
@@ -100,7 +103,14 @@ se obtiene
   \int_0^\infty f_m(r)J_m(kr)\,r\,dr.
 \end{equation}
 
-Identificando coeficientes de $e^{im\phi}$, resulta la relación modal principal:
+Que comparando con 
+
+\begin{equation} 
+  \hat f(k) = \sum_{m \in \mathbb Z} \hat f_m(k) e^{im\phi},
+\end{equation}
+
+se deduce la relación
+
 
 \begin{equation}
   \hat f_m(k)=2\pi(-i)^m\int_0^\infty f_m(r)J_m(kr)\,r\,dr.
@@ -114,6 +124,7 @@ La relación inversa para cada modo angular está dada por
   \label{eq:fourier_modal_inversa}
 \end{equation}
 
+
 De esta manera, la reconstrucción completa se expresa como
 
 \begin{equation}
@@ -123,9 +134,53 @@ De esta manera, la reconstrucción completa se expresa como
 En consecuencia, la transformada de Fourier 2D en polares se desacopla en una serie angular y, para cada $m$, en una transformada de Hankel de orden $m$ entre \eqref{eq:fourier_modal_directa} y \eqref{eq:fourier_modal_inversa}.
 
 
+Definiendo el operador transformada de Hankel de orden $m$ denotado por $\mathscr H_m$, como 
+
+\begin{equation} 
+  \mathscr H \{ f(r)\}(k) = \int_{\infty}^{\infty} f(r) J_m(kr) r dr,
+  \label{eq:def_hankel_operator}
+\end{equation}
 
 
-\subsection{Caso axialmente simétrico}
+y su inversa 
+
+\begin{equation} 
+  \mathscr H^{-1} \{ \hat f(k)\}(r) = \int_{\infty}^{\infty} \hat f(k) J_m(kr) k dk.
+  \label{eq:def_hankel_inverse_operator}
+\end{equation}
+
+
+
+Las ecuaciones \eqref{eq:fourier_modal_directa} y \eqref{eq:fourier_modal_inversa} con esta definición se escriben como 
+
+\begin{equation} 
+  \hat f_m(k) = \frac{i^m}{2 \pi} \mathscr H_m \left\{f_m(r) \right\}(k),
+\end{equation}
+
+
+\begin{equation} 
+  f_m(r) = \frac{i^m}{2 \pi} \mathscr H_m^{-1} \left\{ \hat f_m(k) \right\}(r).
+\end{equation}
+
+
+
+De modo que la función $f$ y su respectiva transformada de Fourier $\hat f$ quedan por suma de sus modos angulares, como 
+
+
+\begin{equation}
+  f(r) = \frac{i^m}{2 \pi} \sum_{m \in \mathbb Z} \mathscr H_m^{-1} \left\{ \hat f_m(k) \right\} e^{im\phi}
+\end{equation}
+
+
+\begin{equation}
+  \hat f(k) = \frac{i^m}{2 \pi} \sum_{m \in \mathbb Z} \mathscr H_m \left\{ f_m(r) \right\} e^{im\phi}
+\end{equation}
+
+
+El calculo de los modos anguales se hace según la ecuacion \eqref{eq:coeficientes_angulares_f}.
+
+
+\section{Caso axialmente simétrico}
 \label{subsec:fourier_2d_polar_axial_symmetric}
 
 
@@ -139,5 +194,21 @@ Cuando $f$ es radial, es decir, $f(r,\theta)=f(r)$, solo contribuye el modo $m=0
   \label{eq:hankel_orden_cero_inversa}
 \end{align}
 
+
+o usando el operador \eqref{eq:def_hankel_operator} y su inversa \eqref{eq:def_hankel_inverse_operator}, se tiene que 
+
+
+\begin{align}
+  \hat f(k) &= 2\pi \, \mathscr H_0 \left\{ f(r) \right\} \\
+  f(r)      &= \frac{1}{2\pi} \mathscr H_0^{-1} \left\{  \hat f(k) \right\}
+\end{align}
+
+
+
+
+
 Estas expresiones corresponden a la transformada de Hankel de orden cero.
-De esta manera, en los problemas con simétria axial, la solución se reduce a una integral en vez de dos.
+De esta manera, en los problemas con simétria axial, la solución se reduce a una integral en vez de dos. Ya que 
+para el caso general se necesitaba integrar para obtener cada modo angular, a cada uno aplicarle la transformada 
+de Hankel segun el orden que corresponda y sumar todos los modos. En el caso simetrico, solo se requiere hacer una 
+transformada de Hankel de orden 0 para obtener la transformada de Fourier de la función.
