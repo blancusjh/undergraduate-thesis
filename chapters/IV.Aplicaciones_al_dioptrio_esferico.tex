@@ -1,0 +1,637 @@
+\chapter{Aplicaciones al dioptrio esférico} 
+
+El caso más simple de los dioptrios estigmáticos es el de la esfera en los llamados puntos de Young-Weierstrass $A$ y $A'$ con $A$ siendo un punto dentro de la esfera y $A'$ uno fuera de esta pero en un medio con el mismo índice de refracción que el del medio que el dioptrio esférico encierra. 
+
+
+%TODO: CITAR. 
+
+Empezamos el estudio de este dioptrio especial por la simpleza de su geometria.
+
+Matemáticamente la superficie dioptrica $\Sigma$ se define como
+
+\begin{equation}
+\Sigma=\{(x,y,z)\,|\,x^2+y^2+z^2=R^2\},
+\label{eq:sigma_spherical}
+\end{equation}
+
+Centrado el sistema de coordenadas en el centro $C$ de la esfera, escribimos el vector que apunta a un punto $Q$ del dioptrio. 
+
+\begin{equation}
+    \lvec{CQ} = R\sin\theta \left( \cos\phi \uvec x + \sin \phi \uvec y \right)  + R\cos\theta \uvec z,
+    \label{eq:CQ_def}
+\end{equation}
+
+Sean $A$ y $A'$ los puntos estigmáticos del sistema, tenemos que los vectores 
+$\vb A = CA$ y $\vb A' = CA'$ estan dados por %esto acorde a la teoria de los dioptrios estimaticos (ovoides de descartes).
+
+
+
+\begin{equation}
+    \vb{A} = R\left(\frac{n_0}{n_i}\right),
+    \quad
+    \vb{A'} = R\left(\frac{n_i}{n_0}\right)
+    \label{eq:young-weierstrass}
+\end{equation}
+
+definimos
+
+\begin{equation}
+    \eta_0 = n_0/n_i, \qquad \eta_i = n_i/n_0
+\end{equation}
+
+
+
+
+
+% Definiciones de puntos
+\begin{equation}
+\vb{A} = R\,\eta_0\,\uvec{z}, \qquad
+\vb{Q} = R\Big[\sin\theta(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})+\cos\theta\,\uvec{z}\Big]
+\label{eq:def_A_Q}
+\end{equation}
+
+Calculamos el vector que apunta desde el punto objeto hasta un punto del dioptrio
+
+\begin{equation}
+\vb{u} = \vb{A}-\vb{Q}
+= R\Big[-\sin\theta\cos\phi\,\uvec{x}
+        -\sin\theta\sin\phi\,\uvec{y}
+        +(\eta_0-\cos\theta)\,\uvec{z}\Big]
+\label{eq:u_vec}
+\end{equation}
+
+\begin{equation}
+\|\vb{u}\|
+= R\,\sqrt{1+\eta_0^2-2\eta_0\cos\theta} 
+\label{eq:u_norm}
+\end{equation}
+
+de modo que los vectores unitarios de incidencia y de transmición son los siguientes
+
+\begin{equation}
+\uvec{u}
+= -\,\frac{1}{\sqrt{1+\eta_0^2-2\eta_0\cos\theta}}
+\Big[\sin\theta(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})
++(\cos\theta - \eta_0)\,\uvec{z}\Big]
+\label{eq:u_hat}
+\end{equation}
+
+\begin{equation}
+\uvec{u}'
+= -\,\frac{1}{\sqrt{1+\eta_i^2-2\eta_i\cos\theta}}
+\Big[\sin\theta(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})
++(\cos\theta - \eta_i)\,\uvec{z}\Big], 
+\label{eq:u_hat_prime}
+\end{equation} 
+
+
+o de forma más compacta usando las definiciones 
+
+
+\begin{equation}
+    l_0(\theta) = \sqrt{1 + \eta_0^2 - 2\eta_0 \cos \theta} 
+    \label{eq:def_l0}
+\end{equation}
+
+\begin{equation}
+    l_i(\theta) = \sqrt{1 + \eta_i^2 - 2\eta_i \cos \theta}, 
+    \label{eq:def_li}
+\end{equation}
+
+escribimos 
+
+
+\begin{equation}
+  \uvec{u} = -\frac{1}{l_0}\left[\sin\theta\,\uvec{r} +
+(\cos\theta - \eta_0)\,\uvec{z}\right]
+\end{equation}
+
+\begin{equation}
+  \uvec{u}' = -\frac{1}{l_i}\left[\sin\theta\,\uvec{r} +
+(\cos\theta - \eta_i)\,\uvec{z}\right]
+\end{equation}
+
+
+de las definiciones \ref{eq:def_l0} y \ref{eq:def_li} notamos la propiedad 
+$\eta_0 l_i = l_0$, así podemos prescindir en lo que sigue de escribir $l_i$, escribimos por lo tanto
+
+
+\begin{equation}
+\uvec{u} = -\frac{1}{l_0}\left[\sin\theta\,\uvec{r} +
+(\cos\theta - \eta_0)\,\uvec{z}\right]
+\end{equation}
+
+\begin{equation}
+  \uvec{u}' = -\frac{1}{l_0}\left[\eta_0\sin\theta\,\uvec{r} +
+(\eta_0\cos\theta - 1)\,\uvec{z}\right]
+\end{equation}
+
+
+
+Dado que eligimos el centro de la esfera como nuestro origen, la normal de la superficie es simplemente 
+
+\begin{equation}
+    \uvec N = \sin \theta \uvec r(\phi) + \cos \theta \uvec k 
+    \label{eq:normal_sphere}
+\end{equation}
+
+Con los vectores unitarios de incidencia y de transmición \ref{eq:u_hat}, \ref{eq:u_hat_prime} y el vector unitario normal a la suprficie \ref{eq:normal_sphere} podemos hallar por sustitución directa los cosenos de los angulos de incidencia y de transmisión como se sigue de 
+
+\begin{align}
+    \cos\theta_i &= -\uvec N \cdot \uvec u \\
+    \cos\theta_t &= -\uvec N \cdot \uvec u',
+    \label{eq:cos_i_cos_t}
+\end{align}
+
+remplazando se llega a 
+
+\begin{align}
+    \cos\theta_i &= \frac{1}{l_0}(1-\eta_0\cos\theta) \\
+    \cos\theta_t &= \frac{1}{l_0}(\eta_0 - \cos\theta).
+    \label{eq:cos_i_cos_t_theta}
+\end{align}
+
+Con los cosenos calculados, procedemos a remplazarlos en los coeficientes de Fresnel de transmisión \ref{eq:ts}, \ref{eq:tp} quedando así 
+
+
+\begin{equation}
+\begin{aligned}
+    t_s &= \frac{2\eta_0\left(1 - \eta_0 \cos\theta\right)}
+                 {\,2\eta_0 - (1 + \eta_0^2)\cos\theta\,}, \\[6pt]
+    t_p &= \frac{2\eta_0\left(1 - \eta_0 \cos\theta\right)}
+                 {\, (1 + \eta_0^2) - 2\eta_0\cos\theta\,}.
+\end{aligned}
+\label{eq:dioptrique_spherical_fresnel_coeffs}
+\end{equation}
+
+
+Equivalentemente, en forma matricial escribimos
+
+
+\begin{equation}
+    \mathcal T = \begin{bmatrix}
+                t_p & 0 \\
+                0 & t_s 
+            \end{bmatrix}.
+    \label{eq:T_matrix_def}
+\end{equation}
+
+\begin{equation}
+    \mathcal{T}
+    = 2\eta_0 \bigl(1 - \eta_0 \cos\theta\bigr)
+    \begin{bmatrix}
+    \dfrac{-1}{2\eta_0\cos\theta - (1 + \eta_0^2)} & 0 \\
+    0 & \dfrac{1}{2\eta_0 - (1+\eta_0^2)\cos\theta}
+    \end{bmatrix}.
+    \label{eq:T_matrix_spherical_dioptrique}
+\end{equation}
+
+Así, mediante la aplicación de la matriz \ref{eq:T_matrix_spherical_dioptrique} se determina el campo transmitido, sin embargo la aplicación debe hacerse en el campo expresado en la base $\uvec s, \uvec p$ para que $\mathcal T$ tenga la forma diagonal que tiene en \ref{eq:T_matrix_spherical_dioptrique} y da el campo en la base $\uvec s, \uvec p'$, también mencionar que en todo caso el campo incidente y transmitido están definidos sobre la esfera, de modo que si el campo es conocido en cualquier otra superficie se debe hacer la \emph{transparencia de curvatura} correspondiente
+
+
+
+Pasemos pues a calcular los vectores $\uvec s$ y $\uvec p$ para poder hacer los cambios de base necesarios para la obtención del campo transmitido, para ello partimos de las definiciones 
+
+\begin{equation}
+    \uvec s = \frac{\uvec N \times \uvec u}{\lvert  \uvec N \times \uvec u \rvert},
+    \label{eq:s_hat_def}
+\end{equation}
+
+
+\begin{equation}
+    \uvec p = \uvec s \times \uvec u   
+    \label{eq:p_hat_def}.
+\end{equation}
+
+Remplazando se llega a 
+
+
+%añadir procedimiento. 
+\begin{equation}
+    \uvec{s} = \uvec{\phi}  
+    \label{eq:s_mode}
+\end{equation}
+
+\begin{equation}
+    \uvec{p} = \frac{1}{\sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}} (\eta_0\uvec{r} - \uvec{\theta})
+    \label{eq:p_mode}
+\end{equation}
+
+\begin{equation}
+    \uvec{p'} = \frac{1}{\sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}}(\uvec r - \eta_0\uvec \theta),
+    \label{eq:p_prime_mode}
+\end{equation}
+
+donde 
+
+\begin{equation}
+    \uvec \theta = \cos\theta \uvec r - \sin\theta\uvec z
+    \label{eq:unit_theta_def}
+\end{equation}
+
+
+Escribiendo estos resultados en coordenadas cilíndricas, tenemos
+
+\begin{equation}
+    \uvec{s} = \uvec{\phi}
+    \label{eq:s_mode_cyl}
+\end{equation}
+
+\begin{equation}
+    \uvec{p} = \frac{1}{\ell_0} \left( \left( \eta_0 - \cos\theta \right)\uvec{r} + \sin\theta \,\uvec{k} \right)
+    \label{eq:p_cyl}
+\end{equation}
+
+\begin{equation}
+    \uvec{p'} = \frac{1}{\ell_0} \left( \left( 1 - \eta_0 \cos\theta \right)\uvec{r} + \eta_0 \sin\theta \,\uvec{k} \right)
+    \label{eq:p_prime_cyl}
+\end{equation}
+
+
+
+Pasemos ahora a transformar el campo incidente segun los coeficientes de Fresnel, 
+notar que las transformaciones mediante estos coeficientes solo tiene sentido 
+en la superficie del dioptrio $\Sigma$, el campo incidente debe estar en tal lugar geometrico y el campo transmitido que obtengamos estara tambien allí. 
+
+Sea $\vb E_\Sigma$ y $\vb E'_{\Sigma}$ los campos incidentes y transmitidos en $\Sigma$ respectivamente. 
+
+Escribiendo estos campos en la bases de Fresnel, tenemos 
+
+
+\begin{equation}
+    \vb E^i = E^i_s \uvec s + E^i_p \uvec p 
+    \label{eq:E_incidente}
+\end{equation}
+
+\begin{equation}
+    \vb E^t = E^t_s \uvec s + E^t_p \uvec p',
+    \label{eq:E_transmitido}
+\end{equation}
+
+donde hemos suprimido el subíndice $\Sigma$ por que de aqui en adelante vamos a enter a los campos siempre en la superficie del dioptrio $\Sigma$ hasta que se indique lo contrario
+
+Se determina el campo transmito a partir de el incidente, como sigue
+
+\begin{align}
+    E'_s &= t_s E_s \\
+    E'_p &= t_p E_p.
+\end{align}
+
+Es decir 
+
+
+\begin{equation}
+    \vb E = t_p E_p \uvec p' + t_s E_s \uvec s 
+    \label{eq:transmited_field_on_sigma_from_incident_field_on_sigma_in_ps_basis}
+\end{equation}
+
+
+% TODO: Algunos comentarios que serán luego mejor escritos en una sección mas arriba donde se describa el problema general, donde usaremos los analisis generales para resolver el caso carticular esférico y los que siguen 
+Así el problema de el calculo del campo transmitido en una cierta superficie $\Sigma$ se basa en la construcción de las matrices $P$ y $P'$, como de los coeficientes $t_s$ y $t_p$ apartir de la geometria de la superficie que es la geometria conjunta de la superficie y como los rayos son emitidos
+
+
+La transformación que sufre el campo incidente se aplica facilmente cuando el 
+campo incidente nos es dado en la base $s$ y $p$ y queremos el campo transmitido en la base $s$ y $p'$, sin embargo, si nuestra campo incidente es conocido en otra base, habrá que hacer la transformación correspondiente. 
+
+Las matrices de transformación para dar el campo en la base $s$ y $p$ en las bases: cartesiana, cilindrica y esférica se escriben como sigue
+
+Expresamos \ref{eq:E_transmitido} en sus componentes cartesianas escribiendo $\uvec u$ y $\uvec p'$ en su descomposición en la base $xyz$. 
+
+
+\begin{align} \vb{E}^T &= \biggl[ -\,t_s E^{(i)}_s \sin\phi + (1+\eta_0\cos\theta)\,\frac{t_p}{l}\,E^{(i)}_p \biggr] \uvec{\imath} \\[6pt] &\quad + \biggl[ \;t_s E^{(i)}_s \cos\phi + (1+\eta_0\cos\theta)\,\frac{t_p}{l}\,E^{(i)}_p \sin\phi \biggr] \uvec{\jmath} \\[6pt] &\quad + \biggl[ \frac{t_p}{l}\,\eta_0 E^{(i)}_p \biggr] \uvec{k}. \end{align}
+
+
+En forma matricial
+
+\[
+\vb{E'} = 
+G(\phi,\theta)\;\mathcal T\;
+\begin{bmatrix}E^{(i)}_s\\[4pt]E^{(i)}_p\end{bmatrix},
+\]
+
+donde 
+
+\[
+G(\phi,\theta)=
+\begin{bmatrix}
+-\sin\phi & \dfrac{1+\eta_0\cos\theta}{\,l\,}\\[8pt]
+\cos\phi  & \dfrac{1+\eta_0\cos\theta}{\,l\,}\sin\phi\\[8pt]
+0         & \dfrac{\eta_0}{\,l\,}
+\end{bmatrix}.
+\]
+
+
+    
+
+
+
+
+
+
+
+\begin{align}
+E_x &= -\,\frac{2\eta_0(1+\eta_0\cos\theta)}{2\eta_0+(1+\eta_0^2)\cos\theta}\,E_i^{s}\,\sin\phi
+     + \frac{2(1+\eta_0\cos\theta)(\eta_0+\cos\theta)}{\bigl(1+\eta_0^2+2\eta_0\cos\theta\bigr)^{3/2}}\,E_i^{p}\,\cos\phi, \\[6pt]
+E_y &= \phantom{-}\frac{2\eta_0(1+\eta_0\cos\theta)}{2\eta_0+(1+\eta_0^2)\cos\theta}\,E_i^{s}\,\cos\phi
+     + \frac{2(1+\eta_0\cos\theta)(\eta_0+\cos\theta)}{\bigl(1+\eta_0^2+2\eta_0\cos\theta\bigr)^{3/2}}\,E_i^{p}\,\sin\phi, \\[6pt]
+E_z &= \frac{2\eta_0(1+\eta_0\cos\theta)}{\bigl(1+\eta_0^2+2\eta_0\cos\theta\bigr)^{3/2}}\,E_i^{p}\,\sin\theta.
+\end{align}
+
+
+Es de apreciar que el modo $p$ del campo decae siempre
+más rápido que el modo perpendicular $s$, siendo el
+campo en $z$ el que más rápido decae con la distancia
+del rayo desde el punto objeto, decae más rápido cuando se aleja el punto objeto $A$ del punto de intersección $I$, pero aumenta más rápido conforme este se acerca. 
+
+
+% ======================
+
+
+\section[Campo incidente general emitido desde A en función de dos funciones escalares]{Campo incidente general emitido desde $A$ en función de dos funciones escalares}
+
+
+Si bien se puede pensar que para hallar el campo transmitido, 
+el procedimiento es escribir el campo incidente en una base en la que no 
+es conocido y transformarlo debidamente a la base s y p. Tal procedimiento es incorrecto porque no todos los campos incidentes son admisibles, sino que se 
+ha de satisfacer la condición de que los campos oscilan transversalemente a su dirección de propagación. 
+
+Para este caso, el campo incidente a de ser tangente en todo punto a la superficie esférica centrada en $A$, pues es el punto donde le campo se emite, y se lo exiguimos de la siguiente manera 
+
+
+\begin{equation}
+   \vb u \cdot \vb E  = 0
+\end{equation}
+
+
+Sea $\vb E$ un campo dado en coordenadas cilíndricas 
+
+
+\begin{equation}
+    \vb E = E_r \uvec r + E_\phi \uvec \phi + E_z \uvec z
+\end{equation}
+
+
+
+\begin{equation}
+   \vb u \cdot \vb E = -\sin\theta E^i_r + (\eta_0 - \cos\theta) E^i_z = 0
+\end{equation}
+
+
+quedando así la condición como 
+
+\begin{equation}
+    E^{(i)}_z = -\frac{\sin\theta}{\cos\theta - \eta_0} E^{(i)}_r
+\end{equation}
+
+Vemos como la condición de oscilación transversal de los campos,
+exige que la componente longitudinal al eje óptico sea no nula, en particular
+es nula en el eje y va creciendo a medida que uno se aleja de este, 
+la dependencia es casi lineal para aperturas de moderadas a bajas, 
+por lo que ni aun en esas aproximaciones el campo longitudinal puede despreciarse. 
+
+No hay forma de que los campos que inciden a un sistema óptico por su púpila y tienen cierta curvatura no den lugar a oscilaciones longitudinales del campo, siendo estas consecuencias de la curvatura, y solo realmente nulas cuando los frentes son planos.
+
+Escribimos entonces la manera más general del campo incidente que es emitido desde el punto $A$, en función de las componentes $E_r$ y $E_\phi$.
+
+
+
+\begin{equation}
+    \vb E = E_r \uvec r + E_\phi \uvec \phi + E_z \uvec z  
+\end{equation}
+
+
+\begin{equation}
+    \vb E = \left(\uvec r - \frac{\sin\theta}{\cos\theta - \eta_0} \uvec z \right)E_r^{(i)} + E_\phi^{(i)} \uvec \phi
+\end{equation}
+
+
+\begin{equation}
+    \vb E = \frac{1}{\eta_0 - \cos\theta} \big[ (\eta_0 - \cos\theta)\uvec r + \sin\theta \uvec z  \big] E_r + E_\phi \uvec \phi
+\end{equation}
+
+
+\begin{equation}
+    \vb E = \frac{l}{\eta_0 - \cos\theta} E_r \uvec p + E_\phi \uvec \phi.
+    \label{eq:permisible_incident_field_given_Er_Ephi}
+\end{equation}
+
+En forma matricial escribimos este resultado cómo 
+
+
+\begin{equation}
+\vb E = 
+\begin{pmatrix}
+\uvec p & \uvec s
+\end{pmatrix}
+\begin{pmatrix}
+\dfrac{l}{\eta_0 - \cos\theta} & 0 \\[8pt]
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+E_r \\[4pt]
+E_\phi
+\end{pmatrix}, 
+\end{equation}
+
+esto es 
+
+\begin{equation}
+\begin{pmatrix}
+E_p \\[4pt]
+E_s
+\end{pmatrix}
+=
+\begin{pmatrix}
+\dfrac{l}{\eta_0 - \cos\theta} & 0 \\[4pt]
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+E_r \\[4pt]
+E_\phi
+\end{pmatrix}
+\end{equation}
+
+De esta manera quedó escrito el campo incidente en la base en la que la matriz de Fresnel opera de manera diagonal en función de una base que es independiente de la geometría del problema. 
+
+La base elegida es conveniente porque podemos conocer el campo en esa base por medio de un sensor plano, comunes en la instrumentación óptica actual, y con esta información nos es suficiente para determinar todo el campo incidente. Si bien, admitimos que los modos radiales y azimutales pueden no ser cómodos en algunas situaciones, por lo que dedicamos un apéndice para dar resultados para las bases cartesianas $xy$ y circulares derecha e izquierda $LR$ (ver \S\ref{subsec:matricial_ErEphi}).
+
+Ahora bien, si el campo incidente es conocido en un plano, no podemos aplicar la matriz de Fresnel directamente, pues esta transformación es formulada para el campo sobre el dioptrio y da el campo transmitido sobre el dioptrio también, de manera que se hace necesario hacer una \emph{transferencia de curvatura}.
+
+% TODO: TEMPORAL (Mejorar la redacción y completar)  
+
+
+\section[Campo transmitido en plano tangente]{Campo transmitido en el plano tangente desde un campo incidente en el mismo plano}
+\label{subsec:campo_plano_a_plano}
+
+Estudiamos ahora la propagación completa del campo desde el plano tangente $P$ de entrada $z = -R$ hasta el plano a una distancia $d$ de el plano $P$, considerando la trnasmición por el dioptrio esférico $\Sigma$. 
+
+Este proceso puede pensarse en tres etapas: (1) transferencia del plano de entrada al dioptrio mediante proyección central desde el punto objeto $A$, (2) transmisión a través del dioptrio según los coeficientes de Fresnel, y (3) transferencia del dioptrio al plano $P$ mediante proyección central desde el punto imagen $A'$.
+
+Es importante notar que las dos transferencias geométricas utilizan centros de proyección diferentes: la primera sigue los rayos incidentes que convergen hacia $A$, mientras que la segunda sigue los rayos transmitidos que divergen desde $A'$ y que la primera de las trasnmiciones ocurre en en el medio de indice de refracción $n_0$ mientras que la segunda en el indice de refracción $n_i$. 
+
+\subsection{Transferencia del plano de entrada al dioptrio}
+
+Sea $\vb{E}_P(r,\phi)$ el campo incidente en el plano tangente $z = -R$. Para transferir este campo a la superficie esférica $\Sigma$, utilizamos el operador de transferencia de curvatura deducido en el apéndice \S\ref{subsec:operador_transferencia}. Los rayos incidentes se propagan en la dirección del punto objeto $A = R\eta_0\,\uvec{z}$, de modo que la proyección geométrica se parametriza mediante $\eta_0 = n_0/n_i$.
+
+El campo sobre el dioptrio se obtiene como (ver ecuación \eqref{eq:transferencia_campo_esfera_plano}):
+
+\begin{equation}
+\vb{E}_\Sigma(\theta,\phi) = T_0(\theta)\, e^{-i k_0 \lambda_0(\theta)}\, \vb{E}_P\bigl(r_0(\theta), \phi\bigr),
+\label{eq:transferencia_plano_a_sigma}
+\end{equation}
+
+donde $k_0 = 2\pi n_0/\lambda$ es el número de onda en el medio de incidencia, y según las ecuaciones \eqref{eq:factor_amplitud} y \eqref{eq:lambda_de_theta}:
+
+\begin{equation}
+T_0(\theta) = \frac{|\eta_0 - \cos\theta|}{1 + \eta_0},
+\label{eq:T0_definicion}
+\end{equation}
+
+\begin{equation}
+\lambda_0(\theta) = -R\,\frac{1+\cos\theta}{|\eta_0-\cos\theta|}
+\sqrt{1+\eta_0^2 - 2\eta_0\cos\theta},
+\label{eq:lambda0_definicion}
+\end{equation}
+
+\begin{equation}
+r_0(\theta) = R\,\frac{(1+\eta_0)\sin\theta}{\eta_0 - \cos\theta}.
+\label{eq:r0_proyeccion}
+\end{equation}
+
+La función $r_0(\theta)$ establece la correspondencia entre la coordenada angular $\theta$ sobre el dioptrio y la coordenada radial en el plano de entrada (ecuación \eqref{eq:r_de_theta}).
+
+\subsection{Transmisión a través del dioptrio}
+
+Una vez conocido el campo sobre $\Sigma$, aplicamos la matriz de transmisión de Fresnel. Dado que $\mathcal{T}(\theta)$ (ecuación \eqref{eq:T_matrix_spherical_dioptrique}) opera en la base $(\uvec{p}, \uvec{s})$ de Fresnel, mientras que el campo está expresado en coordenadas espaciales, necesitamos un operador que deterimine la transmición independiente de la base incorporando los cambios de base necesarios:
+
+\begin{equation}
+\vb{E}'_\Sigma(\theta,\phi) = \bar{\mathcal{T}}(\theta)\, \vb{E}_\Sigma(\theta,\phi),
+\label{eq:transmision_fresnel_sigma}
+\end{equation}
+
+donde $\bar{\mathcal{T}}$ es el operador de transmisión sobre $\Sigma$ definido como 
+
+\begin{equation}
+\bar{\mathcal{T}}(\theta)
+=
+[\,\uvec{p}' \quad \uvec{s}\,]^{\!\top}
+\mathcal{T}(\theta)
+[\,\uvec{p} \quad \uvec{s}\,],
+\label{eq:T_bar}
+\end{equation}
+
+con $\mathcal{T}(\theta)$ dada por \eqref{eq:T_matrix_spherical_dioptrique}, y los vectores $\uvec{p}$, $\uvec{p}'$, $\uvec{s}$ definidos por las ecuaciones \eqref{eq:p_mode}, \eqref{eq:p_prime_mode} y \eqref{eq:s_mode} respectivamente. Esta matriz transforma el campo de la base espacial a la base de Fresnel, aplica los coeficientes de transmisión, y devuelve el resultado a la base espacial.
+
+
+\subsection{Transferencia del dioptrio al plano de salida}
+
+Finalmente, transferimos el campo transmitido desde $\Sigma$ al plano tangente de salida $z' = R$. Ahora los rayos transmitidos divergen desde el punto imagen $A' = R\eta_i\,\uvec{z}$ (donde $\eta_i = n_i/n_0 = 1/\eta_0$), de modo que la proyección geométrica se parametriza mediante $\eta_i$.
+
+Aplicando nuevamente el operador de transferencia del apéndice, pero con $\eta \to \eta_i$ y número de onda $k_i = 2\pi n_i/\lambda$ en el medio de transmisión:
+
+\begin{equation}
+\vb{E}'_P\bigl(r_i(\theta),\phi\bigr) = T_i(\theta)\, e^{i k_i \lambda_i(\theta)}\, \vb{E}'_\Sigma(\theta,\phi),
+\label{eq:transferencia_sigma_a_plano}
+\end{equation}
+
+donde
+
+\begin{equation}
+T_i(\theta) = \frac{|\eta_i - \cos\theta|}{1 + \eta_i} = \frac{|1 - \eta_0 \cos\theta|}{1 + \eta_0},
+\label{eq:Ti_definicion}
+\end{equation}
+
+\begin{equation}
+\lambda_i(\theta) = -R\,\frac{1+\cos\theta}{|\eta_i-\cos\theta|}
+\sqrt{1+\eta_i^2 - 2\eta_i\cos\theta},
+\label{eq:lambdai_definicion}
+\end{equation}
+
+\begin{equation}
+r_i(\theta) = R\,\frac{(1+\eta_i)\sin\theta}{\eta_i - \cos\theta} = R\,\frac{(1+\eta_0)\sin\theta}{1 - \eta_0\cos\theta}.
+\label{eq:ri_proyeccion}
+\end{equation}
+
+\subsection{Operador de propagación plano a plano}
+
+Combinando las tres etapas \eqref{eq:transferencia_plano_a_sigma}, \eqref{eq:transmision_fresnel_sigma} y \eqref{eq:transferencia_sigma_a_plano}, obtenemos el operador completo de propagación entre planos tangentes:
+
+\begin{equation}
+\vb{E}'_P\bigl(r_i(\theta),\phi\bigr)
+= \mathcal{A}(\theta)\, e^{i\Delta\Phi(\theta)}\, \mathcal{\bar{T}}(\theta)\, \vb{E}_P\bigl(r_0(\theta),\phi\bigr)
+\label{eq:operador_plano_a_plano}
+\end{equation}
+
+donde el factor de amplitud geométrico total es:
+
+\begin{equation}
+\mathcal{A}(\theta) = T_0(\theta)\, T_i(\theta) = \frac{|\eta_0 - \cos\theta|\,|1 - \eta_0\cos\theta|}{(1+\eta_0)^2},
+\label{eq:amplitud_geometrica_total}
+\end{equation}
+
+y la fase óptica acumulada en las dos transferencias de curvatura es:
+
+\begin{equation}
+\Delta\Phi(\theta) = k_0 \lambda_0(\theta) + k_i \lambda_i(\theta).
+\label{eq:fase_optica_total}
+\end{equation}
+
+Esta fase puede también expresarse de forma explícita como:
+
+\begin{equation}
+\Delta\Phi(\theta)
+=
+-\,kR n_0\,l_0(\theta)\,(1-\cos\theta)
+\left[
+\frac{1}{\eta_0(1+\eta_0\cos\theta)}
+-
+\frac{1}{\eta_0+\cos\theta}
+\right],
+\label{eq:delta_phi_explicita}
+\end{equation}
+
+donde $k = 2\pi/\lambda$ es el número de onda en el vacío y
+
+\begin{equation}
+l_0(\theta) = \sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}.
+\label{eq:l0_definition_reminder}
+\end{equation}
+
+
+\section{...}
+
+El enfoque de planos trabajado con anterioridad, si bien es teoricamente correcto, no es la manera más natural de trabajar, un enfoque alternativo que tambien usa el método de espectro angular para propagar el campo transmito puede formularse con la ventaja de que nos ahorramos una de las transferencias al evaluar directamente el campo esférico en $\Sigma$. 
+
+De manera general, el campo esférico converguente a $A$ se puede escribir como 
+
+\begin{equation}
+    \vb E (\vb r) = \frac{e^{-ik \lVert \vb r - \vb r_A \rVert}}{\lVert \vb r - \vb r_A \rVert} \uvec e (\vb r - \vb r_A).
+    \label{eq:spherical_incident_field}
+\end{equation}
+
+El campo incidente en $\Sigma$ se obtiene facilmente por sustitución directa $\vb r \rightarrow \vb r_\Sigma$, es decir 
+
+\begin{equation}
+    \vb E_{\Sigma} (Q) =  \frac{e^{-ik l_0(Q)}}{l_0(Q)} \vb e(Q),
+\end{equation}
+
+o de forma equivalente 
+
+\begin{equation}
+    \vb E_{\Sigma} (\theta, \phi) = A(\theta, \phi) \frac{e^{-ik l_0(\theta)}}{l_0(\theta)} \uvec e (\theta, \phi).
+\end{equation}
+
+El estado de polarización no es arbitrario, sino que debe satisfacer la condición de ser transversal al frente de onda, de manera de que si construimos un sistema esférico $(\theta_A, \phi)$ centrado en $A$, tenemos que el estado polarizacion se puede escribir como 
+
+\begin{equation}
+   \uvec e = e_\theta \uvec \theta_A + e_\phi \uvec \phi 
+\end{equation}
+
+
+se hace necesario buscar la ley de transformación entre esta base y la base de Fresnel (p, s).
+
+
+
+
+
+

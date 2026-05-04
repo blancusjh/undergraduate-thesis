@@ -1,0 +1,877 @@
+\chapter{Óptica Ondulatoria} 
+
+
+La visión geométrica de la luz, si bien elegante, y suficiente para muchas de las aplicaciones elementales, no captan por completo la verdader naturaleza de la luz, pues bien se vio acorralada este modelo teórico frente a fenomenos como la interferencia, la diffracción, la birrefrigencia, por mencionar algunos. Estos problemas, hacian temblar este modo de entender la luz, se fue acumulando las experincias que contradecian este modelo, hasta que la paradoja se hizo inegable. Por otro lado, las investigaciones concernientes a los fenomenos electricos y magnéticos, dio fruto a grandes avances en el entendimiento de estas fuerzas de la naturaleza, fue Faraday el que entendio como se influian mutuamente lo que sugeria una misma naturaleza, tambien observo experimentalmente como la luz era influido por estas fuerzas ahora mejor entendidas. James Clerk Maxwell en una tarea verdaderamente unificadora, y excelsa matematicamente, sinteizo las ideas de su epoca en las ecuaciones que lleva su nombre, y por una necesidad física de conservación y el conocimiento matematico de las ecuaciones que la aseguraban, fue mas alla que sus predeceseres postulando las ondas como consecuencia de respetar este principio de conservación para la carga electrica \cite{maxwell1865}.
+
+\section{Ecuaciones de Maxwell}
+
+En su forma general, las ecuaciones de Maxwell pueden escribirse como
+\begin{align}
+\nabla \cdot \mathbf{E}(\mathbf x, t) &= \frac{\rho(\mathbf x, t)}{\epsilon_0} 
+& \qquad 
+\nabla \cdot \mathbf{B}(\mathbf x, t) &= 0, \\
+\nabla \times \mathbf{E}(\mathbf x, t) &= -\,\frac{\partial \mathbf B(\mathbf x, t)}{\partial t}
+& \qquad
+\nabla \times \mathbf B(\mathbf x, t) &= \mu_0\,\mathbf J(\mathbf x, t) 
++ \mu_0\epsilon_0\,\frac{\partial \mathbf E(\mathbf x, t)}{\partial t},
+\label{eq:maxwell_equaitons}
+\end{align}
+
+y, en el caso particular del \emph{vacío}, donde no existen cargas ni corrientes libres,
+\[
+\rho(\mathbf x,t) = 0, \qquad \mathbf J(\mathbf x,t) = \mathbf 0,
+\]
+las ecuaciones toman la forma
+
+
+\begin{align}
+\nabla \cdot \mathbf{E}(\mathbf x, t) &= 0 
+& \qquad 
+\nabla \cdot \mathbf{B}(\mathbf x, t) &= 0, 
+\\
+\nabla \times \mathbf{E}(\mathbf x, t) &= -\,\frac{\partial \mathbf B(\mathbf x, t)}{\partial t}
+& \qquad
+\nabla \times \mathbf B(\mathbf x, t) &= \mu_0\epsilon_0\,\frac{\partial \mathbf E(\mathbf x, t)}{\partial t},
+\label{eq:maxwell_equation_vacuum}
+\end{align}
+
+
+De la combinación adecuada de estas ecuaciones se concluye que los campos satisfacen ecuaciones de onda de la forma
+
+\begin{align}
+\nabla^2 \mathbf E(\mathbf x, t) - \frac{1}{c^2}\frac{\partial^2 \mathbf E(\mathbf x, t)}{\partial t^2} &= 0,
+\label{eq:wave_equation_E} 
+\\
+\nabla^2 \mathbf B(\mathbf x, t) - \frac{1}{c^2}\frac{\partial^2 \mathbf B(\mathbf x, t)}{\partial t^2} &= 0,
+\label{eq:wave_equation_B}
+\end{align}
+donde
+\[
+c = \frac{1}{\sqrt{\mu_0 \epsilon_0}}
+\]
+es la velocidad característica de propagación de la onda electromagnética en el vacío.
+
+
+Por el teorema de Fourier sabemos que toda función admite una representación armonica de la forma, de modo que podemos escribir el campo électrico en dicha representación como se sigue 
+
+\begin{equation}
+    \vb{E}(\vb x, t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \vb{E}_\omega(\vb x) e^{-i\omega t} dt
+    \label{eq:E_field_harmonic_representation}
+\end{equation}
+
+En la representación armonica el campo magnético se optiene fácilmente, como 
+
+
+\begin{equation}
+    \vb{B}_\omega = \frac{1}{i\omega} \nabla \times \vb{E}_\omega,
+    \label{eq:B_harmonic_func_of_E_harmonic}
+\end{equation}
+
+por lo que en lo sucesivo omitiremos el campo magnético en nuestro anális, pues la información del campo eléctrico nos es suficiente. Siendo de este como  
+
+\begin{equation}
+    \nabla^2 \vb{E}(\vb x) + k^2 \vb E = 0, 
+    \label{eq:E_field_wave_equation}
+\end{equation}
+
+donde $k = \omega/c$, la ecuación fundamental para la propagación de el campo armonico. 
+
+La ecuación \ref{eq:E_field_wave_equation} es equivalenete a una ecuación de Helmholtz escalar para cada una de sus componentes cartesianas, sea $\Psi(\vb x)$ una de esas componentes, escribimos 
+
+\begin{equation}
+    \nabla^2 \Psi (\vb x) + k^2 \Psi (\vb x) = 0.
+    \label{eq:Helmholtz_equation}
+\end{equation}
+
+
+Que es la ecuación base de los métodos escalares de propagación, siendo los métodos de propagación en ultimas 
+soluciones a esta dada unas condiciones iniciales, los métodos se dividen en exactos y aproximados, segun si 
+resuleven la ecuación de Helmholtz \eqref{eq:Helmholtz_equation} de forma exacta o aproximada.
+
+
+% ======================
+\section{Propagación de los campos}
+
+\subsection{Método de espectro angular}
+
+El método de espectro angular permite determinar el campo escalar en un plano $z>0$ a partir de su valor conocido en el plano inicial $z=0$. Su fundamento consiste en descomponer el campo como una superposición continua de ondas planas, cada una de las cuales evoluciona de manera simple bajo la ecuación de Helmholtz.
+
+Para ello, se separa primero el operador laplaciano en su parte transversal y longitudinal,
+
+\begin{equation}
+\nabla^2
+=
+\nabla_\perp^2
++
+\frac{\partial^2}{\partial z^2},
+\qquad
+\nabla_\perp^2
+=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2},
+\label{eq:laplacian_transverse_longitudinal}
+\end{equation}
+
+de modo que la ecuación de Helmholtz toma la forma
+
+\begin{equation}
+\left(
+\nabla_\perp^2
++
+\frac{\partial^2}{\partial z^2}
++
+k^2
+\right)
+\Psi(\vb r,z)
+=
+0,
+\label{eq:helmholtz_split}
+\end{equation}
+
+donde $\vb r=(x,y)$ representa la coordenada transversal.
+
+Introducimos ahora la transformada de Fourier bidimensional sobre el plano transversal mediante
+
+\begin{equation}
+\mathscr F_\perp\{\Psi\}
+=
+\tilde{\Psi}(\mathbf k_\perp;z)
+=
+\iint_{\mathbb R^2}
+\Psi(\vb r,z)\,
+e^{-i\,\mathbf k_\perp\cdot\vb r}
+\,d^2\vb r,
+\label{eq:fourier_forward}
+\end{equation}
+
+y su inversa
+
+\begin{equation}
+\Psi(\vb r,z)
+=
+\frac{1}{(2\pi)^2}
+\iint_{\mathbb R^2}
+\tilde{\Psi}(\mathbf k_\perp;z)\,
+e^{i\,\mathbf k_\perp\cdot\vb r}
+\,d^2\mathbf k_\perp,
+\label{eq:fourier_inverse}
+\end{equation}
+
+donde $\mathbf k_\perp=(k_x,k_y)$ es el vector de onda transversal.
+
+Aplicando $\mathscr F_\perp$ sobre la ecuación \eqref{eq:helmholtz_split}, y usando que
+
+\begin{equation}
+\mathscr F_\perp
+\left\{
+\nabla_\perp^2\Psi
+\right\}
+=
+-|\mathbf k_\perp|^2
+\tilde{\Psi},
+\label{eq:fourier_laplacian}
+\end{equation}
+
+se obtiene la ecuación diferencial ordinaria
+
+\begin{equation}
+\frac{\partial^2\tilde{\Psi}}{\partial z^2}
++
+\left(
+k^2
+-
+|\mathbf k_\perp|^2
+\right)
+\tilde{\Psi}
+=
+0.
+\label{eq:spectral_ode}
+\end{equation}
+
+Esta expresión muestra que cada componente espectral transversal evoluciona independientemente como una onda plana.
+
+Definiendo la componente longitudinal del vector de onda mediante la relación de dispersión
+
+\begin{equation}
+k^2
+=
+|\mathbf k_\perp|^2
++
+k_z^2,
+\label{eq:dispersion_relation}
+\end{equation}
+
+se obtiene
+
+\begin{equation}
+k_z(\mathbf k_\perp)
+=
+\begin{cases}
+\sqrt{
+k^2-|\mathbf k_\perp|^2
+},
+&
+|\mathbf k_\perp|^2\leq k^2,
+\\[6pt]
+i\sqrt{
+|\mathbf k_\perp|^2-k^2
+},
+&
+|\mathbf k_\perp|^2>k^2.
+\end{cases}
+\label{eq:kz_definition}
+\end{equation}
+
+La elección de la rama con $\operatorname{Im}(k_z)\geq0$ garantiza que las componentes evanescentes no crezcan exponencialmente para $z>0$.
+
+Las componentes tales que
+$|\mathbf k_\perp|^2\leq k^2$
+corresponden a ondas propagantes, mientras que aquellas con
+$|\mathbf k_\perp|^2>k^2$
+representan campos evanescentes que decaen exponencialmente con la distancia.
+
+La solución general de \eqref{eq:spectral_ode} es
+
+\begin{equation}
+\tilde{\Psi}(\mathbf k_\perp;z)
+=
+A(\mathbf k_\perp)\,
+e^{ik_z z}
++
+B(\mathbf k_\perp)\,
+e^{-ik_z z},
+\label{eq:general_solution_spectral}
+\end{equation}
+
+y para propagación hacia adelante ($z>0$) se conserva únicamente la componente físicamente saliente,
+
+\begin{equation}
+\tilde{\Psi}(\mathbf k_\perp;z)
+=
+\tilde{\Psi}(\mathbf k_\perp;0)\,
+e^{ik_z(\mathbf k_\perp)\,z}.
+\label{eq:spectral_propagation}
+\end{equation}
+
+Esta es la esencia del método de espectro angular: en el dominio espectral, la propagación longitudinal se reduce a una simple multiplicación por un factor exponencial.
+
+Finalmente, sustituyendo \eqref{eq:spectral_propagation} en la transformada inversa \eqref{eq:fourier_inverse}, obtenemos
+
+\begin{equation}
+\Psi(\vb r,z)
+=
+\frac{1}{(2\pi)^2}
+\iint_{\mathbb R^2}
+\tilde{\Psi}(\mathbf k_\perp;0)\,
+\exp
+\left[
+i\left(
+\mathbf k_\perp\cdot\vb r
++
+k_z(\mathbf k_\perp)\,z
+\right)
+\right]
+\,d^2\mathbf k_\perp.
+\label{eq:angular_spectrum_propagation}
+\end{equation}
+
+Esta representación expresa el campo como una superposición continua de ondas planas, cada una caracterizada por su vector de onda transversal $\mathbf k_\perp$ y su evolución longitudinal determinada por $k_z$.
+
+De manera operatorial, la propagación puede escribirse como
+
+\begin{equation}
+\Psi(\vb r,z)
+=
+\mathscr R_{ASM}(z)\,
+\Psi(\vb r,0),
+\label{eq:operator_form}
+\end{equation}
+
+donde
+
+\begin{equation}
+\mathscr R_{ASM}(z)
+=
+\mathscr F_\perp^{-1}
+\left\{
+e^{i\,k_z(\mathbf k_\perp)\,z}
+\right\}
+\mathscr F_\perp.
+\label{eq:propagation_operator}
+\end{equation}
+
+El operador $\mathscr R_{ASM}(z)$ diagonaliza el laplaciano transversal $\nabla_\perp^2$, transformando la ecuación diferencial parcial de Helmholtz en una multiplicación espectral simple. Esta formulación constituye la base de los métodos numéricos de propagación mediante FFT y conecta naturalmente con las aproximaciones de Fresnel y Fraunhofer en el régimen paraxial.
+
+
+
+% ==== SEC : LÍMITE DE RESOLUCIÓN ===
+\subsection{Límite de resolución} 
+\label{sec:resolution_limit}
+
+Tomamos como punto de partida el resultado del método de espectro angular, ecuación \eqref{eq:angular_spectrum_propagation}, que expresa el campo como superposición de ondas planas propagantes y evanescentes. En particular, el campo escalar en el medio puede escribirse como:
+
+\begin{equation}
+\begin{aligned}
+\Psi(\mathbf r)
+&= \frac{1}{(2\pi)^2}
+\int_{-\infty}^{\infty}\!\!\int_{-\infty}^{\infty}
+\tilde\Psi(k_x,k_y,0)\,
+e^{i(k_x x + k_y y + k_z z)}\, dk_x\,dk_y .
+\end{aligned}
+\end{equation}
+
+donde
+
+\begin{equation}
+k_z = \sqrt{k^2 - k_x^2 - k_y^2},
+\qquad
+k = \lvert\mathbf k\rvert = \frac{2\pi n}{\lambda},
+\end{equation}
+
+con \(n\) el índice de refracción del medio y \(\lambda\) la longitud de onda en el vacío.
+
+La dirección de propagación de cada onda plana viene dada por
+
+\begin{equation}
+\frac{\mathbf k\cdot\hat{\mathbf z}}{k} = \cos\theta
+\qquad\Rightarrow\qquad
+\frac{k_z}{k} = \cos\theta .
+\end{equation}
+
+De donde se obtiene
+
+\begin{equation}
+\sin\theta
+= \frac{k_\perp}{k}
+= \frac{\sqrt{k_x^2 + k_y^2}}{k},
+\end{equation}
+
+con \(k_\perp = \sqrt{k_x^2 + k_y^2}\).
+
+La apertura numérica del sistema esta dada por \cite{bornwolf1999}
+
+\begin{equation}
+\mathrm{NA} = n \sin\theta.
+\label{eq:def_NA}
+\end{equation}
+
+
+La finitud de los sistemas ópticos, debida a la finitud de las lentes y de las pupilas, imponen 
+un ángulo máximo de aceptación desde los cuales los rayos del objeto pueden ser emitidos para que pasen al sistema, 
+sea $\alpha$ este ángulo, se sigue que las componentes que se emiten con un angulo $\theta$ deben ser menores o iguales al angulo máximo de aceptación $\alpha$, de lo que se sigue que
+
+
+\begin{equation}
+n\sin\alpha \ge n\sin\theta = \mathrm{NA}.
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \input{tikzfigures/na_diagram.tex}
+    \caption{Ilustración del ángulo de apertura $\alpha$.}
+    \label{fig:na_geometry}
+\end{figure}
+
+
+Que es equivalente a
+
+
+\begin{equation}
+k_\perp \le k \sin\theta_{\max}
+= k\,\frac{\mathrm{NA}}{n}.
+\end{equation}
+
+En términos de frecuencias espaciales
+
+\begin{equation}
+\begin{aligned}
+f_\perp &= \frac{k_\perp}{2\pi}
+\le \frac{k}{2\pi}\,\frac{\mathrm{NA}}{n}
+= \frac{n/\lambda}{1}\,\frac{\mathrm{NA}}{n}
+= \frac{\mathrm{NA}}{\lambda}.
+\end{aligned}
+\end{equation}
+
+Por tanto, el sistema transmite frecuencias espaciales hasta
+
+\begin{equation}
+f_{\max} = \frac{\mathrm{NA}}{\lambda}.
+\end{equation}
+
+
+Considérese ahora un objeto limitado a una extensión \(d\) en la dirección \(x\). Su desarrollo en serie de Fourier contiene armónicas con números de onda
+
+\begin{equation}
+\begin{aligned}
+k_x &= \frac{n\pi}{d},
+\\
+n &= 0,1,2,\dots
+\end{aligned}
+\end{equation}
+
+y por tanto
+
+\begin{equation}
+f_x = \frac{k_x}{2\pi} = \frac{n}{2d},
+\end{equation}
+
+Para que la estructura correspondiente sea resoluble, al menos el primer armónico \(n=1\) debe ser transmitido por el sistema:
+
+\begin{equation}
+\frac{1}{2d} \le f_{\max} = \frac{\mathrm{NA}}{\lambda}.
+\end{equation}
+
+De aquí se obtiene el límite de resolución de Abbe:
+
+\begin{equation}
+d \ge \frac{\lambda}{2\,\mathrm{NA}}.
+\end{equation}
+
+Por lo que el límite inferior de detalle resoluble esta dado por 
+
+\begin{equation}
+  d_{min} = \frac{\lambda}{2\,\mathrm{NA}} ,
+\label{eq:abbe_resolution_limit}
+\end{equation}
+
+donde \(\lambda\) es la longitud de onda en el vacío, y \(\mathrm{NA}\) es la apertura numérica definida en la ecuación \eqref{eq:def_NA}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/Loss_of_detail_in_small_apertures.jpg}
+    \caption{Pérdida de detalle al reducir la apertura numérica: las frecuencias espaciales altas quedan fuera de banda y no son transmitidas por el sistema óptico. Se observa que las frecuencias espaciales más altas contienen los detalles más finos.}
+    \label{fig:loss_detail_small_apertures}
+\end{figure}
+
+De acá se sigue que amentar el tamaño de la pupila y aumentar el indice de refracción $n$ da lugar a una mayor resolución, por lo que las aproximaciones paraxiales límitan la resolución que los sistemas pueden alcanzar debido a que no contemplan frecuencias mayores donde estan los detalles más finos.
+
+
+
+\section{Solución por la Segunda Identidad de Green}
+
+
+Además del tratamiento en el dominio de las frecuencias espaciales mediante el método del espectro angular, la propagación en el vacío puede formularse también desde una perspectiva puramente espacial. En lugar de descomponer el campo en ondas planas, esta formulación reconstruye el campo en un punto del espacio a partir de los valores que el campo toma sobre una superficie que encierra el dominio de interés.
+
+La base matemática de esta formulación es la segunda identidad de Green \cite{arfken2013}. Su importancia radica en que permite transformar el problema diferencial asociado a la ecuación de Helmholtz en una representación integral de frontera. En una región homogénea, isotrópica y libre de fuentes, cada componente cartesiana del campo eléctrico satisface una ecuación escalar de Helmholtz. Por tanto, si \(U(\mathbf r)\) representa una componente escalar del campo, se tiene
+
+\begin{equation}
+\nabla^2 U(\mathbf r)+k^2U(\mathbf r)=0.
+\label{eq:scalar_Helmholtz_equation}
+\end{equation}
+
+Sea \(V\) un volumen limitado por una superficie cerrada \(\Sigma(V)\), y sea \(G(\mathbf r,\mathbf r')\) la función de Green saliente asociada al operador de Helmholtz, definida por
+
+\begin{equation}
+\left(\nabla'^2+k^2\right)G(\mathbf r,\mathbf r')
+=
+-4\pi\delta(\mathbf r-\mathbf r').
+\label{eq:Green_function_Helmholtz}
+\end{equation}
+
+La segunda identidad de Green aplicada a las funciones \(U(\mathbf r')\) y \(G(\mathbf r,\mathbf r')\) establece que
+
+\begin{equation}
+\int_V
+\left[
+G(\mathbf r,\mathbf r')\nabla'^2 U(\mathbf r')
+-
+U(\mathbf r')\nabla'^2 G(\mathbf r,\mathbf r')
+\right]dV'
+=
+\oint_{\Sigma(V)}
+\left[
+G(\mathbf r,\mathbf r')
+\frac{\partial U(\mathbf r')}{\partial n'}
+-
+U(\mathbf r')
+\frac{\partial G(\mathbf r,\mathbf r')}{\partial n'}
+\right]
+d\sigma' .
+\label{eq:second_Green_identity}
+\end{equation}
+
+En el integrando del lado izquierdo se puede sumar y restar el término \(k^2G(\mathbf r,\mathbf r')U(\mathbf r')\). Como \(k^2G U-k^2U G=0\), se obtiene
+
+\begin{equation}
+G\nabla'^2U-U\nabla'^2G
+=
+G(\nabla'^2+k^2)U
+-
+U(\nabla'^2+k^2)G.
+\label{eq:Green_identity_Helmholtz_operator}
+\end{equation}
+
+Por tanto, la segunda identidad de Green puede escribirse directamente en términos del operador de Helmholtz como
+
+\begin{equation}
+\int_V
+\left[
+G(\mathbf r,\mathbf r')
+(\nabla'^2+k^2)U(\mathbf r')
+-
+U(\mathbf r')
+(\nabla'^2+k^2)G(\mathbf r,\mathbf r')
+\right]dV'
+=
+\oint_{\Sigma(V)}
+\left[
+G\frac{\partial U}{\partial n'}
+-
+U\frac{\partial G}{\partial n'}
+\right]
+d\sigma' .
+\label{eq:second_Green_identity_Helmholtz_operator}
+\end{equation}
+
+Ahora bien, como \(U\) satisface la ecuación homogénea de Helmholtz,
+
+\begin{equation}
+(\nabla'^2+k^2)U(\mathbf r')=0,
+\end{equation}
+
+mientras que \(G\) satisface
+
+\begin{equation}
+(\nabla'^2+k^2)G(\mathbf r,\mathbf r')
+=
+-4\pi\delta(\mathbf r-\mathbf r'),
+\end{equation}
+
+el miembro volumétrico se reduce a
+
+\begin{equation}
+\int_V
+4\pi U(\mathbf r')\delta(\mathbf r-\mathbf r')\,dV'.
+\end{equation}
+
+Si el punto de observación \(\mathbf r\) pertenece al volumen \(V\), la propiedad de selección de la delta de Dirac da
+
+\begin{equation}
+\int_V
+4\pi U(\mathbf r')\delta(\mathbf r-\mathbf r')\,dV'
+=
+4\pi U(\mathbf r).
+\end{equation}
+
+Se obtiene entonces
+
+\begin{equation}
+4\pi U(\mathbf r)
+=
+\oint_{\Sigma(V)}
+\left[
+G(\mathbf r,\mathbf r')
+\frac{\partial U(\mathbf r')}{\partial n'}
+-
+U(\mathbf r')
+\frac{\partial G(\mathbf r,\mathbf r')}{\partial n'}
+\right]
+d\sigma',
+\end{equation}
+
+y, finalmente,
+
+\begin{equation}
+U(\mathbf r)
+=
+\frac{1}{4\pi}
+\oint_{\Sigma(V)}
+\left[
+G(\mathbf r,\mathbf r')
+\frac{\partial U(\mathbf r')}{\partial n'}
+-
+U(\mathbf r')
+\frac{\partial G(\mathbf r,\mathbf r')}{\partial n'}
+\right]
+d\sigma' .
+\label{eq:Green_integral_theorem}
+\end{equation}
+
+Esta expresión es el teorema integral de Green para la ecuación de Helmholtz. En ella,
+
+\begin{equation}
+\frac{\partial}{\partial n'}
+=
+\mathbf n'\cdot\nabla'
+\end{equation}
+
+denota la derivada normal exterior sobre la frontera \(\Sigma(V)\).
+
+Para aplicar esta representación al problema de propagación, se escoge una superficie cerrada formada por dos partes:
+
+\begin{equation}
+\Sigma(V)=\Sigma_1\cup\Sigma_2,
+\end{equation}
+
+donde \(\Sigma_1\) es el plano de apertura y \(\Sigma_2\) es una superficie hemisférica que cierra el volumen y cuyo radio se hace tender a infinito. De esta forma, la integral sobre la frontera se separa como
+
+\begin{equation}
+\begin{aligned}
+U(\mathbf r)
+=
+\frac{1}{4\pi}
+\int_{\Sigma_1}
+\left[
+G\frac{\partial U}{\partial n'}
+-
+U\frac{\partial G}{\partial n'}
+\right]
+d\sigma'
++
+\frac{1}{4\pi}
+\int_{\Sigma_2}
+\left[
+G\frac{\partial U}{\partial n'}
+-
+U\frac{\partial G}{\partial n'}
+\right]
+d\sigma' .
+\end{aligned}
+\label{eq:Green_integral_split_boundary}
+\end{equation}
+
+Considerando que el campo y la función de Green satisfacen la condición de radiación de Sommerfeld \cite{jackson1999}, la contribución sobre la superficie hemisférica \(\Sigma_2\) se anula en el límite en que su radio tiende a infinito:
+
+\begin{equation}
+\lim_{R\to\infty}
+\int_{\Sigma_2}
+\left[
+G\frac{\partial U}{\partial n'}
+-
+U\frac{\partial G}{\partial n'}
+\right]
+d\sigma'
+=
+0.
+\label{eq:Sommerfeld_condition_boundary_vanishes}
+\end{equation}
+
+Por consiguiente, la representación integral se reduce únicamente a la contribución sobre el plano de apertura \(\Sigma_1\):
+
+\begin{equation}
+U(\mathbf r)
+=
+\frac{1}{4\pi}
+\int_{\Sigma_1}
+\left[
+G(\mathbf r,\mathbf r')
+\frac{\partial U(\mathbf r')}{\partial n'}
+-
+U(\mathbf r')
+\frac{\partial G(\mathbf r,\mathbf r')}{\partial n'}
+\right]
+d\sigma' .
+\label{eq:Green_integral_aperture_plane}
+\end{equation}
+
+Esta es la forma espacial de la propagación escalar en términos del teorema integral de Green. El campo en el punto de observación \(\mathbf r\) queda determinado por los valores del campo \(U\) y de su derivada normal sobre el plano de apertura. Así, el problema de propagación se reformula como un problema de frontera: el campo no se obtiene mediante una descomposición espectral, sino mediante la contribución integral de los datos definidos sobre la superficie desde la cual emerge la onda.
+
+
+
+
+Al elegir una función de Green $G(\mathbf{r}, \mathbf{r}')$ construida mediante el método de imágenes para que cumpla condiciones de frontera adecuadas (haciendo que la propia función de Green se anule en el plano), obtenemos:
+
+\begin{equation}
+G_1 = \frac{e^{ik\|\mathbf{r}-\mathbf{r}^*\|}}{\|\mathbf{r}-\mathbf{r}^*\|} - \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|}.
+\end{equation}
+
+Remplazando esta función y calculando su derivada normal respecto a la superficie, la expresión se reduce a la primera fórmula de difracción de Rayleigh-Sommerfeld:
+
+\begin{equation}
+U(\mathbf{r}) = -\frac{1}{2\pi} \int_{\Sigma} U(\mathbf{r}') \cos(\mathbf{n}, \mathbf{r}-\mathbf{r}') \left\{ ik - \frac{1}{\|\mathbf{r}-\mathbf{r}'\|} \right\} \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|} d\sigma'.
+\end{equation}
+
+Dado que $\cos(\mathbf{n}, \mathbf{r}-\mathbf{r}') = \frac{z-z'}{\|\mathbf{r}-\mathbf{r}'\|}$, reescribimos:
+
+\begin{equation}
+U(\mathbf{r}) = -\frac{1}{2\pi} \int_{\Sigma} U(\mathbf{r}') \frac{z-z'}{\|\mathbf{r}-\mathbf{r}'\|} \left\{ ik - \frac{1}{\|\mathbf{r}-\mathbf{r}'\|} \right\} \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|^2} d\sigma'.
+\end{equation}
+
+Hasta aquí, los desarrollos han sido exactos. La primera aproximación física que vamos a aplicar consiste en analizar el término entre llaves:
+
+\begin{equation}
+ik - \frac{1}{\|\mathbf{r}-\mathbf{r}'\|} = \frac{2\pi i}{\lambda} - \frac{1}{\|\mathbf{r}-\mathbf{r}'\|}.
+\end{equation}
+
+Bajo la justificación de que estudiaremos la propagación a distancias $\|\mathbf{r}-\mathbf{r}'\| \gg \lambda$, el primer término representa una contribución mucho mayor y domina completamente. Despreciando el segundo término, la integral toma la forma:
+
+\begin{equation}
+U(\mathbf{r}) = -\frac{ik}{2\pi} (z-z') \int_{\Sigma} U(\mathbf{r}') \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|^2} d\sigma',
+\end{equation}
+que, reordenando los factores de número de onda, resulta en la expresión clásica del principio de Huygens:
+
+\begin{equation}
+U(\mathbf{r}) = \frac{(z-z')}{i\lambda} \int_{\Sigma} U(\mathbf{r}') \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|^2} d\sigma'.
+\label{eq:huygens_principle}
+\end{equation}
+
+La asunción de que $\|\mathbf{r}-\mathbf{r}'\| \gg \lambda$ es sumamente plausible en la inmensa mayoría de escenarios ópticos macroscópicos, por lo que la ecuación \eqref{eq:huygens_principle} posee un extenso rango de validez.
+
+
+\subsection{Aproximación de Fresnel}
+
+Podemos realizar más asunciones físicas para simplificar matemáticamente el problema. Si los rayos que van desde un punto $Q$ en el campo de la apertura hasta un punto de observación $P$ son prácticamente paralelos al eje óptico (régimen paraxial), podemos aproximar distancias. Esto se cumple si:
+\begin{enumerate}
+    \item Las distancias transversales al eje óptico (tanto en la apertura como en el plano de observación) son pequeñas.
+    \item Las distancias de propagación $z$ son muy grandes en comparación con dichas dimensiones transversales.
+\end{enumerate}
+
+Bajo estas consideraciones paraxiales, aproximamos el término inversamente proporcional a la distancia geométrica (que actúa sobre la amplitud) tomando simplemente la distancia longitudinal:
+\begin{equation}
+\frac{1}{\|\mathbf{r}-\mathbf{r}'\|} \approx \frac{1}{z-z'}.
+\end{equation}
+
+Por el contrario, el término de distancia $\|\mathbf{r}-\mathbf{r}'\|$ presente en el exponente complejo regula la fase de la onda. Al estar multiplicado por el número de onda $k$, es extremadamente sensible a variaciones pequeñas. Para no perder esta información vital, realizamos una expansión binomial hasta el segundo orden:
+
+\begin{equation}
+\|\mathbf{r}-\mathbf{r}'\| \approx z \left[ 1 + \frac{(x-x')^2}{2z^2} + \frac{(y-y')^2}{2z^2} \right],
+\end{equation}
+donde por simplicidad hemos tomado el plano fuente en $z'=0$.
+
+Sustituyendo estas aproximaciones en la integral de propagación, obtenemos la conocida \textbf{Integral de Fresnel}:
+
+
+\section{Integral de Fresnel}
+
+
+
+\begin{equation}
+U(x,y) = \frac{e^{ikz}}{i\lambda z} \iint_{-\infty}^{\infty} U(x',y') e^{i\frac{k}{2z} \left[ (x-x')^2 + (y-y')^2 \right]} dx'dy'.
+\label{eq:fresnel_integral}
+\end{equation}
+
+Matemáticamente, este resultado revela una naturaleza lineal e invariante ante desplazamientos espaciales, lo cual permite escribir la propagación de manera directa en términos de una convolución espacial:
+
+\begin{equation}
+U(x,y) = \frac{e^{ikz}}{i\lambda z} \left( U(x,y) * e^{i\frac{k}{2z}(x^2+y^2)} \right).
+\end{equation}
+
+Asimismo, si expandimos el término cuadrático dentro de la exponencial en la integral de Fresnel \eqref{eq:fresnel_integral}:
+\begin{equation*}
+(x-x')^2 + (y-y')^2 = (x^2 + y^2) + (x'^2 + y'^2) - 2(xx' + yy'),
+\end{equation*}
+podemos reescribir el campo de forma equivalente extrayendo fuera de la integral los factores que no dependen de $(x', y')$:
+
+\begin{equation}
+U(x,y;z) = \frac{e^{ikz}}{i\lambda z} e^{i\frac{k}{2z}(x^2+y^2)} \iint_{-\infty}^{\infty} \left[ U(x',y') e^{i\frac{k}{2z}(x'^2+y'^2)} \right] e^{-i\frac{2\pi}{\lambda z}(xx'+yy')} dx'dy'.
+\end{equation}
+
+La integral resultante no es más que la Transformada de Fourier del campo de entrada modificado por una fase cuadrática. De esta manera, el campo en $z$ queda expresado mediante la operación:
+
+\begin{equation}
+U(x,y;z) = \frac{e^{ikz}}{i\lambda z} e^{i\frac{k}{2z}(x^2+y^2)} \mathscr{F} \left\{ e^{i\frac{k}{2z}(x'^2+y'^2)} U(x',y') \right\}(f_x, f_y),
+\end{equation}
+donde las frecuencias espaciales se evalúan específicamente en:
+\begin{equation}
+f_x = \frac{x}{\lambda z}, \quad f_y = \frac{y}{\lambda z}.
+\end{equation}
+
+Esta demostración conecta analíticamente la integral espacial de difracción con el uso fundamental de herramientas en el dominio de las frecuencias, cerrando así la conceptualización paralela entre este método paraxial y el método de espectro angular (ASM).
+
+
+
+\section{Transformación que sufre el campo eléctrico al cambiar de medio} 
+
+Cuando la radiación se encuentra con una interfaz que separa dos medios, sufre transformaciones debido a la diferencia entre las propiedades de los medios. 
+Al ser las ecuaciones que rigen la propagación dependientes de las propiedades del medio, en cada región son ligeramente distintas las ecuaciones que se han de satisfacer en la sección~\ref{sec:boundary_conditions_in_dielectrics}.
+
+Estas condiciones de frontera, permiten conocer el campo que se transmite dado el incidente, ambos sobre la interfaz $\Sigma$ que separa los dos medios. 
+
+Escribiendo el campo por su espectro 
+
+\begin{equation*} 
+  \vb{E}(\vb r) = \frac{1}{(2\pi)^3} \int_{\mathbb K^3} \widehat{\vb{E}} (\vb{k}) e^{i\vb k \cdot \vb x} d^3x,
+\end{equation*}
+
+al remplazarlo en las condiciones de frontera, se encuentra la ley de transformación para cada componente $\vb k$ del campo. 
+
+El campo incidente $\widehat{\vb E}(\vb k)$ se transforma de forma diferente en cada punto de la interfaz, y de manera diferente en dos polarizaciones principales $\uvec s$ y $\uvec p$.
+
+Para definir las polarizaciones $\uvec s$ y $\uvec p$ primero hay que definir el plano $\Pi$ de incidencia
+
+\begin{equation}
+\Pi = \operatorname{span}\{\hat{\mathbf{k}}, \hat{\mathbf{N}}\},
+\label{eq:pi}
+\end{equation}
+
+definimos así entonces los vectores unitarios $\uvec s$ y $\uvec p$ según
+
+\begin{equation}
+\hat{\mathbf{p}} \in \Pi, 
+\qquad \hat{\mathbf{p}} \perp \hat{\mathbf{k}},
+\label{eq:pdef}
+\end{equation}
+
+\begin{equation}
+\hat{\mathbf{s}} \perp \Pi.
+\label{eq:sdef}
+\end{equation}
+
+Así el campo transmitido $\vb{E}'_{\Sigma}$ sobre la interfaz $\Sigma$, dado el campo incidente $\vb{E}_\Sigma$ sobre $\Sigma$ tambien, esta dado por
+
+
+\begin{equation}
+  \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}',
+  \label{eq:Transmited_E_field_in_Sigma}
+\end{equation}
+
+\textit{(veáse \eqref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
+
+
+El resultado puede ser escrito en notacion bra-ket de la forma
+
+
+\begin{equation}
+  \vb{E}_{\Sigma}' 
+  = t_p \ket{\uvec{p}'} \bra{\uvec{p}} \ket{\vb{E}_\Sigma}
+  + t_s \ket{\uvec{s}'} \bra{\uvec{s}} \ket{\vb{E}_\Sigma}.
+\end{equation}
+
+Definimos el operador $\mathscr{P}$, que aplicado sobre el campo sobre una interfaz $\Sigma$ da el campo transmitido sobre esa misma interfaz. Es decir 
+
+\begin{equation}
+  \vb{E}'_\Sigma = \mathscr{P}\{\vb{E}_{\Sigma}\}
+\end{equation}
+
+
+Matemáticamente, el operador $\mathscr{P}$ se puede representar como
+
+\begin{equation}
+  \mathscr{P} = t_p \ket{\uvec{p}'} \bra{\uvec{p}}
+  + t_s \ket{\uvec{s}'} \bra{\uvec{s}}.
+\end{equation}
+
+
+Los coeficientes $t_s$, $t_p$ se conocen como coeficientes de Fresnel para la transmisión, y estan dados por
+
+
+\begin{equation}
+t_s = \frac{2 n_1 \cos \theta_i}{n_1 \cos \theta_i + n_2 \cos \theta_t}
+\label{eq:ts}
+\end{equation}
+
+
+\begin{equation}
+t_p = \frac{2 n_1 \cos \theta_i}{n_2 \cos \theta_i + n_1 \cos \theta_t}
+\label{eq:tp}
+\end{equation}
+
+donde los cosenos $\cos \theta_i$ y $\cos \theta_t$ son los cosenos de incidencia y de refracción respectivamente y se definen como 
+
+
+\begin{equation}
+  \cos \theta_i = - \uvec N \cdot \uvec k
+\end{equation}
+
+\begin{equation}
+  \cos \theta_t = - \uvec N \cdot \uvec{k}'
+\end{equation}
+
+
+
+
+
+
+
+% chapter  (end)
