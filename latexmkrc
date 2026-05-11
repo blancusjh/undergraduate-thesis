@@ -11,3 +11,6 @@ $out2_dir = '.';
 
 # TeX Live compatibility for separate aux/output directories.
 $emulate_aux = 1;
+
+# Ensure biber reads/writes in aux/output cache directory.
+$biber = 'biber --input-directory=.tex-cache --output-directory=.tex-cache %O %B';

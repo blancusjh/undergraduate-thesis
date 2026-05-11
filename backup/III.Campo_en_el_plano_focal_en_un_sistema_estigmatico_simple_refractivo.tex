@@ -1,0 +1,2195 @@
+\chapter{Campo en el plano focal en un sistema estigmático simple refractivo}
+
+En la sección presente, se calcula el campo en el plano focal en un sistema estigmático simple, formado por una sola superficie dióptrica. Asumimos que incide un campo esférico desde uno de los puntos estigmáticos $A$ y calcularemos el campo refractado en un plano perpendicular al eje óptico que contenga al otro punto estigmático $A'$.
+
+% ===========================================================================
+\section{Caso General}
+% ===========================================================================
+
+En esta primera parte no especificaremos aún el campo incidente como aquel emitido desde uno de los puntos estigmáticos. El objetivo es obtener una expresión general para el campo transmitido y propagado, dado un campo inicial cualquiera sobre el plano de referencia $P$. La especialización al caso en que la fuente se encuentra en $A$ se realizará posteriormente.
+
+% ---------------------------------------------------------------------------
+\subsection{Geometría del dioptrío estigmático}
+% ---------------------------------------------------------------------------
+
+Partimos primero por escribir las cantidades geométricas relevantes de las superficies cartesianas para nuestro problema.
+
+\subsubsection{Parametrización de la superficie cartesiana}
+
+Las ecuaciones paramétricas de las superficies dióptricas son
+
+\begin{equation}
+  z(\rho)
+  =
+  \frac{(O + T\rho^2)\rho^2}
+  {
+  1 + S\rho^2 + \sqrt{1 + (2S - O^2G)\rho^2}
+  },
+  \label{eq:parametrical_ovoid_z_app}
+\end{equation}
+
+\begin{equation}
+  r(\rho)
+  =
+  \sqrt{\rho^2 - z^2(\rho)}.
+  \label{eq:parametrical_ovoid_r_app}
+\end{equation}
+
+\subsubsection{Vectores de incidencia, transmisión y normal}
+
+El vector normal unitario en cada punto de la superficie considerada es
+
+\begin{equation}
+  \mathbf{\hat N}(\rho,\varphi)
+  =
+  \frac{
+  r'(\rho)\,\mathbf{\hat z}
+  -
+  z'(\rho)\,\mathbf{\hat r}(\varphi)
+  }
+  {
+  \sqrt{(r'(\rho))^2+(z'(\rho))^2}
+  }.
+  \label{eq:N_ovoid_rho_phi_app}
+\end{equation}
+
+Los vectores unitarios de incidencia y transmisión del sistema son
+
+\begin{equation}
+  \uvec{u}
+  =
+  \frac{
+  (z(\rho) - z_0)\uvec{z}
+  +
+  r(\rho)\uvec{r}(\varphi)
+  }
+  {
+  \sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}
+  },
+  \label{eq:u_for_P_in_optical_axis_app}
+\end{equation}
+
+\begin{equation}
+  \uvec{u}'
+  =
+  \frac{
+  (z(\rho) - z_i)\uvec{z}
+  +
+  r(\rho)\uvec{r}(\varphi)
+  }
+  {
+  \sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}
+  }.
+  \label{eq:u_prime_for_P_in_optical_axis_app}
+\end{equation}
+
+\subsubsection{Base local de Fresnel}
+
+De la teoría electromagnética, sabemos que para sistemas axialmente simétricos el campo sobre la interfaz $\Sigma$ que se transmite se calcula como
+
+\begin{equation}
+  \vb{E}'_{\Sigma}
+  =
+  t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}'
+  +
+  t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s},
+  \label{eq:Transmited_E_field_in_Sigma_app}
+\end{equation}
+
+donde $\uvec s$, $\uvec p$ y $\uvec p'$ se definen como
+
+\begin{equation}
+    \uvec s
+    =
+    \frac{\uvec N \times \uvec u}{\lvert  \uvec N \times \uvec u \rvert},
+    \label{eq:s_hat_def_app}
+\end{equation}
+
+\begin{equation}
+    \uvec p
+    =
+    \uvec s \times \uvec u,
+    \label{eq:p_hat_def_app}
+\end{equation}
+
+\begin{equation}
+    \uvec p'
+    =
+    \uvec s \times \uvec u'.
+    \label{eq:p_prime_hat_def}
+\end{equation}
+
+Reemplazando por las ecuaciones anteriores, se obtiene
+
+\begin{equation}
+  \uvec p
+  =
+  \frac{1}{\sqrt{\rho^2 - 2zz_0 + z_0^2}}
+  \left\{
+  (z(\rho) - z_0)\uvec{r}(\varphi)
+  -
+  r(\rho)\uvec{z}
+  \right\},
+  \label{eq:p_mode_ovoid}
+\end{equation}
+
+\begin{equation}
+  \uvec{p}'
+  =
+  \frac{1}{\sqrt{\rho^2 - 2zz_i + z_i^2}}
+  \left\{
+  (z(\rho) - z_i)\uvec{r}(\varphi)
+  -
+  r(\rho)\uvec{z}
+  \right\},
+  \label{eq:p_prime_mode_ovoid}
+\end{equation}
+
+\begin{equation}
+  \uvec{s}
+  =
+  \uvec{\phi}(\varphi).
+  \label{eq:s_mode_ovoid}
+\end{equation}
+
+\subsubsection{Cosenos de incidencia y transmisión}
+
+Los coeficientes de Fresnel de transmisión se definen en función de los cosenos de los ángulos de incidencia y de refracción como
+
+\begin{equation}
+t_s
+=
+\frac{2 n_0 \cos \theta_i}
+{n_0 \cos \theta_i + n_i \cos \theta_t},
+\label{eq:ts_app}
+\end{equation}
+
+\begin{equation}
+t_p
+=
+\frac{2 n_0 \cos \theta_i}
+{n_i \cos \theta_i + n_0 \cos \theta_t}.
+\label{eq:tp_app}
+\end{equation}
+
+Los cosenos $\cos\theta_i$ y $\cos\theta_t$ los obtenemos a partir de las siguientes expresiones:
+
+\begin{align}
+  \cos\theta_i &= -\uvec{N} \cdot \uvec{u},
+  \\
+  \cos\theta_t &= -\uvec{N} \cdot \uvec{u}'.
+\end{align}
+
+Explícitamente,
+
+\begin{equation}
+  \uvec N(\rho,\varphi)
+  =
+  \frac{
+  r'(\rho)\,\uvec z
+  -
+  z'(\rho)\,\uvec r(\varphi)
+  }
+  {
+  \sqrt{(r'(\rho))^2+(z'(\rho))^2}
+  }.
+\label{eq:N_ovoid_rho_phi_explicit}
+\end{equation}
+
+Por tanto,
+
+\begin{align}
+\cos\theta_i(\rho)
+&=
+-\,\uvec N(\rho,\varphi)\cdot\uvec u(\rho,\varphi)
+\label{eq:cos_theta_i_def_app}
+\\
+&=
+-\;
+\frac{
+\big(r'(\rho)\uvec z-z'(\rho)\uvec r(\varphi)\big)
+\cdot
+\big((z(\rho)-z_0)\uvec z+r(\rho)\uvec r(\varphi)\big)
+}
+{
+\sqrt{(r'(\rho))^2+(z'(\rho))^2}\;
+\sqrt{\rho^2-2z(\rho)z_0+z_0^2}
+}.
+\label{eq:cos_theta_i_closed_app}
+\end{align}
+
+De donde se obtiene
+
+\begin{equation}
+  \cos\theta_i(\rho)
+  =
+  \frac{
+  z'(\rho)\,r(\rho)
+  -
+  r'(\rho)\,\big(z(\rho)-z_0\big)
+  }
+  {
+  \sqrt{(r'(\rho))^2+(z'(\rho))^2}\;
+  \sqrt{\rho^2-2z(\rho)z_0+z_0^2}
+  }.
+  \label{eq:cos_theta_i_ovoid_z_and_r}
+\end{equation}
+
+Usando $r^2(\rho)=\rho^2-z^2(\rho)$, esta expresión puede escribirse como
+
+\begin{equation}
+\cos\theta_i(\rho)
+=
+\frac{
+z'(\rho)\,\big(\rho^2-z(\rho)z_0\big)
+-
+\rho\big(z(\rho)-z_0\big)
+}
+{
+\sqrt{\rho^2\big(1+z'(\rho)^2\big)-2\rho z(\rho)z'(\rho)}
+\;
+\sqrt{\rho^2-2z(\rho)z_0+z_0^2}
+}.
+\label{eq:cos_theta_i_ovoid}
+\end{equation}
+
+Luego, $\cos\theta_t$ se obtiene simplemente reemplazando $z_0$ por $z_i$:
+
+\begin{equation}
+\cos\theta_t(\rho)
+=
+\frac{
+z'(\rho)\,\big(\rho^2-z(\rho)z_i\big)
+-
+\rho\big(z(\rho)-z_i\big)
+}
+{
+\sqrt{\rho^2\big(1+z'(\rho)^2\big)-2\rho z(\rho)z'(\rho)}
+\;
+\sqrt{\rho^2-2z(\rho)z_i+z_i^2}
+}.
+\label{eq:cos_theta_t_ovoid}
+\end{equation}
+
+Así pues, los cosenos de incidencia y transmisión son
+
+\begin{equation}
+\left\{
+\begin{aligned}
+\cos\theta_i
+&=
+\frac{
+z'\,\big(\rho^2 - z\,z_0\big) - \rho\big(z - z_0\big)
+}
+{
+\sqrt{\rho^2\big(1+z'^2\big) - 2\rho z z'}\;
+\sqrt{\rho^2 - 2 z z_0 + z_0^2}
+},
+\\
+\cos\theta_t
+&=
+\frac{
+z'\,\big(\rho^2 - z\,z_i\big) - \rho\big(z - z_i\big)
+}
+{
+\sqrt{\rho^2\big(1+z'^2\big) - 2\rho z z'}\;
+\sqrt{\rho^2 - 2 z z_i + z_i^2}
+}.
+\end{aligned}
+\right.
+\label{cosines_ovoid_compact}
+\end{equation}
+
+Usando las definiciones
+
+\begin{align}
+l_0
+&=
+\sqrt{\rho^2 - 2zz_0 + z_0^2},
+\\
+l_i
+&=
+\sqrt{\rho^2 - 2zz_i + z_i^2},
+\label{eq:l0_li_definitions}
+\end{align}
+
+que son las distancias $\overline{AQ}$ y $\overline{A'Q}$ respectivamente, y definiendo también
+
+\begin{equation}
+  s'
+  :=
+  \frac{ds}{d\rho}
+  =
+  \sqrt{(z')^2 + (r')^2},
+  \label{eq:ds_drho}
+\end{equation}
+
+los cosenos de incidencia y transmisión quedan expresados como
+
+\begin{equation}
+\begin{aligned}
+  \cos\theta_i
+  &=
+  \frac{1}{s'l_0}
+  \big\{
+  z'\big(\rho^2 - z z_0\big)
+  -
+  \rho\big(z - z_0\big)
+  \big\},
+\\
+  \cos\theta_t
+  &=
+  \frac{1}{s'l_i}
+  \big\{
+  z'\big(\rho^2 - z z_i\big)
+  -
+  \rho\big(z - z_i\big)
+  \big\}.
+\end{aligned}
+\label{cosines_ovoid}
+\end{equation}
+
+\subsubsection{Coeficientes de Fresnel sobre la superficie}
+
+Reemplazando \eqref{cosines_ovoid_compact} en \eqref{eq:ts_app} y en \eqref{eq:tp_app}, obtenemos los coeficientes de Fresnel para la transmisión para la superficie cartesiana parametrizada por los parámetros $G,O,T,S$:
+
+\begin{equation}
+ t_s
+ =
+ \frac{
+ 2 \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\}
+ }
+ {
+ \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\}
+ +
+ \eta \frac{l_0}{l_i}
+ \left\{ z'(\rho^2 - zz_i) - \rho(z - z_i) \right\}
+ },
+  \label{eq:t_s_ovoid}
+\end{equation}
+
+\begin{equation}
+ t_p
+ =
+ \frac{
+ 2 \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\}
+ }
+ {
+ \eta
+ \left\{ z'(\rho^2 - zz_0) - \rho(z - z_0) \right\}
+ +
+ \frac{l_0}{l_i}
+ \left\{ z'(\rho^2 - zz_i) - \rho(z - z_i) \right\}
+ }.
+  \label{eq:t_p_ovoid}
+\end{equation}
+
+Con esto, terminamos de proporcionar la forma exacta de las cantidades relevantes necesarias para el cálculo del campo eléctrico en el plano focal en función de la función sagita que define el dioptrío estigmático de interés.
+
+% ---------------------------------------------------------------------------
+\subsection{Campo eléctrico en el plano focal}
+% ---------------------------------------------------------------------------
+
+El problema que se resolverá en la presente subsección es el de determinar el campo eléctrico en el plano focal dado un campo inicial cualquiera, el cual posteriormente especificaremos como el campo incidente correspondiente a una fuente puntual centrada en uno de los puntos estigmáticos, pero en principio los cálculos aquí presentados son de una naturaleza general.
+
+\textit{Denotaremos como $\vb E$ en general al campo incidente, y a $\vb E'$ el campo tras la refracción.}
+
+Sea $\vb{E}_p(\vb{r})$ el campo eléctrico en el plano $P$. Calcúlese el campo en $P'$ a una distancia $d$ del plano $P$.
+
+Transfiérase $\vb{E}_p$ a la superficie $\Sigma$ adicionando la fase que acumula el campo en su trayecto. Considerar que el campo describe una línea recta en su recorrido de $P$ a $Q$ y asumir que dicho recorrido es aproximadamente horizontal, justificando esto porque consideraremos como primera aproximación un ángulo $\alpha$ moderado.
+
+Con tales consideraciones, el campo $\vb{E}_{\Sigma}$ sobre $\Sigma$ estará dado por
+
+\begin{equation}
+    \vb{E}_{\Sigma}(\vb{r})
+    =
+    e^{ikz(\vb{r})} \vb{E}_p(\vb{r}).
+    \label{eq:Ep_from_E_Sigma}
+\end{equation}
+
+Equivalentemente,
+
+\begin{equation}
+    \vb{E}_{\Sigma}(r,\phi,z(r))
+    =
+    e^{ikz(r)} \vb{E}_p(r,\phi,z=0).
+\end{equation}
+
+Así, calculamos el campo transmitido sobre la interfaz $\Sigma$:
+
+\begin{equation}
+    \vb{E}'_{\Sigma}(\vb{q})
+    =
+    t_p (\vb{E}_{\Sigma} \cdot \uvec{p}) \uvec{p}'
+    +
+    t_s (\vb{E}_{\Sigma} \cdot \uvec{s}) \uvec{s}.
+\label{eq:E_Sigma_Prime_in_terms_of_E_Sigma}
+\end{equation}
+
+Descomponiendo el campo en la interfaz en sus componentes cilíndricas,
+
+\begin{equation}
+    \vb{E}_{\Sigma}
+    =
+    E_r \uvec{r}
+    +
+    E_{\phi} \uvec{\phi}
+    +
+    E_z \uvec{z}.
+\end{equation}
+
+Calculamos las proyecciones sobre los vectores de la base de Fresnel $\uvec p$ y $\uvec \phi$, donde $\uvec{s}=\uvec{\phi}$:
+
+\begin{equation}
+    \vb{E}_{\Sigma} \cdot \uvec{p}
+    =
+    \frac{1}{\sqrt{\rho^2 - 2zz_0 + z_0^2}}
+    \big\{
+    (z(\rho) - z_0) E_r
+    -
+    r(\rho) E_z
+    \big\},
+\end{equation}
+
+\begin{equation}
+    \vb{E}_{\Sigma} \cdot \uvec{\phi}
+    =
+    E_{\phi}.
+\end{equation}
+
+Sustituyendo en la expresión del campo transmitido,
+
+\begin{equation}
+    \vb{E}'_{\Sigma}
+    =
+    t_p
+    \frac{
+    \big\{ (z(\rho) - z_0) E_r - r(\rho) E_z \big\}
+    }
+    {
+    \sqrt{\rho^2 - 2zz_0 + z_0^2}
+    \sqrt{\rho^2 - 2zz_i + z_i^2}
+    }
+    \big\{
+    (z(\rho) - z_i) \uvec{r}
+    -
+    r(\rho) \uvec{z}
+    \big\}
+    +
+    t_s E_{\phi} \uvec{\phi}.
+\end{equation}
+
+Transfiérase el campo de vuelta a $P$ para hacer uso de los métodos de propagación; llamamos a este ``campo virtual transmitido'' en $P$ como $\vb{E}_P'$:
+
+\begin{equation}
+    \vb{E}_p'
+    =
+    e^{-inkz(r)} \vb{E}_{\Sigma}'.
+\end{equation}
+
+Reemplazando según \eqref{eq:E_Sigma_Prime_in_terms_of_E_Sigma},
+
+\begin{align}
+    \vb{E}_p'
+    &=
+    e^{-inkz(r)}
+    \big\{
+    t_p (\vb{E}_{\Sigma} \cdot \uvec{p}) \uvec{p}'
+    +
+    t_s (\vb{E}_{\Sigma} \cdot \uvec{\phi}) \uvec{\phi}
+    \big\}
+    \nonumber
+    \\
+    &=
+    e^{-inkz(r)}
+    \big\{
+    t_p (e^{ikz(r)} \vb{E}_p \cdot \uvec{p}) \uvec{p}'
+    +
+    t_s (e^{ikz(r)} \vb{E}_p \cdot \uvec{\phi}) \uvec{\phi}
+    \big\}.
+\end{align}
+
+Por tanto,
+
+\begin{equation}
+    \vb{E}_p'
+    =
+    e^{ik(1-n)z(r)}
+    \big\{
+    t_p (\vb{E}_p \cdot \uvec{p}) \uvec{p}'
+    +
+    t_s (\vb{E}_p \cdot \uvec{\phi}) \uvec{\phi}
+    \big\}.
+\end{equation}
+
+Definimos el campo inicial en el plano $z=0$:
+
+\begin{equation}
+    \vb{E}(\vb r, z=0)
+    :=
+    \vb{E}_p(\vb r).
+\end{equation}
+
+Y lo propagamos hasta el plano focal $z=f$:
+
+\begin{equation}
+    \vb{E}'(r, z=f)
+    =
+    \mathscr{R}_n [f] \big\{ \vb{E}_p'(r) \big\},
+\end{equation}
+
+donde $\mathscr R_n[f]$ denota el operador de propagación que toma un campo en un plano dado y da el campo en otro plano paralelo y a una distancia $f$ al primero en un medio de índice de refracción $n$.
+
+Tomando como válida en nuestro estudio la aproximación de Fresnel, que hemos usado implícitamente cuando transferimos los campos del plano al dioptrío y viceversa, tenemos que el operador de propagación está dado por
+
+\begin{equation}
+    \mathscr{R}_n [f] \{ U(x,y) \}
+    =
+    n\frac{e^{inkf}}{i \lambda f}
+    \iint_{-\infty}^{\infty}
+    U(x',y')
+    \exp\!\left[
+        \frac{ink}{2f}
+        \lVert \vb{r}-\vb{r}' \rVert^2
+    \right]
+    d\vb{r}'.
+\end{equation}
+
+Por lo tanto, el campo eléctrico en el plano focal está dado por
+
+\begin{equation}
+    \vb{E}'(r, z=f)
+    =
+    n\frac{e^{inkf}}{i \lambda f}
+    \iint_{-\infty}^{\infty}
+    \vb{E}_p'(r')
+    \exp\!\left[
+        \frac{ink}{2f}
+        \lVert \vb{r}-\vb{r}' \rVert^2
+    \right]
+    d\vb{r}'.
+\end{equation}
+
+O equivalentemente,
+
+\begin{equation}
+    \vb{E}'(r, z)
+    =
+    n\frac{e^{inkz}}{i \lambda z}
+    \iint_{-\infty}^{\infty}
+    \exp\!\left[
+        \frac{ink}{2z}
+        \lVert \vb{r}-\vb{r}' \rVert^2
+        +
+        ik(1-n)z(r')
+    \right]
+    \Big\{
+        t_p (\vb{E}_P \cdot \uvec{p}) \uvec{p}'
+        +
+        t_s (\vb{E}_P \cdot \uvec{\phi}) \uvec{\phi}
+    \Big\}
+    dx'dy'.
+\label{eq:E_field_at_z_3D}
+\end{equation}
+
+Esta expresión nos da el campo en el plano paralelo a $P$ a una distancia $z$, dado el campo inicial en $P$.
+
+Este resultado puede ser también expresado en términos de una transformada de Fourier expandiendo el kernel de Fresnel:
+
+\begin{equation}
+\mathbf{E}'(\mathbf r,z)
+=
+n\frac{e^{inkz}}{i\lambda z}\,
+\exp\!\left[
+\frac{ink}{2z}\|\mathbf r\|^2
+\right]
+\,
+\mathscr F\{\mathbf P\}
+\left(
+\frac{n\mathbf r}{\lambda z}
+\right).
+\label{E_in_observation_plane_as_FT_3D}
+\end{equation}
+
+Donde,
+
+\begin{equation}
+\mathbf P(\|\mathbf r'\|)
+=
+\exp\!\left[
+\frac{ink}{2z}\|\mathbf r'\|^2
++
+ik(1-n)z(\|\mathbf r'\|)
+\right]
+\left\{
+t_p (\mathbf{E}_P\cdot \hat{\boldsymbol p}) \hat{\boldsymbol p}'
++
+t_s (\mathbf{E}_P\cdot \hat{\boldsymbol\phi}) \hat{\boldsymbol\phi}
+\right\}.
+\label{eq:P_definition}
+\end{equation}
+
+Defínase un sistema coordenado esférico centrado en el foco del sistema, que es el punto $A'$; llámense por $\uvec R_{A'}$, $\uvec \theta_{A'}$, $\uvec \phi$ los vectores curvilíneos asociados al sistema.
+
+Los estados de polarización $\uvec p'$ y $\uvec s$ son la polarización definida por los vectores base del sistema esférico centrado en $A'$ tangentes a la esfera, esto es $\uvec \theta_{A'}$ y $\uvec \phi$ respectivamente, como puede ser comprobado con facilidad desde las expresiones \eqref{eq:p_prime_mode_ovoid} y \eqref{eq:s_mode_ovoid}.
+
+De modo que en el sistema esférico centrado en $A'$ la base de polarización queda escrita como
+
+\begin{align}
+\uvec{s}
+&=
+\uvec{\phi}
+=
+-\sin\phi\,\uvec{x}
++
+\cos\phi\,\uvec{y},
+\\
+\uvec{p}'
+&=
+\uvec{\theta}_{A'}
+=
+\cos\theta_{A'}
+(\cos\phi\,\uvec{x}+\sin\phi\,\uvec{y})
+-
+\sin\theta_{A'}\,\uvec{z}.
+\label{s_p_in_A_prime_system}
+\end{align}
+
+Pasamos pues, sin pérdida de generalidad, al problema transversal; denotamos $\vb E'_\perp$ como la parte transversal de $\vb E'$.
+
+De \eqref{eq:E_Sigma_Prime_in_terms_of_E_Sigma} se sigue que
+
+\begin{equation}
+\mathbf{E}'_\perp(\mathbf r,z)
+=
+n\frac{e^{inkz}}{i\lambda z}\,
+\exp\!\left[
+\frac{ink}{2z}\|\mathbf r\|^2
+\right]
+\,
+\mathscr F\{\mathbf P_\perp\}
+\left(
+\frac{n\mathbf r}{\lambda z}
+\right).
+\label{eq:E_field_as_FT}
+\end{equation}
+
+donde
+
+\begin{equation}
+\mathbf P_\perp(\|\mathbf r'\|)
+=
+\exp\!\left[
+\frac{ink}{2z}\|\mathbf r'\|^2
++
+ik(1-n)z(\|\mathbf r'\|)
+\right]
+\left\{
+t_p E_{P,p} \uvec p'_\perp
++
+t_s E_{P,\phi} \uvec \phi
+\right\}.
+\end{equation}
+
+Aquí $\uvec p'_\perp$ y $\uvec s$ denotan las proyecciones transversales de las polarizaciones $\uvec p'$ y $\uvec s$ respectivamente.
+
+% ===========================================================================
+\section{Caso en el que el campo incidente es emitido desde una fuente puntual en el punto estigmático $A$}
+% ===========================================================================
+
+Para analizar nuestro sistema de interés ---un sistema estigmático formado de un único dioptrío---, la función $z(r)$ debe corresponder a la sagita de una superficie cartesiana, y el campo inicial debe corresponder a uno que se emita desde el punto estigmático $A$.
+
+% ---------------------------------------------------------------------------
+\subsection{Forma general del campo incidente cuya fuente es $A$}
+% ---------------------------------------------------------------------------
+
+El campo incidente es aquel que tiene como fuente el primer punto estigmático, el punto $A$. Asumiendo que el campo es uno esférico con centro en $A$, en general escribimos el campo incidente $\vb E$ en un punto $V$ cualquiera como
+
+\begin{equation}
+  \vb E (V)
+  =
+  \mathbb{E}_0(V)
+  \frac{e^{ik\overline{AV}}}{\overline{AV}},
+  \label{eq:initial_field}
+\end{equation}
+
+que evaluado en $\Sigma$ y usando la definición \eqref{eq:l0_li_definitions},
+
+\begin{equation}
+  \vb E_\Sigma (\vb r)
+  =
+  \mathbb{E}_0(\vb r)
+  \frac{e^{ik\ell_0}}{\ell_0},
+  \label{eq:initial_field_sigma}
+\end{equation}
+
+donde $\ell_0$ se define según \eqref{eq:l0_li_definitions}, y $\mathbb E_0$ es
+
+\begin{equation}
+  \mathbb E_0 (\vb r)
+  =
+  \mathscr E_\theta \uvec \theta_A
+  +
+  \mathscr E_\phi \uvec \phi_A,
+  \label{eq:mathbb_E_0_definition}
+\end{equation}
+
+que asegura que se cumpla la condición de transversalidad. De forma equivalente se escribe
+
+\begin{equation}
+  \mathbb E_0 (\vb r)
+  =
+  \mathscr E_\theta \uvec p
+  +
+  \mathscr E_\phi \uvec s.
+  \label{eq:mathbb_E_0_definition_ps}
+\end{equation}
+
+De la relación \eqref{eq:Ep_from_E_Sigma},
+
+\begin{equation}
+  \vb E_p (\vb r)
+  =
+  e^{-ikz(r)}
+  \mathbb{E}_0(\vb r)
+  \frac{e^{ik\ell_0}}{\ell_0}.
+  \label{eq:initial_field_in_p}
+\end{equation}
+
+De esta manera queda expresado el campo incidente sobre el plano $P$ de un campo cuya fuente es puntual y ubicada en $A$. Si se desea en otro punto del espacio cualquiera $H$, basta con remplazar $\ell_0$ en \eqref{eq:initial_field_in_p} por $\overline{AH}$. De cualquier manera, el campo incidente queda determinado por dos funciones reales, $\mathscr E_\theta$ y $\mathscr E_\phi$.
+
+% ---------------------------------------------------------------------------
+\subsection{Campo eléctrico en el plano focal}
+% ---------------------------------------------------------------------------
+
+Reemplazando en \eqref{eq:E_field_as_FT}, se tiene que
+
+\begin{equation}
+\mathbf{E}'_\perp(\mathbf r,z)
+=
+n\frac{e^{inkz}}{i\lambda z}\,
+\exp\!\left[
+\frac{ink}{2z}\|\mathbf r\|^2
+\right]
+\,
+\mathscr F
+\left\{
+\frac{1}{\ell_0}
+e^{i\frac{nk}{2 z}r'^2 - inkz(r') + ik\ell_0}
+\left\{
+t_p \mathbb E_0 \cdot \uvec p \, \uvec p'_\perp
++
+t_s \mathbb E_0 \cdot \uvec s \, \uvec s
+\right\}
+\right\}
+\left(
+\frac{n\mathbf r}{\lambda z}
+\right).
+\end{equation}
+
+Dado que las polarizaciones $\uvec p$ y $\uvec s$ coinciden con los vectores angulares de la base esférica centrada en $A$, $\uvec \theta_A$ y $\uvec \phi$, podemos escribir
+
+\begin{equation}
+\mathbf{E}'_\perp(\mathbf r,z)
+=
+n\frac{e^{inkz}}{i\lambda z}e^{i\frac{nk}{2z}r^2}
+\,
+\mathscr F
+\left\{
+\frac{1}{\ell_0}
+e^{i\frac{nk}{2 z}r'^2 - inkz(r') + ik\ell_0}
+\left\{
+t_p \mathscr E_{\theta} \uvec{r}
++
+t_s \mathscr E_{\phi} \uvec \phi
+\right\}
+\right\}
+\left(
+\frac{n\mathbf r}{\lambda z}
+\right).
+\label{eq:E_perp_for_ovoid_in_prog}
+\end{equation}
+
+Con las definiciones
+
+\begin{equation}
+  \Phi(r)
+  =
+  \frac{n}{2z}r^2
+  -
+  nz(r)
+  +
+  \ell_0,
+\end{equation}
+
+\begin{equation}
+  \mathbb T
+  =
+  \frac{1}{\ell_0}
+  \left\{
+  t_p \mathscr E_\theta \uvec r
+  +
+  t_s \mathscr E_\phi \uvec \phi
+  \right\},
+\end{equation}
+
+la ecuación \eqref{eq:E_perp_for_ovoid_in_prog} queda expresada como
+
+\begin{equation}
+\mathbf{E}'_\perp(\mathbf r,z)
+=
+n\frac{e^{inkz}}{i\lambda z}e^{i\frac{nk}{2z}r^2}
+\,
+\mathscr F
+\left\{
+e^{ik\Phi(r')} \mathbb T(\vb r')
+\right\}
+\left(
+\frac{n\mathbf r}{\lambda z}
+\right).
+\label{eq:E_field_perp_no_phase_replacement}
+\end{equation}
+
+Para el término $\ell_0$ dividiendo en la amplitud, lo aproximamos simplemente a $z_0$; para la fase la aproximación ha de ser más cuidadosa. En concreto, partiendo de
+
+\begin{equation}
+    \ell_0
+    =
+    \sqrt{x^2 + y^2 + (z(r) - z_0)^2}
+    =
+    \sqrt{r^2 + (z(r) - z_0)^2},
+\end{equation}
+
+extrayendo el término $(z(r) - z_0)$ para realizar una expansión binomial en el régimen paraxial, $r \ll |z(r)-z_0|$:
+
+\begin{align}
+    \ell_0
+    &=
+    (z(r) - z_0)
+    \sqrt{
+    1
+    +
+    \left(
+    \frac{r}{z(r) - z_0}
+    \right)^2
+    }
+    \nonumber
+    \\
+    &=
+    (z(r) - z_0)
+    \left\{
+    1
+    +
+    \frac{1}{2}
+    \left(
+    \frac{r}{z(r) - z_0}
+    \right)^2
+    +
+    \dots
+    \right\}
+    \nonumber
+    \\
+    &\approx
+    (z(r) - z_0)
+    +
+    \frac{1}{2}
+    \frac{r^2}{z(r) - z_0}.
+\end{align}
+
+Expandiendo el denominador del segundo término, asumiendo que la sagita es pequeña respecto a la distancia al objeto, $z(r)\ll |z_0|$:
+
+\begin{align}
+    \ell_0
+    &=
+    -z_0
+    +
+    z(r)
+    -
+    \frac{r^2}{2z_0\left(1-\frac{z(r)}{z_0}\right)}
+    \nonumber
+    \\
+    &=
+    -z_0
+    +
+    z(r)
+    -
+    \frac{r^2}{2z_0}
+    \left\{
+    1
+    +
+    \frac{z(r)}{z_0}
+    +
+    \left(\frac{z(r)}{z_0}\right)^2
+    +
+    \dots
+    \right\}
+    \nonumber
+    \\
+    \ell_0
+    &=
+    -z_0
+    +
+    z(r)
+    -
+    \frac{r^2}{2z_0}
+    +
+    \mathcal{O}(r^4).
+\end{align}
+
+Recordando la definición de la cantidad $\Phi$,
+
+\begin{equation}
+    \Phi
+    =
+    \frac{n}{2z}r^2
+    +
+    \ell_0
+    -
+    nz(r),
+  \label{eq:phase_definition}
+\end{equation}
+
+y aplicando la aproximación para $\ell_0$,
+
+\begin{align}
+  \Phi
+  &=
+  \frac{n}{2z}r^2
+  +
+  \left(
+  -z_0
+  +
+  z(r)
+  -
+  \frac{r^2}{2z_0}
+  \right)
+  -
+  nz(r)
+  +
+  \mathscr O(r^4)
+  \nonumber
+  \\
+  &=
+  -z_0
+  +
+  (1-n)z(r)
+  +
+  \frac{1}{2}
+  \left(
+  \frac{n}{z}
+  -
+  \frac{1}{z_0}
+  \right)r^2
+  +
+  \mathscr O(r^4).
+\end{align}
+
+Procedemos reemplazando la forma de la sagita $z(r)$ en la aproximación paraxial:
+
+\begin{equation}
+    z(r)
+    \approx
+    \frac{O}{2}r^2
+    +
+    \mathcal{O}(r^4),
+\end{equation}
+
+donde $O$ es uno de los parámetros de la parametrización GOTS de las superficies cartesianas que se desarrolló en \cite{singlet2020}, cuyas definiciones escribimos en el presente trabajo en el apéndice \ref{apx:ovoid_implicit_deduction}, y el desarrollo en series de la sagita, $\ell_0$, entre otras cantidades relevantes, se realiza con más detalle en \ref{apx:ovoids_series}. Asumiendo que el índice inicial es $n_i=n$, el índice de salida es $n_o=1$, y la posición de la imagen estigmática es $z_i=f$, el parámetro $O$ está dado por
+
+\begin{equation}
+    O
+    =
+    \frac{n_i z_0 - n_o z_i}{z_i z_0 (n_i - n_o)}
+    =
+    \frac{1}{n - 1}
+    \left(
+    \frac{n}{f}
+    -
+    \frac{1}{z_0}
+    \right),
+\end{equation}
+
+de modo que
+
+\begin{equation}
+    (1-n)O
+    =
+    \frac{1}{z_0}
+    -
+    \frac{n}{f}.
+\end{equation}
+
+Reemplazando el término de la sagita en la expresión de la fase total $\Phi$:
+
+\begin{align}
+    \Phi
+    &=
+    -z_0
+    +
+    \frac{1}{2}
+    \left(
+    \frac{n}{z}
+    -
+    \frac{1}{z_0}
+    \right)r^2
+    +
+    (1-n)
+    \left(
+    \frac{O}{2}r^2
+    \right)
+    \nonumber
+    \\
+    &=
+    -z_0
+    +
+    \frac{1}{2}
+    \left(
+    \frac{n}{z}
+    -
+    \frac{1}{z_0}
+    \right)r^2
+    +
+    \frac{1}{2}
+    \left(
+    \frac{1}{z_0}
+    -
+    \frac{n}{f}
+    \right)r^2
+    \nonumber
+    \\
+    &=
+    -z_0
+    +
+    \frac{1}{2}
+    \left(
+    \frac{n}{z}
+    -
+    \frac{n}{f}
+    \right)r^2
+    +
+    \mathcal{O}(r^4).
+\end{align}
+
+Es evidente a partir de este resultado que, cuando la distancia de observación $z$ coincide con el foco del sistema, $z=f$, el término cuadrático en $r$ de la fase se cancela exactamente. Esto significa que la fase de la pupila se vuelve constante, $\Phi\simeq -z_0$, y podemos hacerla $1$ sin pérdida de generalidad.
+
+Reemplazando la fase de pupila por una fase constante en la ecuación \eqref{eq:E_field_perp_no_phase_replacement}, obtenemos
+
+\begin{equation}
+  \vb E'_\perp(\vb r, f)
+  =
+  \frac{n}{i\lambda f}e^{inkf}e^{i\frac{nk}{2f}r^2}
+  \mathscr F
+  \Big\{
+  \mathbb T(r', \phi')
+  \Big\}
+  \left(
+  \frac{n}{\lambda f}\vb r
+  \right).
+  \label{eq:E_field_pupil_phase_and_TT}
+\end{equation}
+
+El campo eléctrico en el plano focal queda determinado puramente por la transformada de Fourier del campo transmitido $\mathbb{T}$, que puede ser interpretada como el campo sobre la superficie esférica centrada en $A'$ tangente al dioptrío, que se obtiene del campo eléctrico en el frente de onda incidente que es esférico centrado en $A$. Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió según la condición estigmática.
+
+Tradicionalmente se ha adjudicado la existencia de aberraciones en el sistema por la diferencia que hay entre una fase constante en una esfera centrada en el foco del sistema; acá no hay aberración de ese tipo, pues el dioptrío estigmático asegura que el campo mantenga constante su fase en el frente. Sin embargo, dado que el campo en el plano focal es proporcional a $\mathscr F\{\mathbb T\}$, y $\mathbb T$ de manera general puede representarse como
+
+\begin{equation}
+  \mathbb T
+  =
+  \mathbb M \vb{E},
+\end{equation}
+
+con
+
+\begin{equation}
+  \mathbb M
+  =
+  \ket{p'} \bra p\, t_p
+  +
+  \ket{s} \bra s\, t_s,
+  \label{eq:def_M_bb}
+\end{equation}
+
+el campo en el plano focal es proporcional a
+
+\begin{equation}
+  \vb{E}'
+  \propto
+  \mathscr F \{\mathbb M \vb E\}.
+\end{equation}
+
+De esta manera, aun cuando la fase de pupila sea constante, la amplitud y el estado de polarización transmitidos pueden variar sobre la pupila por la acción de los coeficientes de Fresnel y de los proyectores locales de polarización. Este es el punto de partida para estudiar, en distintas bases de polarización, cómo se manifiestan las aberraciones de amplitud asociadas al proceso de refracción.
+
+% ---------------------------------------------------------------------------
+\section{Reducción del problema a la parte transversal}
+% ---------------------------------------------------------------------------
+
+Si bien el resultado \eqref{eq:E_field_pupil_phase_and_TT} sugiere un campo tridimensional, el problema puede restringirse al plano perpendicular al eje óptico mediante la condición de transversalidad, que establece una dependencia entre el campo transversal y longitudinal, permitiendo determinar el segundo conociendo el primero.
+
+Escribiendo la condición de transversalidad como que el campo ha de ser tangente al vector radial unitario con origen en $A'$,
+
+\begin{equation}
+\vb{E}\cdot\uvec{R}_{A'}=0,
+\label{eq:transversality_condition}
+\end{equation}
+
+lo que implica
+
+\begin{equation}
+E_r\sin\theta_{A'} + E_z\cos\theta_{A'} = 0,
+\end{equation}
+
+y por tanto
+
+\begin{equation}
+E_z
+=
+-\tan\theta_{A'}\,E_r.
+\label{eq:Ez_from_Er}
+\end{equation}
+
+Esto es equivalente a
+
+\begin{equation}
+  E_z
+  =
+  -\frac{r}{z_i} \,E_r.
+\label{eq:Ez_from_Er_rz}
+\end{equation}
+
+De esta manera, el campo transversal determina completamente el campo longitudinal, y por ende el campo vectorial $\vb E$ completamente.
+
+La intensidad total en la pantalla está dada por
+
+\begin{equation}
+  I
+  =
+  I_\perp
+  +
+  I_z,
+  \label{eq:Intensity_in_Focal_Plane_decomp}
+\end{equation}
+
+donde la contribución transversal $I_\perp$ es
+
+\begin{equation}
+    I_\perp(\vb{r}, f)
+    =
+    \|\vb{E}_\perp(\vb{r}, f)\|^2.
+\end{equation}
+
+Si la parte transversal del campo se escribe como
+
+\begin{equation}
+  \vb E_\perp
+  =
+  E_r \uvec r
+  +
+  E_\phi \uvec \phi ,
+\end{equation}
+
+entonces
+
+\begin{equation}
+  I_\perp(\vb r, f)
+  =
+  |E_r(\vb r, f)|^2
+  +
+  |E_\phi(\vb r, f)|^2 .
+\end{equation}
+
+La componente longitudinal se determina por la dependencia entre $E_z$ y la parte radial del campo transversal, como se sigue de la ecuación \eqref{eq:Ez_from_Er}. En particular,
+
+\begin{equation}
+  E_z(\vb r, f)
+  =
+  -\tan\theta\,
+  E_r(\vb r, f),
+\end{equation}
+
+de modo que
+
+\begin{equation}
+  I_z(\vb r, f)
+  =
+  |E_z(\vb r, f)|^2
+  =
+  \tan^2\theta\,
+  |E_r(\vb r, f)|^2 .
+\end{equation}
+
+La intensidad total en la pantalla focal no se obtiene sumando cuadráticamente las intensidades, sino sumando las contribuciones ortogonales del campo eléctrico. Por tanto,
+
+\begin{equation}
+  I(\vb r, f)
+  =
+  I_\perp(\vb r, f)
+  +
+  I_z(\vb r, f).
+  \label{eq:Intensity_in_Focal_Plane}
+\end{equation}
+
+Usando las expresiones anteriores, queda
+
+\begin{equation}
+  I(\vb r, f)
+  =
+  |E_r(\vb r, f)|^2
+  +
+  |E_\phi(\vb r, f)|^2
+  +
+  \tan^2\theta\,
+  |E_r(\vb r, f)|^2 ,
+\end{equation}
+
+o equivalentemente,
+
+\begin{equation}
+  I(\vb r, f)
+  =
+  \sec^2\theta\,
+  |E_r(\vb r, f)|^2
+  +
+  |E_\phi(\vb r, f)|^2 .
+\end{equation}
+
+En la representación circular,
+
+\begin{equation}
+  I(\vb r,f)
+  =
+  |E_L|^2
+  +
+  |E_R|^2
+  +
+  \frac{\tan^2\theta}{2}
+  \left|
+  e^{-i\phi}E_L
+  +
+  e^{i\phi}E_R
+  \right|^2 .
+  \label{eq:total_intensity_circular_basis_compact}
+\end{equation}
+
+% ---------------------------------------------------------------------------
+\section{Resultados especiales en las distintas bases de polarización}
+% ---------------------------------------------------------------------------
+
+Para hacer explícito el contenido del resultado base-independiente \eqref{eq:E_field_pupil_phase_and_TT} en cada representación de polarización, descomponemos la transformada de Fourier en sus partes angular y radial, $\mathscr{F} = \mathscr{F}_r \circ \mathscr{F}_\phi$, donde $\mathscr{F}_\phi$ denota la integral sobre el ángulo azimutal del plano de la pupila y $\mathscr{F}_r$ la integral radial subsiguiente. Esta separación permite, en cada base de interés, calcular primero la acción angular del operador $\mathbb{M}$ definido en \eqref{eq:def_M_bb} y, posteriormente, cerrar la integral radial sobre el campo incidente.
+
+En cada subsección que sigue se procede en dos pasos. Primero se expresa $\mathbb{M}$ en la base elegida y se calcula la estructura angular que introduce en la transformada de Fourier. Posteriormente se considera el caso reductivo en el que las componentes del campo incidente en esa misma base presentan simetría azimutal, lo que cierra la integral radial en transformadas de Hankel del orden correspondiente.
+
+Debe enfatizarse que esta simetría azimutal depende de la base escogida. Un campo con componentes constantes en la base cartesiana no tiene, en general, componentes cilíndricas independientes de $\phi'$, y un campo radialmente polarizado no tiene, en general, componentes cartesianas independientes de $\phi'$. Por tanto, cada reducción corresponde a una clase particular de campos incidentes.
+
+Definimos la transformada de Hankel de orden $m$ como
+
+\begin{equation}
+\mathscr H_m[f](q)
+=
+\int_0^\infty
+f(r')J_m(qr')r'\,dr',
+\label{eq:def_Hankel_Transform_m_order}
+\end{equation}
+
+donde $q$ es la frecuencia radial conjugada a $r'$ en la transformada de Fourier bidimensional.
+
+También usaremos las combinaciones
+
+\begin{equation}
+t_+
+=
+t_p+t_s,
+\qquad
+t_-
+=
+t_p-t_s.
+\label{eq:t_plus_t_minus_def}
+\end{equation}
+
+% ···········································································
+\subsection{Base circular}
+% ···········································································
+
+Partiendo del resultado \eqref{eq:E_field_pupil_phase_and_TT}, expresamos los vectores $\uvec p'_\perp$ y $\uvec s_\perp$ en la base circular.
+
+Los vectores $\uvec s_\perp$ y $\uvec p'_\perp$ están dados por
+
+\begin{align}
+\uvec{s}_\perp
+&=
+\uvec{\phi}
+=
+-\sin\phi\,\uvec{x}
++
+\cos\phi\,\uvec{y},
+\\
+\uvec{p}'_\perp
+&=
+\cos\phi\,\uvec{x}
++
+\sin\phi\,\uvec{y}.
+\end{align}
+
+En la base circular definida por
+
+\begin{equation}
+\begin{aligned}
+  \ket L
+  &=
+  \frac{1}{\sqrt 2}
+  \left\{
+  \uvec x + i \uvec y
+  \right\},
+  \\
+  \ket R
+  &=
+  \frac{1}{\sqrt 2}
+  \left\{
+  \uvec x - i \uvec y
+  \right\},
+  \label{eq:def_of_circular_basis}
+\end{aligned}
+\end{equation}
+
+las proyecciones perpendiculares de la base de Fresnel se expresan como
+
+\begin{align}
+\uvec{s}_\perp
+&=
+\frac{i}{\sqrt{2}}
+\left(
+e^{i\phi}\ket{L}
+-
+e^{-i\phi}\ket{R}
+\right),
+\\
+\uvec{p}'_\perp
+&=
+\frac{1}{\sqrt{2}}
+\left(
+e^{-i\phi}\ket{L}
++
+e^{i\phi}\ket{R}
+\right).
+\end{align}
+
+Por tanto,
+
+\begin{equation}
+\vb{T}_\perp
+=
+\frac{1}{\sqrt{2}}
+\Big\{
+(t_p E_p + i t_s E_\phi)e^{i\phi}\ket{L}
++
+(t_p E_p - i t_s E_\phi)e^{-i\phi}\ket{R}
+\Big\}.
+\end{equation}
+
+Para que la integral quede completamente formulada en términos de la base circular, escribimos las componentes del campo incidente en la representación correspondiente:
+
+\begin{align}
+E_p = E_r
+&=
+\frac{1}{\sqrt{2}}
+\left(
+e^{-i\phi}E_L
++
+e^{i\phi}E_R
+\right),
+\label{eq:Ep_in_LR_basis}
+\\
+E_\phi
+&=
+\frac{i}{\sqrt{2}}
+\left(
+e^{i\phi}E_R
+-
+e^{-i\phi}E_L
+\right).
+\label{eq:Ephi_in_LR_basis}
+\end{align}
+
+Por lo tanto,
+
+\begin{equation}
+t_pE_p+i t_sE_\phi
+=
+\frac{1}{\sqrt2}
+\left[
+(t_p+t_s)e^{-i\phi}E_L
++
+(t_p-t_s)e^{i\phi}E_R
+\right],
+\end{equation}
+
+\begin{equation}
+t_pE_p-i t_sE_\phi
+=
+\frac{1}{\sqrt2}
+\left[
+(t_p-t_s)e^{-i\phi}E_L
++
+(t_p+t_s)e^{i\phi}E_R
+\right].
+\end{equation}
+
+Entonces,
+
+\begin{equation}
+\vb T_\perp
+=
+\frac{1}{2}
+\Big\{
+\big[(t_p+t_s)E_L+(t_p-t_s)e^{2i\phi}E_R\big]\ket L
++
+\big[(t_p-t_s)e^{-2i\phi}E_L+(t_p+t_s)E_R\big]\ket R
+\Big\}.
+\label{eq:T_perp_circular_basis}
+\end{equation}
+
+Definiendo
+
+\begin{equation}
+  \vb T
+  =
+  T_L\ket L
+  +
+  T_R\ket R,
+\end{equation}
+
+se tiene
+
+\begin{equation}
+\begin{aligned}
+T_L
+&=
+(t_p+t_s)E_L
++
+(t_p-t_s)e^{2i\phi}E_R,
+\\
+T_R
+&=
+(t_p-t_s)e^{-2i\phi}E_L
++
+(t_p+t_s)E_R.
+\end{aligned}
+\label{eq:TL_TR_circular}
+\end{equation}
+
+La expansión de $\mathbb{M}$ en la base circular se lee entonces como
+
+\begin{equation}
+\mathbb M
+=
+\begin{bmatrix}
+t_p+t_s
+&
+(t_p-t_s)e^{2i\phi'}
+\\
+(t_p-t_s)e^{-2i\phi'}
+&
+t_p+t_s
+\end{bmatrix}_{LR}.
+\label{eq:M_in_circular_basis}
+\end{equation}
+
+Aplicando $\mathscr{F}_\phi$ a esa expresión y usando las identidades de Bessel-Fourier con $(-i)^0 = 1$ y $(-i)^{\pm 2} = -1$,
+
+\begin{equation}
+  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
+  =
+  2\pi\,J_0(qr')\,(t_p+t_s)\,\mathbb{I}_\perp
+  -
+  2\pi\,J_2(qr')\,(t_p-t_s)\,\mathbb{V}(\varphi),
+  \label{eq:Fphi_M_circular}
+\end{equation}
+
+donde
+
+\begin{equation}
+\mathbb V(\varphi)
+=
+\begin{bmatrix}
+0 & e^{2i\varphi}
+\\
+e^{-2i\varphi} & 0
+\end{bmatrix}.
+\label{eq:def_V_mixing}
+\end{equation}
+
+El campo en el plano focal se obtiene cerrando con la parte radial,
+
+\begin{equation}
+  \vb{E}'_\perp(\vb r, f)
+  =
+  \frac{n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
+  \int_0^\infty
+  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi) \cdot \vb E(r', \phi')\,r'\,dr'.
+  \label{eq:E_field_general_circular}
+\end{equation}
+
+\paragraph{Reducción con simetría azimutal.}
+Cuando las componentes circulares del campo incidente, $E_L(r')$ y $E_R(r')$, son funciones únicamente del radio, la integral radial reduce $J_0(qr')$ y $J_2(qr')$ a transformadas de Hankel. Se obtiene
+
+\begin{equation}
+\begin{aligned}
+E'_L(\vb r,f)
+&=
+\frac{n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Big[
+2\pi
+\mathscr H_0\{(t_p+t_s)E_L\}(q)
+-
+2\pi e^{2i\varphi}
+\mathscr H_2\{(t_p-t_s)E_R\}(q)
+\Big],
+\\
+E'_R(\vb r,f)
+&=
+\frac{n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Big[
+-2\pi e^{-2i\varphi}
+\mathscr H_2\{(t_p-t_s)E_L\}(q)
++
+2\pi
+\mathscr H_0\{(t_p+t_s)E_R\}(q)
+\Big].
+\end{aligned}
+\label{eq:E_L_E_R_Hankel}
+\end{equation}
+
+El término diagonal en $\mathscr{H}_0$ preserva la helicidad incidente y contribuye on-axis; el término antidiagonal en $\mathscr{H}_2$ acopla $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$ y, dado que $J_2(0)=0$, su contribución es estrictamente off-axis.
+
+Para conectar con el desarrollo en series del apéndice, definimos
+
+\begin{equation}
+\alpha
+=
+\frac{
+n_0(n_0+n_i)^2(z_0-z_i)^2
+}
+{
+z_0^2 z_i^2 (n_0-n_i)^3
+},
+\qquad
+\beta
+=
+\frac{
+n_0(n_0+n_i)(z_0-z_i)^2
+}
+{
+z_0^2 z_i^2 (n_0-n_i)^2
+},
+\qquad
+\gamma_0
+=
+\frac{2n_0}{n_i-n_0}.
+\label{eq:alpha_beta_gamma_def}
+\end{equation}
+
+Las series paraxiales son
+
+\begin{equation}
+(t_p+t_s)(\rho')
+\simeq
+-\alpha\rho'^2,
+\qquad
+(t_p-t_s)(\rho')
+\simeq
+2\gamma_0-\beta\rho'^2.
+\label{eq:t_plus_t_minus_paraxial}
+\end{equation}
+
+Sustituyendo en \eqref{eq:E_L_E_R_Hankel}, se obtiene
+
+\begin{equation}
+\begin{aligned}
+E'_L
+&\simeq
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\left[
+-\alpha\mathscr H_0\{\rho'^2E_L\}
+-
+e^{2i\varphi}
+\left(
+2\gamma_0\mathscr H_2\{E_R\}
+-
+\beta\mathscr H_2\{\rho'^2E_R\}
+\right)
+\right],
+\\
+E'_R
+&\simeq
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\left[
+-
+e^{-2i\varphi}
+\left(
+2\gamma_0\mathscr H_2\{E_L\}
+-
+\beta\mathscr H_2\{\rho'^2E_L\}
+\right)
+-
+\alpha\mathscr H_0\{\rho'^2E_R\}
+\right].
+\end{aligned}
+\label{eq:E_L_E_R_paraxial}
+\end{equation}
+
+Para una pupila homogénea en la base circular,
+
+\begin{equation}
+E_L(r')=E_{L,0}\chi_R(r'),
+\qquad
+E_R(r')=E_{R,0}\chi_R(r'),
+\end{equation}
+
+se usan las integrales
+
+\begin{equation}
+\mathscr H_0\{\rho'^2\chi_R\}(q)
+=
+\frac{R^3}{q}J_1(qR)
++
+\frac{2R^2}{q^2}J_0(qR)
+-
+\frac{4R}{q^3}J_1(qR),
+\label{eq:H0_rho2_chiR}
+\end{equation}
+
+\begin{equation}
+\mathscr H_2\{\chi_R\}(q)
+=
+\frac{
+2[1-J_0(qR)]
+-
+qR\,J_1(qR)
+}
+{q^2},
+\label{eq:H2_chiR}
+\end{equation}
+
+\begin{equation}
+\mathscr H_2\{\rho'^2\chi_R\}(q)
+=
+\frac{R^3}{q}J_3(qR).
+\label{eq:H2_rho2_chiR}
+\end{equation}
+
+Estas expresiones permiten escribir la forma cerrada de los términos circulares para una pupila homogénea, sustituyendo directamente en \eqref{eq:E_L_E_R_paraxial}.
+
+% ···········································································
+\subsection{Base cilíndrica}
+% ···········································································
+
+En la base cilíndrica, el operador $\mathbb{M}$ es diagonal por construcción según \eqref{eq:def_M_bb}:
+
+\begin{equation}
+  \mathbb{M}
+  =
+  t_p\,\ket{\uvec r}\bra{\uvec r}
+  +
+  t_s\,\ket{\uvec\phi}\bra{\uvec\phi}.
+  \label{eq:M_in_cylindrical_basis}
+\end{equation}
+
+Los proyectores tienen dependencia angular $m=\pm 1$ a través de
+
+\begin{equation}
+\uvec r(\phi')
+=
+\cos\phi'\,\uvec x
++
+\sin\phi'\,\uvec y,
+\qquad
+\uvec\phi(\phi')
+=
+-\sin\phi'\,\uvec x
++
+\cos\phi'\,\uvec y.
+\end{equation}
+
+Aplicando las identidades vectoriales de Bessel-Fourier \eqref{eq:Bessel_Fourier_r}--\eqref{eq:Bessel_Fourier_phi},
+
+\begin{equation}
+  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
+  =
+  -2\pi i\,J_1(qr')\,
+  \left\{
+    \begin{bmatrix}
+      t_p & 0 \\
+      0   & t_s
+    \end{bmatrix}
+  \right\}_{\uvec r\uvec\phi},
+  \label{eq:Fphi_M_cylindrical}
+\end{equation}
+
+donde el subíndice $\uvec r\uvec\phi$ indica que la matriz actúa sobre las componentes en la base $(\uvec r(\varphi), \uvec\phi(\varphi))$ del plano focal. La diagonalidad de \eqref{eq:Fphi_M_cylindrical} es consecuencia directa de la diagonalidad de $\mathbb{M}$ en \eqref{eq:M_in_cylindrical_basis}: la base cilíndrica es la base propia natural del problema, y la transformada de Fourier preserva esta propiedad porque los vectores $\uvec r(\phi')$ y $\uvec\phi(\phi')$ se transforman cada uno en su correspondiente en $\varphi$ sin acoplarse.
+
+El campo en el plano focal queda
+
+\begin{equation}
+  \vb E'_\perp(\vb r, f)
+  =
+  \frac{n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
+  \int_0^\infty
+  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
+  \cdot
+  \vb E(r', \phi')\,r'\,dr'.
+  \label{eq:E_field_general_cylindrical}
+\end{equation}
+
+\paragraph{Reducción con simetría azimutal.}
+Cuando las componentes cilíndricas $E_r(r')$, $E_\phi(r')$ son radialmente simétricas —caso que corresponde a polarizaciones radial o azimutal puras— la integral radial cierra en transformadas de Hankel de orden uno:
+
+\begin{equation}
+  \vb E'_\perp(\vb r, f)
+  =
+  -\frac{2\pi n}{\lambda f}
+  e^{inkf}e^{i\frac{nk}{2f}r^2}
+  \Big[
+    \mathscr{H}_1\{t_p E_r\}(q)\,\uvec r(\varphi)
+    +
+    \mathscr{H}_1\{t_s E_\phi\}(q)\,\uvec\phi(\varphi)
+  \Big].
+  \label{eq:E_field_cylindrical_azimuthal}
+\end{equation}
+
+El signo global procede de la combinación del factor $-2\pi i$ en \eqref{eq:Fphi_M_cylindrical} con el prefactor propagativo $1/i$. Este signo no afecta la intensidad, pero se conserva para mantener la convención de Fourier usada en todo el desarrollo.
+
+A partir de las series \eqref{eq:t_plus_t_minus_paraxial}, los coeficientes individuales se obtienen como
+
+\begin{equation}
+t_{p,s}
+=
+\frac{1}{2}
+\left[
+(t_p+t_s)\pm(t_p-t_s)
+\right].
+\end{equation}
+
+Por tanto,
+
+\begin{equation}
+t_p(\rho')
+\simeq
+\gamma_0
+-
+\frac{\alpha+\beta}{2}\rho'^2,
+\label{eq:tp_paraxial_from_pm}
+\end{equation}
+
+\begin{equation}
+t_s(\rho')
+\simeq
+-\gamma_0
+-
+\frac{\alpha-\beta}{2}\rho'^2.
+\label{eq:ts_paraxial_from_pm}
+\end{equation}
+
+Sustituyendo en la reducción azimutal,
+
+\begin{equation}
+\mathscr H_1\{t_p E_r\}(q)
+\simeq
+\gamma_0\,\mathscr H_1\{E_r\}(q)
+-
+\frac{\alpha+\beta}{2}
+\mathscr H_1\{\rho'^2 E_r\}(q),
+\label{eq:H1_tp_Er_paraxial}
+\end{equation}
+
+\begin{equation}
+\mathscr H_1\{t_s E_\phi\}(q)
+\simeq
+-\gamma_0\,\mathscr H_1\{E_\phi\}(q)
+-
+\frac{\alpha-\beta}{2}
+\mathscr H_1\{\rho'^2 E_\phi\}(q).
+\label{eq:H1_ts_Ephi_paraxial}
+\end{equation}
+
+Para
+
+\begin{equation}
+E_r(r')=E_{r,0}\chi_R(r'),
+\qquad
+E_\phi(r')=E_{\phi,0}\chi_R(r'),
+\end{equation}
+
+caso de polarización radial o azimutal uniforme, las Hankel de orden uno no se reducen a expresiones elementales únicamente en funciones de Bessel, sino que involucran la integral
+
+\begin{equation}
+\mathcal I(x)
+=
+\int_0^x J_0(u)\,du.
+\label{eq:Lommel_I_def}
+\end{equation}
+
+Explícitamente,
+
+\begin{equation}
+\mathscr H_1\{\chi_R\}(q)
+=
+\frac{
+\mathcal I(qR)-qR\,J_0(qR)
+}
+{q^2},
+\label{eq:H1_chiR}
+\end{equation}
+
+\begin{equation}
+\mathscr H_1\{\rho'^2\chi_R\}(q)
+=
+\frac{
+(qR)^3 J_2(qR)
++
+(qR)^2 J_1(qR)
++
+3qR\,J_0(qR)
+-
+3\mathcal I(qR)
+}
+{q^4}.
+\label{eq:H1_rho2_chiR}
+\end{equation}
+
+Así,
+
+\begin{equation}
+\mathscr H_1\{t_pE_{r,0}\chi_R\}
+\simeq
+E_{r,0}
+\left[
+\gamma_0
+\frac{\mathcal I(qR)-qR\,J_0(qR)}{q^2}
+-
+\frac{\alpha+\beta}{2}
+\frac{
+(qR)^3 J_2(qR)
++
+(qR)^2 J_1(qR)
++
+3qR\,J_0(qR)
+-
+3\mathcal I(qR)
+}
+{q^4}
+\right],
+\label{eq:H1_tp_Er_homogeneous}
+\end{equation}
+
+\begin{equation}
+\mathscr H_1\{t_sE_{\phi,0}\chi_R\}
+\simeq
+E_{\phi,0}
+\left[
+-\gamma_0
+\frac{\mathcal I(qR)-qR\,J_0(qR)}{q^2}
+-
+\frac{\alpha-\beta}{2}
+\frac{
+(qR)^3 J_2(qR)
++
+(qR)^2 J_1(qR)
++
+3qR\,J_0(qR)
+-
+3\mathcal I(qR)
+}
+{q^4}
+\right].
+\label{eq:H1_ts_Ephi_homogeneous}
+\end{equation}
+
+Por consiguiente,
+
+\begin{equation}
+\begin{aligned}
+\vb E'_\perp(\vb r,f)
+\simeq
+-\frac{2\pi n}{\lambda f}
+e^{inkf}e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+&
+E_{r,0}
+\left[
+\gamma_0
+\frac{\mathcal I(qR)-qR\,J_0(qR)}{q^2}
+-
+\frac{\alpha+\beta}{2}
+\frac{
+(qR)^3 J_2(qR)
++
+(qR)^2 J_1(qR)
++
+3qR\,J_0(qR)
+-
+3\mathcal I(qR)
+}
+{q^4}
+\right]\uvec r(\varphi)
+\\
++
+&
+E_{\phi,0}
+\left[
+-\gamma_0
+\frac{\mathcal I(qR)-qR\,J_0(qR)}{q^2}
+-
+\frac{\alpha-\beta}{2}
+\frac{
+(qR)^3 J_2(qR)
++
+(qR)^2 J_1(qR)
++
+3qR\,J_0(qR)
+-
+3\mathcal I(qR)
+}
+{q^4}
+\right]\uvec\phi(\varphi)
+\Bigg\}.
+\end{aligned}
+\label{eq:E_cylindrical_homogeneous}
+\end{equation}
+
+La intensidad transversal se obtiene directamente de \eqref{eq:E_field_cylindrical_azimuthal}:
+
+\begin{equation}
+  I_\perp(\vb r, f)
+  =
+  \left(\frac{2\pi n}{\lambda f}\right)^2
+  \Big[
+    \big|\mathscr{H}_1\{t_p E_r\}(q)\big|^2
+    +
+    \big|\mathscr{H}_1\{t_s E_\phi\}(q)\big|^2
+  \Big],
+  \label{eq:I_perp_cylindrical}
+\end{equation}
+
+resultado que evidencia la independencia entre las contribuciones $p$ y $s$ a la intensidad cuando el campo incidente posee simetría azimutal en esta base.
+
+A diferencia de los casos circular y cartesiano —donde aparecen los órdenes cero y dos de Hankel—, la simetría azimutal cilíndrica conduce naturalmente al orden uno. Esto refleja que el caso cilíndrico describe una situación física distinta: haces radial o azimutalmente polarizados, y no una polarización lineal uniforme sobre la pupila.
+
+% ···········································································
+\subsection{Base cartesiana}
+% ···········································································
+
+Sustituyendo
+
+\begin{equation}
+\uvec r(\phi')
+=
+\cos\phi'\,\uvec x
++
+\sin\phi'\,\uvec y,
+\qquad
+\uvec\phi(\phi')
+=
+-\sin\phi'\,\uvec x
++
+\cos\phi'\,\uvec y
+\end{equation}
+
+en \eqref{eq:def_M_bb}, y aplicando las identidades trigonométricas
+
+\begin{equation}
+\cos^2\phi'
+=
+\frac{1}{2}(1+\cos2\phi'),
+\qquad
+\sin^2\phi'
+=
+\frac{1}{2}(1-\cos2\phi'),
+\qquad
+\sin\phi'\cos\phi'
+=
+\frac{1}{2}\sin2\phi',
+\end{equation}
+
+el operador $\mathbb{M}$ adopta la forma
+
+\begin{equation}
+  \mathbb{M}
+  =
+  \frac{t_p+t_s}{2}\,\mathbb{I}_\perp
+  +
+  \frac{t_p-t_s}{2}
+  \begin{bmatrix}
+    \cos 2\phi' & \sin 2\phi' \\
+    \sin 2\phi' & -\cos 2\phi'
+  \end{bmatrix}.
+  \label{eq:M_in_cartesian_basis}
+\end{equation}
+
+La descomposición separa $\mathbb{M}$ en una contribución escalar isotrópica y una contribución de orden angular dos. Aplicando $\mathscr{F}_\phi$ con $(-i)^0 = 1$ y $(-i)^{\pm 2} = -1$,
+
+\begin{equation}
+  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
+  =
+  \pi\,J_0(qr')\,(t_p+t_s)\,\mathbb{I}_\perp
+  -
+  \pi\,J_2(qr')\,(t_p-t_s)\,\mathbb{W}(\varphi),
+  \label{eq:Fphi_M_cartesian}
+\end{equation}
+
+donde se define el operador de mezcla cartesiano
+
+\begin{equation}
+  \mathbb{W}(\varphi)
+  =
+  \begin{bmatrix}
+    \cos 2\varphi & \sin 2\varphi \\
+    \sin 2\varphi & -\cos 2\varphi
+  \end{bmatrix}.
+  \label{eq:def_W_mixing}
+\end{equation}
+
+El campo en el plano focal queda
+
+\begin{equation}
+  \vb E'_\perp(\vb r, f)
+  =
+  \frac{n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
+  \int_0^\infty
+  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
+  \cdot
+  \vb E(r', \phi')\,r'\,dr'.
+  \label{eq:E_field_general_cartesian}
+\end{equation}
+
+\paragraph{Reducción con simetría azimutal.}
+Cuando las componentes cartesianas $E_x(r')$, $E_y(r')$ son radialmente simétricas —caso de polarización lineal uniforme sobre la pupila— la integral radial cierra en
+
+\begin{equation}
+  \vb E'_\perp(\vb r, f)
+  =
+  \frac{\pi n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
+  \Big[
+    \mathscr{H}_0\{(t_p+t_s)\vb E\}(q)\,\mathbb{I}_\perp
+    -
+    \mathscr{H}_2\{(t_p-t_s)\vb E\}(q)\,\mathbb{W}(\varphi)
+  \Big],
+  \label{eq:E_field_cartesian_azimuthal}
+\end{equation}
+
+donde la transformada de Hankel actúa componente a componente sobre el vector $\vb E(r')$.
+
+Usando las series paraxiales \eqref{eq:t_plus_t_minus_paraxial}, se obtiene
+
+\begin{equation}
+\vb E'_\perp(\vb r, f)
+\simeq
+\frac{\pi n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+-\alpha\,\mathscr{H}_0\{\rho'^2\vb E\}(q)\,\mathbb{I}_\perp
+-
+\big[
+2\gamma_0\,\mathscr{H}_2\{\vb E\}(q)
+-
+\beta\,\mathscr{H}_2\{\rho'^2\vb E\}(q)
+\big]\mathbb{W}(\varphi)
+\Bigg\}.
+\label{eq:E_field_cartesian_paraxial}
+\end{equation}
+
+Para una pupila homogénea,
+
+\begin{equation}
+\vb E(r')
+=
+\vb E_0\chi_R(r'),
+\qquad
+\vb E_0
+=
+E_{x,0}\uvec x
++
+E_{y,0}\uvec y,
+\end{equation}
+
+las Hankel se reducen a las expresiones cerradas
+
+\begin{equation}
+\mathscr{H}_0\{\rho'^2\chi_R\}(q)
+=
+\frac{R^3}{q}J_1(qR)
++
+\frac{2R^2}{q^2}J_0(qR)
+-
+\frac{4R}{q^3}J_1(qR),
+\end{equation}
+
+\begin{equation}
+\mathscr{H}_2\{\chi_R\}(q)
+=
+\frac{
+2[1-J_0(qR)]
+-
+qR\,J_1(qR)
+}
+{q^2},
+\qquad
+\mathscr{H}_2\{\rho'^2\chi_R\}(q)
+=
+\frac{R^3}{q}J_3(qR).
+\end{equation}
+
+Sustituyendo,
+
+\begin{equation}
+\vb E'_\perp(\vb r, f)
+\simeq
+\frac{\pi n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
+\Big\{
+\mathcal{A}(q)\,\vb E_0
+-
+\mathcal{B}(q)\,\mathbb{W}(\varphi)\,\vb E_0
+\Big\},
+\label{eq:E_field_cartesian_homogeneous}
+\end{equation}
+
+con
+
+\begin{equation}
+\mathcal{A}(q)
+=
+-\alpha
+\left[
+\frac{R^3}{q}J_1(qR)
++
+\frac{2R^2}{q^2}J_0(qR)
+-
+\frac{4R}{q^3}J_1(qR)
+\right],
+\end{equation}
+
+\begin{equation}
+\mathcal{B}(q)
+=
+2\gamma_0
+\frac{
+2[1-J_0(qR)]
+-
+qR\,J_1(qR)
+}
+{q^2}
+-
+\beta
+\frac{R^3}{q}J_3(qR).
+\end{equation}
+
+La estructura es idéntica al caso circular: $\mathcal{A}(q)$ recoge la contribución diagonal, gobernada por $\mathscr H_0$, y $\mathcal{B}(q)$ la contribución de mezcla, gobernada por $\mathscr H_2$. El operador $\mathbb{W}(\varphi)$ introduce una modulación angular de orden dos, determinada por $\cos2\varphi$ y $\sin2\varphi$, característica de las aberraciones de amplitud.
+
+La estructura $\mathscr{H}_0\,\mathbb{I}_\perp - \mathscr{H}_2\,\mathbb{W}$ es la representación cartesiana de la misma física que en la base circular se manifestaba como $\mathscr{H}_0\,\mathbb{I}_\perp - \mathscr{H}_2\,\mathbb{V}$. La diferencia entre los operadores de mezcla, $\mathbb{V}(\varphi)$ con exponenciales complejas $e^{\pm 2i\varphi}$ y $\mathbb{W}(\varphi)$ con funciones trigonométricas reales $\cos 2\varphi$, $\sin 2\varphi$, refleja que la base circular diagonaliza las rotaciones del plano transversal mientras que la cartesiana las descompone en componentes par e impar.
+
+El primer término de \eqref{eq:E_field_cartesian_azimuthal} preserva la polarización lineal incidente y proporciona la contribución on-axis tipo Airy. El segundo término, gobernado por la diferencia $t_p-t_s$ y por la modulación angular de $\mathbb{W}(\varphi)$, constituye una manifestación explícita de las aberraciones de amplitud intrínsecas al proceso de refracción: incluso cuando el campo incidente tiene amplitud uniforme sobre la pupila, la dependencia angular y polarizacional de los coeficientes de Fresnel induce una redistribución espacial de la energía en el plano focal.
