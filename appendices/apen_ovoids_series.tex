@@ -1,11 +1,41 @@
-\chapter{Expansión en series para las ecuaciones de las superficies cartesianas y demás cantidades de interés relacionadas}
+\chapter{Expansión en series para las superficies cartesianas y cantidades asociadas}
 \label{apx:ovoids_series}
 \label{sec:series_expansion_cartesian_surfaces}
 
-Con el propósito de estudiar el comportamiento local del sistema óptico en las cercanías del eje óptico, resulta natural desarrollar en series de potencias las ecuaciones paramétricas de la superficie cartesiana y las magnitudes geométricas y electromagnéticas derivadas de ella. Este procedimiento permite identificar la estructura paraxial del sistema, así como las primeras correcciones no paraxiales responsables de los efectos vectoriales que posteriormente se manifiestan en la formación de imagen.
+Con el propósito de estudiar el comportamiento local del sistema óptico en las cercanías del eje óptico, desarrollamos en series de potencias la superficie cartesiana y las magnitudes geométricas y electromagnéticas derivadas de ella. Este procedimiento permite identificar la estructura paraxial del sistema, así como las primeras correcciones no paraxiales responsables de los efectos vectoriales que aparecen en la formación de imagen.
 
-Recordemos que la superficie dióptrica $\Sigma$ se describe mediante la parametrización
+En este apéndice se adopta la convención
 
+\begin{equation}
+z_0>0,
+\qquad
+z_i>0,
+\qquad
+n_0>0,
+\qquad
+n_i>0,
+\label{eq:positive_axial_convention}
+\end{equation}
+
+y los puntos conjugados se escriben como
+
+\begin{equation}
+A=(0,0,z_0),
+\qquad
+A'=(0,0,z_i).
+\label{eq:conjugate_points_correct_convention}
+\end{equation}
+
+Las cantidades \(z_0\) y \(z_i\) se toman, por tanto, como coordenadas axiales positivas. Con esta convención, la condición estigmática de la superficie cartesiana se escribe como
+
+\begin{equation}
+n_0\ell_0+n_i\ell_i
+=
+\text{constante}.
+\label{eq:stigmatic_condition_correct_convention}
+\end{equation}
+
+La superficie dióptrica \(\Sigma\) se describe mediante la parametrización
 
 \begin{align}
 z(\rho)
@@ -20,35 +50,51 @@ r(\rho)
 \label{eq:cartesian_surface_parametrization_r}
 \end{align}
 
-Los parámetros $G$, $O$, $T$ y $S$ que aparecen en \eqref{eq:cartesian_surface_parametrization_z} contienen la información geométrica del problema y se expresan en términos de los índices de refracción y de las posiciones axiales de los puntos conjugados $A$ y $A'$. Explícitamente,
+Para la convención \eqref{eq:positive_axial_convention}--\eqref{eq:conjugate_points_correct_convention}, los parámetros \(G\), \(O\), \(T\) y \(S\) quedan dados por
 
 \begin{align}
 G
 &=
-\frac{(n_i^2z_i-n_0^2z_0)^2}
-{n_in_0(n_iz_i-n_0z_0)(n_iz_0-n_0z_i)},
+-
+\frac{
+(n_i^2z_i-n_0^2z_0)^2
+}{
+n_in_0
+(n_iz_i+n_0z_0)
+(n_iz_0+n_0z_i)
+},
 \label{eq:cartesian_parameter_G}
 \\[6pt]
 O
 &=
-\frac{n_iz_0-n_0z_i}
-{z_iz_0(n_i-n_0)},
+\frac{
+n_iz_0+n_0z_i
+}{
+z_0z_i(n_0+n_i)
+},
 \label{eq:cartesian_parameter_O}
 \\[6pt]
 T
 &=
-\frac{(n_i-n_0)(n_i+n_0)^2}
-{4n_in_0z_iz_0(n_iz_i-n_0z_0)},
+-
+\frac{
+(n_0+n_i)(n_i-n_0)^2
+}{
+4n_in_0z_0z_i(n_iz_i+n_0z_0)
+},
 \label{eq:cartesian_parameter_T}
 \\[6pt]
 S
 &=
-\frac{(n_i+n_0)(n_i^2z_i-n_0^2z_0)}
-{2n_in_0z_iz_0(n_iz_i-n_0z_0)}.
+\frac{
+(n_0-n_i)(n_i^2z_i-n_0^2z_0)
+}{
+2n_in_0z_0z_i(n_iz_i+n_0z_0)
+}.
 \label{eq:cartesian_parameter_S}
 \end{align}
 
-A partir de \eqref{eq:cartesian_surface_parametrization_z}, expandiendo alrededor de $\rho=0$, se obtiene
+Expandiendo \eqref{eq:cartesian_surface_parametrization_z} alrededor de \(\rho=0\), se obtiene
 
 \begin{align}
 z(\rho)
@@ -61,29 +107,85 @@ z(\rho)
 -
 \frac{OS}{2}
 +
-\frac{O^3G}{8}
+\frac{GO^3}{8}
 \right)\rho^4
 \nonumber
 \\[6pt]
 &
 +
 \left(
-\frac{OS^2}{2}
+\frac{G^2O^5}{16}
 -
-\frac{O^3GS}{4}
+\frac{3GO^3S}{8}
 +
-\frac{O^5G^2}{16}
+\frac{GO^2T}{8}
++
+\frac{5OS^2}{8}
 -
-\frac{TS}{2}
-+
-\frac{TO^2G}{8}
+\frac{ST}{2}
 \right)\rho^6
 +
 O(\rho^8).
 \label{eq:z_rho_series_expansion}
 \end{align}
 
-Luego, sustituyendo \eqref{eq:z_rho_series_expansion} en la relación radial \eqref{eq:cartesian_surface_parametrization_r}, se obtiene
+Sustituyendo \eqref{eq:cartesian_parameter_G}--\eqref{eq:cartesian_parameter_S}, esta expansión puede escribirse como
+
+\begin{equation}
+z(\rho)
+=
+\zeta_2\rho^2
++
+\zeta_4\rho^4
++
+\zeta_6\rho^6
++
+O(\rho^8),
+\label{eq:z_rho_series_substituted}
+\end{equation}
+
+donde
+
+\begin{align}
+\zeta_2
+&=
+\frac{
+n_0z_i+n_iz_0
+}{
+2z_0z_i(n_0+n_i)
+},
+\label{eq:zeta_2_definition}
+\\[6pt]
+\zeta_4
+&=
+-
+\frac{
+n_0n_i(z_0-z_i)^2(n_0z_0+n_iz_i)
+}{
+8z_0^3z_i^3(n_0+n_i)^3
+},
+\label{eq:zeta_4_definition}
+\\[6pt]
+\zeta_6
+&=
+\frac{
+n_0n_i(z_0-z_i)^3
+(n_0z_0+n_iz_i)
+(n_0^2z_0-n_i^2z_i)
+}{
+16z_0^5z_i^5(n_0+n_i)^5
+}.
+\label{eq:zeta_6_definition}
+\end{align}
+
+La coordenada radial \(r(\rho)\) se obtiene a partir de
+
+\begin{equation}
+r^2(\rho)+z^2(\rho)=\rho^2.
+\label{eq:identity_r2_z2_rho2}
+\end{equation}
+
+Por tanto,
 
 \begin{align}
 r(\rho)
@@ -101,7 +203,7 @@ r(\rho)
 +
 \frac{O^2S}{4}
 -
-\frac{O^4G}{16}
+\frac{GO^4}{16}
 -
 \frac{O^4}{128}
 \right)\rho^5
@@ -110,139 +212,58 @@ O(\rho^7).
 \label{eq:r_rho_series_expansion}
 \end{align}
 
+En términos de \(\zeta_2\) y \(\zeta_4\), la forma más compacta es
 
-O remplazando los parametros G, O, T, S. 
-
-\begin{align}
-z(\rho)
-&=
-\frac{n_i z_0 - n_0 z_i}
-{2 z_i z_0 (n_i-n_0)}
-\rho^2
-+
-\frac{
-n_i n_0 (z_0-z_i)^2 (n_i z_i - n_0 z_0)
-}{
-8 z_i^3 z_0^3 (n_i-n_0)^3
-}
-\rho^4
-\\[6pt]
-&\quad
-+
-\frac{
-n_i^2 z_i - n_0^2 z_0
-}{
-32 n_i^2 n_0^2 z_i^5 z_0^5
-(n_i-n_0)^5
-(n_i z_i - n_0 z_0)^2
-}
-\\[4pt]
-&\qquad\times
-\Big[
-2
-(n_i z_0 - n_0 z_i)^3
-(n_i^2 z_i - n_0^2 z_0)^3
-\\
-&\qquad\qquad
--
-4
-(n_i z_0 - n_0 z_i)^2
-(n_i^2 z_i - n_0^2 z_0)^2
-(n_i-n_0)^2
-z_i z_0
-(n_i+n_0)
-\\
-&\qquad\qquad
-+
-5
-(n_i z_0 - n_0 z_i)
-(n_i^2 z_i - n_0^2 z_0)
-(n_i-n_0)^4
-z_i^2 z_0^2
-(n_i+n_0)^2
-\\
-&\qquad\qquad
--
-2
-(n_i-n_0)^6
-z_i^3 z_0^3
-(n_i+n_0)^3
-\Big]\rho^6
-+
-O(\rho^8)
-\end{align}
-
-
-\begin{align}
+\begin{equation}
 r(\rho)
-&=
+=
 \rho
 -
-\frac{(n_i z_0-n_0 z_i)^2}
-{8z_i^2z_0^2(n_i-n_0)^2}
-\rho^3
-\\[6pt]
-&\quad
+\frac{\zeta_2^2}{2}\rho^3
+-
+\left(
+\zeta_2\zeta_4
 +
-\frac{(n_i z_0-n_0 z_i)}
-{128 z_0^4 z_i^4 (n_i-n_0)^4}
-\Big[
-n_0^3z_i^3
-+8n_0^2n_i z_0^3
--16n_0^2n_i z_0^2z_i
-\\
-&\qquad\qquad
-+5n_0^2n_i z_0z_i^2
--5n_0n_i^2 z_0^2z_i
-+16n_0n_i^2 z_0z_i^2
--8n_0n_i^2 z_i^3
--n_i^3z_0^3
-\Big]\rho^5
+\frac{\zeta_2^4}{8}
+\right)\rho^5
 +
-O(\rho^7)
-\end{align}
-
-
-
+O(\rho^7).
+\label{eq:r_rho_series_zeta_form}
+\end{equation}
 
 El término dominante de \eqref{eq:z_rho_series_expansion} es
 
 \begin{equation}
-z(\rho)\sim \frac{O}{2}\rho^2.
+z(\rho)
+\sim
+\frac{O}{2}\rho^2.
 \label{eq:vertex_paraxial_curvature}
 \end{equation}
 
-Por tanto, en virtud de \eqref{eq:vertex_paraxial_curvature}, el parámetro $O$ controla la curvatura en el vértice de la superficie. En efecto, como \eqref{eq:r_rho_series_expansion} implica que $r(\rho)\sim \rho$, se tiene localmente
+Como \(r(\rho)\sim\rho\), localmente se tiene
 
 \begin{equation}
-z(r)\sim \frac{O}{2}r^2,
+z(r)
+\sim
+\frac{O}{2}r^2.
 \label{eq:vertex_curvature_sag_form}
 \end{equation}
 
-lo cual identifica a $O$ como el parámetro de curvatura paraxial de la superficie.
+Así, \(O\) controla la curvatura paraxial en el vértice de la superficie.
 
-Sea ahora
+Sea
 
 \begin{equation}
 Q(\rho,\phi)
 =
-r(\rho)\,\uvec{\rho}
+r(\rho)\,\hat{\boldsymbol{\rho}}
 +
-z(\rho)\,\uvec{z}
+z(\rho)\,\hat{\mathbf z}
 \in\Sigma
 \label{eq:surface_point_Q}
 \end{equation}
 
-un punto sobre la superficie cartesiana, y considérense los puntos conjugados
-
-\begin{equation}
-A=(0,0,z_0),
-\qquad
-A'=(0,0,z_i).
-\label{eq:conjugate_points_A_Aprime}
-\end{equation}
-
-Las distancias geométricas desde los puntos conjugados \eqref{eq:conjugate_points_A_Aprime} hasta el punto superficial \eqref{eq:surface_point_Q} se definen como
+un punto sobre la superficie cartesiana. Las distancias geométricas positivas desde los puntos conjugados hasta \(Q\) se definen como
 
 \begin{equation}
 \ell_0=AQ,
@@ -251,14 +272,7 @@ Las distancias geométricas desde los puntos conjugados \eqref{eq:conjugate_poin
 \label{eq:geometrical_distances_l0_li}
 \end{equation}
 
-Usando la identidad exacta que se deduce de \eqref{eq:cartesian_surface_parametrization_r},
-
-\begin{equation}
-r^2(\rho)+z^2(\rho)=\rho^2,
-\label{eq:identity_r2_z2_rho2}
-\end{equation}
-
-las distancias \eqref{eq:geometrical_distances_l0_li} satisfacen
+De \eqref{eq:identity_r2_z2_rho2} se obtiene
 
 \begin{align}
 \ell_0^2
@@ -276,16 +290,28 @@ r^2(\rho)+\bigl(z(\rho)-z_i\bigr)^2
 \label{eq:li_squared_exact}
 \end{align}
 
-Sustituyendo \eqref{eq:z_rho_series_expansion} en \eqref{eq:l0_squared_exact} y \eqref{eq:li_squared_exact}, y reemplazando completamente los parámetros $G$, $O$, $T$ y $S$ mediante \eqref{eq:cartesian_parameter_G}--\eqref{eq:cartesian_parameter_S}, se obtiene, bajo la convención axial $z_0<0$ y $z_i>0$,
+Puesto que \(z_0,z_i>0\), las ramas axiales son
+
+\begin{equation}
+\ell_0(0)=z_0,
+\qquad
+\ell_i(0)=z_i.
+\label{eq:l0_li_axis_branches}
+\end{equation}
+
+Sustituyendo \eqref{eq:z_rho_series_substituted} en \eqref{eq:l0_squared_exact} y \eqref{eq:li_squared_exact}, se obtiene
 
 \begin{align}
 \ell_0(\rho)
 =
 {}&
--z_0
+z_0
 -
-\frac{n_i(z_0-z_i)}
-{2z_0z_i(n_0-n_i)}
+\frac{
+n_i(z_0-z_i)
+}{
+2z_0z_i(n_0+n_i)
+}
 \rho^2
 \nonumber
 \\[4pt]
@@ -293,44 +319,13 @@ Sustituyendo \eqref{eq:z_rho_series_expansion} en \eqref{eq:l0_squared_exact} y 
 +
 \frac{
 n_i(z_0-z_i)^2
-\left(
-n_0^2z_0-n_i^2z_i
-\right)
-}
-{
-8z_0^3z_i^3(n_0-n_i)^3
+(n_0^2z_0-n_i^2z_i)
+}{
+8z_0^3z_i^3(n_0+n_i)^3
 }
 \rho^4
-\nonumber
-\\[4pt]
-&
--
-\frac{
-n_i(z_0-z_i)^3
-\left(
-n_0^2z_0-n_i^2z_i
-\right)^2
-}
-{
-16z_0^5z_i^5(n_0-n_i)^5
-}
-\rho^6
-\nonumber
-\\[4pt]
-&
 +
-\frac{
-5n_i(z_0-z_i)^4
-\left(
-n_0^2z_0-n_i^2z_i
-\right)^3
-}
-{
-128z_0^7z_i^7(n_0-n_i)^7
-}
-\rho^8
-+
-O(\rho^{10}),
+O(\rho^6),
 \label{eq:l0_series_expansion}
 \end{align}
 
@@ -342,8 +337,11 @@ y
 {}&
 z_i
 +
-\frac{n_0(z_0-z_i)}
-{2z_0z_i(n_0-n_i)}
+\frac{
+n_0(z_0-z_i)
+}{
+2z_0z_i(n_0+n_i)
+}
 \rho^2
 \nonumber
 \\[4pt]
@@ -351,48 +349,17 @@ z_i
 -
 \frac{
 n_0(z_0-z_i)^2
-\left(
-n_0^2z_0-n_i^2z_i
-\right)
-}
-{
-8z_0^3z_i^3(n_0-n_i)^3
+(n_0^2z_0-n_i^2z_i)
+}{
+8z_0^3z_i^3(n_0+n_i)^3
 }
 \rho^4
-\nonumber
-\\[4pt]
-&
 +
-\frac{
-n_0(z_0-z_i)^3
-\left(
-n_0^2z_0-n_i^2z_i
-\right)^2
-}
-{
-16z_0^5z_i^5(n_0-n_i)^5
-}
-\rho^6
-\nonumber
-\\[4pt]
-&
--
-\frac{
-5n_0(z_0-z_i)^4
-\left(
-n_0^2z_0-n_i^2z_i
-\right)^3
-}
-{
-128z_0^7z_i^7(n_0-n_i)^7
-}
-\rho^8
-+
-O(\rho^{10}).
+O(\rho^6).
 \label{eq:li_series_expansion}
 \end{align}
 
-Las expansiones \eqref{eq:l0_series_expansion} y \eqref{eq:li_series_expansion} verifican término a término la condición cartesiana de camino óptico constante,
+Estas expansiones satisfacen término a término la condición estigmática
 
 \begin{equation}
 n_0\ell_0+n_i\ell_i
@@ -401,346 +368,530 @@ n_0\ell_0+n_i\ell_i
 \label{eq:cartesian_optical_path_condition}
 \end{equation}
 
-En efecto, al sustituir \eqref{eq:l0_series_expansion} y \eqref{eq:li_series_expansion} en \eqref{eq:cartesian_optical_path_condition}, los términos de orden $\rho^2$, $\rho^4$, $\rho^6$ y $\rho^8$ se cancelan, de modo que
+En efecto,
 
 \begin{equation}
 n_0\ell_0+n_i\ell_i
 =
--n_0z_0+n_iz_i
+n_0z_0+n_iz_i
 +
-O(\rho^{10}).
+O(\rho^6).
 \label{eq:optical_path_constant_local}
 \end{equation}
 
-La cancelación expresada en \eqref{eq:optical_path_constant_local} es la manifestación local del estigmatismo impuesto por la superficie cartesiana.
+La cancelación de los términos de orden \(\rho^2\) y \(\rho^4\) es la manifestación local del estigmatismo impuesto por la superficie cartesiana.
 
-A partir de las cantidades geométricas anteriores se obtienen los cosenos de incidencia y transmisión que intervienen en los coeficientes de Fresnel. Con la convención orientada adoptada,
+Para escribir los coeficientes de Fresnel en términos geométricos, introducimos
+
+\begin{align}
+\mathcal A_0(\rho)
+&=
+z'\left(\rho^2-zz_0\right)
+-
+\rho\left(z-z_0\right),
+\label{eq:A0_geometrical_factor}
+\\[6pt]
+\mathcal A_i(\rho)
+&=
+z'\left(\rho^2-zz_i\right)
+-
+\rho\left(z-z_i\right).
+\label{eq:Ai_geometrical_factor}
+\end{align}
+
+Con la convención adoptada,
 
 \begin{equation}
-\cos\theta_i(0)=-1,
+\frac{\mathcal A_0(\rho)}{\rho}
+\longrightarrow
+z_0,
 \qquad
-\cos\theta_t(0)=1.
-\label{eq:cos_theta_axis_limit}
+\frac{\mathcal A_i(\rho)}{\rho}
+\longrightarrow
+z_i,
+\qquad
+\rho\to0.
+\label{eq:A0_Ai_axis_limits}
 \end{equation}
 
-Expandiendo los cosenos alrededor de $\rho=0$, y usando las expansiones de $\ell_0$ y $\ell_i$ dadas en \eqref{eq:l0_series_expansion} y \eqref{eq:li_series_expansion}, se encuentra
+Definimos también
+
+\begin{equation}
+s'(\rho)
+=
+\sqrt{r'(\rho)^2+z'(\rho)^2}.
+\label{eq:sprime_definition}
+\end{equation}
+
+Los cosenos locales positivos pueden escribirse como
+
+\begin{equation}
+\mu_0
+=
+\frac{\mathcal A_0}{r\,s'\,\ell_0},
+\qquad
+\mu_i
+=
+\frac{\mathcal A_i}{r\,s'\,\ell_i}.
+\label{eq:positive_direction_cosines}
+\end{equation}
+
+Al orden cuadrático,
 
 \begin{align}
-\cos\theta_i
-=
-{}&
--1
-+
-\frac{n_i^2(z_0-z_i)^2}
-{2z_0^2z_i^2(n_0-n_i)^2}
-\rho^2
-\nonumber
-\\[4pt]
-&
--
-\frac{
-n_i^2(z_0-z_i)^2
-\left(
-4n_0^2z_0^2
--4n_0^2z_0z_i
-+n_0^2z_i^2
--2n_0n_iz_0z_i
--2n_i^2z_0z_i
-+3n_i^2z_i^2
-\right)
-}
-{8z_0^4z_i^4(n_0-n_i)^4}
-\rho^4
-+
-O(\rho^6),
-\label{eq:cos_theta_i_series}
-\end{align}
-
-mientras que
-
-\begin{align}
-\cos\theta_t
-=
-{}&
+\mu_0
+&=
 1
 -
-\frac{n_0^2(z_0-z_i)^2}
-{2z_0^2z_i^2(n_0-n_i)^2}
-\rho^2
-\nonumber
-\\[4pt]
-&
-+
 \frac{
-n_0^2(z_0-z_i)^2
-\left(
-3n_0^2z_0^2
--2n_0^2z_0z_i
--2n_0n_iz_0z_i
-+n_i^2z_0^2
--4n_i^2z_0z_i
-+4n_i^2z_i^2
-\right)
+n_i^2(n_0-n_i)^2(z_0-z_i)^2
+}{
+2z_0^2z_i^2(n_0+n_i)^4
 }
-{8z_0^4z_i^4(n_0-n_i)^4}
-\rho^4
+\rho^2
 +
-O(\rho^6).
-\label{eq:cos_theta_t_series}
+O(\rho^4),
+\label{eq:mu0_series_second_order}
+\\[6pt]
+\mu_i
+&=
+1
+-
+\frac{
+n_0^2(n_0-n_i)^2(z_0-z_i)^2
+}{
+2z_0^2z_i^2(n_0+n_i)^4
+}
+\rho^2
++
+O(\rho^4).
+\label{eq:mui_series_second_order}
 \end{align}
 
-Los signos dominantes en \eqref{eq:cos_theta_i_series} y \eqref{eq:cos_theta_t_series} son consistentes con \eqref{eq:cos_theta_axis_limit}. La diferencia de signo corresponde a la orientación de la normal respecto a los rayos incidente y transmitido.
-
-Los coeficientes de Fresnel pueden escribirse en términos de las cantidades geométricas ya desarrolladas. Para ello definimos
+Sea
 
 \begin{equation}
 \eta=\frac{n_i}{n_0}.
 \label{eq:eta_definition}
 \end{equation}
 
-Con esta notación, los coeficientes exactos son
+Los coeficientes de Fresnel para la transmisión local son
 
 \begin{align}
 t_s
 &=
 \frac{
-2\left[
-z'\left(\rho^2-zz_0\right)-\rho\left(z-z_0\right)
-\right]
-}
-{
-\left[
-z'\left(\rho^2-zz_0\right)-\rho\left(z-z_0\right)
-\right]
+2n_0\mu_0
+}{
+n_0\mu_0+n_i\mu_i
+},
+\label{eq:fresnel_ts_cosine_form}
+\\[6pt]
+t_p
+&=
+\frac{
+2n_0\mu_0
+}{
+n_i\mu_0+n_0\mu_i
+}.
+\label{eq:fresnel_tp_cosine_form}
+\end{align}
+
+Equivalentemente, usando \eqref{eq:A0_geometrical_factor} y \eqref{eq:Ai_geometrical_factor},
+
+\begin{align}
+t_s
+&=
+\frac{
+2\mathcal A_0
+}{
+\mathcal A_0
 +
 \eta
 \frac{\ell_0}{\ell_i}
-\left[
-z'\left(\rho^2-zz_i\right)-\rho\left(z-z_i\right)
-\right]
+\mathcal A_i
 },
 \label{eq:fresnel_ts_exact}
 \\[8pt]
 t_p
 &=
 \frac{
-2\left[
-z'\left(\rho^2-zz_0\right)-\rho\left(z-z_0\right)
-\right]
-}
-{
-\eta
-\left[
-z'\left(\rho^2-zz_0\right)-\rho\left(z-z_0\right)
-\right]
+2\mathcal A_0
+}{
+\eta\mathcal A_0
 +
 \frac{\ell_0}{\ell_i}
-\left[
-z'\left(\rho^2-zz_i\right)-\rho\left(z-z_i\right)
-\right]
+\mathcal A_i
 }.
 \label{eq:fresnel_tp_exact}
 \end{align}
 
-En \eqref{eq:fresnel_ts_exact} y \eqref{eq:fresnel_tp_exact}, tanto $z(\rho)$ como $\ell_0(\rho)$ y $\ell_i(\rho)$ deben entenderse mediante sus desarrollos respectivos \eqref{eq:z_rho_series_expansion}, \eqref{eq:l0_series_expansion} y \eqref{eq:li_series_expansion}. Al expandir \eqref{eq:fresnel_ts_exact} y \eqref{eq:fresnel_tp_exact}, se obtiene
+Al sustituir las expansiones anteriores en \eqref{eq:fresnel_ts_exact} y \eqref{eq:fresnel_tp_exact}, se obtiene
 
 \begin{align}
 t_s(\rho)
-=
-{}&
-\frac{2n_0}{n_0-n_i}
--
-\frac{
-n_0n_i(n_0+n_i)(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^3
-}
-\rho^2
-\nonumber
-\\[4pt]
-&
+&=
+\frac{2n_0}{n_0+n_i}
 +
-\frac{
-n_0n_i(n_0+n_i)(z_0-z_i)^2
-(n_0z_0-n_iz_i)
-(3n_0z_0-2n_0z_i+2n_iz_0-3n_iz_i)
-}
-{
-4z_0^4z_i^4(n_0-n_i)^5
-}
-\rho^4
+t_{s,2}\rho^2
++
+t_{s,4}\rho^4
 +
 O(\rho^6),
-\label{eq:fresnel_ts_series}
-\end{align}
-
-y
-
-\begin{align}
+\label{eq:fresnel_ts_series_general}
+\\[6pt]
 t_p(\rho)
-=
-{}&
-\frac{2n_0}{n_i-n_0}
--
-\frac{
-n_0^2(n_0+n_i)(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^3
-}
-\rho^2
-\nonumber
-\\[4pt]
-&
+&=
+\frac{2n_0}{n_0+n_i}
 +
-\frac{
-n_0^2(n_0+n_i)(z_0-z_i)^2
-}
-{
-4z_0^4z_i^4(n_0-n_i)^5
-}
-\nonumber
-\\
-&\quad\times
-\Big[
-n_0^2z_0^2
-+2n_0^2z_0z_i
--2n_0^2z_i^2
--2n_0n_iz_0^2
-+2n_0n_iz_0z_i
--2n_0n_iz_i^2
-\nonumber
-\\
-&\qquad
--2n_i^2z_0^2
-+2n_i^2z_0z_i
-+n_i^2z_i^2
-\Big]\rho^4
+t_{p,2}\rho^2
++
+t_{p,4}\rho^4
 +
 O(\rho^6).
-\label{eq:fresnel_tp_series}
+\label{eq:fresnel_tp_series_general}
 \end{align}
 
-De las expansiones \eqref{eq:fresnel_ts_series} y \eqref{eq:fresnel_tp_series} se deduce que las combinaciones que aparecen naturalmente en la base circular satisfacen
+Los coeficientes de segundo orden son
+
+\begin{align}
+t_{s,2}
+&=
+\frac{
+n_0n_i(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+},
+\label{eq:ts2_coefficient}
+\\[6pt]
+t_{p,2}
+&=
+\frac{
+n_0^2(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}.
+\label{eq:tp2_coefficient}
+\end{align}
+
+Por conveniencia, definimos
+
+\begin{equation}
+\xi
+=
+\frac{
+n_0(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}.
+\label{eq:xi_definition_fresnel_series}
+\end{equation}
+
+Entonces
+
+\begin{equation}
+t_{s,2}=n_i\xi,
+\qquad
+t_{p,2}=n_0\xi.
+\label{eq:ts2_tp2_xi_form}
+\end{equation}
+
+Los coeficientes de cuarto orden se escriben de forma compacta como
+
+\begin{equation}
+t_{s,4}
+=
+-n_i\xi\,\kappa_s,
+\qquad
+t_{p,4}
+=
+-n_0\xi\,\kappa_p,
+\label{eq:ts4_tp4_kappa_form}
+\end{equation}
+
+donde
+
+\begin{align}
+\kappa_s
+&=
+\frac{
+(n_0z_0+n_iz_i)
+(3n_0z_0-2n_0z_i-2n_iz_0+3n_iz_i)
+}{
+4z_0^2z_i^2(n_0+n_i)^2
+},
+\label{eq:kappa_s_definition}
+\\[8pt]
+\kappa_p
+&=
+\frac{
+Q_p
+}{
+4z_0^2z_i^2(n_0+n_i)^2
+},
+\label{eq:kappa_p_definition}
+\end{align}
+
+con
+
+\begin{align}
+Q_p
+={}&
+n_0^2z_0^2
++
+2n_0^2z_0z_i
+-
+2n_0^2z_i^2
++
+2n_0n_iz_0^2
+-
+2n_0n_iz_0z_i
++
+2n_0n_iz_i^2
+\nonumber
+\\
+&\quad
+-
+2n_i^2z_0^2
++
+2n_i^2z_0z_i
++
+n_i^2z_i^2.
+\label{eq:Qp_definition}
+\end{align}
+
+Por tanto, las expansiones de Fresnel hasta orden cuarto quedan
+
+\begin{align}
+t_s(\rho)
+&=
+\frac{2n_0}{n_0+n_i}
++
+n_i\xi\,\rho^2
+-
+n_i\xi\kappa_s\,\rho^4
++
+O(\rho^6),
+\label{eq:fresnel_ts_series_fourth_order}
+\\[6pt]
+t_p(\rho)
+&=
+\frac{2n_0}{n_0+n_i}
++
+n_0\xi\,\rho^2
+-
+n_0\xi\kappa_p\,\rho^4
++
+O(\rho^6).
+\label{eq:fresnel_tp_series_fourth_order}
+\end{align}
+
+En particular,
+
+\begin{equation}
+t_s(0)=t_p(0)=\frac{2n_0}{n_0+n_i}.
+\label{eq:fresnel_axis_degeneracy}
+\end{equation}
+
+La degeneración axial de las polarizaciones \(s\) y \(p\) se rompe por primera vez en orden cuadrático. De \eqref{eq:fresnel_ts_series_fourth_order} y \eqref{eq:fresnel_tp_series_fourth_order} se sigue que
 
 \begin{align}
 t_p+t_s
 &=
--
-\frac{
-n_0(n_0+n_i)^2(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^3
-}
-\rho^2
+\frac{4n_0}{n_0+n_i}
 +
-O(\rho^4),
-\label{eq:tp_plus_ts_series_paraxial}
+(n_0+n_i)\xi\,\rho^2
+-
+\xi(n_0\kappa_p+n_i\kappa_s)\rho^4
++
+O(\rho^6),
+\label{eq:tp_plus_ts_series_fourth_order}
 \\[8pt]
 t_p-t_s
 &=
-\frac{4n_0}{n_i-n_0}
+(n_0-n_i)\xi\,\rho^2
 -
+\xi(n_0\kappa_p-n_i\kappa_s)\rho^4
++
+O(\rho^6).
+\label{eq:tp_minus_ts_series_fourth_order}
+\end{align}
+
+Al orden dominante no trivial,
+
+\begin{equation}
+t_p-t_s
+=
 \frac{
-n_0(n_0+n_i)(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^2
+n_0(n_0-n_i)^2(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
 }
 \rho^2
 +
 O(\rho^4).
-\label{eq:tp_minus_ts_paraxial}
-\end{align}
+\label{eq:tp_minus_ts_quadratic_explicit}
+\end{equation}
 
+Esta expresión muestra que la diferencia entre los canales \(p\) y \(s\) desaparece axialmente y que su primera contribución es de segundo orden en la coordenada pupilar.
 
-
-Por tanto, si
+En la representación circular, los canales transmitidos se escriben como
 
 \begin{align}
-\mathscr F\{T_L\}
+T_L
 &=
-\mathscr F
-\left\{
-(t_p+t_s)E_L
+(t_p+t_s)\mathscr E_L
 +
-(t_p-t_s)e^{2i\phi'}E_R
-\right\},
-\label{eq:FT_TL_exact_circular}
+(t_p-t_s)e^{2i\phi'}\mathscr E_R,
+\label{eq:TL_exact_circular}
 \\[6pt]
-\mathscr F\{T_R\}
+T_R
 &=
-\mathscr F
-\left\{
-(t_p-t_s)e^{-2i\phi'}E_L
+(t_p-t_s)e^{-2i\phi'}\mathscr E_L
 +
-(t_p+t_s)E_R
-\right\},
-\label{eq:FT_TR_exact_circular}
+(t_p+t_s)\mathscr E_R.
+\label{eq:TR_exact_circular}
 \end{align}
 
-entonces, sustituyendo \eqref{eq:tp_plus_ts_series_paraxial} y \eqref{eq:tp_minus_ts_paraxial} en \eqref{eq:FT_TL_exact_circular} y \eqref{eq:FT_TR_exact_circular}, y usando que al orden retenido $\rho'^2=r'^2+O(r'^4)$, se obtiene
+Si sólo se conserva el primer orden no trivial en la conversión vectorial, entonces
+
+\begin{align}
+T_L
+\simeq{}&
+\frac{4n_0}{n_0+n_i}\mathscr E_L
++
+(n_0+n_i)\xi\,\rho'^2\mathscr E_L
++
+(n_0-n_i)\xi\,\rho'^2e^{2i\phi'}\mathscr E_R,
+\label{eq:TL_second_order_corrected}
+\\[8pt]
+T_R
+\simeq{}&
+\frac{4n_0}{n_0+n_i}\mathscr E_R
++
+(n_0+n_i)\xi\,\rho'^2\mathscr E_R
++
+(n_0-n_i)\xi\,\rho'^2e^{-2i\phi'}\mathscr E_L.
+\label{eq:TR_second_order_corrected}
+\end{align}
+
+Al orden cuadrático,
+
+\begin{equation}
+\rho'^2=r'^2+O(r'^4).
+\label{eq:rho_prime_r_prime_second_order}
+\end{equation}
+
+Si se desea retener sistemáticamente el orden cuarto en la coordenada radial física \(r'\), debe usarse
+
+\begin{equation}
+\rho'^2
+=
+r'^2+\zeta_2^2r'^4+O(r'^6),
+\qquad
+\rho'^4
+=
+r'^4+O(r'^6).
+\label{eq:rho_prime_r_prime_fourth_order}
+\end{equation}
+
+Adoptamos la convención de Fourier transversal
+
+\begin{equation}
+\mathscr F\{f(r',\phi')\}(q,\varphi)
+=
+\int_0^\infty
+\int_0^{2\pi}
+f(r',\phi')
+e^{-iqr'\cos(\phi'-\varphi)}
+r'\,d\phi'\,dr',
+\label{eq:fourier_transform_convention_appendix}
+\end{equation}
+
+y definimos la transformada de Hankel de orden \(m\) como
+
+\begin{equation}
+\mathscr H_m[f](q)
+=
+\int_0^\infty
+f(r')J_m(qr')r'\,dr'.
+\label{eq:hankel_transform_definition_appendix}
+\end{equation}
+
+Con la convención \eqref{eq:fourier_transform_convention_appendix},
+
+\begin{equation}
+\mathscr F\{f(r')e^{im\phi'}\}
+=
+2\pi(-i)^m e^{im\varphi}\mathscr H_m[f].
+\label{eq:fourier_hankel_angular_identity}
+\end{equation}
+
+En particular,
+
+\begin{equation}
+(-i)^{\pm2}=-1.
+\label{eq:hankel_order_two_phase_factor}
+\end{equation}
+
+Si \(\mathscr E_L\) y \(\mathscr E_R\) son radialmente simétricos en la pupila y se retiene sólo el primer orden no trivial, entonces
 
 \begin{align}
 \mathscr F\{T_L\}
 \simeq{}&
--
 2\pi
-\frac{
-n_0(n_0+n_i)^2(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^3
-}
-\mathscr H_0[r'^2E_L]
-\\[6pt]
+\frac{4n_0}{n_0+n_i}
+\mathscr H_0[\mathscr E_L]
++
+2\pi
+(n_0+n_i)\xi
+\mathscr H_0[r'^2\mathscr E_L]
+\nonumber
+\\[4pt]
 &-
-\frac{8\pi n_0}{n_i-n_0}
-e^{2i\varphi}
-\mathscr H_2[E_R]
-\\[6pt]
-&+
 2\pi
-\frac{
-n_0(n_0+n_i)(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^2
-}
+(n_0-n_i)\xi
 e^{2i\varphi}
-\mathscr H_2[r'^2E_R],
-\label{eq:FT_TL_paraxial}
+\mathscr H_2[r'^2\mathscr E_R],
+\label{eq:FT_TL_paraxial_corrected}
 \\[10pt]
 \mathscr F\{T_R\}
 \simeq{}&
--
-\frac{8\pi n_0}{n_i-n_0}
-e^{-2i\varphi}
-\mathscr H_2[E_L]
-\\[6pt]
-&+
 2\pi
-\frac{
-n_0(n_0+n_i)(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^2
-}
-e^{-2i\varphi}
-\mathscr H_2[r'^2E_L]
-\\[6pt]
+\frac{4n_0}{n_0+n_i}
+\mathscr H_0[\mathscr E_R]
++
+2\pi
+(n_0+n_i)\xi
+\mathscr H_0[r'^2\mathscr E_R]
+\nonumber
+\\[4pt]
 &-
 2\pi
-\frac{
-n_0(n_0+n_i)^2(z_0-z_i)^2
-}
-{
-z_0^2z_i^2(n_0-n_i)^3
-}
-\mathscr H_0[r'^2E_R].
-\label{eq:FT_TR_paraxial}
+(n_0-n_i)\xi
+e^{-2i\varphi}
+\mathscr H_2[r'^2\mathscr E_L].
+\label{eq:FT_TR_paraxial_corrected}
 \end{align}
 
-La estructura de \eqref{eq:FT_TL_paraxial} y \eqref{eq:FT_TR_paraxial} exhibe la jerarquía local del acoplamiento vectorial: los términos diagonales aparecen en el siguiente orden paraxial, mientras que los términos de conversión circular permanecen en el orden dominante. Esta separación será esencial para identificar, en el campo focal, cuáles contribuciones pertenecen al límite escalar-paraxial y cuáles corresponden a correcciones vectoriales inducidas por la geometría local de la superficie cartesiana.
+La estructura de \eqref{eq:FT_TL_paraxial_corrected} y \eqref{eq:FT_TR_paraxial_corrected} muestra la jerarquía local del acoplamiento vectorial. El término dominante es diagonal en la base circular y corresponde al límite escalar-paraxial. Los términos de conversión circular, proporcionales a \(e^{\pm2i\varphi}\), aparecen solamente en orden cuadrático y están controlados por
+
+\begin{equation}
+t_p-t_s
+=
+(n_0-n_i)\xi\,\rho^2
++
+O(\rho^4).
+\label{eq:polarization_conversion_quadratic_order}
+\end{equation}
+
+Así, la diferencia entre los canales \(p\) y \(s\) no altera el orden axial dominante, sino que introduce una corrección vectorial de segundo orden en la coordenada pupilar. En términos físicos, \(\xi\) mide la intensidad local de la aberración vectorial inducida por la transmisión local en la superficie cartesiana.
+
+Un caso degenerado importante ocurre cuando \(z_i=z_0\). En tal caso,
+
+\begin{equation}
+\xi=0,
+\label{eq:xi_zero_equal_conjugates}
+\end{equation}
+
+y la diferencia \(t_p-t_s\) se anula al orden cuadrático. Geométricamente, ambos puntos conjugados coinciden axialmente y la superficie local se reduce a una superficie centrada respecto a dicho punto; por consiguiente, la incidencia local pierde la distinción angular ordinaria entre las polarizaciones \(s\) y \(p\) al orden considerado.

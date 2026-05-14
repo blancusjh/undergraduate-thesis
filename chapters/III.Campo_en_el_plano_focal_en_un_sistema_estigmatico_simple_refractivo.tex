@@ -1127,35 +1127,54 @@ de modo que \eqref{eq:E_field_pupil_phase_and_TT} se reescribe compactamente com
 
 En síntesis, los resultados centrales del capítulo en términos de $\mathbb E^{\mathscr G'}$ son
 
-\begin{align}
+
+\begin{equation}
   \vb E'(\vb r, f)
-  &=
-  \frac{n}{i\lambda f}\,e^{inkf}\,e^{i\frac{nk}{2f}r^2}
-  \,\mathscr F\!\left\{\mathbb E^{\mathscr G'}\right\}\!\left(\frac{n}{\lambda f}\vb r\right),
+  =
+  \frac{ne^{inkf}}{i\lambda f}e^{i\frac{nk}{2f}r^2}
+  \,\mathscr F\!\left\{\mathbb E^{\mathscr G'}\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
   \label{eq:E_field_in_EGp}
-  \\
-  \vb E^{\mathscr D}(\vb r)
-  &=
-  \frac{n}{i\lambda f}\,e^{inkf}
-  \,\mathscr F\!\left\{\mathbb E^{\mathscr G'}\right\}\!\left(\frac{n}{\lambda f}\vb r\right),
+\end{equation}
+
+
+
+
+% === BOXED EQ ===
+\begin{equation}
+\boxed{
+  \vb E'^{\mathscr D}(\vb r)
+  =
+  \frac{n e^{inkf}}{i\lambda f}  \,\mathscr F\!\left\{\mathbb E^{\mathscr G'}\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
+}
   \label{eq:E_D_in_EGp}
-\end{align}
+\end{equation}
+% ===============
 
 que, usando $\mathbb E^{\mathscr G'} = \mathbb M \mathbb E_0 / \ell_0$ y aproximando $\ell_0 \approx z_0$ en la amplitud, se leen equivalentemente como
 
-\begin{align}
+
+% === BOXED EQ ===
+
+\begin{equation}
+\boxed{
   \vb E'(\vb r, f)
-  &=
-  \frac{n}{i\lambda f z_0}\,e^{inkf}\,e^{i\frac{nk}{2f}r^2}
-  \,\mathscr F\!\left\{\mathbb M\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right),
-  \label{eq:E_field_in_E0}
-  \\
-  \vb E^{\mathscr D}(\vb r)
-  &=
-  \frac{n}{i\lambda f z_0}\,e^{inkf}
-  \,\mathscr F\!\left\{\mathbb M\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right).
-  \label{eq:E_D_in_E0}
-\end{align}
+  =
+  \frac{ne^{inkf}}{i\lambda f z_0}\,e^{i\frac{nk}{2f}r^2}\,\mathscr F\!\left\{\mathbb M\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
+}
+  \label{eq:E_prime_func_of_M_E0}
+\end{equation}
+% ===============
+
+
+\begin{equation}
+  \vb E'^{\mathscr D}(\vb r)
+  =
+  \frac{ne^{inkf}
+}{i\lambda f z_0}  \,\mathscr F\!\left\{\mathbb M\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
+  \label{eq:E_prime_D_function_of_M_E0}
+\end{equation}
+
+
 
 El campo eléctrico en el plano focal queda determinado por la transformada de Fourier de $\mathbb E^{\mathscr G'} = \mathbb M \mathbb E^{\mathscr G}$, donde
 
@@ -1336,7 +1355,7 @@ que no ha de confundirse con simetria azimutal absoluta, pues un campo cuya comp
 
 Para proceder con los resultados en cada representación, se parte de la ecuación \eqref{eq:E_field_pupil_phase_and_TT} junto con la definición \eqref{eq:E_G_prime_def}, y escribiremos tanto $\mathscr E_\theta$, $\mathscr E_\phi$ como los vectores unitarios $\uvec s$  y $\uvec p'$ en la representación deseada.
 
-
+En la presente sección tendremos en cuenta las siguientes definiciones 
 
 Definimos la transformada de Hankel de orden $m$ como
 
@@ -1376,7 +1395,10 @@ A_a(r')
 \end{equation}
 
 
+Procedemos a dar los resultados en las distintas representaciones
 
+
+%  ==== REPRESENTACIÓN CIRCULAR ====
 
 % ···········································································
 \subsection{Campo eléctrico en el plano focal en la representación circular}
@@ -1598,8 +1620,74 @@ t_p+t_s
 \label{eq:M_in_circular_basis}
 \end{equation}
 
-Aplicando $\mathscr{F}_\phi$ a esa expresión y usando las identidad 
 
+Remplazando en \eqref{eq:E_prime_func_of_M_E0} obtenemos el campo transmitido en el plano focal, 
+en la representación circular
+
+
+
+
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathbf{E}'_\perp(\mathbf r, f)
+=
+\frac{n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+& \mathscr F\!\left[
+(t_p+t_s)\mathscr E_L
++
+(t_p-t_s)e^{2i\phi'}\mathscr E_R
+\right]
+\!\left(
+\frac{n}{\lambda f}\mathbf r
+\right)
+\ket{L}
+\\
+\qquad\qquad
++
+& \mathscr F\!\left[
+(t_p-t_s)e^{-2i\phi'}\mathscr E_L
++
+(t_p+t_s)\mathscr E_R
+\right]
+\!\left(
+\frac{n}{\lambda f}\mathbf r
+\right)
+\ket{R}
+\Bigg\}.
+\end{aligned}
+}
+\label{eq:E_prime_in_circular_representation}
+\end{equation}
+
+
+Este resultado da de manera general el campo transmitido evaluado en el plano focal, como función de las funciones escalares $\mathscr E_\theta$ y $\mathscr E_\phi$ que dependen de $r$ y $\phi$, de lo discutido en la sección (?)%NOTE: CITAR LA SECCIÓN O LUGAR DONDE SE ACLARO ESTO. 
+son funciones reales y definen el vector amplitud del campo en la esfera incidente.
+
+
+
+\subsubsection{Reducción del problema a componentes axialmente simétricas}
+
+La ecuación \eqref{eq:E_prime_in_circular_representation} puede ser simplificada notablemente si asumimos que las componentes $\mathscr E_L$ y $\mathscr E_R$ presentan simetria axial. Además son de interés en óptica, pues campos escritos de esa manera representan haces vectoriales cilindricos, en el que los haces radiales, azimutales y espirales son casos de dichos haces, y son los que corresponden a nuestro caso de estudio.
+
+
+Como ya tenemos claro, el campo transmitido en el plano focal es proporcional a 
+
+\begin{equation}
+  \mathscr F \{ \mathbb M \mathbb E_0 \}
+\end{equation}
+
+al $\mathbb E_0$ no depender de $\phi$ tenemos que el campo es proporcional a 
+
+\begin{equation}
+  \int_0^{\infty} \mathscr F_\phi \{ \mathbb M\} \mathbb E_0 r'dr'
+\end{equation}
+
+
+
+Para calcular $\mathscr{F}_\phi$ se usa la identidad 
 
 
 \begin{equation}
@@ -1609,10 +1697,12 @@ Aplicando $\mathscr{F}_\phi$ a esa expresión y usando las identidad
 \qquad (m\in\mathbb Z)
 \end{equation}
 
-que es la expansión de Jacobi-Anger con un cambio de variable \cite{Watson1944}.
+que es la expansión de Jacobi-Anger con un cambio de variable \cite{Watson1944},
 
 
-Obtenemos
+de la cual se obtiene que 
+
+
 
 \begin{equation}
   \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
@@ -1636,21 +1726,12 @@ e^{-2i\varphi} & 0
 \label{eq:def_V_mixing}
 \end{equation}
 
-El campo en el plano focal se obtiene cerrando con la parte radial,
+
+Quedando ahora las funciones de Bessel $J_0$ y $J_1$ bajo una integral respecto a la coordenada radial con peso la primera potensia de dicha coordenada, el campo transmitido al plano focal se escribe en terminos de las transformadas de Hankel de orden 0 y 2
+
 
 \begin{equation}
-  \vb{E}'_\perp(\vb r, f)
-  =
-  \frac{n}{i\lambda f}\,e^{inkf}e^{i\frac{nk}{2f}r^2}
-  \int_0^\infty
-  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi) \cdot \vb E(r', \phi')\,r'\,dr'.
-  \label{eq:E_field_general_circular}
-\end{equation}
-
-\paragraph{Reducción con simetría azimutal.}
-Cuando las componentes circulares del campo incidente, $E_L(r')$ y $E_R(r')$, son funciones únicamente del radio, la integral radial reduce $J_0(qr')$ y $J_2(qr')$ a transformadas de Hankel. Se obtiene
-
-\begin{equation}
+\boxed{
 \begin{aligned}
 E'_L(\vb r,f)
 &=
@@ -1679,6 +1760,7 @@ e^{i\frac{nk}{2f}r^2}
 \Big].
 \end{aligned}
 \label{eq:E_L_E_R_Hankel}
+}
 \end{equation}
 
 O de forma equivalente, en notación matricial,
@@ -1698,7 +1780,13 @@ O de forma equivalente, en notación matricial,
 
 donde $\mathscr H_m[f]$ denota el operador que multiplica por $f(r')$ y aplica la transformada de Hankel de orden $m$, y $t_\pm$ están definidas en \eqref{eq:t_plus_t_minus_def}.
 
-El término diagonal en $\mathscr{H}_0$ preserva la helicidad incidente y contribuye on-axis; el término antidiagonal en $\mathscr{H}_2$ acopla $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$ y, dado que $J_2(0)=0$, su contribución es estrictamente off-axis.
+El término transformado por $\mathscr{H}_0$, es diagonal, deja la polarización entrante identica si una de las componentes es nula, salvo un escalamiento, tambien, además este termino puede ser identificado como al que corresponde la teoria escalar de la difracción salvo por la modulacion por $tp+ts$ pero si esta se toma como uno, es exactamente lo que se obtiene de la teoria escalar. 
+
+
+
+Los términos en los que $\mathscr{H}_2$ transforma, acoplan $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$ y, dado que $J_2(0)=0$, su contribución es estrictamente fuera de eje, por lo que dicha constribución ensancha el tamaño de la macha focal de manera general y da lugar a un cambio en la polarización.
+
+
 
 Para conectar con el desarrollo en series del apéndice, definimos
 
@@ -1750,13 +1838,13 @@ E'_L
 e^{inkf}
 e^{i\frac{nk}{2f}r^2}
 \left[
--\alpha\mathscr H_0\{\rho'^2E_L\}
+-\alpha\mathscr H_0\{r'^2E_L\}
 -
 e^{2i\varphi}
 \left(
 2\gamma_0\mathscr H_2\{E_R\}
 -
-\beta\mathscr H_2\{\rho'^2E_R\}
+\beta\mathscr H_2\{r'^2E_R\}
 \right)
 \right],
 \\
@@ -1771,24 +1859,30 @@ e^{-2i\varphi}
 \left(
 2\gamma_0\mathscr H_2\{E_L\}
 -
-\beta\mathscr H_2\{\rho'^2E_L\}
+\beta\mathscr H_2\{r'^2E_L\}
 \right)
 -
-\alpha\mathscr H_0\{\rho'^2E_R\}
+\alpha\mathscr H_0\{r'^2E_R\}
 \right].
 \end{aligned}
 \label{eq:E_L_E_R_paraxial}
 \end{equation}
 
-Para una pupila homogénea en la base circular,
+
+Que si ademas el campo incidente es constante sobre la pupila, las 
+funciones $\mathscr E_L$ y $\mathscr E_R$ son
+
 
 \begin{equation}
 E_L(r')=E_{L,0}A_a(r'),
 \qquad
-E_R(r')=E_{R,0}A_a(r'),
+E_R(r')=E_{R,0}A_a(r').
 \end{equation}
 
-se usan las integrales
+
+
+De tal modo, el resultado del campo focal se obtiene evaluando las transformadas de hankel de 1 o de la segunda potencia de $r$, tomamos los sigueintes resultados que se obtienen con facilidad por el uso de las bien conocidas identidades de las funciones de Bessel \cite{arfken2013}
+
 
 \begin{equation}
 \mathscr H_0\{\rho'^2A_a\}(q)
@@ -1820,54 +1914,85 @@ qa\,J_1(qa)
 \label{eq:H2_rho2_chiR}
 \end{equation}
 
-Estas expresiones permiten escribir la forma cerrada de los términos circulares para una pupila homogénea, sustituyendo directamente en \eqref{eq:E_L_E_R_paraxial}.
 
-Cuando, adicionalmente, los coeficientes de Fresnel $t_p$ y $t_s$ se tratan como constantes sobre la apertura, la única integral adicional necesaria es
+sustituyendo directamente en \eqref{eq:E_L_E_R_paraxial}, tenemos que
 
-\begin{equation}
-\mathscr H_0\{A_a\}(q)
-=
-\int_0^a J_0(qr')\,r'\,dr'
-=
-\frac{a}{q}\,J_1(qa),
-\label{eq:H0_chiR}
-\end{equation}
 
-que se evalúa mediante la identidad $\int_0^{x} u\,J_0(u)\,du = x\,J_1(x)$. Combinando con \eqref{eq:H2_chiR} y sustituyendo en \eqref{eq:E_L_E_R_Hankel}, se obtiene el campo en el plano focal para una pupila y campo homogéneos:
+
+
+
+
 
 \begin{equation}
 \begin{aligned}
-E'_L(\vb r,f)
-&=
+E'_L(r,f)
+\simeq&
 \frac{2\pi n}{i\lambda f}
 e^{inkf}
 e^{i\frac{nk}{2f}r^2}
-\left[
-(t_p+t_s)\frac{a}{q}J_1(qa)\,E_{L,0}
+\Bigg\{
+-\alpha
+\left(
+\frac{a^3}{q}J_1(qa)
++
+\frac{2a^2}{q^2}J_0(qa)
+-
+\frac{4a}{q^3}J_1(qa)
+\right)E_{L,0}
+\\
+&\qquad\qquad
 -
 e^{2i\varphi}
-(t_p-t_s)
-\frac{2\bigl(1-J_0(qa)\bigr)-qa\,J_1(qa)}{q^2}
-\,E_{R,0}
-\right],
-\\
-E'_R(\vb r,f)
-&=
+\left(
+2\gamma_0
+\frac{
+2\left\{1-J_0(qa)\right\}
+-
+qaJ_1(qa)
+}{q^2}
+-
+\beta
+\frac{a^3}{q}J_3(qa)
+\right)E_{R,0}
+\Bigg\},
+\\[1em]
+E'_R(r,f)
+\simeq&
 \frac{2\pi n}{i\lambda f}
 e^{inkf}
 e^{i\frac{nk}{2f}r^2}
-\left[
--\,
+\Bigg\{
+-
 e^{-2i\varphi}
-(t_p-t_s)
-\frac{2\bigl(1-J_0(qa)\bigr)-qa\,J_1(qa)}{q^2}
-\,E_{L,0}
+\left(
+2\gamma_0
+\frac{
+2\left\{1-J_0(qa)\right\}
+-
+qaJ_1(qa)
+}{q^2}
+-
+\beta
+\frac{a^3}{q}J_3(qa)
+\right)E_{L,0}
+\\
+&\qquad\qquad
+-
+\alpha
+\left(
+\frac{a^3}{q}J_1(qa)
 +
-(t_p+t_s)\frac{a}{q}J_1(qa)\,E_{R,0}
-\right].
+\frac{2a^2}{q^2}J_0(qa)
+-
+\frac{4a}{q^3}J_1(qa)
+\right)E_{R,0}
+\Bigg\}.
 \end{aligned}
-\label{eq:E_L_E_R_homogeneous_exact}
+\label{eq:EL_ER_constant_E0}
 \end{equation}
+
+
+
 
 O equivalentemente, definiendo las funciones radiales
 
@@ -1884,20 +2009,290 @@ Q(q)
 
 la expresión anterior adopta la forma matricial
 
+
 \begin{equation}
-\begin{pmatrix} E'_L \\ E'_R \end{pmatrix}
-=
-\frac{2\pi n}{i\lambda f}\,e^{inkf}\,e^{i\frac{nk}{2f}r^2}
+\small
 \begin{pmatrix}
-t_+\,P & -e^{2i\varphi}\,t_-\,Q
-\\[4pt]
--e^{-2i\varphi}\,t_-\,Q & t_+\,P
+E'_L(r,f) \\
+E'_R(r,f)
 \end{pmatrix}
-\begin{pmatrix} E_{L,0} \\ E_{R,0} \end{pmatrix}.
-\label{eq:E_L_E_R_homogeneous_matrix}
+\simeq
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\begin{pmatrix}
+-\alpha F_0(q)
+&
+-e^{2i\varphi}
+\left\{
+2\gamma_0 F_2(q)
+-
+\beta G_2(q)
+\right\}
+\\[0.8em]
+-e^{-2i\varphi}
+\left\{
+2\gamma_0 F_2(q)
+-
+\beta G_2(q)
+\right\}
+&
+-\alpha F_0(q)
+\end{pmatrix}
+\begin{pmatrix}
+E_{L,0} \\
+E_{R,0}
+\end{pmatrix},
+\label{eq:EL_ER_constant_E0_matrix}
 \end{equation}
 
-El término diagonal, proporcional a $P(q)=\frac{a}{q}J_1(qa)$, preserva la helicidad incidente y corresponde al patrón de Airy. El término antidiagonal, proporcional a $Q(q)=\frac{2(1-J_0(qa))}{q^2}-\frac{a}{q}J_1(qa)$, acopla $\ket L \leftrightarrow \ket R$ con modulación azimutal $e^{\pm 2i\varphi}$ y es estrictamente nulo en el eje, pues $J_0(0)=1$ y $J_1(0)=0$.
+
+con 
+
+
+\begin{align}
+F_0(q)
+&=
+\frac{a^3}{q}J_1(qa)
++
+\frac{2a^2}{q^2}J_0(qa)
+-
+\frac{4a}{q^3}J_1(qa),
+\\
+F_2(q)
+&=
+\frac{
+2\left\{1-J_0(qa)\right\}
+-
+qaJ_1(qa)
+}{q^2},
+\\
+G_2(q)
+&=
+\frac{a^3}{q}J_3(qa).
+\end{align}
+
+
+
+O en forma de series de las funciones de Bessel 
+
+\begin{equation}
+\begin{aligned}
+E'_L(r,f)
+\simeq&
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+-\frac{2\alpha a^2}{q^2}E_{L,0}
++
+\frac{2\gamma_0 e^{2i\varphi}}{q^2}E_{R,0}
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+-\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)E_{L,0}
++
+\frac{2\gamma_0 a e^{2i\varphi}}{q}E_{R,0}
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\beta\frac{a^3}{q}e^{2i\varphi}E_{R,0}
+\right]
+-
+\frac{4\gamma_0}{q^2}e^{2i\varphi}E_{R,0}
+\Bigg\},
+\\[1em]
+E'_R(r,f)
+\simeq&
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+\frac{2\gamma_0 e^{-2i\varphi}}{q^2}E_{L,0}
+-
+\frac{2\alpha a^2}{q^2}E_{R,0}
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+\frac{2\gamma_0 a e^{-2i\varphi}}{q}E_{L,0}
+-
+\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)E_{R,0}
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\beta\frac{a^3}{q}e^{-2i\varphi}E_{L,0}
+\right]
+-
+\frac{4\gamma_0}{q^2}e^{-2i\varphi}E_{L,0}
+\Bigg\}.
+\end{aligned}
+\label{eq:EL_ER_constant_E0}
+\end{equation}
+
+
+
+Remplazando las constantes auxiliares por los parametros físicos 
+del sistema 
+
+
+\begin{equation}
+\begin{aligned}
+E'_L(r,f)
+\simeq&
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+-\frac{2\alpha a^2}{q^2}E_{L,0}
++
+\frac{4n_0 e^{2i\varphi}}{(n_i-n_0)q^2}E_{R,0}
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+-\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)E_{L,0}
++
+\frac{4n_0 a e^{2i\varphi}}{(n_i-n_0)q}E_{R,0}
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\frac{
+n_0(n_0+n_i)(z_0-z_i)^2a^3
+}{
+z_0^2z_i^2(n_0-n_i)^2q
+}
+e^{2i\varphi}E_{R,0}
+\right]
+-
+\frac{8n_0}{(n_i-n_0)q^2}e^{2i\varphi}E_{R,0}
+\Bigg\},
+\\[1em]
+E'_R(r,f)
+\simeq&
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+\frac{4n_0 e^{-2i\varphi}}{(n_i-n_0)q^2}E_{L,0}
+-
+\frac{2\alpha a^2}{q^2}E_{R,0}
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+\frac{4n_0 a e^{-2i\varphi}}{(n_i-n_0)q}E_{L,0}
+-
+\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)E_{R,0}
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\frac{
+n_0(n_0+n_i)(z_0-z_i)^2a^3
+}{
+z_0^2z_i^2(n_0-n_i)^2q
+}
+e^{-2i\varphi}E_{L,0}
+\right]
+-
+\frac{8n_0}{(n_i-n_0)q^2}e^{-2i\varphi}E_{L,0}
+\Bigg\}.
+\end{aligned}
+\label{eq:EL_ER_constant_E0}
+\end{equation}
+
+
+
+Con esto, quedó en esta seción proporcionado diversos
+resultados para determinar el campo en el plano focal, 
+
+una para cualquier función $\mathscr E_L(r, \phi)$ $\mathscr E_R(r, \phi)$
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/results_of_simulation/first/circular/10/circular_10_abs_propagated.png}
+\caption{Base circular, caso $(1,0)$ (campo propagado).}
+\label{fig:sim_results_circular_10}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/results_of_simulation/first/circular/01/circular_01_abs_propagated.png}
+\caption{Base circular, caso $(0,1)$ (campo propagado).}
+\label{fig:sim_results_circular_01}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/results_of_simulation/first/circular/11/circular_11_abs_propagated.png}
+\caption{Base circular, caso $(1,1)$ (campo propagado).}
+\label{fig:sim_results_circular_11}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/circular/1i/circular_1i_abs_propagated.png}
+\caption{Base circular, caso $(1,i)$ (campo propagado).}
+\label{fig:sim_results_circular_1i}
+\end{figure}
+
+
+Que esta sucediendo acá 
+
+
+
+
+
+% ==== Representación Cilindrica === 
 
 
 
@@ -2263,6 +2658,37 @@ resultado que evidencia la independencia geométrica y energética entre las con
 
 A diferencia de los casos circular y cartesiano —donde aparecen naturalmente los órdenes cero y dos de las transformadas de Hankel—, la simetría azimutal cilíndrica conduce inherentemente al orden uno. Esto corrobora matemáticamente la observación física de que el caso cilíndrico describe una situación lumínica distinta: conforma haces radial o azimutalmente polarizados que poseen una singularidad de fase en el centro, y no una polarización lineal uniforme proyectada sobre la pupila.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/polar/10/polar_10_abs_propagated.png}
+\caption{Base cilíndrica, caso $(1,0)$ (campo propagado).}
+\label{fig:sim_results_cylindrical_10}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/polar/01/polar_01_abs_propagated.png}
+\caption{Base cilíndrica, caso $(0,1)$ (campo propagado).}
+\label{fig:sim_results_cylindrical_01}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/polar/11/polar_11_abs_propagated.png}
+\caption{Base cilíndrica, caso $(1,1)$ (campo propagado).}
+\label{fig:sim_results_cylindrical_11}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/polar/1i/polar_1i_abs_propagated.png}
+\caption{Base cilíndrica, caso $(1,i)$ (campo propagado).}
+\label{fig:sim_results_cylindrical_1i}
+\end{figure}
+
+
+% ==== REPRESENTACIÓN CARTESIANA === 
+
 
 % ···········································································
 \subsection{Base cartesiana}
@@ -2474,3 +2900,31 @@ La estructura es idéntica al caso circular: $\mathcal{A}(q)$ recoge la contribu
 La estructura $\mathscr{H}_0\,\mathbb{I}_\perp - \mathscr{H}_2\,\mathbb{W}$ es la representación cartesiana de la misma física que en la base circular se manifestaba como $\mathscr{H}_0\,\mathbb{I}_\perp - \mathscr{H}_2\,\mathbb{V}$, la contribución de los terminos que produce $\mathscr H_0$ son analogos a los resultados escalares con la salvedad de que en este caso, donde se tuvo en cuenta la naturaleza vectorial de la luz se encuentra doculado los coeficientes de Fresnel, y los terminos de $\mathscr H_2$ acoplan las polarizaciones y estan modelados por la diferencia $t_p - t_s$ y su estructura es meramente anular en contraste con los terminos de $\mathscr H_0$ que es central. 
 
 El primer término de \eqref{eq:E_field_cartesian_azimuthal} preserva la polarización lineal incidente y proporciona la contribución on-axis tipo Airy. El segundo término, gobernado por la diferencia $t_p-t_s$ y por la modulación angular de $\mathbb{W}(\varphi)$, constituye una manifestación explícita de las aberraciones de amplitud intrínsecas al proceso de refracción: incluso cuando el campo incidente tiene amplitud uniforme sobre la pupila, la dependencia angular y polarizacional de los coeficientes de Fresnel induce una redistribución espacial de la energía en el plano focal.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/cartesian/10/cartesian_10_abs_propagated.png}
+\caption{Base cartesiana, caso $(1,0)$ (campo propagado).}
+\label{fig:sim_results_cartesian_10}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/cartesian/01/cartesian_01_abs_propagated.png}
+\caption{Base cartesiana, caso $(0,1)$ (campo propagado).}
+\label{fig:sim_results_cartesian_01}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/cartesian/11/cartesian_11_abs_propagated.png}
+\caption{Base cartesiana, caso $(1,1)$ (campo propagado).}
+\label{fig:sim_results_cartesian_11}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/first/cartesian/1i/cartesian_1i_abs_propagated.png}
+\caption{Base cartesiana, caso $(1,i)$ (campo propagado).}
+\label{fig:sim_results_cartesian_1i}
+\end{figure}
