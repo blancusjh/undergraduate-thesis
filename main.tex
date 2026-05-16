@@ -66,11 +66,19 @@
 % ======================
 % Graphics
 % ======================
+\usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc,angles,quotes,shapes.geometric}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{float}
+
+% Fast build switch: show image boxes instead of rendering full images.
+\newif\iffastbuild
+\fastbuildfalse % Compilación final: renderiza imágenes completas.
+\iffastbuild
+  \setkeys{Gin}{draft}
+\fi
 
 % ======================
 % Bibliography
@@ -120,7 +128,7 @@
 {\large Facultad de Ciencias}\\
 {\large Escuela de Física}\\
 {\large Bucaramanga}\\
-{\large 2025}
+{\large 2026}
 \end{center}
 \end{titlepage}
 
@@ -140,16 +148,18 @@
 
 \input{chapters/III.Campo_en_el_plano_focal_en_un_sistema_estigmatico_simple_refractivo.tex}
 
-\input{chapters/IV.Aplicaciones_al_dioptrio_esferico.tex}
+% \input{chapters/IV.Aplicaciones_al_dioptrio_esferico.tex}
+
+\input{chapters/V.Conclusiones.tex}
 
 % ==== APENDICES ======
 \appendix
 
 \input{appendices/apen_polar_fourier_transform.tex}
 
-\input{appendices/apen_geometria_esferica.tex}
+% \input{appendices/apen_geometria_esferica.tex}       % Cap. IV
 
-\input{appendices/apen_basis_transformations.tex}
+% \input{appendices/apen_basis_transformations.tex}    % Cap. IV
 
 \input{appendices/apen_boundary_conditions_deduction.tex}
 
@@ -157,7 +167,7 @@
 
 \input{appendices/apen_ovoid_implicit_deduction.tex}
 
-\input{appendices/apen_transfer_plane_to_sphere.tex}
+% \input{appendices/apen_transfer_plane_to_sphere.tex} % Cap. IV
 
 \input{appendices/apen_ovoids_series}
 

@@ -3,23 +3,47 @@
 
 \begin{table}[htbp]
 \centering
-\begin{tabular}{p{0.26\textwidth} p{0.66\textwidth}}
+\begin{tabular}{p{0.28\textwidth} p{0.64\textwidth}}
 \hline
 Símbolo & Significado \\
+\hline
+\multicolumn{2}{l}{\textit{Vectores y coordenadas}} \\
 \hline
 $\vb x$ & Vector de posición en $\mathbb{R}^3$. \\
 $\vb r$ & Vector transversal en $\mathbb{R}^2$, con $\vb r=(x,y)$. \\
 $\mathbf k$ & Vector de onda en $\mathbb{R}^3$. \\
 $\mathbf k_\perp$ & Componente transversal del vector de onda, $\mathbf k_\perp=(k_x,k_y)$. \\
 $k_z$ & Componente longitudinal del vector de onda. \\
+\hline
+\multicolumn{2}{l}{\textit{Campos eléctricos}} \\
+\hline
+$\mathbb E_0$ & Vector de amplitud del campo incidente (parte de polarización y módulo, sin la fase esférica). Sus componentes en la base de Fresnel son $\mathscr E_\theta$ y $\mathscr E_\phi$. \\
+$\mathscr E_\theta,\;\mathscr E_\phi$ & Amplitudes escalares del campo incidente en la base de Fresnel local $(\hat p, \hat s)$. \\
+$\mathbb E^{\mathscr G}$ & Campo sobre la esfera de referencia $\mathscr G$ centrada en el punto objeto $A$; satisface $\mathbb E^{\mathscr G} = \mathbb E_0/\ell_0$. \\
+\texorpdfstring{$\mathbb E^{\mathscr G'}$}{E\^{}G'} & Campo sobre la esfera de referencia $\mathscr G'$ centrada en el punto imagen $A'$, tangente al dioptrio. Función pupila vectorial generalizada; satisface $\mathbb E^{\mathscr G'} = \mathbb M\,\mathbb E^{\mathscr G}$. \\
+$\vb E^{\mathscr D}$ & Campo sobre la esfera $\mathscr D$ centrada en el vértice del dioptrio con radio $f$. Proporcional a la transformada de Fourier de $\mathbb E^{\mathscr G'}$. \\
+$\mathbb M$ & Operador de transmisión de Fresnel; aplica $t_p$ a la componente $p$ y $t_s$ a la componente $s$. \\
 $\Psi(\vb x)$ & Componente escalar del campo en el espacio tridimensional. \\
-$\Psi(\vb r,z)$ & Campo escalar escrito en coordenadas transversales y longitudinal. \\
+$\Psi(\vb r,z)$ & Campo escalar en coordenadas transversales y longitudinal. \\
+\hline
+\multicolumn{2}{l}{\textit{Coeficientes de Fresnel}} \\
+\hline
+$t_s,\,t_p$ & Coeficientes de transmisión de Fresnel para polarización $s$ y $p$. \\
+$t_+ = t_s+t_p$ & Combinación isótropa de los coeficientes de Fresnel. \\
+$t_- = t_p-t_s$ & Combinación anisotrópica; gobierna la mezcla de polarizaciones. \\
+\hline
+\multicolumn{2}{l}{\textit{Operadores y transformadas}} \\
+\hline
 $\mathscr F$ & Operador de transformada de Fourier. \\
-$\mathscr F_\perp$ & Transformada de Fourier bidimensional respecto de las coordenadas transversales. \\
-$\mathscr F_\perp^{-1}$ & Transformada inversa de Fourier bidimensional transversal. \\
+$\mathscr F_\perp$ & Transformada de Fourier bidimensional transversal. \\
+$\mathscr H_n$ & Transformada de Hankel de orden $n$. \\
 $\mathscr R$ & Operador de propagación (notación general). \\
 $\mathscr R_{ASM}$ & Operador de propagación del método de espectro angular. \\
+\hline
+\multicolumn{2}{l}{\textit{Otras cantidades}} \\
+\hline
 $\mathrm{NA}$ & Apertura numérica del sistema óptico. \\
+$F_c$ & Razón entre la intensidad central vectorial y la escalar: $I_\text{total}(0)/I_\text{escalar}(0)$. \\
 \hline
 \end{tabular}
 \caption{Convenciones de notación empleadas en el documento.}

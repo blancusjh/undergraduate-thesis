@@ -1,11 +1,12 @@
-\chapter{Aplicaciones al dioptrio esférico} 
+\chapter{Aplicaciones al dioptrio esférico}
+\label{ch:esfera}
 
 El caso más simple de los dioptrios estigmáticos es el de la esfera en los llamados puntos de Young-Weierstrass $A$ y $A'$ con $A$ siendo un punto dentro de la esfera y $A'$ uno fuera de esta pero en un medio con el mismo índice de refracción que el del medio que el dioptrio esférico encierra. 
 
 
 %TODO: CITAR. 
 
-Empezamos el estudio de este dioptrio especial por la simpleza de su geometria.
+Empezamos el estudio de este dioptrio especial por la simpleza de su geometría.
 
 Matemáticamente la superficie dioptrica $\Sigma$ se define como
 
@@ -22,7 +23,7 @@ Centrado el sistema de coordenadas en el centro $C$ de la esfera, escribimos el 
 \end{equation}
 
 Sean $A$ y $A'$ los puntos estigmáticos del sistema, tenemos que los vectores 
-$\vb A = CA$ y $\vb A' = CA'$ estan dados por %esto acorde a la teoria de los dioptrios estimaticos (ovoides de descartes).
+$\vb A = CA$ y $\vb A' = CA'$ están dados por %esto acorde a la teoría de los dioptrios estigmáticos (ovoides de Descartes).
 
 
 
@@ -249,9 +250,9 @@ Escribiendo estos resultados en coordenadas cilíndricas, tenemos
 
 
 
-Pasemos ahora a transformar el campo incidente segun los coeficientes de Fresnel, 
-notar que las transformaciones mediante estos coeficientes solo tiene sentido 
-en la superficie del dioptrio $\Sigma$, el campo incidente debe estar en tal lugar geometrico y el campo transmitido que obtengamos estara tambien allí. 
+Pasemos ahora a transformar el campo incidente según los coeficientes de Fresnel;
+nótese que las transformaciones mediante estos coeficientes solo tienen sentido
+en la superficie del dioptrio $\Sigma$: el campo incidente debe estar en tal lugar geométrico y el campo transmitido que obtengamos estará también allí.
 
 Sea $\vb E_\Sigma$ y $\vb E'_{\Sigma}$ los campos incidentes y transmitidos en $\Sigma$ respectivamente. 
 
@@ -286,14 +287,14 @@ Es decir
 \end{equation}
 
 
-% TODO: Algunos comentarios que serán luego mejor escritos en una sección mas arriba donde se describa el problema general, donde usaremos los analisis generales para resolver el caso carticular esférico y los que siguen 
-Así el problema de el calculo del campo transmitido en una cierta superficie $\Sigma$ se basa en la construcción de las matrices $P$ y $P'$, como de los coeficientes $t_s$ y $t_p$ apartir de la geometria de la superficie que es la geometria conjunta de la superficie y como los rayos son emitidos
+% TODO: Algunos comentarios que serán luego mejor escritos en una sección más arriba donde se describa el problema general, donde usaremos los análisis generales para resolver el caso particular esférico y los que siguen
+Así, el problema del cálculo del campo transmitido en una cierta superficie $\Sigma$ se basa en la construcción de las matrices $P$ y $P'$, así como de los coeficientes $t_s$ y $t_p$ a partir de la geometría de la superficie, que es la geometría conjunta de la superficie y de cómo los rayos son emitidos.
 
 
-La transformación que sufre el campo incidente se aplica facilmente cuando el 
-campo incidente nos es dado en la base $s$ y $p$ y queremos el campo transmitido en la base $s$ y $p'$, sin embargo, si nuestra campo incidente es conocido en otra base, habrá que hacer la transformación correspondiente. 
+La transformación que sufre el campo incidente se aplica fácilmente cuando el
+campo incidente nos es dado en la base $s$ y $p$ y queremos el campo transmitido en la base $s$ y $p'$; sin embargo, si nuestro campo incidente es conocido en otra base, habrá que hacer la transformación correspondiente.
 
-Las matrices de transformación para dar el campo en la base $s$ y $p$ en las bases: cartesiana, cilindrica y esférica se escriben como sigue
+Las matrices de transformación para dar el campo en la base $s$ y $p$ en las bases cartesiana, cilíndrica y esférica se escriben como sigue
 
 Expresamos \ref{eq:E_transmitido} en sus componentes cartesianas escribiendo $\uvec u$ y $\uvec p'$ en su descomposición en la base $xyz$. 
 
@@ -463,11 +464,11 @@ Ahora bien, si el campo incidente es conocido en un plano, no podemos aplicar la
 \section[Campo transmitido en plano tangente]{Campo transmitido en el plano tangente desde un campo incidente en el mismo plano}
 \label{subsec:campo_plano_a_plano}
 
-Estudiamos ahora la propagación completa del campo desde el plano tangente $P$ de entrada $z = -R$ hasta el plano a una distancia $d$ de el plano $P$, considerando la trnasmición por el dioptrio esférico $\Sigma$. 
+Estudiamos ahora la propagación completa del campo desde el plano tangente $P$ de entrada $z = -R$ hasta el plano a una distancia $d$ del plano $P$, considerando la transmisión por el dioptrio esférico $\Sigma$.
 
 Este proceso puede pensarse en tres etapas: (1) transferencia del plano de entrada al dioptrio mediante proyección central desde el punto objeto $A$, (2) transmisión a través del dioptrio según los coeficientes de Fresnel, y (3) transferencia del dioptrio al plano $P$ mediante proyección central desde el punto imagen $A'$.
 
-Es importante notar que las dos transferencias geométricas utilizan centros de proyección diferentes: la primera sigue los rayos incidentes que convergen hacia $A$, mientras que la segunda sigue los rayos transmitidos que divergen desde $A'$ y que la primera de las trasnmiciones ocurre en en el medio de indice de refracción $n_0$ mientras que la segunda en el indice de refracción $n_i$. 
+Es importante notar que las dos transferencias geométricas utilizan centros de proyección diferentes: la primera sigue los rayos incidentes que convergen hacia $A$, mientras que la segunda sigue los rayos transmitidos que divergen desde $A'$. Además, la primera de las transmisiones ocurre en el medio de índice de refracción $n_0$, mientras que la segunda ocurre en el índice de refracción $n_i$.
 
 \subsection{Transferencia del plano de entrada al dioptrio}
 
@@ -502,7 +503,7 @@ La función $r_0(\theta)$ establece la correspondencia entre la coordenada angul
 
 \subsection{Transmisión a través del dioptrio}
 
-Una vez conocido el campo sobre $\Sigma$, aplicamos la matriz de transmisión de Fresnel. Dado que $\mathcal{T}(\theta)$ (ecuación \eqref{eq:T_matrix_spherical_dioptrique}) opera en la base $(\uvec{p}, \uvec{s})$ de Fresnel, mientras que el campo está expresado en coordenadas espaciales, necesitamos un operador que deterimine la transmición independiente de la base incorporando los cambios de base necesarios:
+Una vez conocido el campo sobre $\Sigma$, aplicamos la matriz de transmisión de Fresnel. Dado que $\mathcal{T}(\theta)$ (ecuación \eqref{eq:T_matrix_spherical_dioptrique}) opera en la base $(\uvec{p}, \uvec{s})$ de Fresnel, mientras que el campo está expresado en coordenadas espaciales, necesitamos un operador que determine la transmisión independiente de la base incorporando los cambios de base necesarios:
 
 \begin{equation}
 \vb{E}'_\Sigma(\theta,\phi) = \bar{\mathcal{T}}(\theta)\, \vb{E}_\Sigma(\theta,\phi),
@@ -600,7 +601,7 @@ l_0(\theta) = \sqrt{1+\eta_0^2 - 2\eta_0\cos\theta}.
 
 \section{...}
 
-El enfoque de planos trabajado con anterioridad, si bien es teoricamente correcto, no es la manera más natural de trabajar, un enfoque alternativo que tambien usa el método de espectro angular para propagar el campo transmito puede formularse con la ventaja de que nos ahorramos una de las transferencias al evaluar directamente el campo esférico en $\Sigma$. 
+El enfoque de planos trabajado con anterioridad, si bien es teóricamente correcto, no es la manera más natural de trabajar; un enfoque alternativo que también usa el método de espectro angular para propagar el campo transmitido puede formularse con la ventaja de que nos ahorramos una de las transferencias al evaluar directamente el campo esférico en $\Sigma$.
 
 De manera general, el campo esférico converguente a $A$ se puede escribir como 
 
@@ -621,7 +622,7 @@ o de forma equivalente
     \vb E_{\Sigma} (\theta, \phi) = A(\theta, \phi) \frac{e^{-ik l_0(\theta)}}{l_0(\theta)} \uvec e (\theta, \phi).
 \end{equation}
 
-El estado de polarización no es arbitrario, sino que debe satisfacer la condición de ser transversal al frente de onda, de manera de que si construimos un sistema esférico $(\theta_A, \phi)$ centrado en $A$, tenemos que el estado polarizacion se puede escribir como 
+El estado de polarización no es arbitrario, sino que debe satisfacer la condición de ser transversal al frente de onda, de manera que, si construimos un sistema esférico $(\theta_A, \phi)$ centrado en $A$, tenemos que el estado de polarización se puede escribir como
 
 \begin{equation}
    \uvec e = e_\theta \uvec \theta_A + e_\phi \uvec \phi 
@@ -629,9 +630,5 @@ El estado de polarización no es arbitrario, sino que debe satisfacer la condici
 
 
 se hace necesario buscar la ley de transformación entre esta base y la base de Fresnel (p, s).
-
-
-
-
 
 

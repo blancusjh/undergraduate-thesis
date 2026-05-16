@@ -1,7 +1,8 @@
-\chapter{Óptica Ondulatoria} 
+\chapter{Óptica Ondulatoria}
+\label{ch:ondulatoria}
 
 
-La visión geométrica de la luz, si bien elegante, y suficiente para muchas de las aplicaciones elementales, no captan por completo la verdader naturaleza de la luz, pues bien se vio acorralada este modelo teórico frente a fenomenos como la interferencia, la diffracción, la birrefrigencia, por mencionar algunos. Estos problemas, hacian temblar este modo de entender la luz, se fue acumulando las experincias que contradecian este modelo, hasta que la paradoja se hizo inegable. Por otro lado, las investigaciones concernientes a los fenomenos electricos y magnéticos, dio fruto a grandes avances en el entendimiento de estas fuerzas de la naturaleza, fue Faraday el que entendio como se influian mutuamente lo que sugeria una misma naturaleza, tambien observo experimentalmente como la luz era influido por estas fuerzas ahora mejor entendidas. James Clerk Maxwell en una tarea verdaderamente unificadora, y excelsa matematicamente, sinteizo las ideas de su epoca en las ecuaciones que lleva su nombre, y por una necesidad física de conservación y el conocimiento matematico de las ecuaciones que la aseguraban, fue mas alla que sus predeceseres postulando las ondas como consecuencia de respetar este principio de conservación para la carga electrica \cite{maxwell1865}.
+La visión geométrica de la luz, si bien elegante y suficiente para muchas de las aplicaciones elementales, no capta por completo la verdadera naturaleza de la luz, pues este modelo teórico se vio acorralado frente a fenómenos como la interferencia, la difracción y la birrefringencia, por mencionar algunos. Estos problemas hicieron temblar este modo de entender la luz: se fueron acumulando experiencias que contradecían el modelo, hasta que la paradoja se hizo innegable. Por otro lado, las investigaciones concernientes a los fenómenos eléctricos y magnéticos dieron fruto a grandes avances en el entendimiento de estas fuerzas de la naturaleza; fue Faraday quien entendió cómo se influían mutuamente, lo que sugería una misma naturaleza, y también observó experimentalmente cómo la luz era influida por estas fuerzas, ahora mejor entendidas. James Clerk Maxwell, en una tarea verdaderamente unificadora y excelsa matemáticamente, sintetizó las ideas de su época en las ecuaciones que llevan su nombre y, por una necesidad física de conservación y el conocimiento matemático de las ecuaciones que la aseguraban, fue más allá que sus predecesores postulando las ondas como consecuencia de respetar este principio de conservación para la carga eléctrica \cite{maxwell1865}.
 
 \section{Ecuaciones de Maxwell}
 
@@ -76,7 +77,7 @@ por lo que en lo sucesivo omitiremos el campo magnético en nuestro anális, pue
 
 donde $k = \omega/c$, la ecuación fundamental para la propagación de el campo armonico. 
 
-La ecuación \ref{eq:E_field_wave_equation} es equivalenete a una ecuación de Helmholtz escalar para cada una de sus componentes cartesianas, sea $\Psi(\vb x)$ una de esas componentes, escribimos 
+La ecuación \ref{eq:E_field_wave_equation} es equivalente a una ecuación de Helmholtz escalar para cada una de sus componentes cartesianas; sea $\Psi(\vb x)$ una de esas componentes, escribimos
 
 \begin{equation}
     \nabla^2 \Psi (\vb x) + k^2 \Psi (\vb x) = 0.
@@ -84,9 +85,9 @@ La ecuación \ref{eq:E_field_wave_equation} es equivalenete a una ecuación de H
 \end{equation}
 
 
-Que es la ecuación base de los métodos escalares de propagación, siendo los métodos de propagación en ultimas 
-soluciones a esta dada unas condiciones iniciales, los métodos se dividen en exactos y aproximados, segun si 
-resuleven la ecuación de Helmholtz \eqref{eq:Helmholtz_equation} de forma exacta o aproximada.
+Que es la ecuación base de los métodos escalares de propagación, siendo los métodos de propagación, en últimas,
+soluciones a esta dadas unas condiciones iniciales; los métodos se dividen en exactos y aproximados, según si
+resuelven la ecuación de Helmholtz \eqref{eq:Helmholtz_equation} de forma exacta o aproximada.
 
 
 % ======================
@@ -349,7 +350,7 @@ De donde se obtiene
 
 con \(k_\perp = \sqrt{k_x^2 + k_y^2}\).
 
-La apertura numérica del sistema esta dada por \cite{bornwolf1999}
+La apertura numérica del sistema está dada por \cite{bornwolf1999}
 
 \begin{equation}
 \mathrm{NA} = n \sin\theta.
@@ -428,7 +429,7 @@ De aquí se obtiene el límite de resolución de Abbe:
 d \ge \frac{\lambda}{2\,\mathrm{NA}}.
 \end{equation}
 
-Por lo que el límite inferior de detalle resoluble esta dado por 
+Por lo que el límite inferior de detalle resoluble está dado por
 
 \begin{equation}
   d_{min} = \frac{\lambda}{2\,\mathrm{NA}} ,
@@ -444,7 +445,7 @@ donde \(\lambda\) es la longitud de onda en el vacío, y \(\mathrm{NA}\) es la a
     \label{fig:loss_detail_small_apertures}
 \end{figure}
 
-De acá se sigue que amentar el tamaño de la pupila y aumentar el indice de refracción $n$ da lugar a una mayor resolución, por lo que las aproximaciones paraxiales límitan la resolución que los sistemas pueden alcanzar debido a que no contemplan frecuencias mayores donde estan los detalles más finos.
+De acá se sigue que aumentar el tamaño de la pupila y aumentar el índice de refracción $n$ da lugar a una mayor resolución, por lo que las aproximaciones paraxiales limitan la resolución que los sistemas pueden alcanzar debido a que no contemplan frecuencias mayores, donde están los detalles más finos.
 
 
 
@@ -676,7 +677,7 @@ Al elegir una función de Green $G(\mathbf{r}, \mathbf{r}')$ construida mediante
 G_1 = \frac{e^{ik\|\mathbf{r}-\mathbf{r}^*\|}}{\|\mathbf{r}-\mathbf{r}^*\|} - \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|}.
 \end{equation}
 
-Remplazando esta función y calculando su derivada normal respecto a la superficie, la expresión se reduce a la primera fórmula de difracción de Rayleigh-Sommerfeld:
+Reemplazando esta función y calculando su derivada normal respecto a la superficie, la expresión se reduce a la primera fórmula de difracción de Rayleigh-Sommerfeld:
 
 \begin{equation}
 U(\mathbf{r}) = -\frac{1}{2\pi} \int_{\Sigma} U(\mathbf{r}') \cos(\mathbf{n}, \mathbf{r}-\mathbf{r}') \left\{ ik - \frac{1}{\|\mathbf{r}-\mathbf{r}'\|} \right\} \frac{e^{ik\|\mathbf{r}-\mathbf{r}'\|}}{\|\mathbf{r}-\mathbf{r}'\|} d\sigma'.
@@ -776,7 +777,7 @@ Esta demostración conecta analíticamente la integral espacial de difracción c
 Cuando la radiación se encuentra con una interfaz que separa dos medios, sufre transformaciones debido a la diferencia entre las propiedades de los medios. 
 Al ser las ecuaciones que rigen la propagación dependientes de las propiedades del medio, en cada región son ligeramente distintas las ecuaciones que se han de satisfacer en la sección~\ref{sec:boundary_conditions_in_dielectrics}.
 
-Estas condiciones de frontera, permiten conocer el campo que se transmite dado el incidente, ambos sobre la interfaz $\Sigma$ que separa los dos medios. 
+Estas condiciones de frontera permiten conocer el campo que se transmite dado el incidente, ambos sobre la interfaz $\Sigma$ que separa los dos medios.
 
 Escribiendo el campo por su espectro 
 
@@ -808,7 +809,7 @@ definimos así entonces los vectores unitarios $\uvec s$ y $\uvec p$ según
 \label{eq:sdef}
 \end{equation}
 
-Así el campo transmitido $\vb{E}'_{\Sigma}$ sobre la interfaz $\Sigma$, dado el campo incidente $\vb{E}_\Sigma$ sobre $\Sigma$ tambien, esta dado por
+Así, el campo transmitido $\vb{E}'_{\Sigma}$ sobre la interfaz $\Sigma$, dado el campo incidente $\vb{E}_\Sigma$ sobre $\Sigma$ también, está dado por
 
 
 \begin{equation}
@@ -843,7 +844,7 @@ Matemáticamente, el operador $\mathscr{P}$ se puede representar como
 \end{equation}
 
 
-Los coeficientes $t_s$, $t_p$ se conocen como coeficientes de Fresnel para la transmisión, y estan dados por
+Los coeficientes $t_s$, $t_p$ se conocen como coeficientes de Fresnel para la transmisión y están dados por
 
 
 \begin{equation}

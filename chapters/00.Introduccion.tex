@@ -1,28 +1,127 @@
 \chapter*{Introducción}
 \addcontentsline{toc}{chapter}{Introducción}
 
-\lettrine[lines=2]{E}{n} el libro presente, se obtiene una representación integral del campo eléctrico en el plano focal de los \emph{sistemas estigmáticos} formados de una superficie dioptrica. En la primera parte se da una presentación breve pero rigurosa de la óptica geoemétrica, con el objetivo proncipal de definir el concepto de estigmátismo que son los sistemas de interes de este trabajo al estar libres de \emph{aberración geométrica}. En la segunda parte, se presentara la teoría ondulatoria/electrogmanética de la luz de la cual se deriva la \emph{teoría escalar de la difracción} y las leyes de transformación del campo eléctrico al cambiar de medio, que son las bases de nuestra teoría para abordar \emph{la propagación electromagnética de la luz}. En la tercera parte, se calculan los \emph{coeficientes de Fresnel} en las \emph{Superficies Cartesianas} y los operadores transversales de fase, que son los recursos necesarios para aplicar la teoría a los sistemas de nuestro interés.
+\lettrine[lines=2]{L}{a} capacidad de un sistema óptico para concentrar la luz en un punto
+—o, en sentido inverso, para formar la imagen de un punto objeto en un punto imagen bien
+definido— es la propiedad central de la óptica de formación de imagen. Esta propiedad,
+conocida como \emph{estigmatismo}, garantiza una correspondencia biunívoca entre objeto e
+imagen al menos para un par de puntos conjugados, y constituye el punto de partida de toda
+la teoría de aberraciones. Los instrumentos de la óptica moderna —microscopios de alta
+resolución, telescopios de gran apertura, sistemas de litografía óptica— han alcanzado un
+grado de refinamiento tal que la descripción rigurosa del campo electromagnético en el plano
+focal se ha convertido en una necesidad práctica, ya no en una sofisticación teórica.
 
+En la mayoría de los tratamientos clásicos de la formación de imagen, la propagación de la
+luz se describe mediante una función escalar, y las superficies ópticas se analizan bajo la
+aproximación paraxial. Estas simplificaciones son justificadas cuando la apertura numérica
+del sistema es moderada, pues en ese régimen la polarización tiene una influencia secundaria
+sobre el patrón de intensidad y la curvatura de las superficies puede aproximarse por
+paraboloides. Sin embargo, al aumentar la apertura numérica —condición necesaria para
+mejorar simultáneamente la resolución espacial y la luminosidad del sistema— ambas
+aproximaciones dejan de ser válidas. La componente longitudinal del campo eléctrico, que
+en la aproximación escalar se ignora, crece con el ángulo de convergencia y puede llegar a
+ser comparable a las componentes transversales. El estado de polarización del campo
+incidente determina entonces de manera esencial la estructura del punto focal, con
+consecuencias directas sobre la resolución y la simetría del patrón de intensidad.
 
+La formulación canónica del problema vectorial en la región focal fue establecida por
+Richards y Wolf en 1959 \cite{RichardsWolf1959}, quienes expresaron el campo
+electromagnético cerca del foco de un sistema aplanático como una integral sobre una
+esfera de referencia que representa el frente de onda convergente. En su formulación, la
+función de apodización que pondera cada dirección de integración se obtiene de la
+conservación de la energía junto con la condición de seno de Abbe, que impone una relación
+específica entre los ángulos de incidencia y la posición radial en la pupila. El integral de
+Richards-Wolf se ha convertido en la herramienta estándar para el cálculo del campo en el
+foco de objetivos de microscopio y de cualquier sistema de alta apertura numérica que
+satisfaga la condición de seno.
 
-La teoria ondulatoria de la luz tomo considerable tiempo y esfuerzo para ser aceptada ampliamente, Fresnel, Franhoufer, ..., Defendieron la Teoria y la formularón matemáticamente. Para ellos 
-el estado de la luz podía ser descrito por un \emph{campo escalar}. Y fueron exitosos en el calculo del patrón de intensidad que se observaba en una pantalla luego de que la luz atravezará aperturas circulares, estructuras con bordes definidos, etc. Llamamos a esta doctrina, la teoría escalar de la luz o teoría escalar de la radiación.
+El presente trabajo se sitúa en este mismo problema —el cálculo riguroso del campo
+electromagnético en el plano focal— pero aborda una clase de sistemas más fundamental: los
+\emph{sistemas estigmáticos} formados por una sola superficie dióptrica, cuya geometría
+exacta queda determinada por la condición de estigmatismo sin restricciones adicionales.
+Las superficies que realizan el estigmatismo exacto entre un par de puntos $A$ y $A'$
+son las conocidas \emph{superficies cartesianas} u \emph{ovoides de Descartes}, obtenidas
+por Descartes en la \textit{Dioptrique} como solución al problema del igual camino óptico.
+Estas superficies son el objeto de estudio natural cuando se exige rigor geométrico sin
+hipótesis paraxiales, pues codifican en su forma la condición de que todos los rayos
+emitidos desde $A$ acumulen exactamente la misma fase en su recorrido hasta $A'$,
+independientemente del punto de la superficie por el que pasen.
 
-Por las investigaciones de James Clerk Maxwell (1831-1879) y la posterior comprobación experimental realizada por Heinrich Hertz (1857-1894) se nos dio a conocer que \emph{la luz} puede ser entendida como una \emph{onda electromagnética}. 
+La estrategia adoptada en este trabajo combina tres elementos:
+\begin{enumerate}
+  \item La \emph{óptica geométrica}, que proporciona la geometría exacta de la superficie
+    dióptrica estigmática a través de las ecuaciones paramétricas de la superficie
+    cartesiana y la ley vectorial de Snell--Descartes.
+  \item Las \emph{ecuaciones de Maxwell} y el \emph{método de espectro angular}, que rigen
+    la propagación del campo electromagnético en medios homogéneos e isótropos y
+    proporcionan el operador de propagación entre planos paralelos.
+  \item Los \emph{coeficientes de Fresnel vectoriales} en la superficie dióptrica, que
+    determinan cómo se transforman las componentes $s$ y $p$ del campo eléctrico al
+    atravesar la interfaz entre dos medios con distintos índices de refracción.
+\end{enumerate}
+La combinación de estos tres ingredientes produce una expresión integral exacta —salvo
+por la aproximación de Fresnel en la propagación en espacio libre— para el campo
+electromagnético en el plano focal, expresada como la transformada de Fourier de una
+función pupila vectorial que incorpora la geometría de la superficie y los coeficientes
+de transmisión. Esta función pupila es la generalización, para superficies cartesianas
+arbitrarias, de la función de apodización que aparece en el integral de Richards-Wolf.
 
-Este nuevo entendimiento de la naturaleza de la luz permitio explicar fenomenos como la polarización, y la interacción de la luz con la materia. 
+El trabajo está organizado en tres capítulos y un conjunto de apéndices.
 
-Es entonces, para esta nueva y refinada visión acerca de la naturaleza de la luz, insuficiente describir el estado de la luz mediante una función escalar, sino que es necesario describirla mediante al menos una función de campo vectorial.
+El \textbf{Capítulo~\ref{ch:geometrica}} presenta la óptica geométrica con la precisión
+requerida por el resto del trabajo. Se introduce el principio de Fermat y la ley vectorial
+de Snell--Descartes; a partir de la condición de estigmatismo se derivan las superficies
+cartesianas u \emph{ovoides de Descartes} como solución geométrica exacta al problema de
+la formación de imagen puntual, y se obtiene la parametrización de la superficie junto con
+su campo normal, que es el ingrediente geométrico que entra en los coeficientes de Fresnel.
 
-Conociendo la teoría electromagnética de la radiación, incluso hoy en día son ampliamente utilizados las teorias escalares para computar como la luz se propaga en los sistemas ópticos, porque esta aproximación es suficiente cuando estamos solo interesados en el patrón de intensidad y el sistema no tiene una resolución descomunal. 
+El \textbf{Capítulo~\ref{ch:ondulatoria}} desarrolla la teoría ondulatoria y
+electromagnética que sustenta el tratamiento vectorial. Se obtiene la ecuación de onda a
+partir de las ecuaciones de Maxwell y su solución en términos de ondas planas armónicas;
+se introduce el método de espectro angular como operador exacto de propagación entre planos
+paralelos. Se deducen las condiciones de frontera en interfaces dieléctricas y se formulan
+los coeficientes de Fresnel tanto en su forma escalar habitual como en su versión operatorial
+vectorial, que es la que se emplea en el capítulo siguiente.
 
-El interés de este trabajo son los sistemas estigmáticos, porque asegura una correspondencia punto a punto entre el objeto y su imagen al menos para un par de ellos en el regimen geoemetrico, y es de esperar que conserven buenas propiedades en las teorias ondulatorias porque la condicion de mismo camino óptico, es equivalente a que en el trayecto, todos los rayos emitidos desde unos de los puntos estigmáticos acumulan exactamente la misma fase en su trayecto hasta su convergencia en el punto estigmático conjugado al primero. 
+El \textbf{Capítulo~\ref{ch:focal}} contiene el desarrollo central del trabajo. Se calcula
+el campo eléctrico en el plano focal de un sistema estigmático simple para un campo incidente
+esférico emitido desde el punto objeto $A$; la condición estigmática cancela la fase
+geométrica acumulada entre las esferas de referencia, de modo que el resultado toma la forma
+de la transformada de Fourier de una función pupila vectorial generalizada $\mathbb E^{G'}$
+que codifica la polarización incidente, la geometría exacta de la superficie cartesiana y
+los coeficientes de Fresnel locales. El capítulo está organizado en tres secciones, una por
+cada representación de polarización de la pupila:
+\begin{enumerate}
+  \item \textbf{Representación circular.} Se expresa $\mathbb E^{G'}$ en la base de
+    polarizaciones circulares izquierda/derecha. Con simetría azimutal, la transformada
+    de Fourier bidimensional se reduce a transformadas de Hankel de órdenes $0$ y $2$:
+    el orden $0$ corresponde a la parte isótropa de la transmisión (proporcional a $t_+$)
+    y el orden $2$ a la corrección vectorial anisotrópica (proporcional a $t_-=t_p-t_s$),
+    que acopla las componentes $L$ y $R$ mediante fases $e^{\pm 2i\varphi}$.
+  \item \textbf{Representación cilíndrica.} Se expresa $\mathbb E^{G'}$ en la base de
+    polarizaciones radial y azimutal. Esta base es especial porque radial y azimutal son
+    modos propios del operador de transmisión de la interfaz
+    ($\mathcal M\,\hat{\mathbf r}=t_p\hat{\mathbf r}$,
+    $\mathcal M\,\hat{\boldsymbol\varphi}=t_s\hat{\boldsymbol\varphi}$): la transmisión
+    actúa como modulación escalar local sin mezcla de polarizaciones. Con simetría
+    azimutal, la transformada de Fourier reduce al orden de Hankel $1$, lo que implica
+    que el campo transversal se anula en el centro del foco, predicción que no tiene
+    análogo en la teoría escalar.
+  \item \textbf{Representación cartesiana.} Se expresa $\mathbb E^{G'}$ en las componentes
+    $x$/$y$ del campo incidente. La misma estructura Hankel $0$/$2$ que aparece en la
+    representación circular se manifiesta aquí como mezcla de componentes cartesianas
+    gobernada por una matriz angular de orden dos en $\varphi$.
+\end{enumerate}
+En cada representación se analiza el caso particular de campo uniforme sobre una pupila
+circular de radio $a$, para el cual las transformadas de Hankel se evalúan analíticamente
+y el campo focal queda expresado en términos de funciones de Bessel. Se estudia asimismo
+la intensidad total incluyendo la componente longitudinal del campo eléctrico, que en
+este régimen de alta apertura no puede despreciarse, y se compara con la predicción
+escalar cuantificando la discrepancia en función del contraste de índice y el ángulo de
+semiapertura.
 
-
-
-La óptica moderna ha perfeccionado los instrumentos que empleamos para resolver tanto las estructuras más pequeñasrácticas muy extendidas en el campo de la óptica —tales como las aproximaciones paraxiales en óptica geométrica y ondulatoria, y el ignorar la naturaleza vectorial de la radiación— han sido suficientes para la gran mayoría de las aplicaciones, al costo de limitar la apertura numérica. Como es bien conocido por los instruidos en la ciencia de la luz, esta limitación restringe tanto la resolución alcanzable como la luminosidad captada por los sistemas ópticos. Si bien estas aproximaciones aportan cierta simplicidad calculacional, cada vez más los modelos se sustentan en aproximaciones sobre aproximaciones, de modo que un sentimiento de arbitrariedad perturba el intelecto—perturbación que ignoramos bajo el popular lema de «callar y calcular».
-
-El presente trabajo no busca revolucionar nuestro entendimiento de la luz, sino respetar rigurosamente los principios fundamentales con los que comprendemos la radiación electromagnética, desarrollando un nuevo método para trabajar en óptica. Presentamos un método para calcular cómo se propaga la radiación desde las fuentes (el objeto), cómo se transforma al atravesar sistemas ópticos compuestos de lentes y espejos, y cómo obtener el resultado matemático riguroso de la imagen del sistema en la superficie donde se desee medir la radiación. Desarrollamos aquí la teoría ultraxial de la óptica.
-
-
-
+Los \textbf{apéndices} reúnen las derivaciones auxiliares que interrumpirían el hilo
+argumental del texto principal: la transformada de Fourier en coordenadas polares, la
+deducción de las condiciones de frontera de Maxwell y los coeficientes de Fresnel en
+la interfaz, la deducción implícita de los ovoides de Descartes, y la representación en
+serie de las superficies cartesianas.
