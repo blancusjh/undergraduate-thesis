@@ -2,49 +2,170 @@
 \label{ch:geometrica}
 
 
-La óptica geométrica fue la primera imagen conceptual que la humanidad elaboró para comprender la naturaleza de la luz. En esta concepción, la luz se entiende como compuesta de rayos que se propagan en línea recta a gran velocidad. 
+La óptica geométrica fue la primera imagen conceptual que la humanidad elaboró para comprender la naturaleza de la luz. En esta concepción, la luz se entiende como compuesta de rayos luminosos que se propagan en línea recta a gran velocidad, -incluso llegándose a creer infinita-, rayos que se dividen y desvían al cambiar de medio en uno reflejado y uno transmitido, fenómenos ampliamente conocidos como reflexión y refracción respectivamente.
 
-En algún momento se llegó a pensar que dicha velocidad era infinita; sin embargo, a partir de las observaciones de los eclipses de Júpiter \cite{Romer1676} y de numerosos experimentos posteriores, sabemos, que la velocidad de la luz es finita.
+Fue entonces menester de la óptica geométrica el dar a conocer la ley que determina, a partir de un rayo incidente la dirección de los correspondientes rayo reflejado y transmitido. La ley de la reflexión fue dada a conocer desde mucho antes que se conociece la ley para la refracción. Un registro formal de la formulación de la ley para la reflexión con distintas aplicaciones fueron tratados por el Matemático Griego Euclides en su trabajo {\greekfont Κατοπτρικά} (Catoptrica) \cite{euclides1895catoptrica} obra que se estima data de alrededor de los años 300 A.C, más la ley de la refracción fue conocida por W. Snellius y dada a conocer publicamente por R. Descartes \cite{dioptrique}.
+Leyes que ya son ampliamente conocidas, que versan que los angulos de incidencia y de reflexión son iguales, y que el angulo de incidencia y de refracción siguen la ley de los senos \cite{bornwolf1999}.
 
-Sin embargo, la propagación rectilínea de losrayos luminicos se ve modificada cuando la luz interactúa con los cuerpos materiales o, más precisamente, cuando atraviesa la frontera entre dos medios distintos. Como es manifiesto de la experiencia diaria en donde se observa como la luz se refleja en la superficies del agua, de los espejos, de los metales, \&c, y que también cambia de dirección al pasar de un medio a otro, como se observa en los objetos que se sumergidos en el agua y en los lentes. En general, cuando la luz experimenta un cambio de medio, se divide en una parte que retorna al medio de procedencia, y otra que se transmite al nuevo medio, dando lugar a los rayos transmitidos. Estos dos fenómenos se conocen como \textit{reflexión} y \textit{refracción} respectivamente.
+Junto a estas dos leyes hay se le adiciona que la luz tiene una cierta velocidad $c$ en el vacío y que esta se retarda en los medios materiales conforme a su densidad. 
 
-La \emph{ley de la reflexión} fue conocida primero y mucho antes que la ley para la \emph{ley de la refracción}, siendo concebidas como leyes separadas y \textit{ad hoc}, en vez de responder a un principio natural. Definitivamente esta fue una gran incomodidad para los filosofos natirales que buscaban comprender la naturaleza de la luz, por la que la busqueda de un principio que explicara el comportamiento de la luz. 
-
-Las investigaciones de Fermat dieron como resultado un principio natural por el cual se deducían las ya conocidas leyes de reflexión y refracción, así como la propagación rectilínea~\cite{bornwolf1999}.
-
+Que la luz tuviese cierta velocidad y no una infinita como muchos llegarón a creer, fue un importante cambio de paradigma que ayudo a entender mejor la naturaleza de la luz, el hecho de la finitud de la velocidad de la luz fue demostrado a partir de las observaciones de los eclipses de Júpiter \cite{Romer1676} y de numerosos experimentos posteriores por otros autores como Fizeau \cite{Fizeau1849}. Hecho que ayudo en gran manera a entender el fenomeno de la refracción.
 
 
-\section{Principio de Fermat} 
 
+Estas leyes, derivadas de las observaciones, se sentian puestas \textit{ad hoc} por lo aparentemente inconexas, en falta de un principio común del cual estas leyes se derivasen por necesidad logica.
+ 
+
+ 
+
+Las investigaciones de Fermat dieron como resultado un principio natural por el cual se deducían las ya conocidas leyes de reflexión y refracción, como la propagación rectilínea de la luz, reduciendo la óptica geometrica a este único principio, 
+
+
+
+\section{Principio de Fermat}
+
+El \textit{principio de Fermat} dicta que de todas las trayectorias concebibles que unen un punto $A$ con un punto $B$, 
+solo una es la natural. El criterio de selección es que la trayectoria 
+que toma la luz es aquella para la cual cualquier perturbación de primer orden 
+no altera el tiempo de recorrido. Este principio suele enunciarse como un 
+principio de minimización del tiempo; sin embargo, en general la trayectoria 
+natural puede igualmente maximizarlo en otra circunstancia, por lo que es más preciso afirmar que 
+se trata de un \textit{principio de estabilidad o estacionariedad} del tiempo de trayecto, pues la trayectoria natural es aquella a la que las pequeñas perturbaciones no afectan el tiempo de trayecto.
+
+Dicho de manera más formal: de todas las trayectorias posibles, la trayectoria 
+$\Gamma$ que toma la luz para viajar de un punto $A$ a un punto $B$ es 
+únicamente aquella que extrema el tiempo de recorrido,
+%
+\begin{equation}
+    \Gamma = \left\{ \Phi \mid \delta t(\Phi;\, A, B) = 0 \right\},
+    \label{eq:fermat_principle}
+\end{equation}
+%
+donde $\delta t(\Phi;\, A, B)$ denota la variación de primer orden del tiempo 
+de recorrido sobre la trayectoria $\Phi$ que une $A$ con $B$. 
+
+
+
+Ciertamente, este principio natural evoca lo que los Filosofos querrían decir con\footnote{La naturaleza no obra en vano.}
+
+%
+\vspace{0.5em}
+%
 \begin{center}
-\textit{«Natura nihil agit frustra»}
+    \textit{``Natura nihil agit frustra''},
 \end{center}
 
 
-La trayectoria $\Gamma$ que toma la luz para viajar de un punto $A$ a un punto $B$, de todas las posibles, es solo aquella que extrema el tiempo de trayecto
-
-
-
-\begin{equation}
-    \Gamma = \left\{ \Phi \mid \delta t(\Phi; A, B) = 0 \right\}        
-    \label{eq:fermat_principle}
-\end{equation}
-
-donde $(\Phi, A, B)$ denota cualquier trayectoria $\Phi$ que une $A$ con $B$.
-
+Aplicando el principio de Fermat a dos medios separados por una interfaz $\Sigma$, y tomando
+$Q \in \Sigma$ como punto de incidencia, se tiene
+%
 \begin{equation}
     n_0\ || AQ || + n' || QA' || = k,
     \label{eq:maxwell_condition_of_stigmatism_ovoid}
 \end{equation}
+%
+donde $k$ es una constante.
+De esta expresión se deducen las leyes de reflexión y refracción, como se demuestra a continuación.
 
 
 \section{Ley Vectorial de Snell–Descartes} 
 
-
+Partimos de la condición estigmática local escrita en \eqref{eq:maxwell_condition_of_stigmatism_ovoid},
+%
 \begin{equation}
-  \mathbf{k}_t = \frac{n_1}{n_2} \left\{ \mathbf{k}_i - (\mathbf{k}_i \cdot \mathbf{n})\mathbf{n} \right\} - \mathbf{n} \sqrt{ 1 - \left( \frac{n_1}{n_2} \right)^2 \left\{ 1 - (\mathbf{k}_i \cdot \mathbf{n})^2 \right\} }
+    n_0\ || AQ || + n' || QA' || = k,
+\end{equation}
+%
+donde $Q$ es el punto de incidencia sobre la superficie refractante.
+Al variar $Q \mapsto Q + \delta Q$ con $\delta Q$ tangente a la superficie, la estacionariedad del camino óptico exige
+%
+\begin{equation}
+    \delta \left(n_0\ || AQ || + n' || QA' ||\right)=0.
+\end{equation}
+%
+Usando la derivada de la norma,
+%
+\begin{equation}
+    \left(
+      n_0\frac{\lvec{QA}}{\|\lvec{QA}\|}
+      -
+      n'\frac{\lvec{A'Q}}{\|\lvec{A'Q}\|}
+    \right)\cdot \delta Q = 0.
+\end{equation}
+%
+Definimos los vectores unitarios de incidencia y transmisión en $Q$ por
+%
+\begin{equation}
+  \uvec{u} = \frac{\lvec{AQ}}{\|\lvec{AQ}\|},
+  \qquad
+  \uvec{u}' = \frac{\lvec{QA'}}{\|\lvec{QA'}\|},
+\end{equation}
+%
+y denotamos por $\uvec{N}$ la normal unitaria local de la superficie en $Q$.
+Entonces la condición variacional se escribe como
+%
+\begin{equation}
+    (n_0\uvec{u} - n'\uvec{u}')\cdot \delta Q = 0,
+    \qquad \forall\, \delta Q \perp \uvec{N}.
+\end{equation}
+%
+Por lo tanto, $n_0\uvec{u} - n'\uvec{u}'$ no tiene componente tangencial y debe ser paralelo a $\uvec{N}$, lo cual equivale a
+%
+\begin{equation}
+  n_0\left[\uvec{u} - (\uvec{u}\cdot\uvec{N})\uvec{N}\right]
+  =
+  n'\left[\uvec{u}' - (\uvec{u}'\cdot\uvec{N})\uvec{N}\right].
+\end{equation}
+%
+Tomando norma en ambos lados y usando que
+%
+\begin{equation}
+  \left\|\uvec{u} - (\uvec{u}\cdot\uvec{N})\uvec{N}\right\|=\sin\theta_i
+\end{equation}
+%
+y
+%
+\begin{equation}
+  \left\|\uvec{u}' - (\uvec{u}'\cdot\uvec{N})\uvec{N}\right\|=\sin\theta_t,
+\end{equation}
+%
+se obtiene inmediatamente
+%
+\begin{equation}
+  n_0\sin\theta_i = n'\sin\theta_t,
+\end{equation}
+%
+que es la ley de los senos de Snell para la refracción.
+%
+Para la reflexión, si $n'=n_0$, la ley anterior se reduce a
+%
+\begin{equation}
+  \theta_r=\theta_i.
+\end{equation}
+%
+Despejando el vector unitario transmitido $\uvec{u}'$ se obtiene la forma explícita
+%
+\begin{equation}
+  \uvec{u}'
+  =
+  \frac{n_0}{n'}
+  \left\{
+    \uvec{u} - (\uvec{u}\cdot\uvec{N})\uvec{N}
+  \right\}
+  -
+  \uvec{N}
+  \sqrt{
+    1 - \left(\frac{n_0}{n'}\right)^2
+    \left\{
+      1 - (\uvec{u}\cdot\uvec{N})^2
+    \right\}
+  },
   \label{eq:vectorial_law_of_snell_descartes}
 \end{equation}
+%
+donde el signo de la componente normal se fija según el sentido físico de propagación.
+
+Esta forma es particularmente útil en \emph{ray tracing}, pues entrega directamente el vector unitario del rayo transmitido $\uvec{u}'$ a partir del vector unitario del rayo incidente $\uvec{u}$ y de la normal unitaria local $\uvec{N}$ en el punto de incidencia.
 
 
 
@@ -207,7 +328,7 @@ Cuando $P$ esta en el plano $(z, r)$, se cumple que $\Delta \varphi = 0$, de tal
 
 
 
-Procedemos ahora con el cálculo de la normal, en un punto $Q$ parametrizado por  $(\rho, \phi)$, denotemos al vector normal en el punto $Q=Q(\rho, \varphi)$ como $\uvec{n}$, y construyamos un vector $\vec{N}$ proporcional a $\uvec{n}$ 
+Procedemos ahora con el cálculo de la normal, en un punto $Q$ parametrizado por  $(\rho, \phi)$, denotemos al vector normal en el punto $Q=Q(\rho, \varphi)$ como $\uvec{N}$, y construyamos un vector $\vec{N}$ proporcional a $\uvec{N}$ 
 
 
 
@@ -247,7 +368,7 @@ La norma de $\vec{N}$ esta dada por
 De esta manera, obtenemos el vector unitario $\uvec{N}$, desde la definición:
 
 \[
-\uvec{n}(\rho,\varphi)=\frac{\lvec{N}}{|\lvec{N}|},
+\uvec{N}(\rho,\varphi)=\frac{\lvec{N}}{|\lvec{N}|},
 \]
 
 por lo tanto,

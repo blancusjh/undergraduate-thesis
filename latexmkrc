@@ -13,4 +13,5 @@ $out2_dir = '.';
 $emulate_aux = 1;
 
 # Ensure biber reads/writes in aux/output cache directory.
+$bibtex_use = 2;
 $biber = 'biber --input-directory=.tex-cache --output-directory=.tex-cache %O %B';

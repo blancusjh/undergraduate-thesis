@@ -9,7 +9,12 @@
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+  \newfontfamily\greekfont{Times New Roman}
 \fi
+\usepackage{textalpha}
+\usepackage{textgreek}
 
 
 
@@ -75,7 +80,7 @@
 
 % Fast build switch: show image boxes instead of rendering full images.
 \newif\iffastbuild
-\fastbuildfalse % Compilación final: renderiza imágenes completas.
+\fastbuildtrue % Modo borrador: no renderiza imágenes completas.
 \iffastbuild
   \setkeys{Gin}{draft}
 \fi
