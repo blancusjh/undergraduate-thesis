@@ -124,75 +124,107 @@ v = \frac{\omega}{k}.
 
 Consideramos tres ondas planas en la interfaz $\Sigma$: incidente, reflejada y transmitida,
 \begin{equation}
-\mathbf E_j = \mathbf E_j^0 e^{i(\mathbf k_j\cdot\mathbf r-\omega t)},
+\mathbf{E}_j = \mathbf{E}_j^0\, e^{i(\mathbf{k}_j\cdot\mathbf{r} - \omega t)},
 \qquad j\in\{i,R,T\}.
 \label{eq:apx_campos_iRT}
 \end{equation}
 
-De \eqref{eq:apx_condiciones_frontera_finales} se obtiene el sistema base:
+Situamos la interfaz en $z=0$ con normal $\hat{\mathbf{n}} = \hat{\mathbf{z}}$ apuntando hacia el medio incidente. Los vectores de onda unitarios son
 \begin{equation}
-\begin{aligned}
-\bigl(\epsilon(\mathbf E_i^0+\mathbf E_R^0)-\epsilon'\mathbf E_T^0\bigr)\cdot\hat{\mathbf n} &= 0,\\
-\bigl[(\mathbf k_i\times\mathbf E_i^0+\mathbf k_R\times\mathbf E_R^0)-(\mathbf k_T\times\mathbf E_T^0)\bigr]\cdot\hat{\mathbf n} &= 0,\\
-(\mathbf E_i+\mathbf E_R-\mathbf E_T)\times\hat{\mathbf n} &= 0,\\
-\left[\frac{1}{\mu}(\mathbf k_i\times\mathbf E_i^0+\mathbf k_R\times\mathbf E_R^0)-\frac{1}{\mu'}(\mathbf k_T\times\mathbf E_T^0)\right]\times\hat{\mathbf n} &= 0.
-\end{aligned}
-\label{eq:apx_sistema_frontera_iRT}
+\hat{\mathbf{k}}_i = \sin\theta_i\,\hat{\mathbf{x}} - \cos\theta_i\,\hat{\mathbf{z}},
+\quad
+\hat{\mathbf{k}}_R = \sin\theta_i\,\hat{\mathbf{x}} + \cos\theta_i\,\hat{\mathbf{z}},
+\quad
+\hat{\mathbf{k}}_T = \sin\theta_T\,\hat{\mathbf{x}} - \cos\theta_T\,\hat{\mathbf{z}}.
+\label{eq:apx_kvectors}
 \end{equation}
 
-Descomponemos
+El \textit{plano de incidencia} es $\Pi = \operatorname{span}\{\hat{\mathbf{k}}_i, \hat{\mathbf{n}}\}$, que en este caso coincide con el plano $xz$. Se definen dos polarizaciones ortogonales:
+\begin{itemize}
+\item \textit{Polarización $s$} (\textit{senkrecht}, perpendicular a $\Pi$): $\hat{\mathbf{s}} = \hat{\mathbf{y}}$, común a los tres campos.
+\item \textit{Polarización $p$} (\textit{parallel}, en $\Pi$ con $\hat{\mathbf{p}}_j \perp \hat{\mathbf{k}}_j$): se obtiene rotando $\hat{\mathbf{k}}_j$ en $\Pi$ un ángulo $\pi/2$ hacia $\hat{\mathbf{n}}$,
 \begin{equation}
-\mathbf E_0 = E_s^0\,\hat{\mathbf s}+E_p^0\,\hat{\mathbf p},
+\hat{\mathbf{p}}_i = \cos\theta_i\,\hat{\mathbf{x}} + \sin\theta_i\,\hat{\mathbf{z}},
+\quad
+\hat{\mathbf{p}}_R = -\cos\theta_i\,\hat{\mathbf{x}} + \sin\theta_i\,\hat{\mathbf{z}},
+\quad
+\hat{\mathbf{p}}_T = \cos\theta_T\,\hat{\mathbf{x}} + \sin\theta_T\,\hat{\mathbf{z}}.
+\label{eq:apx_pvectors}
+\end{equation}
+\end{itemize}
+
+Cada amplitud vectorial se descompone como
+\begin{equation}
+\mathbf{E}_j^0 = E_j^s\,\hat{\mathbf{s}} + E_j^p\,\hat{\mathbf{p}}_j.
 \label{eq:apx_descomposicion_sp}
 \end{equation}
-y para el modo $s$ se usa además
+
+Como $s$ y $p$ son ortogonales, las condiciones de frontera \eqref{eq:apx_condiciones_frontera_finales} se desacoplan para cada modo. Definimos también
 \begin{equation}
-E_i^0+E_R^0=E_T^0,
-\label{eq:apx_continuidad_tangencial_s}
+Z = \sqrt{\frac{\epsilon}{\mu}},
+\qquad
+Z' = \sqrt{\frac{\epsilon'}{\mu'}},
+\label{eq:apx_def_Z}
 \end{equation}
-junto con
+y los coeficientes $R_j = E_R^j/E_i^j$, $T_j = E_T^j/E_i^j$ para $j \in \{s, p\}$.
+
+\paragraph{Modo $s$.}
+
+La componente $s$ es tangencial a $\Sigma$, por lo que la condición iii) da directamente
 \begin{equation}
-(\mathbf k\times\mathbf E)\times\hat{\mathbf n}
-=
-(\mathbf k\cdot\hat{\mathbf n})\mathbf E
--
-(\hat{\mathbf n}\cdot\mathbf E)\mathbf k.
-\label{eq:apx_identidad_triple}
+E_i^s + E_R^s = E_T^s.
+\label{eq:apx_cond_s_E}
 \end{equation}
 
-Definiendo
+Para la condición iv) se aplica la identidad $(\mathbf{k}\times\mathbf{E}^s)\times\hat{\mathbf{n}} = (\hat{\mathbf{k}}\cdot\hat{\mathbf{n}})\mathbf{E}^s$, válida porque $\hat{\mathbf{n}}\cdot\hat{\mathbf{s}} = 0$. Con los productos $\hat{\mathbf{k}}_i\cdot\hat{\mathbf{n}} = -\cos\theta_i$, $\hat{\mathbf{k}}_R\cdot\hat{\mathbf{n}} = \cos\theta_i$, $\hat{\mathbf{k}}_T\cdot\hat{\mathbf{n}} = -\cos\theta_T$ y usando $k/\mu = \omega\sqrt{\epsilon/\mu} = \omega Z$, se obtiene
 \begin{equation}
-R=\frac{E_R^0}{E_i^0},
-\qquad
-T=\frac{E_T^0}{E_i^0},
-\qquad
-Z=\sqrt{\frac{\epsilon}{\mu}},
-\qquad
-Z'=\sqrt{\frac{\epsilon'}{\mu'}},
-\label{eq:apx_def_R_T_Z}
+Z\cos\theta_i\,(E_i^s - E_R^s) = Z'\cos\theta_T\,E_T^s.
+\label{eq:apx_cond_s_H}
 \end{equation}
-los coeficientes de Fresnel para polarización $s$ quedan:
+
+Resolviendo el sistema \eqref{eq:apx_cond_s_E}--\eqref{eq:apx_cond_s_H}:
 \begin{align}
-R_s
-&=
-\frac{Z\cos\theta_i - Z'\cos\theta_T}{Z\cos\theta_i + Z'\cos\theta_T},
+R_s &= \frac{Z\cos\theta_i - Z'\cos\theta_T}{Z\cos\theta_i + Z'\cos\theta_T},
 \label{eq:apx_fresnel_rs}\\
-T_s
-&=
-\frac{2Z\cos\theta_i}{Z\cos\theta_i + Z'\cos\theta_T}.
+T_s &= \frac{2Z\cos\theta_i}{Z\cos\theta_i + Z'\cos\theta_T}.
 \label{eq:apx_fresnel_ts}
 \end{align}
 
-Para polarización $p$:
+\paragraph{Modo $p$.}
+
+La componente tangencial ($\hat{\mathbf{x}}$) de la condición iii), usando que $\hat{\mathbf{p}}_R\cdot\hat{\mathbf{x}} = -\cos\theta_i$, da
+\begin{equation}
+(E_i^p - E_R^p)\cos\theta_i = E_T^p\cos\theta_T.
+\label{eq:apx_cond_p_E}
+\end{equation}
+
+El campo magnético del modo $p$ es $\mathbf{H}_j = \frac{k_j}{\omega\mu_j}(\hat{\mathbf{k}}_j \times \hat{\mathbf{p}}_j)E_j^p$; de \eqref{eq:apx_kvectors} y \eqref{eq:apx_pvectors} se comprueba que $\hat{\mathbf{k}}_j\times\hat{\mathbf{p}}_j = -\hat{\mathbf{s}}$ para los tres campos, de modo que $\mathbf{H}_j^p$ es tangencial a $\Sigma$ con magnitud $Z_j E_j^p$. La condición iv) da
+\begin{equation}
+Z\,(E_i^p + E_R^p) = Z'\,E_T^p.
+\label{eq:apx_cond_p_H}
+\end{equation}
+
+Resolviendo el sistema \eqref{eq:apx_cond_p_E}--\eqref{eq:apx_cond_p_H}:
 \begin{align}
-R_p
-&=
-\frac{Z\cos\theta_T - Z'\cos\theta_i}{Z\cos\theta_T + Z'\cos\theta_i},
+R_p &= \frac{Z'\cos\theta_i - Z\cos\theta_T}{Z'\cos\theta_i + Z\cos\theta_T},
 \label{eq:apx_fresnel_rp}\\
-T_p
-&=
-\frac{2Z'\cos\theta_i}{Z\cos\theta_T + Z'\cos\theta_i}.
+T_p &= \frac{2Z\cos\theta_i}{Z'\cos\theta_i + Z\cos\theta_T}.
 \label{eq:apx_fresnel_tp}
 \end{align}
 
-Las expresiones \eqref{eq:apx_fresnel_rp} y \eqref{eq:apx_fresnel_tp} condensan los resultados finales para el modo $p$ en incidencia oblicua entre dieléctricos.
+\paragraph{Expresión en términos de índices de refracción y campo transmitido.}
+
+Para medios no magnéticos ($\mu = \mu' = \mu_0$) se tiene $Z_j = n_j/Z_0$ con $Z_0 = \sqrt{\mu_0/\epsilon_0}$, y los factores $Z_0$ se cancelan. Los coeficientes de transmisión quedan
+\begin{align}
+t_s &= \frac{2n_1\cos\theta_i}{n_1\cos\theta_i + n_2\cos\theta_t},
+\label{eq:apx_fresnel_ts_n}\\
+t_p &= \frac{2n_1\cos\theta_i}{n_2\cos\theta_i + n_1\cos\theta_t},
+\label{eq:apx_fresnel_tp_n}
+\end{align}
+y el campo eléctrico transmitido sobre la interfaz resulta
+\begin{equation}
+\vb{E}'_\Sigma
+= t_p\,(\vb{E}_\Sigma\cdot\uvec{p})\,\uvec{p}'
++ t_s\,(\vb{E}_\Sigma\cdot\uvec{s})\,\uvec{s}'.
+\label{eq:apx_E_transmitido_Sigma}
+\end{equation}

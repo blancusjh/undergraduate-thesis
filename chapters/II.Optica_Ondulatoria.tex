@@ -8,7 +8,7 @@ Por otro lado, aparentemente inconexo en un principio, las investigaciones conce
 
 \section{Ecuaciones de Maxwell}
 
-En su forma general, las ecuaciones de Maxwell pueden escribirse como
+En su forma general, las ecuaciones de Maxwell pueden escribirse como \cite{jackson1999}
 \begin{align}
 \nabla \cdot \mathbf{E}(\mathbf x, t) &= \frac{\rho(\mathbf x, t)}{\epsilon_0} 
 & \qquad 
@@ -79,7 +79,7 @@ por lo que en lo sucesivo omitiremos el campo magnético en nuestro anális, pue
 
 donde $k = \omega/c$, la ecuación fundamental para la propagación de el campo armonico. 
 
-La ecuación \ref{eq:E_field_wave_equation} es equivalente a una ecuación de Helmholtz escalar para cada una de sus componentes cartesianas; sea $\Psi(\vb x)$ una de esas componentes, escribimos
+La ecuación \ref{eq:E_field_wave_equation} es equivalente a una ecuación de Helmholtz escalar para cada una de sus componentes en una base independiente del espacio; sea $\Psi(\vb x)$ una de esas componentes, escribimos
 
 \begin{equation}
     \nabla^2 \Psi (\vb x) + k^2 \Psi (\vb x) = 0.
@@ -87,8 +87,7 @@ La ecuación \ref{eq:E_field_wave_equation} es equivalente a una ecuación de He
 \end{equation}
 
 
-Que es la ecuación base de los métodos escalares de propagación, siendo los métodos de propagación, en últimas,
-soluciones a esta dadas unas condiciones iniciales; los métodos se dividen en exactos y aproximados, según si
+Que es la ecuación base de los \textit{métodos escalares de propagación}. Siendo los métodos de propagación escalares, en últimas, soluciones a la ecuaciónon escalar de Helmholtz dadas una condiciones de contorno. Los métodos se dividen en exactos y aproximados, según si
 resuelven la ecuación de Helmholtz \eqref{eq:Helmholtz_equation} de forma exacta o aproximada.
 
 
@@ -714,23 +713,37 @@ La asunción de que $\|\mathbf{r}-\mathbf{r}'\| \gg \lambda$ es sumamente plausi
 
 \subsection{Aproximación de Fresnel}
 
-Podemos realizar más asunciones físicas para simplificar matemáticamente el problema. Si los rayos que van desde un punto $Q$ en el campo de la apertura hasta un punto de observación $P$ son prácticamente paralelos al eje óptico (régimen paraxial), podemos aproximar distancias. Esto se cumple si:
-\begin{enumerate}
-    \item Las distancias transversales al eje óptico (tanto en la apertura como en el plano de observación) son pequeñas.
-    \item Las distancias de propagación $z$ son muy grandes en comparación con dichas dimensiones transversales.
-\end{enumerate}
+Hasta ahora los métodos de propagación presentado han sido "exactos" al menos en el sentido de que resuelven exactamente la ecuación de Helmholtz. 
 
-Bajo estas consideraciones paraxiales, aproximamos el término inversamente proporcional a la distancia geométrica (que actúa sobre la amplitud) tomando simplemente la distancia longitudinal:
-\begin{equation}
-\frac{1}{\|\mathbf{r}-\mathbf{r}'\|} \approx \frac{1}{z-z'}.
-\end{equation}
+En la practica resulta muy conveniente considerar que las distancias transversales al eje óptico (tanto en la apertura como en el plano de observación) son pequeñas comparada  con la distancia de propagación $z$.
 
-Por el contrario, el término de distancia $\|\mathbf{r}-\mathbf{r}'\|$ presente en el exponente complejo regula la fase de la onda. Al estar multiplicado por el número de onda $k$, es extremadamente sensible a variaciones pequeñas. Para no perder esta información vital, realizamos una expansión binomial hasta el segundo orden:
+De tal manera que en \eqref{eq:huygens_principle} podamos aproximar la distancia entre un punto de la imagén y un punto del objeto, que aprece en la amplitud según
+
 
 \begin{equation}
-\|\mathbf{r}-\mathbf{r}'\| \approx z \left[ 1 + \frac{(x-x')^2}{2z^2} + \frac{(y-y')^2}{2z^2} \right],
+\|\mathbf{r}-\mathbf{r}'\| \approx z-z'.
 \end{equation}
-donde por simplicidad hemos tomado el plano fuente en $z'=0$.
+
+
+
+
+
+El otro término $\|\mathbf{r}-\mathbf{r}'\|$ esta presente en la fase de la onda, y la fase es más sensible que la amplitud, al estar multiplicada por el número de onda $k = 2\pi/\lambda$ que relativiza la distancia entre los puntos objeto e imagen respecto a la longitud de onda, es el número de veces que la longitud de onda debe curbrir para llegar al valor númerico de la distancia mencionada. 
+
+Con esto en mente, refinamos nuestra aproximación de la distancia entre los puntos objeto e imagen hasta orden $4$ 
+
+
+
+$$\|\mathbf{r}-\mathbf{r}'\| = d \left[ 1 + \frac{(x-x')^2}{2d^2} + \frac{(y-y')^2}{2d^2} + \mathscr O\left( \left( \frac{\| \vb r - \vb r' \|}{d}\right)^4 \right) \right]$$
+
+
+
+$$\|\mathbf{r}-\mathbf{r}'\| \approx d \left[ 1 + \frac{(x-x')^2}{2d^2} + \frac{(y-y')^2}{2d^2} \right]$$
+
+
+donde $d=z-z'$.
+
+
 
 Sustituyendo estas aproximaciones en la integral de propagación, obtenemos la conocida \textbf{Integral de Fresnel}:
 
@@ -776,10 +789,29 @@ Esta demostración conecta analíticamente la integral espacial de difracción c
 
 \section{Transformación que sufre el campo eléctrico al cambiar de medio} 
 
-Cuando la radiación se encuentra con una interfaz que separa dos medios, sufre transformaciones debido a la diferencia entre las propiedades de los medios. 
-Al ser las ecuaciones que rigen la propagación dependientes de las propiedades del medio, en cada región son ligeramente distintas las ecuaciones que se han de satisfacer en la sección~\ref{sec:boundary_conditions_in_dielectrics}.
 
-Estas condiciones de frontera permiten conocer el campo que se transmite dado el incidente, ambos sobre la interfaz $\Sigma$ que separa los dos medios.
+Considerese dos medios dieléctricos $M_1$ \textit{\&} $M_2$  distintos separados por una superficie $\Sigma$ cuya normal en cada punto se considera positiva cuando apunta hacia el medio $M_1$. 
+
+Sean $n_1$ y $n_2$ los indices de refracción de $M_1$ y $M_2$ respectivamente, el campo eléctrico $\vb E_1$ en el medio $M_1$ y el campo eléctrico en el medio $M_2$ satisfacen
+
+
+\begin{equation}
+  \nabla^2 \vb E_i + k_i^2 \vb E_i = \vb 0,
+  \qquad
+  i=1,2.
+\end{equation}
+
+
+con 
+
+\[
+  k_i = n_i k_0 = \frac{2\pi n_i}{\lambda_0},
+\]
+
+
+
+Como la ecuación de Helmholtz a satisfacer es distinta en cada medio, esto genera una discontunuidad que transforma el campo que incide en la interfaz que separa ambos medios.
+
 
 Escribiendo el campo por su espectro 
 
@@ -788,6 +820,11 @@ Escribiendo el campo por su espectro
 \end{equation*}
 
 al remplazarlo en las condiciones de frontera, se encuentra la ley de transformación para cada componente $\vb k$ del campo. 
+
+
+
+Dicha transformación puede ser efectuada de forma matemática mediante los coeficientes de Fresnel para una onda plana y monocromatica, o lo componente espectral de un campo general, la deducción de dicha transformación puede encontrarse en el apendice \ref{sec:boundary_conditions_in_dielectrics}.
+
 
 El campo incidente $\widehat{\vb E}(\vb k)$ se transforma de forma diferente en cada punto de la interfaz, y de manera diferente en dos polarizaciones principales $\uvec s$ y $\uvec p$.
 
@@ -819,7 +856,7 @@ Así, el campo transmitido $\vb{E}'_{\Sigma}$ sobre la interfaz $\Sigma$, dado e
   \label{eq:Transmited_E_field_in_Sigma}
 \end{equation}
 
-\textit{(veáse \eqref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
+\textit{(veáse \ref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
 
 
 El resultado puede ser escrito en notacion bra-ket de la forma
@@ -868,12 +905,31 @@ donde los cosenos $\cos \theta_i$ y $\cos \theta_t$ son los cosenos de incidenci
 \end{equation}
 
 \begin{equation}
-  \cos \theta_t = - \uvec N \cdot \uvec{k}'
+  \cos \theta_t = - \uvec N \cdot \uvec{k}'.
 \end{equation}
 
 
 
+Con esto, conociendo el campo incidente sobre la interfaz $\Sigma$ que separa dos medios, podemos determinar el campo que se transmite sobre la misma interfaz mediante la base y los coeficientes de Fresnel que dependen de la normal al punto de la superficie considerado y la dirección de propagación del campo electrico en ese mismo punto.
 
+En el problema \textit{estigmático simple} la dirección de propagación en función de cualquier punto $Q \ \in \Sigma$ es siempre conocida, pues por la construcción del problema estigmático
+
+
+$$
+\uvec k := \uvec u = \text{dirección}(A, Q),
+$$
+
+
+$$
+\uvec k':= \uvec u' = \text{dirección}(Q, A'),
+$$
+
+donde dirección($AQ$) es el vector unitario que va desde $A$ hasta $Q$. 
+
+Esto porque todos los rayos que emerguen de $A$ lo hacen radialmente, e igualmente radialmente converguen en $A'$. 
+
+
+Tenemos pues, todo lo necesario para pasar al estudio del campo eléctrico en el plano focal en un sistema simple refractivo.
 
 
 

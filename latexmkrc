@@ -2,16 +2,11 @@
 $pdf_mode = 1;
 $pdflatex = 'xelatex -interaction=nonstopmode -halt-on-error %O %S';
 
-# Keep generated compilation artifacts in a dedicated cache folder.
-$aux_dir = '.tex-cache';
-$out_dir = '.tex-cache';
+# NOTE:
+# Using separate aux/output directories in this project can produce
+# malformed .aux state with biblatex in repeated runs. Keep outputs
+# in the project root for stable builds.
 
-# Keep final deliverables (like main.pdf) in the project root.
-$out2_dir = '.';
-
-# TeX Live compatibility for separate aux/output directories.
-$emulate_aux = 1;
-
-# Ensure biber reads/writes in aux/output cache directory.
+# Ensure biber runs against the default working directory outputs.
 $bibtex_use = 2;
-$biber = 'biber --input-directory=.tex-cache --output-directory=.tex-cache %O %B';
+$biber = 'biber %O %B';
