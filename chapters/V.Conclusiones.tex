@@ -2,67 +2,49 @@
 \addcontentsline{toc}{chapter}{Conclusiones}
 
 \lettrine[lines=2]{E}{n} este trabajo se desarrolló un formalismo vectorial para calcular el
-campo focal de un sistema estigmático simple con superficie dióptrica arbitraria, combinando
-la geometría exacta de las superficies cartesianas con los coeficientes de Fresnel y la
-propagación en régimen de Fresnel. El resultado central puede resumirse así: la condición
-estigmática cancela la fase geométrica acumulada entre las esferas de referencia, de modo
-que la estructura del campo en el plano focal queda gobernada por cómo se transforma el
-estado de polarización al cambiar de medio. Por tanto, aun en ausencia de aberración de
-frente de onda, aparecen aberraciones de origen vectorial.
+campo focal de un sistema estigmático simple —formado por una única superficie cartesiana
+que separa dos medios, caracterizada por los puntos objeto e imagen y los índices de
+refracción de los medios que separa— combinando la geometría exacta de dicha superficie con
+los coeficientes de Fresnel y la
+propagación en régimen de Fresnel. La teoría se ha aplicado al caso de sistemas estigmáticos
+simples —formados por un solo dioptrio— de especial interés por constituir escenarios libres
+de aberración geométrica por construcción. Que un sistema sea geométricamente perfecto no
+impide que existan aberraciones de origen vectorial: la condición estigmática cancela la fase
+acumulada entre las esferas de referencia, pero no elimina la transformación inhomogénea del
+estado de polarización que ocurre en la refracción.
 
-La transformación de polarización es inhomogénea sobre la pupila porque depende localmente
-del ángulo de incidencia. Esa inhomogeneidad actúa por tres mecanismos acoplados. El primero
-es la modulación espacial por los coeficientes $t_s(\theta)$ y $t_p(\theta)$, que introduce
-una apodización vectorial no uniforme. El segundo es la mezcla de componentes de
-polarización cuando el campo se expresa en bases que no coinciden con los modos propios
-locales de la transmisión; en particular, la separación isotrópica/anisotrópica del operador
-deja explícito que la parte anisotrópica, gobernada por $t_p-t_s$, produce conversión entre
-componentes y redistribución azimutal de la intensidad. El tercero es la contribución
-longitudinal $E_z$, que se acopla a la componente radial transversal y modifica la intensidad
-total, pero que suele omitirse en desarrollos simplificados.
+Definimos la aberración vectorial como la desviación del campo focal respecto al límite en
+que $t_s=t_p=1$, que es exactamente cuando se recupera la teoría escalar de la difracción.
+El agente que cuantifica esta aberración es la diferencia $t_-=t_p-t_s$: cuando $t_-=0$ la
+descripción vectorial colapsa exactamente sobre la escalar; cuando $t_-\neq 0$ —caso genérico
+para cualquier interfaz entre medios de distinto índice— aparecen efectos sin contrapartida
+en la teoría escalar. La causa es que el ángulo de incidencia varía punto a punto sobre la
+pupila, y con él los coeficientes de Fresnel, de modo que la polarización se transforma de
+forma diferente en cada punto.
 
-Entre las representaciones analizadas, la base cilíndrica muestra con mayor claridad la
-física del problema: radial y azimutal son modos propios locales del operador de transmisión.
-Esto permite identificar de forma directa cuándo hay únicamente modulación escalar local y
-cuándo, en otras bases, dicha misma física aparece como mezcla de polarizaciones. En ese
-marco también emerge una predicción relevante: para excitaciones radial o azimutalmente
-polarizadas con simetría azimutal, el campo transversal en el centro del foco se anula, de
-acuerdo con la estructura de Hankel de orden uno.
+La elección de base de polarización determina cómo se manifiesta esta aberración. Los modos propios de la refracción son siempre el modo radial y el modo azimutal: en la
+base cilíndrica el operador de transmisión es diagonal y la aberración vectorial no produce
+mezcla de polarizaciones, sino únicamente una modulación diferencial entre ambos modos. Cuando el campo incidente no coincide con estos modos propios
+—como ocurre con polarización lineal o circular— el proceso de refracción convierte energía
+entre las componentes de polarización. En la base circular, la diferencia $t_-$ genera un
+acoplamiento $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$; en la base
+cartesiana, genera una componente cruzada con simetría de orden dos que se manifiesta como un
+patrón de cuatro lóbulos en la polarización ortogonal a la incidente. Ambos efectos son
+firmas directas y observables de la aberración vectorial.
 
-En este contexto, el caso escalar se recupera como límite ideal en el que se desprecia la
-componente longitudinal y se toma $t_s=t_p=1$. Bajo esas hipótesis desaparecen tanto la
-modulación inhomogénea por transmisión como la anisotropía de polarización, y el problema
-vuelve a la descripción escalar usual.
+En cuanto a los efectos sobre el patrón focal, la diferencia $t_p-t_s$, a través de las
+transformadas de Hankel de orden dos, redistribuye energía desde el centro hacia lóbulos
+laterales, ensanchando el patrón focal y reduciendo la intensidad central respecto a la
+predicción escalar. Esta supresión del pico central se cuantifica mediante la razón
 
-En síntesis, hemos desarrollado una teoría vectorial de la difracción cuya estructura queda
-reducida a dos problemas de propagación escalar, por lo que su implementación puede adaptarse
-de manera directa al método de espectro angular (ASM) cuando se requiera reemplazar la
-propagación paraxial de Fresnel por una propagación exacta de Helmholtz. En este trabajo
-hemos aplicado dicha teoría al caso de sistemas estigmáticos simples, formados por un solo
-dioptrio, de especial interés por constituir un escenario libre de aberraciones geométricas.
-
-Los resultados se han presentado en tres niveles de especificidad creciente. En el nivel más
-general, el campo en el plano focal es la transformada de Fourier bidimensional de la función
-pupila vectorial generalizada $\mathbb E^{G'}$; en cada una de las secciones del capítulo
-\ref{ch:focal} —representaciones circular, cilíndrica y cartesiana— se ha calculado
-explícitamente la forma que adopta $\mathbb E^{G'}$ en la base de polarización correspondiente.
-Cuando la excitación se descompone en modos azimutales, la transformada de Fourier bidimensional
-se reduce a transformadas de Hankel de orden definido: órdenes $0$ y $2$ en las bases circular
-y cartesiana —parte isótropa y corrección vectorial, respectivamente— y orden $1$ para las
-polarizaciones radial y azimutal en la base cilíndrica. Finalmente, para el caso particular
-de campo uniforme sobre una pupila circular de radio $a$, las transformadas de Hankel se
-evalúan analíticamente, proporcionando expresiones cerradas en funciones de Bessel.
-
-Para cuantificar lo anterior se define
 \begin{equation*}
-  F_c \;=\; \frac{I_\text{total}(0)}{I_\text{escalar}(0)},
+  F_c \;=\; \frac{I_\text{total}(0)}{I_\text{escalar}(0)}.
 \end{equation*}
-razón entre la intensidad central vectorial y la escalar. La figura~\ref{fig:Fc_vs_alpha_polar_exact}
-muestra $F_c$ en función del ángulo de semiapertura $\alpha$ para tres contrastes de índice,
-con polarización cilíndrica y modelo exacto. En todo el rango explorado $F_c < 1$: la teoría
-escalar sobreestima el pico central entre un $50\,\%$ y un $70\,\%$, siendo el contraste de
-índice el parámetro dominante. Las aberraciones vectoriales actúan pues como una supresión
-sistemática del pico sin redistribuir energía lateralmente.
+
+La figura~\ref{fig:Fc_vs_alpha_polar_exact} muestra $F_c$ en función del ángulo de
+semiapertura $\alpha$ para tres contrastes de índice, con polarización cilíndrica y modelo
+exacto. En todo el rango explorado $F_c < 1$: la teoría escalar sobreestima el pico central
+entre un $50\,\%$ y un $70\,\%$, siendo el contraste de índice el parámetro dominante.
 
 \begin{figure}[H]
   \centering
@@ -73,8 +55,18 @@ sistemática del pico sin redistribuir energía lateralmente.
   \label{fig:Fc_vs_alpha_polar_exact}
 \end{figure}
 
-En conjunto, los resultados numéricos confirman que el tratamiento vectorial es cuantitativamente
-necesario en sistemas de alto contraste de índice: la teoría escalar reproduce bien el tamaño
-de la mancha pero puede errar en más de un factor dos en la predicción del pico central, error
-que no es detectable por inspección del perfil de intensidad sino solo mediante la comparación
-explícita de ambas descripciones.
+Más aún, la teoría predice efectos cualitativos que la escalar no puede describir. Para
+polarización radial o azimutal, el campo transversal en el centro del foco se anula: el
+patrón toma la forma de un anillo con centro oscuro, resultado que emerge de la estructura de
+Hankel de orden uno y que no puede deducirse de la teoría escalar. La supresión axial de la aberración vectorial tiene además un
+origen doble: las series paraxiales muestran que $t_-(0)=0$, y a su vez $J_2(0)=0$, de modo
+que los efectos vectoriales son exactamente nulos sobre el eje óptico y crecen cuadráticamente
+al alejarse de él.
+
+En síntesis, hemos desarrollado una teoría vectorial de la difracción cuya estructura queda
+reducida a transformadas de Hankel de orden definido, lo que la hace directamente adaptable
+al método de espectro angular cuando se requiera propagación exacta de Helmholtz en lugar de
+la aproximación de Fresnel. Aplicada a sistemas estigmáticos simples, la teoría muestra que
+la aberración vectorial es cuantitativamente importante para alto contraste de índice —con
+errores superiores al $50\,\%$ en la predicción del pico central— y el resultado del centro
+oscuro para polarización cilíndrica no puede deducirse de la teoría escalar.

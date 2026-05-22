@@ -1,0 +1,1615 @@
+\chapter{Pupila circular uniforme: resultados analíticos}
+\label{apx:focal_forms}
+
+Este apéndice reúne los resultados explícitos para el campo en el plano focal de un sistema estigmático refractivo cuando el campo incidente es constante sobre una pupila circular de radio $a$. Se presentan las tres representaciones de polarización estudiadas en el capítulo~\ref{ch:focal}: circular, cilíndrica y cartesiana. En cada caso se parte de la forma general en transformadas de Hankel y se sustituyen las aproximaciones paraxiales de los coeficientes de Fresnel.
+
+% -----------------------------------------------------------------------
+\section{Representación circular}
+% -----------------------------------------------------------------------
+
+
+donde $\mathscr H_m[f]$ denota el operador que multiplica por $f(r')$ y aplica la transformada de Hankel de orden $m$, y $t_\pm$ están definidas en \eqref{eq:t_plus_t_minus_def}.
+
+El término transformado por $\mathscr{H}_0$ es diagonal y deja la polarización entrante idéntica si una de las componentes es nula, salvo un escalamiento. Además, este término puede identificarse con el correspondiente a la teoría escalar de la difracción, salvo por la modulación por $t_p+t_s$; si esta se toma como uno, se obtiene exactamente el resultado escalar.
+
+Los términos en los que $\mathscr{H}_2$ transforma, acoplan $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$ y, dado que $J_2(0)=0$, su contribución es estrictamente fuera de eje, por lo que dicha constribución ensancha el tamaño de la macha focal de manera general y da lugar a un cambio en la polarización.
+
+
+Para conectar con el desarrollo en series del apéndice, definimos
+
+\begin{equation}
+\alpha
+=
+\frac{
+n_0(n_0+n_i)^2(z_0-z_i)^2
+}
+{
+z_0^2 z_i^2 (n_0-n_i)^3
+},
+\qquad
+\beta
+=
+\frac{
+n_0(n_0+n_i)(z_0-z_i)^2
+}
+{
+z_0^2 z_i^2 (n_0-n_i)^2
+},
+\qquad
+\gamma_0
+=
+\frac{2n_0}{n_i-n_0}.
+\label{eq:alpha_beta_gamma_def}
+\end{equation}
+
+Las series paraxiales, derivadas en el apéndice~\ref{apx:ovoids_series} (véanse \eqref{eq:tp_plus_ts_series_paraxial} y \eqref{eq:tp_minus_ts_paraxial}), son
+
+\begin{equation}
+(t_p+t_s)(\rho')
+\simeq
+-\alpha\rho'^2,
+\qquad
+(t_p-t_s)(\rho')
+\simeq
+2\gamma_0-\beta\rho'^2.
+\label{eq:t_plus_t_minus_paraxial}
+\end{equation}
+
+Sustituyendo en \eqref{eq:E_L_E_R_Hankel}, se obtiene
+
+\begin{equation}
+\begin{aligned}
+E'_L
+&\simeq
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\left[
+-\alpha\mathscr H_0\{r'^2E_L\}
+-
+e^{2i\varphi}
+\left(
+2\gamma_0\mathscr H_2\{E_R\}
+-
+\beta\mathscr H_2\{r'^2E_R\}
+\right)
+\right],
+\\
+E'_R
+&\simeq
+\frac{2\pi n}{i\lambda f}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\left[
+-
+e^{-2i\varphi}
+\left(
+  2\gamma_0\mathscr H_2\{E_L\}
+  -
+  \beta\mathscr H_2\{r'^2E_L\}
+\right)
+-
+\alpha\mathscr H_0\{r'^2E_R\}
+\right].
+\end{aligned}
+\label{eq:E_L_E_R_paraxial}
+\end{equation}
+
+
+Que si además el campo incidente es constante sobre la pupila, las
+funciones $\mathscr E_L$ y $\mathscr E_R$ son
+
+\begin{equation}
+  E_L(r')=E_{L,0}A_a(r'),
+  \qquad
+  E_R(r')=E_{R,0}A_a(r').
+\end{equation}
+
+De tal modo, el resultado del campo focal se obtiene evaluando las transformadas de Hankel de orden 1 o de la segunda potencia de $\rho'$; tomamos los siguientes resultados, que se obtienen con facilidad por el uso de las bien conocidas identidades de las funciones de Bessel \cite{arfken2013}
+
+\begin{equation}
+  \mathscr H_0\{\rho'^2A_a\}(q)
+  =
+  \frac{a^3}{q}J_1(qa)
+  +
+  \frac{2a^2}{q^2}J_0(qa)
+  -
+  \frac{4a}{q^3}J_1(qa),
+  \label{eq:H0_rho2_chiR}
+\end{equation}
+
+\begin{equation}
+  \mathscr H_2\{A_a\}(q)
+  =
+  \frac{
+    2[1-J_0(qa)]
+    -
+    qa\,J_1(qa)
+  }
+  {q^2},
+  \label{eq:H2_chiR}
+\end{equation}
+
+\begin{equation}
+  \mathscr H_2\{\rho'^2A_a\}(q)
+  =
+  \frac{a^3}{q}J_3(qa).
+  \label{eq:H2_rho2_chiR}
+\end{equation}
+
+
+sustituyendo directamente en \eqref{eq:E_L_E_R_paraxial}, tenemos que
+
+\begin{equation}
+  \begin{aligned}
+    E'_L(r,f)
+    \simeq&
+    \frac{2\pi n}{i\lambda f}
+    e^{inkf}
+    e^{i\frac{nk}{2f}r^2}
+    \Bigg\{
+      -\alpha
+      \left(
+        \frac{a^3}{q}J_1(qa)
+        +
+        \frac{2a^2}{q^2}J_0(qa)
+        -
+        \frac{4a}{q^3}J_1(qa)
+      \right)E_{L,0}
+      \\
+          &\qquad\qquad
+          -
+          e^{2i\varphi}
+          \left(
+            2\gamma_0
+            \frac{
+              2\left\{1-J_0(qa)\right\}
+              -
+              qaJ_1(qa)
+            }{q^2}
+            -
+            \beta
+            \frac{a^3}{q}J_3(qa)
+          \right)E_{R,0}
+        \Bigg\},
+        \\[1em]
+        E'_R(r,f)
+    \simeq&
+    \frac{2\pi n}{i\lambda f}
+    e^{inkf}
+    e^{i\frac{nk}{2f}r^2}
+    \Bigg\{
+      -
+      e^{-2i\varphi}
+      \left(
+        2\gamma_0
+        \frac{
+          2\left\{1-J_0(qa)\right\}
+          -
+          qaJ_1(qa)
+        }{q^2}
+        -
+        \beta
+        \frac{a^3}{q}J_3(qa)
+      \right)E_{L,0}
+      \\
+          &\qquad\qquad
+          -
+          \alpha
+          \left(
+            \frac{a^3}{q}J_1(qa)
+            +
+            \frac{2a^2}{q^2}J_0(qa)
+            -
+            \frac{4a}{q^3}J_1(qa)
+          \right)E_{R,0}
+        \Bigg\}.
+  \end{aligned}
+  \label{eq:EL_ER_constant_E0}
+\end{equation}
+
+O equivalentemente, definiendo las funciones radiales
+
+\begin{equation}
+  P(q)
+  =
+  \frac{a}{q}\,J_1(qa),
+  \qquad
+  Q(q)
+  =
+  \frac{2\bigl(1-J_0(qa)\bigr)}{q^2}-\frac{a}{q}\,J_1(qa),
+  \label{eq:PQ_def}
+\end{equation}
+
+la expresión anterior adopta la forma matricial
+
+\begin{equation}
+  \small
+  \begin{pmatrix}
+    E'_L(r,f) \\
+    E'_R(r,f)
+  \end{pmatrix}
+  \simeq
+  \frac{2\pi n}{i\lambda f}
+  e^{inkf}
+  e^{i\frac{nk}{2f}r^2}
+  \begin{pmatrix}
+    -\alpha F_0(q)
+&
+-e^{2i\varphi}
+\left\{
+  2\gamma_0 F_2(q)
+  -
+  \beta G_2(q)
+\right\}
+\\[0.8em]
+-e^{-2i\varphi}
+\left\{
+  2\gamma_0 F_2(q)
+  -
+  \beta G_2(q)
+\right\}
+&
+-\alpha F_0(q)
+  \end{pmatrix}
+  \begin{pmatrix}
+    E_{L,0} \\
+    E_{R,0}
+  \end{pmatrix},
+  \label{eq:EL_ER_constant_E0_matrix}
+\end{equation}
+
+con
+
+\begin{align}
+  F_0(q)
+&=
+\frac{a^3}{q}J_1(qa)
++
+\frac{2a^2}{q^2}J_0(qa)
+-
+\frac{4a}{q^3}J_1(qa),
+\\
+F_2(q)
+&=
+\frac{
+  2\left\{1-J_0(qa)\right\}
+  -
+  qaJ_1(qa)
+}{q^2},
+\\
+G_2(q)
+&=
+\frac{a^3}{q}J_3(qa).
+\end{align}
+
+O en forma de series de las funciones de Bessel
+
+\begin{equation}
+  \begin{aligned}
+    E'_L(r,f)
+    \simeq&
+    \frac{2\pi n}{i\lambda f}
+    e^{inkf}
+    e^{i\frac{nk}{2f}r^2}
+    \Bigg\{
+      J_0(qa)
+      \left[
+        -\frac{2\alpha a^2}{q^2}E_{L,0}
+        +
+        \frac{2\gamma_0 e^{2i\varphi}}{q^2}E_{R,0}
+      \right]
+      \\
+          &\qquad
+          +
+          J_1(qa)
+          \left[
+            -\alpha
+            \left(
+              \frac{a^3}{q}
+              -
+              \frac{4a}{q^3}
+            \right)E_{L,0}
+            +
+            \frac{2\gamma_0 a e^{2i\varphi}}{q}E_{R,0}
+          \right]
+          \\
+          &\qquad
+          +
+          J_3(qa)
+          \left[
+            \beta\frac{a^3}{q}e^{2i\varphi}E_{R,0}
+          \right]
+          -
+          \frac{4\gamma_0}{q^2}e^{2i\varphi}E_{R,0}
+        \Bigg\},
+        \\[1em]
+        E'_R(r,f)
+    \simeq&
+    \frac{2\pi n}{i\lambda f}
+    e^{inkf}
+    e^{i\frac{nk}{2f}r^2}
+    \Bigg\{
+      J_0(qa)
+      \left[
+        \frac{2\gamma_0 e^{-2i\varphi}}{q^2}E_{L,0}
+        -
+        \frac{2\alpha a^2}{q^2}E_{R,0}
+      \right]
+      \\
+          &\qquad
+          +
+          J_1(qa)
+          \left[
+            \frac{2\gamma_0 a e^{-2i\varphi}}{q}E_{L,0}
+            -
+            \alpha
+            \left(
+              \frac{a^3}{q}
+              -
+              \frac{4a}{q^3}
+            \right)E_{R,0}
+          \right]
+          \\
+          &\qquad
+          +
+          J_3(qa)
+          \left[
+            \beta\frac{a^3}{q}e^{-2i\varphi}E_{L,0}
+          \right]
+          -
+          \frac{4\gamma_0}{q^2}e^{-2i\varphi}E_{L,0}
+        \Bigg\}.
+  \end{aligned}
+  \label{eq:EL_ER_constant_E0_bessel_series}
+\end{equation}
+
+Reemplazando las constantes auxiliares por los parámetros físicos
+del sistema
+
+\begin{equation}
+  \begin{aligned}
+    E'_L(r,f)
+    \simeq&
+    \frac{2\pi n}{i\lambda f}
+    e^{inkf}
+    e^{i\frac{nk}{2f}r^2}
+    \Bigg\{
+      J_0(qa)
+      \left[
+        -\frac{2\alpha a^2}{q^2}E_{L,0}
+        +
+        \frac{4n_0 e^{2i\varphi}}{(n_i-n_0)q^2}E_{R,0}
+      \right]
+      \\
+          &\qquad
+          +
+          J_1(qa)
+          \left[
+            -\alpha
+            \left(
+              \frac{a^3}{q}
+              -
+              \frac{4a}{q^3}
+            \right)E_{L,0}
+            +
+            \frac{4n_0 a e^{2i\varphi}}{(n_i-n_0)q}E_{R,0}
+          \right]
+          \\
+          &\qquad
+          +
+          J_3(qa)
+          \left[
+            \frac{
+              n_0(n_0+n_i)(z_0-z_i)^2a^3
+            }{
+              z_0^2z_i^2(n_0-n_i)^2q
+            }
+            e^{2i\varphi}E_{R,0}
+          \right]
+          -
+          \frac{8n_0}{(n_i-n_0)q^2}e^{2i\varphi}E_{R,0}
+        \Bigg\},
+        \\[1em]
+        E'_R(r,f)
+        \simeq&
+        \frac{2\pi n}{i\lambda f}
+        e^{inkf}
+        e^{i\frac{nk}{2f}r^2}
+        \Bigg\{
+          J_0(qa)
+          \left[
+            \frac{4n_0 e^{-2i\varphi}}{(n_i-n_0)q^2}E_{L,0}
+            -
+            \frac{2\alpha a^2}{q^2}E_{R,0}
+          \right]
+          \\
+              &\qquad
+              +
+              J_1(qa)
+              \left[
+                \frac{4n_0 a e^{-2i\varphi}}{(n_i-n_0)q}E_{L,0}
+                -
+                \alpha
+                \left(
+                  \frac{a^3}{q}
+                  -
+                  \frac{4a}{q^3}
+                \right)E_{R,0}
+              \right]
+              \\
+              &\qquad
+              +
+              J_3(qa)
+              \left[
+                \frac{
+                  n_0(n_0+n_i)(z_0-z_i)^2a^3
+                }{
+                  z_0^2z_i^2(n_0-n_i)^2q
+                }
+                e^{-2i\varphi}E_{L,0}
+              \right]
+              -
+              \frac{8n_0}{(n_i-n_0)q^2}e^{-2i\varphi}E_{L,0}
+            \Bigg\}.
+          \end{aligned}
+          \label{eq:EL_ER_constant_E0_physical}
+        \end{equation}
+
+Con esto quedaron establecidos los resultados de esta sección para campo
+incidente arbitrario $(\mathscr E_L(\rho',\phi'),\,\mathscr E_R(\rho',\phi'))$.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/results_of_simulation/fc_analysis/circular_exact_ni2p60_a40_maps.png}
+  \caption{Comparación de intensidades para polarización circular, modelo exacto
+    ($n_i=2.6$, $\alpha=40^{\circ}$). De izquierda a derecha: intensidad escalar $I_\text{escalar}$,
+    intensidad vectorial total $I_\text{total}$, y diferencia absoluta $|\Delta I|$.
+    El centro del foco presenta la mayor discrepancia entre ambas descripciones.}
+  \label{fig:maps_circular_exact_ni2p60_a40}
+\end{figure}
+
+La diferencia $|\Delta I|$ se concentra en el centro de la mancha de Airy y decae
+hacia los anillos exteriores, lo que refleja que la corrección vectorial —gobernada
+por $t_-=t_p-t_s$— actúa principalmente sobre los modos de orden angular cero y dos,
+que son los que contribuyen al pico central.
+
+% -----------------------------------------------------------------------
+\section{Representación cilíndrica}
+% -----------------------------------------------------------------------
+
+
+En esta representación no hay acoplamiento entre las componentes radial y azimutal: la diagonalidad de \(\mathbb M\) se conserva en la reducción axialmente simétrica, pero la propagación difractiva convierte ambas componentes en transformadas de Hankel de orden uno.
+
+El hecho de que aparezca \(J_1\) implica que el campo focal no posee contribución central para un campo incidente regular y axialmente simétrico en la base cilíndrica. En efecto, cerca de \(q=0\), las transformadas de Hankel de orden uno se anulan linealmente en \(q\). Por tanto,
+
+\begin{equation}
+  \vb E'_\perp(\vb 0,f)=0,
+\end{equation}
+
+siempre que las integrales radiales correspondientes sean finitas.
+
+
+Para obtener resultados en forma cerrada, especializamos el campo incidente a una pupila circular uniforme y aproximamos los coeficientes de Fresnel por su expansión paraxial. Para esta última, conectamos con las series del apéndice~\ref{apx:ovoids_series} (véanse \eqref{eq:fresnel_ts_series_fourth_order}, \eqref{eq:fresnel_tp_series_fourth_order} y \eqref{eq:xi_definition_fresnel_series}). Definimos
+
+\begin{equation}
+\xi
+=
+\frac{
+n_0(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+},
+\label{eq:xi_definition_cylindrical}
+\end{equation}
+
+y al orden cuadrático
+
+\begin{equation}
+  t_p(\rho')
+  \simeq
+  \frac{2n_0}{n_0+n_i}
+  +
+  n_0\xi\,\rho'^2,
+  \label{eq:tp_paraxial_cylindrical}
+\end{equation}
+
+\begin{equation}
+  t_s(\rho')
+  \simeq
+  \frac{2n_0}{n_0+n_i}
+  +
+  n_i\xi\,\rho'^2.
+  \label{eq:ts_paraxial_cylindrical}
+\end{equation}
+
+Sustituyendo en \eqref{eq:E_field_cylindrical_Hankel},
+
+\begin{equation}
+\begin{aligned}
+E'_r
+&\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\frac{2n_0}{n_0+n_i}\mathscr H_1\{\mathscr E_r\}
++
+n_0\xi
+\mathscr H_1\{\rho'^2\mathscr E_r\}
+\right],
+\\
+E'_\phi
+&\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\frac{2n_0}{n_0+n_i}\mathscr H_1\{\mathscr E_\phi\}
++
+n_i\xi
+\mathscr H_1\{\rho'^2\mathscr E_\phi\}
+\right].
+\end{aligned}
+\label{eq:E_cylindrical_paraxial}
+\end{equation}
+
+Consideremos una pupila circular de radio \(a\), definida por
+
+\begin{equation}
+  A_a(\rho')
+  =
+  \begin{cases}
+  1, & 0\leq \rho'\leq a,\\
+  0, & \rho'>a.
+  \end{cases}
+\end{equation}
+
+Tomamos
+
+\begin{equation}
+  \mathscr E_r(\rho')=E_{r,0}A_a(\rho'),
+  \qquad
+  \mathscr E_\phi(\rho')=E_{\phi,0}A_a(\rho').
+\end{equation}
+
+Las transformadas necesarias son
+
+\begin{equation}
+  \mathscr H_1\{A_a\}(q)
+  =
+  \int_0^a
+  \rho'J_1(q\rho')\,d\rho',
+\end{equation}
+
+y
+
+\begin{equation}
+  \mathscr H_1\{\rho'^2A_a\}(q)
+  =
+  \int_0^a
+  \rho'^3J_1(q\rho')\,d\rho'.
+\end{equation}
+
+Definimos
+
+\begin{equation}
+  \mathcal I(x)
+  =
+  \int_0^x J_0(u)\,du.
+  \label{eq:Lommel_I_def_cylindrical}
+\end{equation}
+
+Con \(x=qa\), se obtiene
+
+\begin{equation}
+  L_1(q)
+  \equiv
+  \mathscr H_1\{A_a\}(q)
+  =
+  \frac{\mathcal I(qa)-qaJ_0(qa)}{q^2},
+  \label{eq:L1_def_cylindrical}
+\end{equation}
+
+y
+
+\begin{equation}
+  M_1(q)
+  \equiv
+  \mathscr H_1\{\rho'^2A_a\}(q)
+  =
+  \frac{
+  (qa)^3J_2(qa)
+  +
+  (qa)^2J_1(qa)
+  +
+  3qaJ_0(qa)
+  -
+  3\mathcal I(qa)
+  }{q^4}.
+  \label{eq:M1_def_cylindrical}
+\end{equation}
+
+Por tanto,
+
+\begin{equation}
+\begin{aligned}
+\vb E'_\perp(\vb r,f)
+\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+&
+E_{r,0}
+\left[
+\frac{2n_0}{n_0+n_i}L_1(q)
++
+n_0\xi\,M_1(q)
+\right]\uvec r(\varphi)
+\\
++
+&
+E_{\phi,0}
+\left[
+\frac{2n_0}{n_0+n_i}L_1(q)
++
+n_i\xi\,M_1(q)
+\right]\uvec\phi(\varphi)
+\Bigg\}.
+\end{aligned}
+\label{eq:E_cylindrical_homogeneous}
+\end{equation}
+
+Los límites en el eje se obtienen directamente de las series de Bessel:
+
+\begin{equation}
+  L_1(q)
+  =
+  \frac{qa^3}{6}
+  +
+  O(q^3),
+  \qquad
+  M_1(q)
+  =
+  \frac{qa^5}{10}
+  +
+  O(q^3).
+  \label{eq:L1_M1_small_q}
+\end{equation}
+
+De este modo, cada componente del campo transversal es de orden \(O(q)\) cerca del origen del plano focal. La contribución transversal \(I_\perp\), por consiguiente, se anula como \(O(q^2)\).
+
+
+Como \(\uvec r(\varphi)\) y \(\uvec\phi(\varphi)\) son ortogonales punto a punto,
+
+\begin{equation}
+  \uvec r(\varphi)\cdot\uvec\phi(\varphi)=0,
+\end{equation}
+
+la intensidad transversal se obtiene sin término de interferencia entre las componentes radial y azimutal:
+
+\begin{equation}
+  I_\perp(\vb r,f)
+  =
+  \left(
+  \frac{2\pi n}{\lambda f z_0}
+  \right)^2
+  \left[
+  \left|
+  \mathscr H_1\{t_p\mathscr E_r\}(q)
+  \right|^2
+  +
+  \left|
+  \mathscr H_1\{t_s\mathscr E_\phi\}(q)
+  \right|^2
+  \right].
+\label{eq:I_perp_cylindrical}
+\end{equation}
+
+Sin embargo, la intensidad total debe incluir la componente longitudinal. Usando
+
+\begin{equation}
+E'_z(\vb r,f)=-\tan\theta_A'(r)\,E'_r(\vb r,f),
+\qquad
+\theta_A'(r)=\frac{r}{z_i-z(r)},
+\label{eq:Ez_from_Er_cylindrical}
+\end{equation}
+
+se obtiene
+
+\begin{equation}
+I_z(\vb r,f)=|E'_z|^2=\tan^2\theta_A'(r)\,|E'_r|^2,
+\label{eq:Iz_cylindrical}
+\end{equation}
+
+y por tanto
+
+\begin{equation}
+I(\vb r,f)=I_\perp(\vb r,f)+I_z(\vb r,f)
+=
+\left(
+\frac{2\pi n}{\lambda f z_0}
+\right)^2
+\left[
+\left(1+\tan^2\theta_A'(r)\right)
+\left|
+\mathscr H_1\{t_p\mathscr E_r\}(q)
+\right|^2
++
+\left|
+\mathscr H_1\{t_s\mathscr E_\phi\}(q)
+\right|^2
+\right].
+\label{eq:I_total_cylindrical}
+\end{equation}
+
+Para el caso uniforme sobre la pupila,
+
+\begin{equation}
+\begin{aligned}
+\mathcal G_r(q)
+\equiv\;&
+\frac{2n_0}{n_0+n_i}
+\frac{\mathcal I(qa)-qaJ_0(qa)}{q^2}
+\\[0.3em]
+&+
+\frac{
+n_0^2(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}
+\frac{
+(qa)^3J_2(qa)
++
+(qa)^2J_1(qa)
++
+3qaJ_0(qa)
+-
+3\mathcal I(qa)
+}{q^4},
+\end{aligned}
+\label{eq:Gr_cylindrical}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\mathcal G_\phi(q)
+\equiv\;&
+\frac{2n_0}{n_0+n_i}
+\frac{\mathcal I(qa)-qaJ_0(qa)}{q^2}
+\\[0.3em]
+&+
+\frac{
+n_0n_i(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}
+\frac{
+(qa)^3J_2(qa)
++
+(qa)^2J_1(qa)
++
+3qaJ_0(qa)
+-
+3\mathcal I(qa)
+}{q^4},
+\end{aligned}
+\label{eq:Gphi_cylindrical}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+  I_\perp(\vb r,f)
+  \simeq
+  \left(
+  \frac{2\pi n}{\lambda f z_0}
+  \right)^2
+  \Bigg[
+  &
+  |E_{r,0}|^2
+  \left|
+  \mathcal G_r(q)
+  \right|^2
+  \\
+  +
+  &
+  |E_{\phi,0}|^2
+  \left|
+  \mathcal G_\phi(q)
+  \right|^2
+  \Bigg].
+\end{aligned}
+\label{eq:I_perp_cylindrical_homogeneous}
+\end{equation}
+
+incluyendo la componente longitudinal:
+
+\begin{equation}
+\begin{aligned}
+I(\vb r,f)
+&\simeq
+\left(
+\frac{2\pi n}{\lambda f z_0}
+\right)^2
+\Bigg[
+\left(1+\tan^2\theta_A'(r)\right)
+|E_{r,0}|^2
+\left|
+\mathcal G_r(q)
+\right|^2
+\\
+&\qquad
++
+|E_{\phi,0}|^2
+\left|
+\mathcal G_\phi(q)
+\right|^2
+\Bigg].
+\end{aligned}
+\label{eq:I_total_cylindrical_homogeneous}
+\end{equation}
+
+Este resultado expresa una diferencia estructural con la representación circular: en la base circular aparecen naturalmente los órdenes \(0\) y \(2\), asociados respectivamente al término diagonal y al acoplamiento \(\ket L\leftrightarrow\ket R\). En cambio, para campos axialmente simétricos escritos directamente en la base cilíndrica, la dependencia angular de los propios vectores \(\uvec r(\phi')\) y \(\uvec\phi(\phi')\) impone el orden \(1\). Por eso los haces radial y azimutalmente polarizados presentan un cero axial en la componente transversal del campo focal.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/results_of_simulation/fc_analysis/polar_exact_ni2p60_a40_maps.png}
+\caption{Comparación de intensidades para polarización cilíndrica, modelo exacto
+  ($n_i=2.6$, $\alpha=40^{\circ}$). La estructura anular de $I_\text{total}$ confirma el cero
+  axial predicho por la transformada de Hankel de orden uno para modos
+  radial o azimutalmente polarizados con simetría azimutal.}
+\label{fig:maps_polar_exact_ni2p60_a40}
+\end{figure}
+
+A diferencia de las bases circular y cartesiana, aquí la diferencia $|\Delta I|$ también
+presenta simetría anular: la ausencia de campo en el centro es un resultado puramente
+vectorial que la teoría escalar no puede describir, pues emerge de la estructura
+geométrica de los vectores $\hat{\mathbf r}(\varphi')$ y $\hat{\boldsymbol\varphi}(\varphi')$
+sobre la pupila, no de una modulación de amplitud.
+
+
+La ecuación \eqref{eq:E_cylindrical_paraxial} escrita en forma matricial es
+
+\begin{equation}
+\begin{pmatrix}
+E'_r\\
+E'_\phi
+\end{pmatrix}
+\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\begin{pmatrix}
+\dfrac{2n_0}{n_0+n_i}\mathscr H_1+n_0\xi\,\mathscr H_1[\rho'^2]
+&
+0
+\\[0.8em]
+0
+&
+\dfrac{2n_0}{n_0+n_i}\mathscr H_1+n_i\xi\,\mathscr H_1[\rho'^2]
+\end{pmatrix}
+\begin{pmatrix}
+\mathscr E_r\\
+\mathscr E_\phi
+\end{pmatrix},
+\label{eq:E_cylindrical_paraxial_matrix}
+\end{equation}
+
+donde $\mathscr H_1[\rho'^2]$ denota el operador que multiplica por $\rho'^2$ y aplica la transformada de Hankel de orden uno.
+
+
+Sustituyendo las definiciones \eqref{eq:L1_def_cylindrical} y \eqref{eq:M1_def_cylindrical} en \eqref{eq:E_cylindrical_homogeneous}, las componentes resultan
+
+\begin{equation}
+\begin{aligned}
+E'_r
+&\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+E_{r,0}
+\Bigg[
+\frac{2n_0}{n_0+n_i}
+\frac{\mathcal I(qa)-qaJ_0(qa)}{q^2}
+\\
+&\qquad\qquad
++
+\frac{
+n_0^2(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}
+\frac{
+(qa)^3J_2(qa)
++
+(qa)^2J_1(qa)
++
+3qaJ_0(qa)
+-
+3\mathcal I(qa)
+}{q^4}
+\Bigg],
+\\[0.4em]
+E'_\phi
+&\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+E_{\phi,0}
+\Bigg[
+\frac{2n_0}{n_0+n_i}
+\frac{\mathcal I(qa)-qaJ_0(qa)}{q^2}
+\\
+&\qquad\qquad
++
+\frac{
+n_0n_i(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}
+\frac{
+(qa)^3J_2(qa)
++
+(qa)^2J_1(qa)
++
+3qaJ_0(qa)
+-
+3\mathcal I(qa)
+}{q^4}
+\Bigg].
+\end{aligned}
+\label{eq:E_cylindrical_homogeneous_explicit}
+\end{equation}
+
+Agrupando por orden de función de Bessel, con $x = qa$:
+
+\begin{equation}
+\begin{aligned}
+E'_r
+&\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+E_{r,0}
+\Bigg[
+\left(
+\frac{2n_0}{n_0+n_i}\frac{1}{q^2}
+-
+\frac{3n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{1}{q^4}
+\right)\mathcal I(x)
+\\
+&\qquad
++
+\left(
+-\frac{2n_0}{n_0+n_i}\frac{x}{q^2}
++
+\frac{3n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x}{q^4}
+\right)J_0(x)
++
+\left(
+\frac{n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^2}{q^4}
+\right)J_1(x)
+\\
+&\qquad
++
+\left(
+\frac{n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^3}{q^4}
+\right)J_2(x)
+\Bigg],
+\\[0.6em]
+E'_\phi
+&\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+E_{\phi,0}
+\Bigg[
+\left(
+\frac{2n_0}{n_0+n_i}\frac{1}{q^2}
+-
+\frac{3n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{1}{q^4}
+\right)\mathcal I(x)
+\\
+&\qquad
++
+\left(
+-\frac{2n_0}{n_0+n_i}\frac{x}{q^2}
++
+\frac{3n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x}{q^4}
+\right)J_0(x)
++
+\left(
+\frac{n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^2}{q^4}
+\right)J_1(x)
+\\
+&\qquad
++
+\left(
+\frac{n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^3}{q^4}
+\right)J_2(x)
+\Bigg].
+\end{aligned}
+\label{eq:E_cylindrical_homogeneous_grouped_bessel}
+\end{equation}
+
+
+El resultado \eqref{eq:E_cylindrical_homogeneous} escrito en forma matricial es
+
+\begin{equation}
+\begin{pmatrix}
+E'_r\\
+E'_\phi
+\end{pmatrix}
+\simeq
+-\frac{2\pi n}{\lambda f z_0}
+e^{inkf}
+e^{i\frac{nk}{2f}r^2}
+\begin{pmatrix}
+\dfrac{2n_0}{n_0+n_i}L_1(q)+n_0\xi\,M_1(q) & 0
+\\[0.8em]
+0 & \dfrac{2n_0}{n_0+n_i}L_1(q)+n_i\xi\,M_1(q)
+\end{pmatrix}
+\begin{pmatrix}
+E_{r,0}\\
+E_{\phi,0}
+\end{pmatrix}.
+\label{eq:E_cylindrical_homogeneous_matrix}
+\end{equation}
+
+% -----------------------------------------------------------------------
+\section{Representación cartesiana}
+% -----------------------------------------------------------------------
+
+
+Para obtener resultados en forma cerrada, especializamos el campo incidente a una pupila circular homogénea y empleamos la expansión paraxial de las combinaciones $t_+$ y $t_-$, conectando con el desarrollo en series del apéndice. Usamos
+
+\begin{equation}
+t_+(\rho')
+\simeq
+-\alpha\rho'^2,
+\qquad
+t_-(\rho')
+\simeq
+2\gamma_0-\beta\rho'^2.
+\label{eq:t_plus_t_minus_paraxial_cartesian}
+\end{equation}
+
+Sustituyendo en \eqref{eq:Ex_Ey_Hankel_cartesian}, la expresión compacta es
+
+\begin{equation}
+\mathbf E'_\perp(\mathbf r,f)
+\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+-\alpha
+\mathscr H_0\{\rho'^2\mathscr E_\perp\}(q)
+-
+\mathbb W(\varphi)
+\left(
+2\gamma_0\mathscr H_2\{\mathscr E_\perp\}(q)
+-
+\beta\mathscr H_2\{\rho'^2\mathscr E_\perp\}(q)
+\right)
+\right].
+\label{eq:E_field_cartesian_paraxial}
+\end{equation}
+
+Consideremos una pupila circular homogénea de radio $a$, para la cual
+
+\begin{equation}
+\mathscr E_\perp(\rho')
+=
+\mathscr E_{\perp,0}A_a(\rho'),
+\qquad
+\mathscr E_{\perp,0}
+=
+\mathscr E_{x,0}\,\hat{\mathbf x}
++
+\mathscr E_{y,0}\,\hat{\mathbf y}.
+\label{eq:cartesian_homogeneous_pupil_def}
+\end{equation}
+
+Usaremos las siguientes transformadas de Hankel:
+
+\begin{equation}
+\mathscr H_0\{\rho'^2A_a\}(q)
+=
+\frac{a^3}{q}J_1(qa)
++
+\frac{2a^2}{q^2}J_0(qa)
+-
+\frac{4a}{q^3}J_1(qa),
+\label{eq:H0_rho2_Aa_cartesian}
+\end{equation}
+
+\begin{equation}
+\mathscr H_2\{A_a\}(q)
+=
+\frac{
+2\left\{1-J_0(qa)\right\}
+-
+qa\,J_1(qa)
+}
+{q^2},
+\label{eq:H2_Aa_cartesian}
+\end{equation}
+
+\begin{equation}
+\mathscr H_2\{\rho'^2A_a\}(q)
+=
+\frac{a^3}{q}J_3(qa).
+\label{eq:H2_rho2_Aa_cartesian}
+\end{equation}
+
+Definimos
+
+\begin{equation}
+\begin{aligned}
+\mathcal A(q)
+&=
+-\alpha\left[
+\frac{a^3}{q}J_1(qa)
++
+\frac{2a^2}{q^2}J_0(qa)
+-
+\frac{4a}{q^3}J_1(qa)
+\right],
+\\[0.5em]
+\mathcal B(q)
+&=
+2\gamma_0
+\frac{
+2\left\{1-J_0(qa)\right\}
+-
+qa\,J_1(qa)
+}
+{q^2}
+-
+\beta
+\frac{a^3}{q}J_3(qa).
+\end{aligned}
+\label{eq:A_B_cartesian_def}
+\end{equation}
+
+Entonces el campo en el plano focal adopta la forma compacta
+
+\begin{equation}
+\mathbf E'_\perp(\mathbf r,f)
+\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)\mathbb I_\perp
+-
+\mathcal B(q)\mathbb W(\varphi)
+\right]
+\mathscr E_{\perp,0}.
+\label{eq:E_field_cartesian_homogeneous}
+\end{equation}
+
+Por componentes,
+
+\begin{equation}
+\begin{aligned}
+E'_x(\mathbf r,f)
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\left(
+\mathcal A(q)-\mathcal B(q)\cos2\varphi
+\right)\mathscr E_{x,0}
+-
+\mathcal B(q)\sin2\varphi\,\mathscr E_{y,0}
+\right],
+\\[1em]
+E'_y(\mathbf r,f)
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+-
+\mathcal B(q)\sin2\varphi\,\mathscr E_{x,0}
++
+\left(
+\mathcal A(q)+\mathcal B(q)\cos2\varphi
+\right)\mathscr E_{y,0}
+\right].
+\end{aligned}
+\label{eq:Ex_Ey_cartesian_homogeneous}
+\end{equation}
+
+
+Para una polarización incidente lineal en $\hat{\mathbf x}$,
+
+\begin{equation}
+\mathscr E_{\perp,0}
+=
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix},
+\end{equation}
+
+se obtiene
+
+\begin{equation}
+\begin{aligned}
+E'_x
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)
+-
+\mathcal B(q)\cos2\varphi
+\right],
+\\
+E'_y
+&\simeq
+-
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\mathcal B(q)\sin2\varphi.
+\end{aligned}
+\label{eq:cartesian_case_10}
+\end{equation}
+
+Para una polarización incidente lineal en $\hat{\mathbf y}$,
+
+\begin{equation}
+\mathscr E_{\perp,0}
+=
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix},
+\end{equation}
+
+se obtiene
+
+\begin{equation}
+\begin{aligned}
+E'_x
+&\simeq
+-
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\mathcal B(q)\sin2\varphi,
+\\
+E'_y
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)
++
+\mathcal B(q)\cos2\varphi
+\right].
+\end{aligned}
+\label{eq:cartesian_case_01}
+\end{equation}
+
+Para una polarización incidente diagonal,
+
+\begin{equation}
+\mathscr E_{\perp,0}
+=
+\begin{pmatrix}
+1\\
+1
+\end{pmatrix},
+\end{equation}
+
+el campo focal queda
+
+\begin{equation}
+\begin{aligned}
+E'_x
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)
+-
+\mathcal B(q)
+\left(
+\cos2\varphi+\sin2\varphi
+\right)
+\right],
+\\
+E'_y
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)
++
+\mathcal B(q)
+\left(
+\cos2\varphi-\sin2\varphi
+\right)
+\right].
+\end{aligned}
+\label{eq:cartesian_case_11}
+\end{equation}
+
+Finalmente, para una polarización incidente
+
+\begin{equation}
+\mathscr E_{\perp,0}
+=
+\begin{pmatrix}
+1\\
+i
+\end{pmatrix},
+\end{equation}
+
+se obtiene
+
+\begin{equation}
+\begin{aligned}
+E'_x
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)
+-
+\mathcal B(q)
+\left(
+\cos2\varphi+i\sin2\varphi
+\right)
+\right],
+\\
+E'_y
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+i\mathcal A(q)
+-
+\mathcal B(q)
+\left(
+\sin2\varphi-i\cos2\varphi
+\right)
+\right].
+\end{aligned}
+\label{eq:cartesian_case_1i}
+\end{equation}
+
+Usando
+
+\begin{equation}
+  \cos2\varphi+i\sin2\varphi
+  =
+  e^{2i\varphi},
+\end{equation}
+
+la primera componente del caso $(1,i)$ puede escribirse como
+
+\begin{equation}
+E'_x
+\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)
+-
+\mathcal B(q)e^{2i\varphi}
+\right].
+\end{equation}
+
+Esto muestra explícitamente cómo, en el caso circular escrito desde la base
+cartesiana, reaparece la fase azimutal de orden dos.
+
+
+La estructura obtenida en la base cartesiana es
+
+\begin{equation}
+  \mathscr H_0\,\mathbb I_\perp
+  -
+  \mathscr H_2\,\mathbb W(\varphi).
+\end{equation}
+
+El término proporcional a $\mathscr H_0$ es la contribución isotrópica:
+preserva las componentes cartesianas incidentes y corresponde al canal de
+orden angular cero. En ausencia de la modulación vectorial introducida por
+$t_-$, este término reproduce la estructura central esperada de la teoría
+escalar de la difracción, salvo por la modulación radial debida a los
+coeficientes de Fresnel.
+
+El término proporcional a $\mathscr H_2$ contiene la información vectorial de
+la transmisión. Está gobernado por la diferencia
+
+\begin{equation}
+  t_-
+  =
+  t_p-t_s,
+\end{equation}
+
+y por el operador angular
+
+\begin{equation}
+  \mathbb W(\varphi)
+  =
+  \begin{pmatrix}
+    \cos 2\varphi & \sin 2\varphi \\
+    \sin 2\varphi & -\cos 2\varphi
+  \end{pmatrix}.
+\end{equation}
+
+Por tanto, este término mezcla las componentes $x$ e $y$ del campo propagado
+y produce una redistribución angular de orden dos en el plano focal.
+
+La misma física que en la representación circular aparece como acoplamiento
+helicoidal entre $\ket L$ y $\ket R$ mediante fases $e^{\pm2i\varphi}$, en la
+representación cartesiana aparece como una anisotropía angular gobernada por
+$\cos2\varphi$ y $\sin2\varphi$. En síntesis,
+
+\begin{equation}
+\text{representación circular:}
+\qquad
+\mathscr H_0\,\mathbb I_\perp
+-
+\mathscr H_2\,\mathbb V(\varphi),
+\end{equation}
+
+mientras que
+
+\begin{equation}
+\text{representación cartesiana:}
+\qquad
+\mathscr H_0\,\mathbb I_\perp
+-
+\mathscr H_2\,\mathbb W(\varphi).
+\end{equation}
+
+Ambas expresiones describen el mismo fenómeno vectorial: la parte escalar
+conserva la polarización, mientras que la parte de orden angular dos introduce
+mezcla polarizacional y estructura azimutal en el plano focal.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/results_of_simulation/fc_analysis/cartesian_exact_ni2p60_a40_maps.png}
+\caption{Comparación de intensidades para polarización cartesiana, modelo exacto
+  ($n_i=2.6$, $\alpha=40^{\circ}$). La supresión central en $I_\text{total}$ respecto de
+  $I_\text{escalar}$ refleja el mismo efecto que en la representación circular:
+  la parte anisotrópica $\mathscr H_2$ redistribuye energía desde el centro hacia
+  el entorno azimutal de orden dos.}
+\label{fig:maps_cartesian_exact_ni2p60_a40}
+\end{figure}
+
+Las tres representaciones describen el mismo fenómeno físico: la transmisión en la interfaz
+impone una modulación no uniforme sobre la pupila que reduce la intensidad central respecto
+a la predicción escalar. La elección de base determina únicamente si esa modulación se
+manifiesta como mezcla de polarizaciones, como supresión anular o como anisotropía
+azimutal, pero el campo resultante es en todos los casos el mismo.
+
+
+La expresión compacta \eqref{eq:E_field_cartesian_paraxial} escrita por componentes es
+
+\begin{equation}
+\begin{aligned}
+E'_x(\mathbf r,f)
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg[
+-\alpha
+\mathscr H_0\{\rho'^2\mathscr E_x\}(q)
+\\
+&\quad
+-
+\cos2\varphi
+\left(
+2\gamma_0\mathscr H_2\{\mathscr E_x\}(q)
+-
+\beta\mathscr H_2\{\rho'^2\mathscr E_x\}(q)
+\right)
+-
+\sin2\varphi
+\left(
+2\gamma_0\mathscr H_2\{\mathscr E_y\}(q)
+-
+\beta\mathscr H_2\{\rho'^2\mathscr E_y\}(q)
+\right)
+\Bigg],
+\\[1em]
+E'_y(\mathbf r,f)
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg[
+-\alpha
+\mathscr H_0\{\rho'^2\mathscr E_y\}(q)
+\\
+&\quad
+-
+\sin2\varphi
+\left(
+2\gamma_0\mathscr H_2\{\mathscr E_x\}(q)
+-
+\beta\mathscr H_2\{\rho'^2\mathscr E_x\}(q)
+\right)
++
+\cos2\varphi
+\left(
+2\gamma_0\mathscr H_2\{\mathscr E_y\}(q)
+-
+\beta\mathscr H_2\{\rho'^2\mathscr E_y\}(q)
+\right)
+\Bigg].
+\end{aligned}
+\label{eq:Ex_Ey_cartesian_paraxial}
+\end{equation}
+
+
+El resultado \eqref{eq:E_field_cartesian_homogeneous} escrito en forma matricial es
+
+\begin{equation}
+\begin{pmatrix}
+E'_x\\
+E'_y
+\end{pmatrix}
+\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\begin{pmatrix}
+\mathcal A(q)-\mathcal B(q)\cos2\varphi
+&
+-\mathcal B(q)\sin2\varphi
+\\
+-\mathcal B(q)\sin2\varphi
+&
+\mathcal A(q)+\mathcal B(q)\cos2\varphi
+\end{pmatrix}
+\begin{pmatrix}
+\mathscr E_{x,0}\\
+\mathscr E_{y,0}
+\end{pmatrix}.
+\label{eq:E_field_cartesian_homogeneous_matrix}
+\end{equation}
+
+
+Sustituyendo explícitamente \eqref{eq:A_B_cartesian_def} en \eqref{eq:Ex_Ey_cartesian_homogeneous},
+
+\begin{equation}
+\begin{aligned}
+E'_x(\mathbf r,f)
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)\,\mathscr E_{x,0}
+-
+\mathcal B(q)
+\left(
+\cos2\varphi\,\mathscr E_{x,0}
++
+\sin2\varphi\,\mathscr E_{y,0}
+\right)
+\right],
+\\[1em]
+E'_y(\mathbf r,f)
+&\simeq
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\left[
+\mathcal A(q)\,\mathscr E_{y,0}
+-
+\mathcal B(q)
+\left(
+\sin2\varphi\,\mathscr E_{x,0}
+-
+\cos2\varphi\,\mathscr E_{y,0}
+\right)
+\right].
+\end{aligned}
+\label{eq:Ex_Ey_cartesian_homogeneous_AB}
+\end{equation}
