@@ -1,18 +1,41 @@
 # LaTeX build cache and auxiliary files
 .tex-cache/
+.texlive-var/
 *.aux
 *.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
 *.fls
+*.lof
+*.lot
 *.log
+*.nav
 *.out
 *.run.xml
+*.snm
 *.synctex.gz
 *.toc
 *.xdv
+*.vrb
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
 *-SAVE-ERROR
+
+# Latexmk/engine temp files
+_minted-*/
+*.dvi
+*.ps
+*.tmp
+*.bak
 
 # macOS metadata
 .DS_Store
