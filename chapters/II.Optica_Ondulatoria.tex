@@ -2,13 +2,24 @@
 \label{ch:ondulatoria}
 
 
-La visión geométrica de la luz, si bien elegante y suficiente para muchas de las aplicaciones elementales, no capta por completo la verdadera naturaleza de la luz, pues en la naturaleza la luz no se mantiene confinada en un rayo en el espacio libre, sino que tiende a ``esparcirse" a las vecindades. En concreto, esta manera geométrica de entender la luz se vio enfrentado a serios problemas ante fenómenos como la interferencia, la difracción y la birrefringencia, por mencionar algunos. Con el tiempo se fueron acumulando experiencias que contradecían el modelo geométrico, hasta que la paradoja se hizo innegable.
+La visión geométrica de la luz, si bien elegante y suficiente para muchas de las aplicaciones elementales, no capta por completo la verdadera naturaleza de la luz, pues en la naturaleza la luz no se mantiene confinada en un rayo mientras se propaga por el espacio libre, sino que tiende a ``esparcirse'' hacia las vecindades, entre otros fenomenos que la teoría geométrica no explica o ni contempla.
 
-Por otro lado, aparentemente inconexo en un principio, las investigaciones concernientes a los fenómenos eléctricos y magnéticos dieron fruto a grandes avances en el entendimiento de estas fuerzas a distancia observada en cuerpos "terrenales" como la magnetita fue Faraday quien entendió cómo se influían mutuamente, lo que sugería una misma naturaleza, y también observó experimentalmente cómo la luz era influida por estas fuerzas, ahora mejor entendidas. James Clerk Maxwell, en una tarea verdaderamente unificadora y excelsa matemáticamente, sintetizó las ideas de su época en las ecuaciones que llevan su nombre y, por una necesidad física de conservación y el conocimiento matemático de las ecuaciones que la aseguraban, fue más allá que sus predecesores postulando las ondas como consecuencia de respetar este principio de conservación para la carga eléctrica \cite{maxwell1865}.
+En concreto, esta manera geométrica de entender la luz se vio enfrentado a serios problemas para explicar fenómenos como la interferencia, la difracción y la birrefringencia, por mencionar algunos. Con el tiempo se fueron acumulando experiencias que contradecían el modelo geométrico, hasta que las falencias de este modelo se hicieron innegables.
+
+Por otro lado, aparentemente inconexo en un principio, las investigaciones concernientes a los fenómenos eléctricos y magnéticos dieron fruto a grandes avances en el entendimiento de estas fuerzas a distancia observada en cuerpos ``terrenales'' como la magnetita fue Faraday quien entendió cómo se influían mutuamente, lo que sugería una misma naturaleza, y también observó experimentalmente cómo la luz era influida por estas fuerzas, ahora mejor entendidas. James Clerk Maxwell, en una tarea verdaderamente unificadora y excelsa matemáticamente, sintetizó las ideas de su época en las ecuaciones que llevan su nombre y, por una necesidad física de conservación y el conocimiento matemático de las ecuaciones que la aseguraban, fue más allá que sus predecesores postulando las ondas como consecuencia de respetar este principio de conservación para la carga eléctrica \cite{maxwell1865}.
+
+Las ondas electromagéticas de Maxwell, tenian que viajar a cierta velocidad que resulto ser la misma que la velocidad a la que viajaban las ondas lúminosas. 
+Finalmente, se llego a concluir que la luz visible era radiación electromagética. 
+
+
 
 \section{Ecuaciones de Maxwell}
 
 En su forma general, las ecuaciones de Maxwell pueden escribirse como \cite{jackson1999}
+
+
+
+
 \begin{align}
 \nabla \cdot \mathbf{E}(\mathbf x, t) &= \frac{\rho(\mathbf x, t)}{\epsilon_0} 
 & \qquad 
@@ -256,16 +267,26 @@ e^{ik_z(\mathbf k_\perp)\,z}.
 \label{eq:spectral_propagation}
 \end{equation}
 
-Esta es la esencia del método de espectro angular: en el dominio espectral, la propagación longitudinal se reduce a una simple multiplicación por un factor exponencial.
+
+Así el espectro transversal se propaga retrazando cada componente acorde a la fase $\left( \sqrt{k^2 - k_r^2} \right ) z$, notese como cada componente se retrasa de manera distinta segun $k_r$, los mayores retardos corresponde a los menores valores que puede tomar $k_r$, es decir las frecuencias transversales cercanas a cero.  
+
+
+
+
+
 
 Finalmente, sustituyendo \eqref{eq:spectral_propagation} en la transformada inversa \eqref{eq:fourier_inverse}, obtenemos
+
+
+
+
 
 \begin{equation}
 \Psi(\vb r,z)
 =
 \frac{1}{(2\pi)^2}
 \iint_{\mathbb R^2}
-\tilde{\Psi}(\mathbf k_\perp;0)\,
+\tilde{\Psi}_0(\mathbf k_\perp)\,
 \exp
 \left[
 i\left(
@@ -278,9 +299,15 @@ k_z(\mathbf k_\perp)\,z
 \label{eq:angular_spectrum_propagation}
 \end{equation}
 
-Esta representación expresa el campo como una superposición continua de ondas planas, cada una caracterizada por su vector de onda transversal $\mathbf k_\perp$ y su evolución longitudinal determinada por $k_z$.
 
-De manera operatorial, la propagación puede escribirse como
+
+En esta representación el campo $\Psi$ en el plano $z$ es una suma de ondas planas con vector de onda $\vb k = \vb k_\perp + k_z(\vb k_\perp)$, cuya amplitud es el espectro angular del campo en $z=0$. 
+
+
+
+
+
+De manera operatoracional, la propagación puede escribirse como
 
 \begin{equation}
 \Psi(\vb r,z)
@@ -298,12 +325,33 @@ donde
 \mathscr F_\perp^{-1}
 \left\{
 e^{i\,k_z(\mathbf k_\perp)\,z}
-\right\}
-\mathscr F_\perp.
+\mathscr F_\perp \left\{ \right\} \right\}
 \label{eq:propagation_operator}
 \end{equation}
 
-El operador $\mathscr R_{ASM}(z)$ diagonaliza el laplaciano transversal $\nabla_\perp^2$, transformando la ecuación diferencial parcial de Helmholtz en una multiplicación espectral simple. Esta formulación constituye la base de los métodos numéricos de propagación mediante FFT y conecta naturalmente con las aproximaciones de Fresnel y Fraunhofer en el régimen paraxial.
+
+O equivalente, 
+
+\begin{equation}
+\mathscr R_{ASM}(z)
+=
+\mathscr F_\perp^{-1}
+\left\{
+  e^{i\, k \sqrt{1 - (k_r/k)^2 }  \,z}
+\mathscr F_\perp \left\{ \right\} \right\}
+\label{eq:propagation_operator}
+\end{equation}
+
+
+
+
+
+El operador $\mathscr R_{ASM}(z)$ diagonaliza el laplaciano transversal $\nabla_\perp^2$, transformando la ecuación diferencial parcial de Helmholtz en una operación espectral.
+
+
+
+
+
 
 
 
@@ -728,6 +776,7 @@ De tal manera que en \eqref{eq:huygens_principle} podamos aproximar la distancia
 
 
 
+
 El otro término $\|\mathbf{r}-\mathbf{r}'\|$ esta presente en la fase de la onda, y la fase es más sensible que la amplitud, al estar multiplicada por el número de onda $k = 2\pi/\lambda$ que relativiza la distancia entre los puntos objeto e imagen respecto a la longitud de onda, es el número de veces que la longitud de onda debe curbrir para llegar al valor númerico de la distancia mencionada. 
 
 Con esto en mente, refinamos nuestra aproximación de la distancia entre los puntos objeto e imagen hasta orden $4$ 
@@ -819,6 +868,17 @@ Escribiendo el campo por su espectro
   \vb{E}(\vb r) = \frac{1}{(2\pi)^3} \int_{\mathbb K^3} \widehat{\vb{E}} (\vb{k}) e^{i\vb k \cdot \vb x} d^3x,
 \end{equation*}
 
+
+que por cumplir la ecuación de Helmhotz, es equivalente a 
+
+
+
+\begin{equation*} 
+  \vb{E}(\vb r) = \frac{1}{(2\pi)^3} \int_{\tilde{S}^2} \widehat{\vb{E}} (\vb{k}) e^{ik \uvec k \cdot \vb x} d\tilde{\Omega},
+\end{equation*}
+
+donde $\tilde S^2:=\{\hat{\mathbf k}\in\mathbb R^3:\|\hat{\mathbf k}\|=1\}$ es la esfera unitaria en el espacio $\mathbf{k}$, y $d\tilde\Omega$ su elemento de superficie (ángulo sólido), con $d\tilde\Omega=\sin\tilde\theta\,d\tilde\theta\,d\tilde\varphi$ en coordenadas esféricas.
+
 al remplazarlo en las condiciones de frontera, se encuentra la ley de transformación para cada componente $\vb k$ del campo. 
 
 
@@ -831,22 +891,28 @@ El campo incidente $\widehat{\vb E}(\vb k)$ se transforma de forma diferente en 
 Para definir las polarizaciones $\uvec s$ y $\uvec p$ primero hay que definir el plano $\Pi$ de incidencia
 
 \begin{equation}
-\Pi = \operatorname{span}\{\hat{\mathbf{k}}, \hat{\mathbf{N}}\},
+\Pi(\uvec{k},\uvec N) = \operatorname{span}\{\uvec{k}, \uvec{N}\},
 \label{eq:pi}
 \end{equation}
 
 definimos así entonces los vectores unitarios $\uvec s$ y $\uvec p$ según
 
 \begin{equation}
-\hat{\mathbf{p}} \in \Pi, 
-\qquad \hat{\mathbf{p}} \perp \hat{\mathbf{k}},
-\label{eq:pdef}
+  \uvec{s}(\uvec{k},\uvec N)
+  = \frac{\uvec N\times\uvec{k}}
+  {\left\|\uvec N\times\uvec{k}\right\|},
+\label{eq:sdef}
 \end{equation}
 
 \begin{equation}
-\hat{\mathbf{s}} \perp \Pi.
-\label{eq:sdef}
+  \uvec{p}(\uvec{k},\uvec N)
+  = \uvec{s}(\uvec{k},\uvec N)\times\uvec{k}
+  = \frac{(\uvec N\cdot\uvec{k})\uvec{k}-\uvec N}
+  {\sqrt{1-\left(\uvec N\cdot\uvec{k}\right)^2}}.
+\label{eq:pdef}
 \end{equation}
+
+El vector $\uvec{s}$ es perpendicular al plano de incidencia, mientras que $\uvec{p}$ pertenece a $\Pi(\uvec{k},\uvec N)$ y es perpendicular a $\uvec{k}$. Para el campo transmitido se definen análogamente $\uvec{s}'=\uvec{s}(\uvec{k}',\uvec N)$ y $\uvec{p}'=\uvec{p}(\uvec{k}',\uvec N)$.
 
 \begin{figure}[H]
   \centering
@@ -855,69 +921,137 @@ definimos así entonces los vectores unitarios $\uvec s$ y $\uvec p$ según
   \label{fig:fresnel_basis}
 \end{figure}
 
-Así, el campo transmitido $\vb{E}'_{\Sigma}$ sobre la interfaz $\Sigma$, dado el campo incidente $\vb{E}_\Sigma$ sobre $\Sigma$ también, está dado por
-
+Los coeficientes $t_s$, $t_p$ se conocen como coeficientes de Fresnel para la transmisión y se definen como
 
 \begin{equation}
-  \vb{E}'_{\Sigma} = t_p (\vb{E}_\Sigma \cdot \uvec{p}) \uvec{p}' + t_s (\vb{E}_\Sigma \cdot \uvec s) \uvec{s}',
+  t_s =
+  \frac{2 n_1 \cos\theta_i}
+  {n_1\cos\theta_i+n_2\cos\theta_t},
+  \label{eq:ts}
+\end{equation}
+
+\begin{equation}
+  t_p =
+  \frac{2 n_1 \cos\theta_i}
+  {n_2\cos\theta_i+n_1\cos\theta_t}.
+  \label{eq:tp}
+\end{equation}
+
+Para escribirlos directamente en términos de la dirección del vector de onda incidente $\uvec{k}$, usamos
+
+\begin{equation}
+  \cos\theta_i = -\,\uvec N\cdot\uvec{k}.
+  \label{eq:cos_i_kN}
+\end{equation}
+
+Por la ley de Snell, $n_1\sin\theta_i=n_2\sin\theta_t$, se tiene
+
+\begin{equation}
+  \cos\theta_t
+  = \sqrt{1-\left(\frac{n_1}{n_2}\right)^2
+  \left[1-\left(\uvec N\cdot\uvec{k}\right)^2\right]},
+  \label{eq:cos_t_kN}
+\end{equation}
+
+donde se toma la rama positiva para la onda transmitida propagándose hacia el segundo medio. Sustituyendo \eqref{eq:cos_i_kN} y \eqref{eq:cos_t_kN} en \eqref{eq:ts} y \eqref{eq:tp}, los coeficientes de Fresnel de transmisión quedan como
+
+\begin{equation}
+t_s(\uvec{k},\uvec N) =
+\frac{-2 n_1\,\uvec N\cdot\uvec{k}}
+{-n_1\,\uvec N\cdot\uvec{k}
++ n_2\sqrt{1-\left(\frac{n_1}{n_2}\right)^2
+\left[1-\left(\uvec N\cdot\uvec{k}\right)^2\right]}}
+\label{eq:ts_kN}
+\end{equation}
+
+\begin{equation}
+t_p(\uvec{k},\uvec N) =
+\frac{-2 n_1\,\uvec N\cdot\uvec{k}}
+{-n_2\,\uvec N\cdot\uvec{k}
++ n_1\sqrt{1-\left(\frac{n_1}{n_2}\right)^2
+\left[1-\left(\uvec N\cdot\uvec{k}\right)^2\right]}}.
+\label{eq:tp_kN}
+\end{equation}
+
+
+
+Con esto, conociendo el campo incidente sobre la interfaz $\Sigma$ que separa dos medios, podemos determinar el campo transmitido punto a punto sobre la misma interfaz. Si $\vb x_\Sigma\in\Sigma$, entonces la forma operacional de esta transformación es
+
+\begin{equation}
+  \vb{E}'_{\Sigma}(\vb x_\Sigma)
+  =
+  \mathscr{T}\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \left\{\vb{E}_{\Sigma}(\vb x_\Sigma)\right\}.
+\end{equation}
+
+En notación bra-ket, el operador local de transmisión se escribe como
+
+\begin{equation}
+  \mathscr{T}\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  =
+  t_p\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \ket{\uvec{p}'}
+  \bra{\uvec{p}}
+  +
+  t_s\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \ket{\uvec{s}'}
+  \bra{\uvec{s}}.
+\end{equation}
+
+De forma explícita, el campo transmitido queda dado por
+
+\begin{equation}
+  \begin{aligned}
+  \vb{E}'_{\Sigma}(\vb x_\Sigma)
+  &=
+  t_p\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \left[
+  \vb{E}_{\Sigma}(\vb x_\Sigma)\cdot
+  \uvec{p}\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \right]
+  \uvec{p}'\!\left[
+  \uvec{k}',\uvec N(\vb x_\Sigma)
+  \right]
+  \\[4pt]
+  &\quad+
+  t_s\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \left[
+  \vb{E}_{\Sigma}(\vb x_\Sigma)\cdot
+  \uvec{s}\!\left[
+  \uvec{k},\uvec N(\vb x_\Sigma)
+  \right]
+  \right]
+  \uvec{s}'\!\left[
+  \uvec{k}',\uvec N(\vb x_\Sigma)
+  \right].
+  \end{aligned}
   \label{eq:Transmited_E_field_in_Sigma}
 \end{equation}
 
 \textit{(veáse \ref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
 
 
-El resultado puede ser escrito en notacion bra-ket de la forma
-
-
-\begin{equation}
-  \vb{E}_{\Sigma}' 
-  = t_p \ket{\uvec{p}'} \bra{\uvec{p}} \ket{\vb{E}_\Sigma}
-  + t_s \ket{\uvec{s}'} \bra{\uvec{s}} \ket{\vb{E}_\Sigma}.
-\end{equation}
-
-Definimos el operador $\mathscr{P}$, que aplicado sobre el campo sobre una interfaz $\Sigma$ da el campo transmitido sobre esa misma interfaz. Es decir 
-
-\begin{equation}
-  \vb{E}'_\Sigma = \mathscr{P}\{\vb{E}_{\Sigma}\}
-\end{equation}
-
-
-Matemáticamente, el operador $\mathscr{P}$ se puede representar como
-
-\begin{equation}
-  \mathscr{P} = t_p \ket{\uvec{p}'} \bra{\uvec{p}}
-  + t_s \ket{\uvec{s}'} \bra{\uvec{s}}.
-\end{equation}
-
-
-Los coeficientes $t_s$, $t_p$ se conocen como coeficientes de Fresnel para la transmisión y están dados por
-
-
-\begin{equation}
-t_s = \frac{2 n_1 \cos \theta_i}{n_1 \cos \theta_i + n_2 \cos \theta_t}
-\label{eq:ts}
-\end{equation}
-
-
-\begin{equation}
-t_p = \frac{2 n_1 \cos \theta_i}{n_2 \cos \theta_i + n_1 \cos \theta_t}
-\label{eq:tp}
-\end{equation}
-
-donde los cosenos $\cos \theta_i$ y $\cos \theta_t$ son los cosenos de incidencia y de refracción respectivamente y se definen como 
-
-
-\begin{equation}
-  \cos \theta_i = - \uvec N \cdot \uvec k
-\end{equation}
-
-\begin{equation}
-  \cos \theta_t = - \uvec N \cdot \uvec{k}'.
-\end{equation}
 
 
 
-Con esto, conociendo el campo incidente sobre la interfaz $\Sigma$ que separa dos medios, podemos determinar el campo que se transmite sobre la misma interfaz mediante la base y los coeficientes de Fresnel que dependen de la normal al punto de la superficie considerado y la dirección de propagación del campo electrico en ese mismo punto.
+
+
+
+
 
 En el problema \textit{estigmático simple} la dirección de propagación en función de cualquier punto $Q \ \in \Sigma$ es siempre conocida, pues por la construcción del problema estigmático
 

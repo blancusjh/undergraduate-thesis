@@ -1163,7 +1163,7 @@ En síntesis, los resultados centrales del capítulo en términos de $\mathbb E^
 \end{equation}
 % ===============
 
-que, usando $\mathbb E^{\mathscr G'} = \mathbb M \mathbb E_0 / \ell_0$ y aproximando $\ell_0 \approx z_0$ en la amplitud, se leen equivalentemente como
+que, usando $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E_0 / \ell_0$ y aproximando $\ell_0 \approx z_0$ en la amplitud, se leen equivalentemente como
 
 
 % === BOXED EQ ===
@@ -1172,27 +1172,33 @@ que, usando $\mathbb E^{\mathscr G'} = \mathbb M \mathbb E_0 / \ell_0$ y aproxim
 \boxed{
   \vb E'(\vb r, f)
   =
-  \frac{ne^{inkf}}{i\lambda f z_0}\,e^{i\frac{nk}{2f}r^2}\,\mathscr F\!\left\{\mathbb M\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
+  \frac{ne^{inkf}}{i\lambda f z_0}\,e^{i\frac{nk}{2f}r^2}\,\mathscr F\!\left\{\mathbb T\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
 }
   \label{eq:E_prime_func_of_M_E0}
 \end{equation}
 % ===============
 
 
+Que en la Esfera de Fourier $\mathscr D$ de $\mathscr G'$ el campo esta dado por
+
+
+
 \begin{equation}
   \vb E'^{\mathscr D}(\vb r)
   =
   \frac{ne^{inkf}
-}{i\lambda f z_0}  \,\mathscr F\!\left\{\mathbb M\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
+}{i\lambda f z_0}  \,\mathscr F\!\left\{\mathbb T\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
   \label{eq:E_prime_D_function_of_M_E0}
 \end{equation}
 
 
 
-El campo eléctrico en el plano focal queda determinado por la transformada de Fourier de $\mathbb E^{\mathscr G'} = \mathbb M \mathbb E^{\mathscr G}$, donde
+
+
+El campo eléctrico en el plano focal queda determinado por la transformada de Fourier de $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E^{\mathscr G}$, donde
 
 \begin{equation}
-  \mathbb M
+  \mathbb T
   =
   \ket{p'} \bra p\, t_p
   +
@@ -1200,8 +1206,11 @@ El campo eléctrico en el plano focal queda determinado por la transformada de F
   \label{eq:def_M_bb}
 \end{equation}
 
-Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió según la condición estigmática; no hay, pues, aberración de fase. Sin embargo, el campo en el plano focal es proporcional a $\mathscr F\{\mathbb M \mathbb E_0\} = \mathscr F\{\mathbb M\} * \mathscr F\{\mathbb E_0\}$. Incluso cuando $\mathbb E_0$ es constante —y su transformada de Fourier es en consecuencia una delta de Dirac— la convolución con $\mathscr F\{\mathbb M\}$ reproduce $\mathscr F\{\mathbb M\}$ evaluada en el punto de observación, que no es en general una delta pues $\mathbb M$ varía sobre la apertura por la dependencia angular de los coeficientes de Fresnel. Esto produce un ensanchamiento del punto imagen que actúa como una aberración, análoga a la que describe la teoría clásica de Fourier para las aberraciones de fase \cite{goodman2005}, con la diferencia fundamental de que aquí su origen no son imperfecciones geométricas sino los principios de la teoría electromagnética: los coeficientes de Fresnel transforman el campo de manera no homogénea durante la refracción. Así, incluso en un sistema ópticamente perfecto, la naturaleza vectorial del campo impone aberraciones de amplitud y polarización de carácter intrínseco. Si bien el caso de reflexión no fue tratado en detalle en el presente trabajo, los resultados son en esencia los mismos, pues el mecanismo subyacente es idéntico.
+Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió, como se sigue de la condición estigmática; no hay, pues, aberración de fase. Sin embargo, el campo en el plano focal es proporcional a $\mathscr F\{\mathbb T \mathbb E_0\} = \mathscr F\{\mathbb T\} * \mathscr F\{\mathbb E_0\}$, lo que hace que incluso cuando $\mathbb E_0$ es constante —y su transformada de Fourier es en consecuencia una delta de Dirac— la convolución con $\mathscr F\{\mathbb T\}$ reproduce $\mathscr F\{\mathbb T\}$ evaluada en el punto de observación, que no es en general una delta dado que $\mathbb T$ es diferente en cada punto considerado, pues depende de el coseno de incidencia. Esto produce un ensanchamiento del punto imagen, ademas de un acoplamiento entre las polarizaciones, efectos que pueden ser entendidos como una aberración de origen netamente vectorial, presentes incluso en sistemas libres de imperfecciones geométricas. 
 
+Dicho de forma breve, el origen de las aberraciones vectoriales se debe a que los coeficientes de Fresnel transforman el campo de manera no homogénea durante la refracción, y lo hacen de manera distinta para dos componentes "principales", a saber, las correspondientes a las polarizaciones $\uvec s$ y $\uvec p$.
+
+Si bien el caso de reflexión no es tratado en detalle en el presente trabajo, los resultados son en esencia los mismos, bastaría con remplazar los coeficientes de Fresnel de refracción por los de reflexión. 
 
 
 % ---------------------------------------------------------------------------
@@ -1540,7 +1549,7 @@ t_p\mathscr E_\theta-i t_s\mathscr E_\phi
 Definimos, en favor de la simple escritura
 
 \begin{equation}
-  \vb T
+  \vb E_t
   \equiv
   \ell_0 \mathbb E^{\mathscr G}_\perp.
 \end{equation}
@@ -1548,7 +1557,7 @@ Definimos, en favor de la simple escritura
 De modo que,
 
 \begin{equation}
-\vb T
+\vb E_t
 =
 \frac{1}{2}
 \Big\{
@@ -1581,7 +1590,7 @@ T_R
 donde por supuesto, 
 
 \begin{equation}
-  \vb T
+  \vb E_t
   =
   T_L\ket L
   +
@@ -1593,7 +1602,7 @@ donde por supuesto,
 Es así que podemos escribir 
 
 \begin{equation}
-  \vb T = \mathbb M \begin{bmatrix} 
+  \vb E_t = \mathbb T \begin{bmatrix} 
                       \mathscr E_L \\ \mathscr E_R
                     \end{bmatrix},
 \end{equation}
@@ -1603,7 +1612,7 @@ Es así que podemos escribir
 donde $\mathbb{M}$ para esta representación es 
 
 \begin{equation}
-\mathbb M
+\mathbb T
 =
 \begin{bmatrix}
 t_+
@@ -1673,13 +1682,13 @@ La ecuación \eqref{eq:E_prime_in_circular_representation} puede simplificarse n
 Como ya tenemos claro, el campo transmitido en el plano focal es proporcional a 
 
 \begin{equation}
-  \mathscr F \{ \mathbb M \mathbb E_0 \}
+  \mathscr F \{ \mathbb T \mathbb E_0 \}
 \end{equation}
 
 al $\mathbb E_0$ no depender de $\phi$ tenemos que el campo es proporcional a 
 
 \begin{equation}
-  \int_0^{\infty} \mathscr F_\phi \{ \mathbb M\} \mathbb E_0 r'dr'
+  \int_0^{\infty} \mathscr F_\phi \{ \mathbb T\} \mathbb E_0 r'dr'
 \end{equation}
 
 
@@ -1749,8 +1758,7 @@ E'_R(\vb r,f)
 e^{inkf}
 e^{i\frac{nk}{2f}r^2}
 \Big[
--2\pi e^{-2i\varphi}
-\mathscr H_2\{t_-E_L\}(q)
+-2\pi e^{-2i\varphi} \mathscr H_2\{t_-E_L\}(q)
 +
 2\pi
 \mathscr H_0\{t_+E_R\}(q)
@@ -1856,7 +1864,7 @@ La representación cilíndrica es la base natural asociada a las direcciones loc
 entonces el campo transmitido transversalmente queda dado por
 
 \begin{equation}
-  \vb T(\rho',\phi')
+  \vb E_t(\rho',\phi')
   =
   t_p(\rho')\mathscr E_r(\rho',\phi')\,\uvec r(\phi')
   +
@@ -1867,7 +1875,7 @@ entonces el campo transmitido transversalmente queda dado por
 En notación operatorial,
 
 \begin{equation}
-  \mathbb M
+  \mathbb T
   =
   t_p\,\ket{\uvec r}\bra{\uvec r}
   +
@@ -1996,7 +2004,7 @@ y, de manera an\'aloga,
   \label{eq:Fphi_phihat}
 \end{equation}
 
-N\'otese que lo que se transforma de esta forma no es el operador dy\'adico \(\mathbb M\) por s\'i solo, sino el campo transmitido \(\mathbb M\mathbb E_0\). Sustituyendo \eqref{eq:Fphi_rhat} y \eqref{eq:Fphi_phihat} en \eqref{eq:E_prime_cylindrical_general}, se obtiene
+N\'otese que lo que se transforma de esta forma no es el operador dy\'adico \(\mathbb T\) por s\'i solo, sino el campo transmitido \(\mathbb T\mathbb E_0\). Sustituyendo \eqref{eq:Fphi_rhat} y \eqref{eq:Fphi_phihat} en \eqref{eq:E_prime_cylindrical_general}, se obtiene
 
 \begin{equation}
 \boxed{
@@ -2065,11 +2073,8 @@ Los resultados para la pupila circular uniforme se desarrollan en el apéndice~\
 
 Es claro como en esta representación la transformación que sufre el campo al refractarse en la interfaz $\Sigma$ es diagonal, esto es que los modos radiales y azimutales de la polarización son modos propios de este proceso de refracción a través de una superficie. La modulación radial está dada por la transformada de Hankel de orden 1 de los coeficientes de Fresnel; dado que la transformada de Hankel de orden uno es una integral ponderada por la función de Bessel $J_1$, no hay contribución central del campo en el eje óptico (figs.~\ref{fig:polar_10} y~\ref{fig:polar_01}). Esto es consecuencia de la homogeneidad del campo en la polarización radial y azimutal.
 
-Este resultado, el que \textit{un campo radial u azimutal simétrico que sea axialmente simétrico, en su propagación hasta el plano focal, da lugar a un campo sin contribución central}.
+Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialmente simétrico, en su propagación hasta el plano focal, da lugar a un campo sin contribución central}.
 
-Una diferencia notable entre los dos modos puros es la presencia de la componente longitudinal $E_z$: el modo radial genera una componente $E_z$ apreciable en la pupila (fig.~\ref{fig:polar_10}, arriba), consecuencia de la condición de transversalidad en un frente de onda convergente; el modo azimutal es intrínsecamente transversal y su componente $E_z$ es nula en la pupila (fig.~\ref{fig:polar_01}, arriba).
-
-Para campos incidentes que son superposición de ambos modos, como los casos $(1,1)$ y $(1,i)$ mostrados en las figuras~\ref{fig:polar_11} y~\ref{fig:polar_1i}, cada componente se propaga de forma independiente por el carácter diagonal de la transformación. Los casos $(1,1)$ y $(1,i)$ son indistinguibles en intensidad pues el desfase relativo $\pi/2$ entre las componentes no altera los módulos $|E_r'|$ ni $|E_\phi'|$ en el plano focal.
 
 \begin{figure}[H]
   \centering
@@ -2095,7 +2100,6 @@ Para campos incidentes que son superposición de ambos modos, como los casos $(1
   \label{fig:polar_11}
 \end{figure}
 
-\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/1i/polar_1i_abs_incident.png}\\[4pt]
   \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/1i/polar_1i_abs_propagated.png}
@@ -2215,7 +2219,7 @@ Así,
     T_y
   \end{pmatrix}
   =
-  \mathbb M_{xy}
+  \mathbb T_{xy}
   \begin{pmatrix}
     \mathscr E_x\\
     \mathscr E_y
@@ -2249,7 +2253,7 @@ la matriz de transmisión en la base cartesiana adopta la forma
 
 \begin{equation}
 \boxed{
-  \mathbb M_{xy}
+  \mathbb T_{xy}
   =
   \frac{t_p+t_s}{2}\,\mathbb I_\perp
   +
@@ -2277,7 +2281,7 @@ Usando las combinaciones $t_+$ y $t_-$ definidas en \eqref{eq:t_plus_t_minus_def
 podemos escribir simplemente
 
 \begin{equation}
-  \mathbb M_{xy}
+  \mathbb T_{xy}
   =
   \frac{1}{2}t_+\,\mathbb I_\perp
   +
@@ -2299,7 +2303,7 @@ El campo transmitido en el plano focal puede escribirse entonces como
 e^{i\frac{nk}{2f}r^2}
 \mathscr F
 \left[
-\mathbb M_{xy}(\rho',\phi')
+\mathbb T_{xy}(\rho',\phi')
 \begin{pmatrix}
 \mathscr E_x\\
 \mathscr E_y
@@ -2320,7 +2324,7 @@ De manera equivalente, separando la integración angular de la integración radi
 \frac{n e^{inkf}}{i\lambda f z_0}
 e^{i\frac{nk}{2f}r^2}
 \int_0^\infty
-\mathscr F_\phi\{\mathbb M_{xy}\}
+\mathscr F_\phi\{\mathbb T_{xy}\}
 (q,\rho',\varphi)
 \begin{pmatrix}
 \mathscr E_x(\rho',\phi')\\
@@ -2356,7 +2360,7 @@ axialmente simétricas, es decir,
 \end{equation}
 
 En este caso, toda la dependencia angular de la integral se encuentra en
-$\mathbb M_{xy}$. Para calcular la transformada angular se usan
+$\mathbb T_{xy}$. Para calcular la transformada angular se usan
 
 \begin{equation}
   \cos2\phi'
@@ -2396,7 +2400,7 @@ Puesto que $(-i)^0=1$ y $(-i)^{\pm2}=-1$, se obtiene
 
 \begin{equation}
 \boxed{
-  \mathscr F_\phi\{\mathbb M_{xy}\}
+  \mathscr F_\phi\{\mathbb T_{xy}\}
   (q,\rho',\varphi)
   =
   \pi J_0(q\rho')\,t_+(\rho')\,\mathbb I_\perp

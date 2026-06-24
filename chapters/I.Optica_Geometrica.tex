@@ -392,44 +392,4 @@ operativa para el problema vectorial desarrollado en los capítulos siguientes,
 en particular para la definición de la base local de Fresnel y el cálculo de la
 transformación de polarización en la interfaz.
 
-\subsection{Comparación de foco de una superficie cartesiana y una superficie esférica equivalente}
-
-Para contrastar la capacidad de formación puntual de imagen, se comparó por
-trazado de rayos 3D una superficie cartesiana estigmática con una superficie
-esférica equivalente, ambas referidas al mismo par conjugado axial
-$A\rightarrow A'$. La superficie cartesiana está construida para mantener la
-igualdad de camino óptico entre $A$ y $A'$, por lo que su comportamiento es
-estigmático para ese par objeto--imagen; en cambio, la superficie esférica solo
-reproduce el enfoque paraxial axial y, fuera de ese límite, introduce
-aberración geométrica. Esta diferencia se observa directamente en el corte
-meridional $r$--$z$ y en los spot diagrams del plano detector.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.90\textwidth]{figures/results_of_simulation/raytrace/case_focus_cartesian_unified.png}
-\caption{Dioptrio cartesiano, fuente en $A$ y detector en $A'$: en el corte $r$--$z$ se observa convergencia al plano focal y un spot prácticamente puntual (RMS numéricamente cercano a cero).}
-\label{fig:raytrace_focus_cartesian}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.90\textwidth]{figures/results_of_simulation/raytrace/case_focus_spherical_unified.png}
-\caption{Dioptrio esférico para el mismo par $A\rightarrow A'$: comparte el foco paraxial axial, pero el spot muestra apertura transversal por aberración esférica.}
-\label{fig:raytrace_focus_spherical}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.72\textwidth]{figures/results_of_simulation/raytrace/case_focus_spot_compare.png}
-\caption{Comparación directa de spot diagrams en $A'$ para fuente en $A$: el dioptrio cartesiano concentra los rayos, mientras que el esférico produce una mancha extendida.}
-\label{fig:raytrace_focus_spot_compare}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.90\textwidth]{figures/results_of_simulation/raytrace/case_offaxis_offfocus_unified.png}
-\caption{Dioptrio cartesiano en condición fuera de eje y fuera de foco: el trazado en $r$--$z$ y el diagrama de manchas muestra como si la fuente no esta en un punto estigmatico no se obtiene en la pantalla un punto sino una macha extendida.}
-\label{fig:raytrace_offaxis_offfocus}
-\end{figure}
-
 % =========ÓPTICA ONDULATORIA =============

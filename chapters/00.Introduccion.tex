@@ -1,133 +1,25 @@
 \chapter*{Introducción}
 \addcontentsline{toc}{chapter}{Introducción}
 
-\lettrine[lines=2]{L}{a} capacidad de un sistema óptico para concentrar la luz en un punto
-—o, en sentido inverso, para formar la imagen de un punto objeto en un punto imagen bien
-definido— es la propiedad central de la óptica de formación de imagen. Esta propiedad,
-conocida como \emph{estigmatismo}, garantiza una correspondencia biunívoca entre objeto e
-imagen al menos para un par de puntos conjugados, y constituye el punto de partida de toda
-la teoría de aberraciones. Los instrumentos de la óptica moderna —microscopios de alta
-resolución, telescopios de gran apertura, sistemas de litografía óptica— han alcanzado un
-grado de refinamiento tal que la descripción rigurosa del campo electromagnético en el plano
-focal se ha convertido en una necesidad práctica, ya no en una sofisticación teórica.
+\lettrine[lines=2]{L}{a} visión es el más noble y elevado de los sentidos que nos han sido otorgados, sin embargo, está limitada en cuanto puede discernir. Sabemos por experiencia que nos es imposible resolver objetos demasiado alejados, como los planetas y las estrellas, como también los más diminutos, como los tejidos y las células. El conocimiento de la naturaleza de la luz nos permite sortear esta dificultad, manipulando la luz que emana de estos cuerpos — ya sea por emisión directa o por reflexión — para que esta se manifieste en los dominios accesibles a la visión humana, y así nuestra percepción pueda discernir los detalles de los objetos que antes nos eran ocultos. Sin embargo, este proceso de formación de imágenes está sujeto a imperfecciones que hacen que la imagen no sea una representación completamente fiel del objeto; a estas desviaciones se les conoce en óptica como \emph{aberraciones}. El sistema de imágenes ideal es aquel en que a cada punto del objeto le corresponde uno y solo un punto en la imagen. Por lo que los sistemas capaces de mantener esta correspondencia son de gran importancia en óptica. Cuando esta correspondencia se cumple para un par de puntos conjugados, se dice que el sistema es \emph{estigmático} respecto a ese par, y a la condición que lo define se le conoce como \emph{estigmatismo}.
+ 
 
-En la mayoría de los tratamientos clásicos de la formación de imagen, la propagación de la
-luz se describe mediante una función escalar, y las superficies ópticas se analizan bajo la
-aproximación paraxial. Estas simplificaciones son justificadas cuando la apertura numérica
-del sistema es moderada, pues en ese régimen la polarización tiene una influencia secundaria
-sobre el patrón de intensidad y la curvatura de las superficies puede aproximarse por
-paraboloides. Sin embargo, al aumentar la apertura numérica —condición necesaria para
-mejorar simultáneamente la resolución espacial y la luminosidad del sistema— ambas
-aproximaciones dejan de ser válidas. La componente longitudinal del campo eléctrico, que
-en la aproximación escalar se ignora, crece con el ángulo de convergencia y puede llegar a
-ser comparable a las componentes transversales. El estado de polarización del campo
-incidente determina entonces de manera esencial la estructura del punto focal, con
-consecuencias directas sobre la resolución y la simetría del patrón de intensidad~\cite{Quabis2000,Dorn2003}.
-Estas aberraciones vectoriales han sido exploradas en lentes de alta apertura~\cite{Shen2022} y se ha
-demostrado que pueden imponer límites de corrección intrínsecos que no tienen análogo en la
-descripción escalar~\cite{Ma2025}.
+La noción de estigmatismo depende esencialmente del concepto geométrico de punto. Un sistema óptico es estigmático cuando todos los rayos provenientes de un punto objeto convergen, después de atravesar el sistema, en un único punto imagen. Esta idealización pertenece propiamente a la óptica geométrica, pues en óptica ondulatoria un punto objeto no se reproduce como un punto matemático, sino como una distribución finita determinada por la difracción. Sin embargo, las aberraciones geométricas conservan una importancia fundamental en la teoría ondulatoria de la formación de imágenes porque las aberraciones geométricas se manifiestan como un error de camino óptico, o aberración de fase, sobre la pupila del sistema. Dicho error modifica la función de dispersión puntual: en lugar de producir la PSF ideal de un sistema limitado únicamente por difracción, el sistema genera una PSF aberrada, generalmente más extensa, asimétrica y con menor concentración de energía en el máximo principal. Por ello, aunque el punto imagen de la óptica geométrica no exista literalmente en óptica ondulatoria, la corrección de las aberraciones geométricas sigue siendo crucial: determina cuán cerca puede estar la imagen real del límite impuesto únicamente por la difracción. Es por ello que los sistemas estigmáticos mantienen su interes aun en la óptica ondulatoria.
 
-La formulación canónica del problema vectorial en la región focal fue establecida por
-Richards y Wolf en 1959 \cite{RichardsWolf1959}, quienes expresaron el campo
-electromagnético cerca del foco de un sistema aplanático como una integral sobre una
-esfera de referencia que representa el frente de onda convergente. En su formulación, la
-función de apodización que pondera cada dirección de integración se obtiene de la
-conservación de la energía junto con la condición de seno de Abbe, que impone una relación
-específica entre los ángulos de incidencia y la posición radial en la pupila. El integral de
-Richards-Wolf se ha convertido en la herramienta estándar para el cálculo del campo en el
-foco de objetivos de microscopio y de cualquier sistema de alta apertura numérica que
-satisfaga la condición de seno. Este formalismo ha sido extendido para tratar el
-enfocamiento a través de interfaces planas entre medios de distinto índice de
-refracción~\cite{Torok1995}, así como para analizar el efecto de la polarización cilíndrica
-sobre la estructura del punto focal~\cite{Youngworth2000,Zhan2009}.
 
-El presente trabajo se sitúa en este mismo problema —el cálculo riguroso del campo
-electromagnético en el plano focal— pero aborda una clase de sistemas más fundamental: los
-\emph{sistemas estigmáticos} formados por una sola superficie dióptrica, cuya geometría
-exacta queda determinada por la condición de estigmatismo sin restricciones adicionales.
-Las superficies que realizan el estigmatismo exacto entre un par de puntos $A$ y $A'$
-son las conocidas \emph{superficies cartesianas} u \emph{ovoides de Descartes}, obtenidas
-por Descartes en la \textit{Dioptrique} como solución al problema del igual camino óptico.
-Estas superficies son el objeto de estudio natural cuando se exige rigor geométrico sin
-hipótesis paraxiales, pues codifican en su forma la condición de que todos los rayos
-emitidos desde $A$ acumulen exactamente la misma fase en su recorrido hasta $A'$,
-independientemente del punto de la superficie por el que pasen.
+En la mayoría de los tratamientos clásicos de la formación de imágenes, la propagación de la luz se describe mediante una función escalar. Esta aproximación, aunque útil, omite la información asociada al estado de polarización del campo, que es precisamente donde se manifiesta la naturaleza vectorial de la radiación electromagnética. Tal simplificación resulta adecuada cuando el campo se propaga en el vacio, la apertura numérica del sistema es baja, pues en este régimen las transformaciones vectoriales que experimenta el campo al refractarse en una superficie óptica producen correcciones pequeñas sobre la distribución de intensidad en el plano de observación. Sin embargo, al aumentar la apertura numérica —condición necesaria para mejorar la resolución espacial— la dirección local de propagación varía de manera apreciable sobre la pupila, y con ello también varía la transformación que relaciona el campo incidente con el campo transmitido. En particular, la refracción en una interfaz no actúa simplemente como una multiplicación escalar de la amplitud, sino como una transformación vectorial determinada por las direcciones locales (s) y (p), y por los coeficientes de Fresnel correspondientes. Como consecuencia, los distintos estados de polarización pueden acoplarse entre sí, de modo que una componente inicialmente ausente en una base fija de polarización puede aparecer después de la transmisión. Estas contribuciones vectoriales modifican la estructura del campo y del patrón de intensidad en el plano focal, afectando directamente la forma de la PSF, el contraste y la resolución del sistema~\cite{Quabis2000,Dorn2003}. A las desviaciones entre el patrón de intensidad predicho por la teoría escalar y el obtenido a partir de una descripción electromagnética vectorial se les denomina \emph{aberraciones vectoriales}. Este tipo de aberraciones ha sido estudiado en sistemas de alta apertura~\cite{Shen2022}, y se ha mostrado que pueden imponer límites intrínsecos de corrección que no poseen un análogo directo en la descripción escalar~\cite{Ma2025}.
 
-La estrategia adoptada en este trabajo combina tres elementos:
-\begin{enumerate}
-  \item La \emph{óptica geométrica}, que proporciona la geometría exacta de la superficie
-    dióptrica estigmática a través de las ecuaciones paramétricas de la superficie
-    cartesiana y la ley vectorial de Snell--Descartes.
-  \item Las \emph{ecuaciones de Maxwell} y el \emph{método de espectro angular}, que rigen
-    la propagación del campo electromagnético en medios homogéneos e isótropos y
-    proporcionan el operador de propagación entre planos paralelos.
-  \item Los \emph{coeficientes de Fresnel vectoriales} en la superficie dióptrica, que
-    determinan cómo se transforman las componentes $s$ y $p$ del campo eléctrico al
-    atravesar la interfaz entre dos medios con distintos índices de refracción.
-\end{enumerate}
-La combinación de estos tres ingredientes produce una expresión integral exacta —salvo
-por la aproximación de Fresnel en la propagación en espacio libre— para el campo
-electromagnético en el plano focal, expresada como la transformada de Fourier de una
-función pupila vectorial que incorpora la geometría de la superficie y los coeficientes
-de transmisión. Esta función pupila es la generalización, para superficies cartesianas
-arbitrarias, de la función de apodización que aparece en el integral de Richards-Wolf.
 
-El trabajo está organizado en tres capítulos y un conjunto de apéndices.
 
-El \textbf{Capítulo~\ref{ch:geometrica}} presenta la óptica geométrica con la precisión
-requerida por el resto del trabajo. Se introduce el principio de Fermat y la ley vectorial
-de Snell--Descartes; a partir de la condición de estigmatismo se derivan las superficies
-cartesianas u \emph{ovoides de Descartes} como solución geométrica exacta al problema de
-la formación de imagen puntual, y se obtiene la parametrización de la superficie junto con
-su campo normal, que es el ingrediente geométrico que entra en los coeficientes de Fresnel.
 
-El \textbf{Capítulo~\ref{ch:ondulatoria}} desarrolla la teoría ondulatoria y
-electromagnética que sustenta el tratamiento vectorial. Se obtiene la ecuación de onda a
-partir de las ecuaciones de Maxwell y su solución en términos de ondas planas armónicas;
-se introduce el método de espectro angular como operador exacto de propagación entre planos
-paralelos. Se deducen las condiciones de frontera en interfaces dieléctricas y se formulan
-los coeficientes de Fresnel tanto en su forma escalar habitual como en su versión operatorial
-vectorial, que es la que se emplea en el capítulo siguiente.
+La formulación canónica del campo electromagnético en la región focal de sistemas de alta apertura fue establecida por Richards y Wolf~\cite{RichardsWolf1959}. Su método expresa el campo cerca del foco como una superposición vectorial de ondas planas distribuidas sobre una esfera de referencia, cuya ponderación queda determinada por la conservación de la energía y por la condición de seno de Abbe. Esta construcción permitió incorporar la polarización en el problema del enfocamiento y se convirtió en una herramienta fundamental para el estudio de objetivos aplanáticos de alta apertura numérica. Sin embargo, en dicha formulación la geometría concreta del sistema óptico queda absorbida en la esfera de referencia y en la función de apodización; es decir, el sistema se describe a través de sus propiedades aplanáticas efectivas, más que a partir de la superficie refractiva que produce directamente el estigmatismo.
 
-El \textbf{Capítulo~\ref{ch:focal}} contiene el desarrollo central del trabajo. Se calcula
-el campo eléctrico en el plano focal de un sistema estigmático simple para un campo incidente
-esférico emitido desde el punto objeto $A$; la condición estigmática cancela la fase
-geométrica acumulada entre las esferas de referencia, de modo que el resultado toma la forma
-de la transformada de Fourier de una función pupila vectorial generalizada $\mathbb E^{G'}$
-que codifica la polarización incidente, la geometría exacta de la superficie cartesiana y
-los coeficientes de Fresnel locales. El capítulo está organizado en tres secciones, una por
-cada representación de polarización de la pupila:
-\begin{enumerate}
-  \item \textbf{Representación circular.} Se expresa $\mathbb E^{G'}$ en la base de
-    polarizaciones circulares izquierda/derecha. Con simetría azimutal, la transformada
-    de Fourier bidimensional se reduce a transformadas de Hankel de órdenes $0$ y $2$:
-    el orden $0$ corresponde a la parte isótropa de la transmisión (proporcional a $t_+$)
-    y el orden $2$ a la corrección vectorial anisotrópica (proporcional a $t_-=t_p-t_s$),
-    que acopla las componentes $L$ y $R$ mediante fases $e^{\pm 2i\varphi}$.
-  \item \textbf{Representación cilíndrica.} Se expresa $\mathbb E^{G'}$ en la base de
-    polarizaciones radial y azimutal. Esta base es especial porque radial y azimutal son
-    modos propios del operador de transmisión de la interfaz
-    ($\mathcal M\,\hat{\mathbf r}=t_p\hat{\mathbf r}$,
-    $\mathcal M\,\hat{\boldsymbol\varphi}=t_s\hat{\boldsymbol\varphi}$): la transmisión
-    actúa como modulación escalar local sin mezcla de polarizaciones. Con simetría
-    azimutal, la transformada de Fourier reduce al orden de Hankel $1$, lo que implica
-    que el campo transversal se anula en el centro del foco, predicción que no tiene
-    análogo en la teoría escalar.
-  \item \textbf{Representación cartesiana.} Se expresa $\mathbb E^{G'}$ en las componentes
-    $x$/$y$ del campo incidente. La misma estructura Hankel $0$/$2$ que aparece en la
-    representación circular se manifiesta aquí como mezcla de componentes cartesianas
-    gobernada por una matriz angular de orden dos en $\varphi$.
-\end{enumerate}
-En cada representación se analiza el caso particular de campo uniforme sobre una pupila
-circular de radio $a$, para el cual las transformadas de Hankel se evalúan analíticamente
-y el campo focal queda expresado en términos de funciones de Bessel. Se estudia asimismo
-la intensidad total incluyendo la componente longitudinal del campo eléctrico, que en
-este régimen de alta apertura no puede despreciarse, y se compara con la predicción
-escalar cuantificando la discrepancia en función del contraste de índice y el ángulo de
-semiapertura.
+El presente trabajo aborda el mismo problema fundamental —determinar el campo electromagnético en la región focal—, pero lo formula desde una perspectiva geométrica más explícita. En lugar de partir de una esfera de referencia impuesta por la condición de seno, se considera una superficie dióptrica que garantiza el estigmatismo entre dos puntos conjugados. De este modo, la fase geométrica no se introduce como una condición auxiliar del sistema, sino que queda codificada directamente en la geometría de la interfaz refractiva.
 
-Los \textbf{apéndices} reúnen las derivaciones auxiliares que interrumpirían el hilo
-argumental del texto principal: la transformada de Fourier en coordenadas polares, la
-deducción de las condiciones de frontera de Maxwell y los coeficientes de Fresnel en
-la interfaz, la deducción implícita de los ovoides de Descartes, y la representación en
-serie de las superficies cartesianas.
+Esta reformulación permite estudiar de manera directa las transformaciones vectoriales que experimenta el campo al atravesar un dioptrio estigmático. Aunque la superficie garantiza que todos los rayos provenientes del punto objeto acumulen el mismo camino óptico hasta el punto imagen, la transmisión electromagnética no es puramente escalar: en cada punto de la interfaz aparecen direcciones locales (s) y (p), coeficientes de Fresnel distintos ($t_s$) y ($t_p$), y una transformación vectorial dependiente de la posición sobre la pupila. Por ello, un campo que en la descripción escalar sólo adquiriría una fase y una amplitud puede, en la descripción vectorial, sufrir mezcla de polarizaciones y generar componentes ortogonales inicialmente ausentes.
+
+En este contexto, el objetivo de este trabajo es principalmente demostrar la presencia de aberraciones vectoriales en un sistema libre de aberraciones geométricas, analizando cómo un campo esférico centrado en el punto objeto se transforma al transmitirse por un dioptrío estigmático, incorporando de manera explícita los efectos vectoriales de la transmisión. A partir de esta descripción, se busca determinar el campo resultante en el plano focal y compararlo con la predicción obtenida mediante la teoría escalar.
+
+
+Para desarrollar este objetivo, el trabajo se organiza de manera progresiva. Primero se establece el marco geométrico del problema, derivando la forma de las superficies estigmáticas a partir de la condición de igual camino óptico y obteniendo las cantidades locales necesarias para describir la refracción. Luego se introduce la descripción electromagnética del campo, junto con las condiciones de frontera y los coeficientes de Fresnel que determinan la transformación vectorial en la superficie. Finalmente, estos elementos se combinan para construir la función pupila vectorial del sistema, propagar el campo hasta el plano focal y analizar las diferencias entre la respuesta electromagnética y la predicción escalar. Esta comparación permite identificar en qué medida la naturaleza vectorial de la luz modifica la distribución de intensidad, genera componentes cruzadas de polarización y afecta la resolución efectiva de un sistema geométricamente estigmático.
+
