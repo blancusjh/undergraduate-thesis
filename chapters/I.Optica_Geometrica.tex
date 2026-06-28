@@ -186,37 +186,41 @@ De tal manera, que exiguiendo matemáticamente la condicion estigmática para lo
 
 
 
-Tales superficies son conocidas ampliamente en la literatura \emph{Ovoide de Descartes}, en atribución a el filosofo francés Rene Descartes, que escribio sobre ellas en la DIOPTRIQUE. 
+Tales superficies son conocidas ampliamente en la literatura como \emph{ovoides de Descartes}, en atribución al filósofo francés René Descartes, quien escribió sobre ellas en la \emph{Dioptrique}.
 
-La búsqueda matemática de esta superficie se hace exigiendo a la superficie que los rayos emitidos desde un punto $A$ lleguen todos al mismo tiempo a $A'$ independientemente del punto de la superficie que se tome como intermedio. Llamando al punto intermedio $I$ 
-
-
-
+La condición de estigmatismo exige que el camino óptico entre los puntos conjugados $A$ y $A'$ sea independiente del punto de incidencia $Q\in\Sigma$:
 \begin{equation}
-    n_0\ || AQ || + n' || QA' || = k,
+    n_0\lVert AQ\rVert + n'\lVert QA'\rVert = k.
     \label{eq:maxwell_condition_of_stigmatism}
 \end{equation}
+Las superficies que satisfacen esta condición constituyen los dioptrios estigmáticos cartesianos. La deducción de su ecuación implícita a partir de \eqref{eq:maxwell_condition_of_stigmatism} se desarrolla en el apéndice~\ref{apx:ovoid_implicit_deduction}.
 
-
-\begin{equation}
-   f_\Sigma =  n_0\ || AQ || + n' || QA' || - k = 0,
-\end{equation}
-
+En la parametrización GOTS, dicha ecuación implícita toma la forma
 
 \begin{equation}
-  f_{\Sigma}(x,y,z) = O G z^2 - 2(1 + S\rho^2)z + (O + T\rho^2)\rho^2 = 0 
+  f_{\Sigma}(z,\rho) = OGz^2 - 2(1 + S\rho^2)z + (O + T\rho^2)\rho^2 = 0,
   \label{eq:implicit_ovoid_GOTS}
 \end{equation}
 
+donde los parámetros $G$, $O$, $T$ y $S$ dependen de los índices de refracción y de las posiciones de los puntos conjugados; sus expresiones explícitas se dan en el apéndice~\ref{apx:ovoid_implicit_deduction}.
+
+La rama de interés de \eqref{eq:implicit_ovoid_GOTS} se escribe como
+
 \begin{equation}
-  z(\rho) = \frac{(O + T\varphi^2)\varphi^2}{1 + S\varphi^2 + \sqrt{1 + (2S - O^2G)\varphi^2}}
+  z(\rho) = \frac{(O + T\rho^2)\rho^2}{1 + S\rho^2 + \sqrt{1 + (2S - O^2G)\rho^2}},
   \label{eq:parametrical_ovoid_z}
 \end{equation}
 
+
+y el radio correspondiente es
+
+
 \begin{equation}
-  r(\varphi) = \sqrt{\rho^2 - z^2(\varphi)} 
+  r(\rho) = \sqrt{\rho^2 - z^2(\rho)}.
   \label{eq:parametrical_ovoid_r}
 \end{equation}
+
+
 
 
 La manera de referirse a un punto $Q$ de $\Sigma$ desde el punto $O$, se hace mediante el vector $\lvec{OQ}$, que junto con las ecuaciones paramétricas \ref{eq:parametrical_ovoid_z} y \ref{eq:parametrical_ovoid_r} se puede expresar en la forma: 
@@ -379,9 +383,6 @@ por lo tanto,
 \end{equation}
 
 
-\begin{equation}
-    \uvec N(Q) = \frac{\bm \nabla f_\Sigma(Q)}{|| f_\Sigma(Q)||}
-\end{equation}
 
 
 Con esto quedan establecidas las cantidades geométricas esenciales para estudiar

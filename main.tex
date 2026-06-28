@@ -78,13 +78,26 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{float}
+\usepackage{longtable}
 
-% Fast build switch: show image boxes instead of rendering full images.
+% Fast build switch:
+% - main.tex uses compressed previews.
+% - main-final.tex defines \finalbuild and uses the original figures.
 \newif\iffastbuild
-\fastbuildtrue % Modo borrador: no renderiza imágenes completas.
-\iffastbuild
-  \setkeys{Gin}{draft}
+\ifdefined\finalbuild
+  \fastbuildfalse
+\else
+  \fastbuildtrue
 \fi
+
+% #1: graphicx options; #2: final asset; #3: optimized preview.
+\newcommand{\thesisincludegraphics}[3][]{%
+  \iffastbuild
+    \includegraphics[#1]{#3}%
+  \else
+    \includegraphics[#1]{#2}%
+  \fi
+}
 
 % ======================
 % Bibliography

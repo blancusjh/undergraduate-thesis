@@ -857,7 +857,9 @@ donde $\mathbb E^{\mathscr G'}$ es el campo sobre la esfera $\mathscr G'$ centra
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.65\textwidth]{figures/geometrical_setups/EGs.pdf}
+  \thesisincludegraphics[width=0.65\textwidth]
+    {figures/geometrical_setups/EGs.pdf}
+    {figures/fast/EGs.jpg}
   \caption{Esferas de referencia $\mathscr G$ y $\mathscr G'$. $\mathscr G$ está centrada en el punto objeto $A$ y $\mathscr G'$ en el punto imagen $A'$; ambas son tangentes al dioptrío en el vértice. El campo $\mathbb E^{\mathscr G}$ es la amplitud incidente sobre $\mathscr G$, y $\mathbb E^{\mathscr G'}$ es el campo transmitido sobre $\mathscr G'$, sobre el que la fase es constante por la condición estigmática.}
   \label{fig:EGs}
 \end{figure}
@@ -1798,48 +1800,63 @@ t_+(\rho')
 \approx
 \frac{4n_0}{n_0+n_i}
 +
-(n_0+n_i)\xi\,\rho'^2,
+\frac{
+n_0(n_0-n_i)(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^2
+}\,\rho'^2,
 \qquad
 t_-(\rho')
 \approx
-(n_0-n_i)\xi\,\rho'^2,
+\frac{
+n_0(n_0-n_i)^2(z_0-z_i)^2
+}{
+z_0^2z_i^2(n_0+n_i)^3
+}\,\rho'^2,
 \label{eq:t_plus_t_minus_paraxial_second_order}
 \end{equation}
 
-donde $\xi$ está definida en \eqref{eq:xi_definition_fresnel_series}. Así, $t_+(0)=4n_0/(n_0+n_i)\neq 0$ mientras que $t_-(0)=0$: el coeficiente de mezcla es nulo sobre el eje y crece cuadráticamente alejándose de él. A esto se añade que $J_2(0)=0$, de modo que tanto el coeficiente $t_-$ como la función de Bessel $J_2$ se anulan simultáneamente en el origen, suprimiendo la conversión de helicidad en el eje. En contraste, $J_0(0)=1$ y $t_+(0)\neq 0$ garantizan que el término diagonal sí contribuye en el eje, generando un brillo central en el plano focal.
+Así, $t_+(0)=4n_0/(n_0+n_i)\neq 0$ mientras que $t_-(0)=0$: el coeficiente de mezcla es nulo sobre el eje y crece cuadráticamente alejándose de él. A esto se añade que $J_2(0)=0$, de modo que tanto el coeficiente $t_-$ como la función de Bessel $J_2$ se anulan simultáneamente en el origen, suprimiendo la conversión de helicidad en el eje. En contraste, $J_0(0)=1$ y $t_+(0)\neq 0$ garantizan que el término diagonal sí contribuye en el eje, generando un brillo central en el plano focal.
 
-Esto se confirma en las figuras~\ref{fig:circ_10} y~\ref{fig:circ_01}, que muestran la propagación de $\ket{L}$ puro y $\ket{R}$ puro respectivamente: en el plano focal domina el canal de la misma helicidad con un disco de Airy con centro brillante, mientras que el canal de helicidad convertida es varios órdenes de magnitud menor y presenta mínimo central. Para entradas de polarización mixta $(1,1)$ y $(1,i)$ (figs.~\ref{fig:circ_11} y~\ref{fig:circ_1i}), ambas helicidades propagan discos de Airy prácticamente iguales de forma independiente; la diferencia de fase entre los casos no altera los módulos en el plano focal.
+Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-focal-componentes}. En el plano focal domina el canal de la misma helicidad, con centro brillante, mientras que en la componente de helicidad opuesta aparece la conversión parcial inducida por $t_-$. Los mapas de polarización de las figuras~\ref{fig:circular-incidente-mapa-polarizacion} y~\ref{fig:circular-plano-focal-mapa-polarizacion} muestran cómo esta conversión modifica espacialmente el estado local de polarización. Los ángulos de elipticidad y de orientación del eje mayor se presentan conjuntamente en la figura~\ref{fig:circular-plano-focal-mapas-escalares}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/10/circular_10_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/10/circular_10_abs_propagated.png}
-  \caption{Simulación numérica para incidencia de polarización circular izquierda pura $(E_L,E_R)=(1,0)$. \textit{Arriba}: campo incidente; $E_L$ ocupa uniformemente la pupila, $E_R=0$, $E_z$ es no nulo. \textit{Abajo}: campo en el plano focal; $E_L'$ reproduce un disco de Airy con centro brillante (término $\mathscr{H}_0[t_+]$), $E_R'$ es varios órdenes de magnitud menor y con mínimo central (doble supresión por $J_2(0)=0$ y $t_-(0)=0$).}
-  \label{fig:circ_10}
+  \thesisincludegraphics[width=0.41\textwidth]
+    {to_insert/circular/circular_incidente_mapa_polarizacion.pdf}
+    {figures/fast/circular_incidente_mapa_polarizacion.jpg}
+  \caption{Mapa de polarización del campo incidente circular. El fondo muestra $|E|^2$ y las elipses el estado local de polarización.}
+  \label{fig:circular-incidente-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/01/circular_01_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/01/circular_01_abs_propagated.png}
-  \caption{Simulación numérica para incidencia de polarización circular derecha pura $(E_L,E_R)=(0,1)$. El resultado es simétrico al caso $(1,0)$: $E_R'$ genera el disco de Airy dominante y $E_L'$ es el canal de conversión de helicidad, suprimido axialmente.}
-  \label{fig:circ_01}
+  \thesisincludegraphics[width=0.55\textwidth]
+    {to_insert/circular/circular_plano_focal_mapa_polarizacion.pdf}
+    {figures/fast/circular_plano_focal_mapa_polarizacion.jpg}
+  \caption{Mapa de polarización en el plano focal para incidencia circular. El fondo muestra $|E|^2$ y las elipses la polarización local, incluyendo la modificación espacial de la helicidad.}
+  \label{fig:circular-plano-focal-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/11/circular_11_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/11/circular_11_abs_propagated.png}
-  \caption{Simulación numérica para incidencia en superposición equitativa $(E_L,E_R)=(1,1)$. En el plano focal ambas helicidades propagan discos de Airy de igual amplitud de forma independiente, resultado consistente con el carácter diagonal del término $\mathscr{H}_0[t_+]$ dominante.}
-  \label{fig:circ_11}
+  \thesisincludegraphics[width=0.42\textwidth]
+    {to_insert/analisis_polarizacion/circular_plano_focal_elipticidad.pdf}
+    {figures/fast/circular_plano_focal_elipticidad.jpg}\hfill
+  \thesisincludegraphics[width=0.42\textwidth]
+    {to_insert/analisis_polarizacion/circular_plano_focal_angulo_eje_mayor.pdf}
+    {figures/fast/circular_plano_focal_angulo_eje_mayor.jpg}
+  \caption{Mapas escalares en el plano focal para incidencia circular: ángulo de elipticidad $\chi$ (izquierda) y ángulo del eje mayor $\psi$ (derecha). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
+  \label{fig:circular-plano-focal-mapas-escalares}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/1i/circular_1i_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/circular/1i/circular_1i_abs_propagated.png}
-  \caption{Simulación numérica para incidencia en superposición con desfase $(E_L,E_R)=(1,i)$. Las distribuciones de intensidad en el plano focal son idénticas al caso $(1,1)$ de la figura~\ref{fig:circ_11}; la diferencia de fase $\pi/2$ modifica el estado de polarización de la superposición pero no los módulos de las componentes.}
-  \label{fig:circ_1i}
+  \thesisincludegraphics[width=\textwidth]
+    {to_insert/circular/circular_plano_focal_componentes.pdf}
+    {figures/fast/circular_plano_focal_componentes.jpg}
+  \caption{Campo en el plano focal para incidencia circular. La componente opuesta representa la conversión parcial de helicidad.}
+  \label{fig:circular-plano-focal-componentes}
 \end{figure}
 
 
@@ -2071,40 +2088,63 @@ e^{i\frac{nk}{2f}r^2}
 Los resultados para la pupila circular uniforme se desarrollan en el apéndice~\ref{apx:focal_forms}.
 
 
-Es claro como en esta representación la transformación que sufre el campo al refractarse en la interfaz $\Sigma$ es diagonal, esto es que los modos radiales y azimutales de la polarización son modos propios de este proceso de refracción a través de una superficie. La modulación radial está dada por la transformada de Hankel de orden 1 de los coeficientes de Fresnel; dado que la transformada de Hankel de orden uno es una integral ponderada por la función de Bessel $J_1$, no hay contribución central del campo en el eje óptico (figs.~\ref{fig:polar_10} y~\ref{fig:polar_01}). Esto es consecuencia de la homogeneidad del campo en la polarización radial y azimutal.
+Es claro como en esta representación la transformación que sufre el campo al refractarse en la interfaz $\Sigma$ es diagonal, esto es que los modos radiales y azimutales de la polarización son modos propios de este proceso de refracción a través de una superficie. La modulación radial está dada por la transformada de Hankel de orden 1 de los coeficientes de Fresnel; dado que la transformada de Hankel de orden uno es una integral ponderada por la función de Bessel $J_1$, no hay contribución central del campo en el eje óptico, como se observa en las figuras~\ref{fig:radial-plano-focal-componentes} y~\ref{fig:azimutal-plano-focal-componentes}. Esto es consecuencia de la homogeneidad del campo en la polarización radial y azimutal.
 
 Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialmente simétrico, en su propagación hasta el plano focal, da lugar a un campo sin contribución central}.
 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/10/polar_10_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/10/polar_10_abs_propagated.png}
-  \caption{Simulación numérica para incidencia de polarización radial pura $(\mathscr{E}_r,\mathscr{E}_\phi)=(1,0)$. \textit{Arriba}: campo incidente sobre la pupila; $E_r$ ocupa uniformemente el disco, $E_\phi=0$, $E_z$ es no nulo por la condición de transversalidad. \textit{Abajo}: campo en el plano focal; $E_r'$ forma un anillo con centro oscuro ($J_1(0)=0$), $E_\phi'=0$ se conserva, $E_z'$ presenta un patrón anular.}
-  \label{fig:polar_10}
+  \thesisincludegraphics[width=0.41\textwidth]
+    {to_insert/cilindrico/radial_incidente_mapa_polarizacion_polar_hot_v1.pdf}
+    {figures/fast/radial_incidente_mapa_polarizacion_polar_hot_v1.jpg}
+  \caption{Mapa de polarización del campo incidente radial. El centro se excluye por la singularidad de la base cilíndrica.}
+  \label{fig:radial-incidente-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/01/polar_01_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/01/polar_01_abs_propagated.png}
-  \caption{Simulación numérica para incidencia de polarización azimutal pura $(\mathscr{E}_r,\mathscr{E}_\phi)=(0,1)$. \textit{Arriba}: campo incidente sobre la pupila; $E_r=0$, $E_\phi$ ocupa uniformemente el disco, $E_z=0$ pues el modo azimutal es intrínsecamente transversal. \textit{Abajo}: campo en el plano focal; $E_\phi'$ forma un anillo con centro oscuro, mientras que $E_r'$ y $E_z'$ son despreciables.}
-  \label{fig:polar_01}
+  \thesisincludegraphics[width=0.55\textwidth]
+    {to_insert/cilindrico/radial_salida_mapa_polarizacion_polar_hot_v1.pdf}
+    {figures/fast/radial_salida_mapa_polarizacion_polar_hot_v1.jpg}
+  \caption{Mapa de polarización en el plano focal para incidencia radial, con muestreo polar y centro excluido.}
+  \label{fig:radial-plano-focal-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/11/polar_11_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/11/polar_11_abs_propagated.png}
-  \caption{Simulación numérica para incidencia en superposición equitativa de modos radial y azimutal $(\mathscr{E}_r,\mathscr{E}_\phi)=(1,1)$. \textit{Arriba}: campo incidente; $E_r$ y $E_\phi$ llenan uniformemente la pupila con igual amplitud, $E_z$ es no nulo. \textit{Abajo}: campo en el plano focal; ambas componentes forman patrones anulares independientes con centro oscuro.}
-  \label{fig:polar_11}
+  \thesisincludegraphics[width=\textwidth]
+    {to_insert/cilindrico/radial_salida_componentes_hot_v1.pdf}
+    {figures/fast/radial_salida_componentes_hot_v1.jpg}
+  \caption{Campo en el plano focal para incidencia radial, representado en base cilíndrica.}
+  \label{fig:radial-plano-focal-componentes}
 \end{figure}
 
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/1i/polar_1i_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/polar/1i/polar_1i_abs_propagated.png}
-  \caption{Simulación numérica para incidencia en superposición con desfase $(\mathscr{E}_r,\mathscr{E}_\phi)=(1,i)$. Las distribuciones de intensidad son idénticas al caso $(1,1)$ de la figura~\ref{fig:polar_11}; el desfase relativo $\pi/2$ entre los modos no altera los módulos de las componentes en el plano focal.}
-  \label{fig:polar_1i}
+  \thesisincludegraphics[width=0.41\textwidth]
+    {to_insert/cilindrico/azimutal_incidente_mapa_polarizacion_polar_hot_v1.pdf}
+    {figures/fast/azimutal_incidente_mapa_polarizacion_polar_hot_v1.jpg}
+  \caption{Mapa de polarización del campo incidente azimutal. El centro se excluye por la singularidad de la base cilíndrica.}
+  \label{fig:azimutal-incidente-mapa-polarizacion}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=0.55\textwidth]
+    {to_insert/cilindrico/azimutal_salida_mapa_polarizacion_polar_hot_v1.pdf}
+    {figures/fast/azimutal_salida_mapa_polarizacion_polar_hot_v1.jpg}
+  \caption{Mapa de polarización en el plano focal para incidencia azimutal, con muestreo polar y centro excluido.}
+  \label{fig:azimutal-plano-focal-mapa-polarizacion}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=\textwidth]
+    {to_insert/cilindrico/azimutal_salida_componentes_hot_v1.pdf}
+    {figures/fast/azimutal_salida_componentes_hot_v1.jpg}
+  \caption{Campo en el plano focal para incidencia azimutal, representado en base cilíndrica.}
+  \label{fig:azimutal-plano-focal-componentes}
 \end{figure}
 
 
@@ -2565,36 +2605,43 @@ El término $\mathscr{H}_0[t_+]\,\mathbb{I}_\perp$ es isótropo: preserva la dir
 
 Al igual que en la representación circular, la supresión axial de la mezcla queda garantizada por la aproximación paraxial \eqref{eq:t_plus_t_minus_paraxial_second_order}: $t_-(0)=0$ y $J_2(0)=0$ anulan simultáneamente la contribución de $\mathscr{H}_2[t_-]$ sobre el eje, mientras que $t_+(0)\neq 0$ y $J_0(0)=1$ aseguran un brillo central en el canal isótropo.
 
-La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una componente cruzada en el plano focal con dependencia azimutal de orden dos. Para una entrada puramente $\hat{\mathbf x}$ (fig.~\ref{fig:cart_10}), el término $-\sin 2\varphi\,\mathscr{H}_2[t_-\mathscr{E}_x]$ genera una componente $E_y'$ con patrón de cuatro lóbulos, varios órdenes de magnitud menor que $E_x'$; el caso $\hat{\mathbf y}$ (fig.~\ref{fig:cart_01}) es simétrico. Para entradas de polarización mixta $(1,1)$ y $(1,i)$ (figs.~\ref{fig:cart_11} y~\ref{fig:cart_1i}), las contribuciones de la mezcla en $E_x'$ y $E_y'$ se compensan azimutalmente y ambas componentes presentan discos de Airy de amplitud similar.
+La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una componente cruzada en el plano focal con dependencia azimutal de orden dos. Para una entrada puramente $\hat{\mathbf x}$, el término $-\sin 2\varphi\,\mathscr{H}_2[t_-\mathscr{E}_x]$ genera una componente $E_y'$ con patrón de cuatro lóbulos, varios órdenes de magnitud menor que $E_x'$, como se observa en la figura~\ref{fig:lineal-plano-focal-componentes}. El mapa de la figura~\ref{fig:lineal-plano-focal-mapa-polarizacion} evidencia la rotación local inducida por esta componente cruzada, y la figura~\ref{fig:lineal-plano-focal-mapas-escalares} separa dicha variación en los ángulos $\chi$ y $\psi$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/10/cartesian_10_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/10/cartesian_10_abs_propagated.png}
-  \caption[Simulación numérica de incidencia lineal en x (1,0)]{Simulación numérica para incidencia de polarización lineal $\hat{\mathbf x}$ pura $(\mathscr{E}_x,\mathscr{E}_y)=(1,0)$. \textit{Arriba}: campo incidente; $E_x$ ocupa uniformemente la pupila, $E_y=0$, $E_z$ presenta una distribución dipolar. \textit{Abajo}: campo en el plano focal; $E_x'$ muestra un disco de Airy con centro brillante (término $\mathscr{H}_0[t_+]$); $E_y'$, varios órdenes de magnitud menor, presenta un patrón de cuatro lóbulos generado por el término $-\sin 2\varphi\,\mathscr{H}_2[t_-]$ de $\mathbb{W}(\varphi)$.}
-  \label{fig:cart_10}
+  \thesisincludegraphics[width=0.41\textwidth]
+    {to_insert/lineal/lineal_incidente_mapa_polarizacion.pdf}
+    {figures/fast/lineal_incidente_mapa_polarizacion.jpg}
+  \caption{Mapa de polarización del campo incidente lineal. El fondo muestra $|E|^2$ y las flechas la orientación local de la polarización.}
+  \label{fig:lineal-incidente-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/01/cartesian_01_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/01/cartesian_01_abs_propagated.png}
-  \caption[Simulación numérica de incidencia lineal en y (0,1)]{Simulación numérica para incidencia de polarización lineal $\hat{\mathbf y}$ pura $(\mathscr{E}_x,\mathscr{E}_y)=(0,1)$. El resultado es simétrico al caso $(1,0)$: $E_y'$ genera el disco de Airy dominante y $E_x'$ presenta el patrón de cuatro lóbulos de la mezcla por $\mathbb{W}(\varphi)$.}
-  \label{fig:cart_01}
+  \thesisincludegraphics[width=0.55\textwidth]
+    {to_insert/lineal/lineal_plano_focal_mapa_polarizacion.pdf}
+    {figures/fast/lineal_plano_focal_mapa_polarizacion.jpg}
+  \caption{Mapa de polarización en el plano focal para incidencia lineal. El fondo muestra $|E|^2$ y las flechas la orientación local, evidenciando la rotación inducida por la componente cruzada.}
+  \label{fig:lineal-plano-focal-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/11/cartesian_11_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/11/cartesian_11_abs_propagated.png}
-  \caption[Simulación numérica de incidencia mixta (1,1)]{Simulación numérica para incidencia en superposición equitativa $(\mathscr{E}_x,\mathscr{E}_y)=(1,1)$. En el plano focal ambas componentes presentan discos de Airy de amplitud similar; las contribuciones de mezcla de $\mathbb{W}(\varphi)$ se compensan azimutalmente.}
-  \label{fig:cart_11}
+  \thesisincludegraphics[width=0.42\textwidth]
+    {to_insert/analisis_polarizacion/lineal_plano_focal_elipticidad.pdf}
+    {figures/fast/lineal_plano_focal_elipticidad.jpg}\hfill
+  \thesisincludegraphics[width=0.42\textwidth]
+    {to_insert/analisis_polarizacion/lineal_plano_focal_angulo_eje_mayor.pdf}
+    {figures/fast/lineal_plano_focal_angulo_eje_mayor.jpg}
+  \caption{Mapas escalares en el plano focal para incidencia lineal: ángulo de elipticidad $\chi$ (izquierda) y ángulo del eje mayor $\psi$ (derecha). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
+  \label{fig:lineal-plano-focal-mapas-escalares}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/1i/cartesian_1i_abs_incident.png}\\[4pt]
-  \includegraphics[width=\textwidth]{figures/results_of_simulation/first/cartesian/1i/cartesian_1i_abs_propagated.png}
-  \caption[Simulación numérica de incidencia con desfase (1,i)]{Simulación numérica para incidencia con desfase $(\mathscr{E}_x,\mathscr{E}_y)=(1,i)$ (polarización circular en la base cartesiana). Las distribuciones de intensidad en el plano focal son análogas al caso $(1,1)$; la diferencia de fase no altera los módulos de las componentes.}
-  \label{fig:cart_1i}
+  \thesisincludegraphics[width=\textwidth]
+    {to_insert/lineal/lineal_plano_focal_componentes.pdf}
+    {figures/fast/lineal_plano_focal_componentes.jpg}
+  \caption{Campo en el plano focal para incidencia lineal. La componente $|E_y'|^2$ corresponde a la polarización cruzada.}
+  \label{fig:lineal-plano-focal-componentes}
 \end{figure}
