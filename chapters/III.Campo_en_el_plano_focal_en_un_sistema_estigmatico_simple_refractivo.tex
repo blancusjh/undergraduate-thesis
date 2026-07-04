@@ -1350,6 +1350,22 @@ o equivalentemente,
 
 Queda evidenciado como la intensidad del campo en el plano focal depende unicamente de la parte transversal del campo electrico.
 
+Como ejemplo de aplicación de la formulación general a un campo sin simetría
+axial, consideramos una máscara litográfica compuesta por estructuras con
+distintas orientaciones y escalas. La
+figura~\ref{fig:lithography-general-non-axisymmetric} compara la intensidad
+obtenida mediante los modelos escalar y vectorial, y muestra que las
+diferencias dependen de la geometría local del patrón.
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=\textwidth]
+    {figures/results_of_simulation/general/lithography_pattern_intensities.png}
+    {figures/fast/lithography_pattern_intensities.jpg}
+  \caption{Formación de un patrón litográfico para un campo incidente sin simetría axial. De izquierda a derecha: máscara de entrada, intensidad predicha por el modelo escalar, intensidad predicha por el modelo vectorial y diferencia absoluta entre ambas.}
+  \label{fig:lithography-general-non-axisymmetric}
+\end{figure}
+
 % ---------------------------------------------------------------------------
 \section{Resultados especiales en las distintas bases de polarización}
 % ---------------------------------------------------------------------------
@@ -1823,7 +1839,7 @@ Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.41\textwidth]
-    {to_insert/circular/circular_incidente_mapa_polarizacion.pdf}
+    {figures/results_of_simulation/axial_symmetric/circular/circular_incidente_mapa_polarizacion.pdf}
     {figures/fast/circular_incidente_mapa_polarizacion.jpg}
   \caption{Mapa de polarización del campo incidente circular. El fondo muestra $|E|^2$ y las elipses el estado local de polarización.}
   \label{fig:circular-incidente-mapa-polarizacion}
@@ -1832,7 +1848,7 @@ Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.55\textwidth]
-    {to_insert/circular/circular_plano_focal_mapa_polarizacion.pdf}
+    {figures/results_of_simulation/axial_symmetric/circular/circular_plano_focal_mapa_polarizacion.pdf}
     {figures/fast/circular_plano_focal_mapa_polarizacion.jpg}
   \caption{Mapa de polarización en el plano focal para incidencia circular. El fondo muestra $|E|^2$ y las elipses la polarización local, incluyendo la modificación espacial de la helicidad.}
   \label{fig:circular-plano-focal-mapa-polarizacion}
@@ -1841,10 +1857,10 @@ Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.42\textwidth]
-    {to_insert/analisis_polarizacion/circular_plano_focal_elipticidad.pdf}
+    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/circular_plano_focal_elipticidad.pdf}
     {figures/fast/circular_plano_focal_elipticidad.jpg}\hfill
   \thesisincludegraphics[width=0.42\textwidth]
-    {to_insert/analisis_polarizacion/circular_plano_focal_angulo_eje_mayor.pdf}
+    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/circular_plano_focal_angulo_eje_mayor.pdf}
     {figures/fast/circular_plano_focal_angulo_eje_mayor.jpg}
   \caption{Mapas escalares en el plano focal para incidencia circular: ángulo de elipticidad $\chi$ (izquierda) y ángulo del eje mayor $\psi$ (derecha). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
   \label{fig:circular-plano-focal-mapas-escalares}
@@ -1853,7 +1869,7 @@ Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {to_insert/circular/circular_plano_focal_componentes.pdf}
+    {figures/results_of_simulation/axial_symmetric/circular/circular_plano_focal_componentes.pdf}
     {figures/fast/circular_plano_focal_componentes.jpg}
   \caption{Campo en el plano focal para incidencia circular. La componente opuesta representa la conversión parcial de helicidad.}
   \label{fig:circular-plano-focal-componentes}
@@ -2096,8 +2112,8 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.41\textwidth]
-    {to_insert/cilindrico/radial_incidente_mapa_polarizacion_polar_hot_v1.pdf}
-    {figures/fast/radial_incidente_mapa_polarizacion_polar_hot_v1.jpg}
+    {figures/results_of_simulation/axial_symmetric/cilindrico/radial_incidente_mapa_polarizacion.pdf}
+    {figures/fast/radial_incidente_mapa_polarizacion.jpg}
   \caption{Mapa de polarización del campo incidente radial. El centro se excluye por la singularidad de la base cilíndrica.}
   \label{fig:radial-incidente-mapa-polarizacion}
 \end{figure}
@@ -2105,8 +2121,8 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.55\textwidth]
-    {to_insert/cilindrico/radial_salida_mapa_polarizacion_polar_hot_v1.pdf}
-    {figures/fast/radial_salida_mapa_polarizacion_polar_hot_v1.jpg}
+    {figures/results_of_simulation/axial_symmetric/cilindrico/radial_plano_focal_mapa_polarizacion.pdf}
+    {figures/fast/radial_plano_focal_mapa_polarizacion.jpg}
   \caption{Mapa de polarización en el plano focal para incidencia radial, con muestreo polar y centro excluido.}
   \label{fig:radial-plano-focal-mapa-polarizacion}
 \end{figure}
@@ -2114,8 +2130,8 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {to_insert/cilindrico/radial_salida_componentes_hot_v1.pdf}
-    {figures/fast/radial_salida_componentes_hot_v1.jpg}
+    {figures/results_of_simulation/axial_symmetric/cilindrico/radial_plano_focal_componentes.pdf}
+    {figures/fast/radial_plano_focal_componentes.jpg}
   \caption{Campo en el plano focal para incidencia radial, representado en base cilíndrica.}
   \label{fig:radial-plano-focal-componentes}
 \end{figure}
@@ -2123,8 +2139,8 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.41\textwidth]
-    {to_insert/cilindrico/azimutal_incidente_mapa_polarizacion_polar_hot_v1.pdf}
-    {figures/fast/azimutal_incidente_mapa_polarizacion_polar_hot_v1.jpg}
+    {figures/results_of_simulation/axial_symmetric/cilindrico/azimutal_incidente_mapa_polarizacion.pdf}
+    {figures/fast/azimutal_incidente_mapa_polarizacion.jpg}
   \caption{Mapa de polarización del campo incidente azimutal. El centro se excluye por la singularidad de la base cilíndrica.}
   \label{fig:azimutal-incidente-mapa-polarizacion}
 \end{figure}
@@ -2132,8 +2148,8 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.55\textwidth]
-    {to_insert/cilindrico/azimutal_salida_mapa_polarizacion_polar_hot_v1.pdf}
-    {figures/fast/azimutal_salida_mapa_polarizacion_polar_hot_v1.jpg}
+    {figures/results_of_simulation/axial_symmetric/cilindrico/azimutal_plano_focal_mapa_polarizacion.pdf}
+    {figures/fast/azimutal_plano_focal_mapa_polarizacion.jpg}
   \caption{Mapa de polarización en el plano focal para incidencia azimutal, con muestreo polar y centro excluido.}
   \label{fig:azimutal-plano-focal-mapa-polarizacion}
 \end{figure}
@@ -2141,8 +2157,8 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {to_insert/cilindrico/azimutal_salida_componentes_hot_v1.pdf}
-    {figures/fast/azimutal_salida_componentes_hot_v1.jpg}
+    {figures/results_of_simulation/axial_symmetric/cilindrico/azimutal_plano_focal_componentes.pdf}
+    {figures/fast/azimutal_plano_focal_componentes.jpg}
   \caption{Campo en el plano focal para incidencia azimutal, representado en base cilíndrica.}
   \label{fig:azimutal-plano-focal-componentes}
 \end{figure}
@@ -2610,7 +2626,7 @@ La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una co
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.41\textwidth]
-    {to_insert/lineal/lineal_incidente_mapa_polarizacion.pdf}
+    {figures/results_of_simulation/axial_symmetric/lineal/lineal_incidente_mapa_polarizacion.pdf}
     {figures/fast/lineal_incidente_mapa_polarizacion.jpg}
   \caption{Mapa de polarización del campo incidente lineal. El fondo muestra $|E|^2$ y las flechas la orientación local de la polarización.}
   \label{fig:lineal-incidente-mapa-polarizacion}
@@ -2619,7 +2635,7 @@ La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una co
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.55\textwidth]
-    {to_insert/lineal/lineal_plano_focal_mapa_polarizacion.pdf}
+    {figures/results_of_simulation/axial_symmetric/lineal/lineal_plano_focal_mapa_polarizacion.pdf}
     {figures/fast/lineal_plano_focal_mapa_polarizacion.jpg}
   \caption{Mapa de polarización en el plano focal para incidencia lineal. El fondo muestra $|E|^2$ y las flechas la orientación local, evidenciando la rotación inducida por la componente cruzada.}
   \label{fig:lineal-plano-focal-mapa-polarizacion}
@@ -2628,10 +2644,10 @@ La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una co
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.42\textwidth]
-    {to_insert/analisis_polarizacion/lineal_plano_focal_elipticidad.pdf}
+    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/lineal_plano_focal_elipticidad.pdf}
     {figures/fast/lineal_plano_focal_elipticidad.jpg}\hfill
   \thesisincludegraphics[width=0.42\textwidth]
-    {to_insert/analisis_polarizacion/lineal_plano_focal_angulo_eje_mayor.pdf}
+    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/lineal_plano_focal_angulo_eje_mayor.pdf}
     {figures/fast/lineal_plano_focal_angulo_eje_mayor.jpg}
   \caption{Mapas escalares en el plano focal para incidencia lineal: ángulo de elipticidad $\chi$ (izquierda) y ángulo del eje mayor $\psi$ (derecha). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
   \label{fig:lineal-plano-focal-mapas-escalares}
@@ -2640,7 +2656,7 @@ La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una co
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {to_insert/lineal/lineal_plano_focal_componentes.pdf}
+    {figures/results_of_simulation/axial_symmetric/lineal/lineal_plano_focal_componentes.pdf}
     {figures/fast/lineal_plano_focal_componentes.jpg}
   \caption{Campo en el plano focal para incidencia lineal. La componente $|E_y'|^2$ corresponde a la polarización cruzada.}
   \label{fig:lineal-plano-focal-componentes}

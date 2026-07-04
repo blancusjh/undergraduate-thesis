@@ -95,7 +95,12 @@
   \iffastbuild
     \includegraphics[#1]{#3}%
   \else
-    \includegraphics[#1]{#2}%
+    \IfFileExists{#2}{%
+      \includegraphics[#1]{#2}%
+    }{%
+      \PackageWarning{thesis}{Full-quality figure '#2' not found; using preview '#3'}%
+      \includegraphics[#1]{#3}%
+    }%
   \fi
 }
 

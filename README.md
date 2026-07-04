@@ -29,3 +29,6 @@ figures remain the source of truth for the final document. `latexmk` regenerates
 only previews whose original files have changed. ImageMagick's `magick` command
 is required to create missing previews; without it, an existing stale preview is
 kept with a warning.
+
+Permanent simulation assets live under `figures/results_of_simulation/`.
+`to_insert/` is staging-only and must not be referenced from the LaTeX sources.
