@@ -1,68 +1,87 @@
 \chapter*{Conclusiones}
 \addcontentsline{toc}{chapter}{Conclusiones}
+\markboth{Conclusiones}{Conclusiones}
 
-\lettrine[lines=2]{E}{n} este trabajo se desarrolló un formalismo vectorial para calcular el
-campo focal de un sistema estigmático simple —formado por una única superficie cartesiana
-que separa dos medios, caracterizada por los puntos objeto e imagen y los índices de
-refracción de los medios que separa— combinando la geometría exacta de dicha superficie con
-los coeficientes de Fresnel y la
-propagación en régimen de Fresnel. La teoría se ha aplicado al caso de sistemas estigmáticos
-simples —formados por un solo dioptrio— de especial interés por constituir escenarios libres
-de aberración geométrica por construcción. Que un sistema sea geométricamente perfecto no
-impide que existan aberraciones de origen vectorial: la condición estigmática cancela la fase
-acumulada entre las esferas de referencia, pero no elimina la transformación inhomogénea del
-estado de polarización que ocurre en la refracción.
+\lettrine[lines=2]{E}{n} este trabajo se desarrolló un formalismo vectorial para
+calcular el campo electromagnético en el plano focal de un sistema estigmático
+simple, formado por una única superficie cartesiana que separa dos medios
+homogéneos. El formalismo combina la geometría exacta de la superficie, la
+refracción vectorial dada por los coeficientes de Fresnel y la propagación de
+Fresnel hasta el plano focal, y produce el campo focal como transformada de
+Fourier de una función pupila vectorial generalizada
+$\mathbb E^{\mathscr G'}=\mathbb T\,\mathbb E_0/\ell_0$. Cuando la iluminación
+es azimutalmente simétrica, esta transformada de Fourier se reduce a
+combinaciones de transformadas de Hankel de órdenes cero, uno y dos. A
+diferencia del tratamiento canónico de Richards y
+Wolf~\cite{RichardsWolf1959} —formulado para sistemas aplanáticos idealizados—
+aquí la superficie refractora y su transmisión de Fresnel entran de forma
+explícita en la función pupila, punto a punto.
 
-Definimos la aberración vectorial como la desviación del campo focal respecto al límite en
-que $t_s=t_p=1$, que es exactamente cuando se recupera la teoría escalar de la difracción.
-El agente que cuantifica esta aberración es la diferencia $t_-=t_p-t_s$: cuando $t_-=0$ la
-descripción vectorial colapsa exactamente sobre la escalar; cuando $t_-\neq 0$ —caso genérico
-para cualquier interfaz entre medios de distinto índice— aparecen efectos sin contrapartida
-en la teoría escalar. La causa es que el ángulo de incidencia varía punto a punto sobre la
-pupila, y con él los coeficientes de Fresnel, de modo que la polarización se transforma de
-forma diferente en cada punto.
+El resultado central es que un sistema geométricamente perfecto no está libre
+de aberraciones. La condición estigmática elimina la aberración de camino
+óptico, pero al cambiar de medio las condiciones de frontera de Maxwell
+inducen una transformación vectorial sobre el campo que es, en general,
+distinta en cada punto de la superficie —por variar allí el ángulo de
+incidencia— y anisótropa: sus modos principales son las direcciones radial y
+azimutal, sobre las que actúan respectivamente los coeficientes de Fresnel
+$t_p$ y $t_s$. Este formalismo recupera de forma exacta la teoría escalar de
+la difracción en el límite $t_s=t_p=1$, lo cual permite aislar y estudiar los
+efectos de origen puramente vectorial. Definimos la aberración vectorial como
+la desviación del campo focal respecto a ese límite; su agente cuantitativo es
+la combinación anisotrópica $t_-=t_p-t_s$, no nula y no uniforme para
+cualquier interfaz entre medios de distinto índice.
 
-La elección de base de polarización determina cómo se manifiesta esta aberración. Los modos propios de la refracción son siempre el modo radial y el modo azimutal: en la
-base cilíndrica el operador de transmisión es diagonal y la aberración vectorial no produce
-mezcla de polarizaciones, sino únicamente una modulación diferencial entre ambos modos. Cuando el campo incidente no coincide con estos modos propios
-—como ocurre con polarización lineal o circular— el proceso de refracción convierte energía
-entre las componentes de polarización. En la base circular, la diferencia $t_-$ genera un
-acoplamiento $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$; en la base
-cartesiana, genera una componente cruzada con simetría de orden dos que se manifiesta como un
-patrón de cuatro lóbulos en la polarización ortogonal a la incidente. Ambos efectos son
-firmas directas y observables de la aberración vectorial.
+Las manifestaciones observables de esta aberración dependen de la base en que
+se examine el campo, pero corresponden al mismo fenómeno. En la base
+cilíndrica —la de los modos propios— no hay mezcla de polarizaciones, sino
+una modulación diferencial de las componentes radial y azimutal por $t_p$ y
+$t_s$; para iluminación axialmente simétrica el campo transversal se anula en
+el eje y el patrón focal es un anillo con centro oscuro, resultado de la
+estructura de Hankel de orden uno que la teoría escalar no puede producir. En
+bases que no coinciden con los modos propios, $t_-$ acopla polarizaciones
+ortogonales: en la circular genera un canal
+$\ket{L}\!\leftrightarrow\!\ket{R}$ con fase azimutal $e^{\pm2i\varphi}$; en
+la cartesiana genera una componente cruzada de orden angular dos, visible
+como un patrón de cuatro lóbulos en la polarización ortogonal a la
+incidente. Cuantitativamente, bajo simetría azimutal la contribución de $t_-$
+a través del canal $\mathscr H_2$ redistribuye energía del centro hacia
+lóbulos laterales y suprime el pico central respecto de la predicción escalar.
 
-En cuanto a los efectos sobre el patrón focal, la diferencia $t_p-t_s$, a través de las
-transformadas de Hankel de orden dos, redistribuye energía desde el centro hacia lóbulos
-laterales, ensanchando el patrón focal y reduciendo la intensidad central respecto a la
-predicción escalar. Esta supresión del pico central se cuantifica mediante la razón
+El régimen vectorial modifica también la forma del punto focal. Para
+incidencia lineal la interferencia entre los canales de Hankel
+$\mathscr H_0$ y $\mathscr H_2$ rompe la simetría circular del lóbulo central,
+que deja de tener un radio único a mitad de altura: en su lugar aparecen dos
+radios principales, $R_\parallel$ medido a lo largo de la dirección de
+polarización incidente y $R_\perp$ medido en la dirección perpendicular a
+ella. Comparados con el radio $R_{\mathrm{esc}}$ predicho por la teoría
+escalar se tiene $R_\parallel<R_{\mathrm{esc}}<R_\perp$: el lóbulo se contrae en la dirección
+de la polarización incidente y se expande en la dirección perpendicular a
+ella, rotando rígidamente junto con la polarización. En el dioptrio de vidrio
+estudiado la deformación es del orden del $3\,\%$
+($e=R_\perp/R_\parallel\approx 1.06$) y crece con la apertura y el contraste
+de índice hasta $e\approx 1.14$ en un dioptrio rápido de alto índice; para
+incidencia circular el punto permanece circular por promedio azimutal del
+caso lineal y solo se ensancha levemente. Estas anisotropías se traducen
+directamente en la formación de imágenes: en una máscara litográfica formada
+por una lente de dos superficies cartesianas conjugadas a $\mathrm{NA}=0.94$, las trazas alineadas con una
+iluminación linealmente polarizada conservan la mayor parte del contraste
+($C_H:0.98\to0.85$) mientras que las ortogonales se degradan severamente
+($C_V:0.91\to0.67$); la iluminación circular reparte la pérdida entre ambas
+orientaciones sin eliminarla. Es el mismo fenómeno que obliga a la litografía
+de alta apertura numérica a controlar la polarización de la
+iluminación~\cite{flagello1996, ruoff2009}.
 
-\begin{equation*}
-  F_c \;=\; \frac{I_\text{total}(0)}{I_\text{escalar}(0)}.
-\end{equation*}
-
-La figura~\ref{fig:Fc_vs_alpha_polar_exact} muestra $F_c$ en función del ángulo de
-semiapertura $\alpha$ para tres contrastes de índice, con polarización cilíndrica y modelo
-exacto. En todo el rango explorado $F_c < 1$: la teoría escalar sobreestima el pico central
-entre un $50\,\%$ y un $70\,\%$, siendo el contraste de índice el parámetro dominante.
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.65\textwidth]
-    {figures/results_of_simulation/fc_analysis/Fc_vs_alpha_polar_exact_left.png}
-    {figures/fast/Fc_vs_alpha_polar_exact_left.jpg}
-  \caption{$F_c = I_\text{total}(0)/I_\text{escalar}(0)$ en función del ángulo de semiapertura
-    $\alpha$ para tres valores del índice de refracción del medio imagen $n_i$, con
-    polarización cilíndrica y modelo exacto ($\lambda=532\,\mathrm{nm}$).}
-  \label{fig:Fc_vs_alpha_polar_exact}
-\end{figure}
-
-Más aún, la teoría predice efectos cualitativos que la escalar no puede describir. Para
-polarización radial o azimutal, el campo transversal en el centro del foco se anula: el
-patrón toma la forma de un anillo con centro oscuro, resultado que emerge de la estructura de
-Hankel de orden uno y que no puede deducirse de la teoría escalar. 
-
-En síntesis, hemos desarrollado un método para tratar la diffracción vectorial, y la hemos aplicado al caso de un sistema estigmático simple, donde los resultados de esta aplicación hemos expresado en función de transformadas de Hankel. Hemos demostrado que incluso en un sistema geométricamente perfecto aparecen aberraciones cuyo origen es netamente vectorial, en concreto, las superficies dioptricas pueden ser modeladas como birrefrigentes en cada punto que las conforma, cuyos ejes principales son las direcciones radiales y aximutales. 
-
-
-Respecto a la teoría escalar, se predice un cambio en la polarización del campo incidente, un mayor tamaño de la mancha central y una menor intensidad en el foco - con discrepancias en ocaciones superiores al $50 \%$ como se muestra en los resultados númericos - y se predice centro oscuro para polarización cilíndrica. 
+El formalismo admite extensiones naturales. El caso de reflexión se obtiene
+reemplazando $t_p,t_s$ por $r_p,r_s$; los sistemas de varias superficies se
+tratan por composición de operadores, como ilustra la lente formada por dos
+superficies cartesianas conjugadas del ejemplo litográfico; y el dioptrio esférico en los puntos de
+Young--Weierstrass ofrece un caso de validación de especial interés por su
+realizabilidad práctica. La formulación se puede generalizar además a
+iluminaciones arbitrarias —no restringidas a un frente esférico centrado en
+el punto objeto estigmático— y a superficies dióptricas de forma arbitraria,
+no necesariamente estigmáticas, en cuyo caso a la aberración vectorial aquí
+identificada se le superpondría la aberración de camino óptico propia de la
+geometría de la superficie. La verificación experimental de las firmas aquí
+predichas —en particular la componente cruzada de cuatro lóbulos y la
+deformación anisótropa del punto focal— constituye la continuación natural de
+este trabajo.

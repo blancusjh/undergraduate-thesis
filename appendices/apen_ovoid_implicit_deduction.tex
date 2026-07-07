@@ -1,134 +1,106 @@
-\chapter{Deducción de la ecuación implícita y paramétrica del dioptrio estigmático}
+\chapter{Deducción de la ecuación implícita del dioptrio estigmático}
 \label{apx:ovoid_implicit_deduction}
 
+Este apéndice deduce, a partir de la condición estigmática de Fermat, la
+ecuación polinómica implícita que caracteriza a la superficie cartesiana. La
+forma canónica y su expansión en series se recogen en el
+apéndice~\ref{apx:ovoids_series}.
 
+\medskip
 
-El principio de Fermat aplicado a los rayos que emerguen de $A$ hasta un punto $I$ en el dioptrio $\Sigma$ y se refractan hasta $A'$ que vive en el medio que encierra el dioptrio se escribe como
-
+Sean $A=(0,0,z_0)$ el punto objeto y $A'=(0,0,z_i)$ el punto imagen sobre el
+eje óptico, ambos con coordenadas axiales positivas $z_0,z_i>0$, y sea
+$I=(r,z)$ un punto arbitrario sobre la superficie $\Sigma$, con $r^2=x^2+y^2$
+y con distancia al origen dada por
 \begin{equation}
-    L(A, I, A') = n_0 \overline{AI} + n_1 \overline{IA'} = k
-    \label{eq:fermat_principle_for_dioptrique}
+\rho^2\;=\;r^2+z^2.
+\label{eq:rho_definition_ovoid}
+\end{equation}
+Los caminos ópticos elementales desde $A$ hasta $I$ y desde $I$ hasta $A'$
+son
+\begin{align}
+\overline{AI}^{\,2}
+&= r^2+(z-z_0)^2
+= \rho^2-2zz_0+z_0^2,
+\label{eq:AI_squared_ovoid}
+\\[4pt]
+\overline{IA'}^{\,2}
+&= r^2+(z-z_i)^2
+= \rho^2-2zz_i+z_i^2.
+\label{eq:IAp_squared_ovoid}
+\end{align}
+
+La condición de Fermat para el estigmatismo exige que el camino óptico total
+$L(I)=n_0\overline{AI}+n_i\overline{IA'}$ sea constante sobre $\Sigma$; su
+valor se determina evaluando en el vértice $I=(0,0,0)$:
+\begin{equation}
+L\;=\;n_0\overline{AI}+n_i\overline{IA'}
+\;=\;n_0z_0+n_iz_i
+\;\equiv\;k.
+\label{eq:fermat_principle_for_dioptrique}
 \end{equation}
 
-la condición estigmatica, es la condición matemática para que todos los rayos que emergan de $A$ lleguen a $A'$ independientemente del punto intermedio $I$. 
-
-
-Elevando al cuadrado ambos miembros 
-
+Elevando \eqref{eq:fermat_principle_for_dioptrique} al cuadrado y despejando
+el término cruzado,
 \begin{equation}
-n_0^2 \overline{AI}^2 + n_1^2 \overline{A'I}^2 + 2n_0n_1 \overline{AI} \overline{A'I} = k^2, 
+2n_0n_i\,\overline{AI}\,\overline{IA'}
+\;=\;
+k^2-n_0^2\,\overline{AI}^{\,2}-n_i^2\,\overline{IA'}^{\,2}.
+\label{eq:fermat_squared_once}
+\end{equation}
+Sustituyendo $k^2=(n_0z_0+n_iz_i)^2=n_0^2z_0^2+n_i^2z_i^2+2n_0n_iz_0z_i$ y
+las expresiones \eqref{eq:AI_squared_ovoid}--\eqref{eq:IAp_squared_ovoid}, el
+lado derecho se reduce a
+\begin{equation}
+2n_0n_i\,\overline{AI}\,\overline{IA'}
+\;=\;
+2n_0n_iz_0z_i
+-n_0^2(\rho^2-2zz_0)
+-n_i^2(\rho^2-2zz_i).
+\label{eq:fermat_squared_once_reduced}
 \end{equation}
 
-organizando 
-
-\begin{equation}
-2n_0n_1 \overline{AI} \overline{A'I} = K^2 - n_0^2\overline{AI}^2 - n_1^2\overline{A'I}^2, 
-\end{equation}
-
-elevando al cuadrado 
-
-\begin{equation}
-4n_0^2n_1^2 \overline{AI}^2 \overline{A'I}^2 = [k^2 - n_0^2\overline{AI}^2 - n_1^2\overline{A'I}^2]^2
-\end{equation}
-
-\begin{equation}
-4n_0^2n_1^2 (\rho^2 - 2\rho z_0 + z_0^2) (\rho^2 - 2\rho z_1 + z_1^2) = [(n_0z_0 + n_iz_i)^2 - n_0^2(\rho^2 - 2\rho z_0 + z_0^2) - n_1^2(\rho^2 - 2\rho z_1 + z_1^2)]^2
-\end{equation}
-
-
-
-$\sqrt{RHS}$
-
-
+Para eliminar la raíz que aparece en el producto $\overline{AI}\,\overline{IA'}$
+se eleva de nuevo al cuadrado \eqref{eq:fermat_squared_once_reduced}. El lado
+izquierdo se expande como
 \begin{equation}
 \begin{aligned}
-&\cancel{n_0^2z_0^2} + \cancel{n_i^2z_i^2} + 2n_0n_iz_0z_i 
-- \cancel{n_0^2z_0^2} - n_0^2(\rho^2 - 2zz_0) 
-- \cancel{n_i^2z_i^2} - n_i^2(\rho^2 - 2zz_i) \\
-&= 2n_0n_iz_0z_i - n_0^2(\rho^2 - 2zz_0) - n_i^2(\rho^2 - 2zz_i)
-\end{aligned}
-\end{equation}
-
-remplazando en la ecuación original $(LHS = RHS)$
-
-
-\begin{equation}
-\begin{aligned}
-4 n_0^2 n_i^2 (\rho^2 - 2\rho z_0 + z_0^2)(\rho^2 - 2\rho z_i + z_i^2)
-&= [ 2 n_0 n_i z_0 z_i 
-- n_0^2 (\rho^2 - 2\rho z_0)
-- n_i^2 (\rho^2 - 2\rho z_i) ]^2
-\end{aligned}
-\end{equation}
-
-\begin{equation}
-\begin{aligned}
-&4n_0^2n_i^2[(\rho^2 2zz_0)(\rho^2 - 2zz_i) + (\rho^2 - 2zz_0)z_i^2 + (\rho^2 - 2zz_i)z_0^2 + \cancel{z_0^2z_i^2}  ] 
+4n_0^2n_i^2\,\overline{AI}^{\,2}\,\overline{IA'}^{\,2}
+&=
+4n_0^2n_i^2(\rho^2-2zz_0+z_0^2)(\rho^2-2zz_i+z_i^2)
 \\
-&= \cancel{4n_0^2n_i^2z_0^2z_i^2} + [n_o^2(\rho^2  - 2zz_0) + n_i^2(\rho^ 2 - 2zz_i)]^2 - 4n_0n_iz_0z_i [n_0^2 (\rho^2 - 2zz_0) + n_i^2(\rho^2 - 2zz_i)]
+&=
+4n_0^2n_i^2\bigl[(\rho^2-2zz_0)(\rho^2-2zz_i)
+\\
+&\phantom{=4n_0^2n_i^2\bigl[}
++z_i^2(\rho^2-2zz_0)
++z_0^2(\rho^2-2zz_i)
++z_0^2z_i^2\bigr],
 \end{aligned}
+\label{eq:LHS_fermat_squared_twice}
+\end{equation}
+mientras que el lado derecho es
+\begin{equation}
+\bigl[2n_0n_iz_0z_i-n_0^2(\rho^2-2zz_0)-n_i^2(\rho^2-2zz_i)\bigr]^2.
+\label{eq:RHS_fermat_squared_twice}
 \end{equation}
 
-
-
-
-Finalmente
-
-
+Igualando \eqref{eq:LHS_fermat_squared_twice} con
+\eqref{eq:RHS_fermat_squared_twice}, cancelando el término común
+$4n_0^2n_i^2z_0^2z_i^2$ y agrupando por potencias de las combinaciones
+$u\equiv\rho^2-2zz_0$ y $v\equiv\rho^2-2zz_i$, se obtiene la ecuación
+polinómica implícita del dioptrio estigmático:
 \begin{equation}
-[n_0^2(\rho^2-2\rho z_0) - n_1^2(\rho^2-2\rho z_1)]^2 = 4n_0n_1(n_1z_1-n_0z_0)[n_1z_0(\rho^2-2\rho z_1) - n_0z_1(\rho^2-2\rho z_0)]  
+\bigl[n_0^2(\rho^2-2zz_0)-n_i^2(\rho^2-2zz_i)\bigr]^2
+=
+4n_0n_i(n_0z_0+n_iz_i)
+\bigl[n_0z_i(\rho^2-2zz_0)+n_iz_0(\rho^2-2zz_i)\bigr].
 \label{eq:stigmatic_polynomial}
 \end{equation}
 
-
-
-Dividiendo la ecuación \eqref{eq:stigmatic_polynomial} por el factor
-\[
-4n_i n_o z_i z_o (n_i - n_o)(n_i z_i - n_o z_o),
-\]
-se obtiene una forma cuadrática en $z$:
-
-\begin{equation}
-f(z, \rho) = O G z^2 - 2(1 + S\rho^2)z + (O + T\rho^2)\rho^2 = 0,
-\label{eq:stigmatic_canonical}
-\end{equation}
-donde los parámetros $G, O, T, S$ están definidos por
-
-\begin{align}
-G &= \frac{(n_i^2 z_i - n_o^2 z_o)^2}{n_i n_o (n_i z_i - n_o z_o)(n_i z_o - n_o z_i)}, \label{eq:def_G} \\
-O &= \frac{n_i z_o - n_o z_i}{z_i z_o (n_i - n_o)}, \label{eq:def_O} \\
-T &= \frac{(n_i - n_o)(n_i + n_o)^2}{4n_i n_o z_i z_o (n_i z_i - n_o z_o)}, \label{eq:def_T} \\
-S &= \frac{(n_i + n_o)(n_i^2 z_i - n_o^2 z_o)}{2n_i n_o z_i z_o (n_i z_i - n_o z_o)}. \label{eq:def_S}
-\end{align}
-
-
-
-
-
-
-\subsubsection{Forma parametrica del ovoide}
-
-La ecuación cuadrática \eqref{eq:stigmatic_canonical} se puede resolver para $z$ en función de $\rho$, resultando:
-
-\begin{equation}
-z(\rho) = \frac{(O + T\rho^2)\rho^2}
-{1 + S\rho^2 + \sqrt{1 + (2S - O^2 G)\rho^2}}.
-\label{eq:z_rho_parametric}
-\end{equation}
-
-Esta expresión representa la forma explícita del perfil del dioptrio estigmático.
-
-
-
-El radio vector asociado se obtiene de la relación geométrica
-\[
-\rho^2 = r^2 + z^2(\rho),
-\]
-de modo que
-
-\begin{equation}
-r(\rho) = \pm \sqrt{\rho^2 - z^2(\rho)}.
-\label{eq:r_rho}
-\end{equation}
-
-Las ecuaciones \eqref{eq:z_rho_parametric} y \eqref{eq:r_rho} constituyen la \emph{forma paramétrica del dioptrio estigmático}, completamente determinada por los índices de refracción $n_i$, $n_o$ y las posiciones de los puntos estigmáticos $z_i$, $z_o$.
+La expresión \eqref{eq:stigmatic_polynomial} es una identidad de cuarto grado
+en las coordenadas $(\rho,z)$ del punto $I\in\Sigma$. Su forma canónica
+—obtenida dividiendo por un factor apropiado en $n_0,n_i,z_0,z_i$ para
+la convención axial positiva adoptada— es una cuadrática en $z$ con
+coeficientes en $\rho^2$, y se estudia junto con su expansión paraxial en el
+apéndice~\ref{apx:ovoids_series}.

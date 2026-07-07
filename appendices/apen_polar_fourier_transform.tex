@@ -88,7 +88,7 @@ La onda plana se escribe mediante la identidad de Jacobi--Anger,
   \label{eq:jacobi_anger}
 \end{equation}
 
-donde $J_n$ es la funci\'on de Bessel de primera especie de orden $n$.
+donde $J_n$ es la función de Bessel de primera especie de orden $n$.
 
 Al sustituir \eqref{eq:expansion_angular_f} y \eqref{eq:jacobi_anger} en \eqref{eq:fourier_2d_polar_directa}, y usar la ortogonalidad angular
 
@@ -134,18 +134,18 @@ De esta manera, la reconstrucción completa se expresa como
 En consecuencia, la transformada de Fourier 2D en polares se desacopla en una serie angular y, para cada $m$, en una transformada de Hankel de orden $m$ entre \eqref{eq:fourier_modal_directa} y \eqref{eq:fourier_modal_inversa}.
 
 
-Definiendo el operador transformada de Hankel de orden $m$ denotado por $\mathscr H_m$, como 
+Definiendo el operador transformada de Hankel de orden $m$ denotado por $\mathscr H_m$, como
 
-\begin{equation} 
-  \mathscr H \{ f(r)\}(k) = \int_{\infty}^{\infty} f(r) J_m(kr) r dr,
+\begin{equation}
+  \mathscr H_m \{ f(r)\}(k) = \int_{0}^{\infty} f(r) J_m(kr)\, r\, dr,
   \label{eq:def_hankel_operator}
 \end{equation}
 
 
-y su inversa 
+y su inversa
 
-\begin{equation} 
-  \mathscr H^{-1} \{ \hat f(k)\}(r) = \int_{\infty}^{\infty} \hat f(k) J_m(kr) k dk.
+\begin{equation}
+  \mathscr H_m^{-1} \{ \hat f(k)\}(r) = \int_{0}^{\infty} \hat f(k) J_m(kr)\, k\, dk,
   \label{eq:def_hankel_inverse_operator}
 \end{equation}
 
@@ -177,7 +177,7 @@ De modo que la función $f$ y su respectiva transformada de Fourier $\hat f$ que
 \end{equation}
 
 
-El calculo de los modos anguales se hace según la ecuacion \eqref{eq:coeficientes_angulares_f}.
+El cálculo de los modos angulares se hace según la ecuación \eqref{eq:coeficientes_angulares_f}.
 
 
 \section{Caso axialmente simétrico}

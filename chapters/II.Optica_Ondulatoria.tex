@@ -2,14 +2,14 @@
 \label{ch:ondulatoria}
 
 
-La visión geométrica de la luz, si bien elegante y suficiente para muchas de las aplicaciones elementales, no capta por completo la verdadera naturaleza de la luz, pues en la naturaleza la luz no se mantiene confinada en un rayo mientras se propaga por el espacio libre, sino que tiende a ``esparcirse'' hacia las vecindades, entre otros fenomenos que la teoría geométrica no explica o ni contempla.
+La visión geométrica de la luz, si bien elegante y suficiente para muchas de las aplicaciones elementales, no capta por completo la verdadera naturaleza de la luz, pues en la naturaleza la luz no se mantiene confinada en un rayo mientras se propaga por el espacio libre, sino que tiende a ``esparcirse'' hacia las vecindades, entre otros fenómenos que la teoría geométrica no explica ni contempla.
 
-En concreto, esta manera geométrica de entender la luz se vio enfrentado a serios problemas para explicar fenómenos como la interferencia, la difracción y la birrefringencia, por mencionar algunos. Con el tiempo se fueron acumulando experiencias que contradecían el modelo geométrico, hasta que las falencias de este modelo se hicieron innegables.
+En concreto, esta manera geométrica de entender la luz se vio enfrentada a serios problemas para explicar fenómenos como la interferencia, la difracción y la birrefringencia, por mencionar algunos. Con el tiempo se fueron acumulando experiencias que contradecían el modelo geométrico, hasta que las falencias de este modelo se hicieron innegables.
 
-Por otro lado, aparentemente inconexo en un principio, las investigaciones concernientes a los fenómenos eléctricos y magnéticos dieron fruto a grandes avances en el entendimiento de estas fuerzas a distancia observada en cuerpos ``terrenales'' como la magnetita fue Faraday quien entendió cómo se influían mutuamente, lo que sugería una misma naturaleza, y también observó experimentalmente cómo la luz era influida por estas fuerzas, ahora mejor entendidas. James Clerk Maxwell, en una tarea verdaderamente unificadora y excelsa matemáticamente, sintetizó las ideas de su época en las ecuaciones que llevan su nombre y, por una necesidad física de conservación y el conocimiento matemático de las ecuaciones que la aseguraban, fue más allá que sus predecesores postulando las ondas como consecuencia de respetar este principio de conservación para la carga eléctrica \cite{maxwell1865}.
+Por otro lado, aparentemente inconexo en un principio, las investigaciones concernientes a los fenómenos eléctricos y magnéticos dieron fruto a grandes avances en el entendimiento de estas fuerzas a distancia observadas en cuerpos ``terrenales'' como la magnetita. Fue Faraday quien entendió cómo se influían mutuamente, lo que sugería una misma naturaleza, y también observó experimentalmente cómo la luz era influida por estas fuerzas, ahora mejor entendidas. James Clerk Maxwell, en una tarea verdaderamente unificadora y excelsa matemáticamente, sintetizó las ideas de su época en las ecuaciones que llevan su nombre y, por una necesidad física de conservación y el conocimiento matemático de las ecuaciones que la aseguraban, fue más allá que sus predecesores postulando las ondas como consecuencia de respetar este principio de conservación para la carga eléctrica \cite{maxwell1865}.
 
-Las ondas electromagéticas de Maxwell, tenian que viajar a cierta velocidad que resulto ser la misma que la velocidad a la que viajaban las ondas lúminosas. 
-Finalmente, se llego a concluir que la luz visible era radiación electromagética. 
+Las ondas electromagnéticas de Maxwell tenían que viajar a cierta velocidad que resultó ser la misma que la velocidad a la que viajaban las ondas luminosas. 
+Finalmente, se llegó a concluir que la luz visible era radiación electromagnética. 
 
 
 
@@ -66,14 +66,14 @@ c = \frac{1}{\sqrt{\mu_0 \epsilon_0}}
 es la velocidad característica de propagación de la onda electromagnética en el vacío.
 
 
-Por el teorema de Fourier sabemos que toda función admite una representación armonica de la forma, de modo que podemos escribir el campo électrico en dicha representación como se sigue 
+Por el teorema de Fourier sabemos que toda función admite una representación armónica, de modo que podemos escribir el campo eléctrico en dicha representación como sigue
 
 \begin{equation}
-    \vb{E}(\vb x, t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \vb{E}_\omega(\vb x) e^{-i\omega t} dt
+    \vb{E}(\vb x, t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \vb{E}_\omega(\vb x) e^{-i\omega t} d\omega
     \label{eq:E_field_harmonic_representation}
 \end{equation}
 
-En la representación armonica el campo magnético se optiene fácilmente, como 
+En la representación armónica el campo magnético se obtiene fácilmente, como 
 
 
 \begin{equation}
@@ -81,14 +81,14 @@ En la representación armonica el campo magnético se optiene fácilmente, como
     \label{eq:B_harmonic_func_of_E_harmonic}
 \end{equation}
 
-por lo que en lo sucesivo omitiremos el campo magnético en nuestro anális, pues la información del campo eléctrico nos es suficiente. Siendo de este como  
+por lo que en lo sucesivo omitiremos el campo magnético en nuestro análisis, pues la información del campo eléctrico nos es suficiente. De este modo, cada componente armónica satisface
 
 \begin{equation}
     \nabla^2 \vb{E}(\vb x) + k^2 \vb E = 0, 
     \label{eq:E_field_wave_equation}
 \end{equation}
 
-donde $k = \omega/c$, la ecuación fundamental para la propagación de el campo armonico. 
+donde $k = \omega/c$, la ecuación fundamental para la propagación del campo armónico. 
 
 La ecuación \ref{eq:E_field_wave_equation} es equivalente a una ecuación de Helmholtz escalar para cada una de sus componentes en una base independiente del espacio; sea $\Psi(\vb x)$ una de esas componentes, escribimos
 
@@ -98,7 +98,7 @@ La ecuación \ref{eq:E_field_wave_equation} es equivalente a una ecuación de He
 \end{equation}
 
 
-Que es la ecuación base de los \textit{métodos escalares de propagación}. Siendo los métodos de propagación escalares, en últimas, soluciones a la ecuaciónon escalar de Helmholtz dadas una condiciones de contorno. Los métodos se dividen en exactos y aproximados, según si
+Que es la ecuación base de los \textit{métodos escalares de propagación}. Siendo los métodos de propagación escalares, en últimas, soluciones a la ecuación escalar de Helmholtz dadas unas condiciones de contorno. Los métodos se dividen en exactos y aproximados, según si
 resuelven la ecuación de Helmholtz \eqref{eq:Helmholtz_equation} de forma exacta o aproximada.
 
 
@@ -268,7 +268,7 @@ e^{ik_z(\mathbf k_\perp)\,z}.
 \end{equation}
 
 
-Así el espectro transversal se propaga retrazando cada componente acorde a la fase $\left( \sqrt{k^2 - k_r^2} \right ) z$, notese como cada componente se retrasa de manera distinta segun $k_r$, los mayores retardos corresponde a los menores valores que puede tomar $k_r$, es decir las frecuencias transversales cercanas a cero.  
+Así el espectro transversal se propaga retrasando cada componente acorde a la fase $\left( \sqrt{k^2 - k_r^2} \right ) z$, nótese cómo cada componente se retrasa de manera distinta según $k_r$, los mayores retardos corresponden a los menores valores que puede tomar $k_r$, es decir las frecuencias transversales cercanas a cero.  
 
 
 
@@ -301,13 +301,13 @@ k_z(\mathbf k_\perp)\,z
 
 
 
-En esta representación el campo $\Psi$ en el plano $z$ es una suma de ondas planas con vector de onda $\vb k = \vb k_\perp + k_z(\vb k_\perp)$, cuya amplitud es el espectro angular del campo en $z=0$. 
+En esta representación el campo $\Psi$ en el plano $z$ es una suma de ondas planas con vector de onda $\vb k = \vb k_\perp + k_z(\vb k_\perp)\,\uvec z$, cuya amplitud es el espectro angular del campo en $z=0$. 
 
 
 
 
 
-De manera operatoracional, la propagación puede escribirse como
+De manera operacional, la propagación puede escribirse como
 
 \begin{equation}
 \Psi(\vb r,z)
@@ -339,7 +339,7 @@ O equivalente,
 \left\{
   e^{i\, k \sqrt{1 - (k_r/k)^2 }  \,z}
 \mathscr F_\perp \left\{ \right\} \right\}
-\label{eq:propagation_operator}
+\label{eq:propagation_operator_explicit}
 \end{equation}
 
 
@@ -407,9 +407,9 @@ La apertura numérica del sistema está dada por \cite{bornwolf1999}
 \end{equation}
 
 
-La finitud de los sistemas ópticos, debida a la finitud de las lentes y de las pupilas, imponen 
-un ángulo máximo de aceptación desde los cuales los rayos del objeto pueden ser emitidos para que pasen al sistema, 
-sea $\alpha$ este ángulo, se sigue que las componentes que se emiten con un angulo $\theta$ deben ser menores o iguales al angulo máximo de aceptación $\alpha$, de lo que se sigue que
+La finitud de los sistemas ópticos, debida a la finitud de las lentes y de las pupilas, impone
+un ángulo máximo de aceptación desde el cual los rayos del objeto pueden ser emitidos para que pasen al sistema, 
+sea $\alpha$ este ángulo, se sigue que las componentes que se emiten con un ángulo $\theta$ deben ser menores o iguales al ángulo máximo de aceptación $\alpha$, de lo que se sigue que
 
 
 \begin{equation}
@@ -763,11 +763,11 @@ La asunción de que $\|\mathbf{r}-\mathbf{r}'\| \gg \lambda$ es sumamente plausi
 
 \subsection{Aproximación de Fresnel}
 
-Hasta ahora los métodos de propagación presentado han sido "exactos" al menos en el sentido de que resuelven exactamente la ecuación de Helmholtz. 
+Hasta ahora los métodos de propagación presentados han sido ``exactos'' al menos en el sentido de que resuelven exactamente la ecuación de Helmholtz. 
 
-En la practica resulta muy conveniente considerar que las distancias transversales al eje óptico (tanto en la apertura como en el plano de observación) son pequeñas comparada  con la distancia de propagación $z$.
+En la práctica resulta muy conveniente considerar que las distancias transversales al eje óptico (tanto en la apertura como en el plano de observación) son pequeñas comparadas con la distancia de propagación $z$.
 
-De tal manera que en \eqref{eq:huygens_principle} podamos aproximar la distancia entre un punto de la imagén y un punto del objeto, que aprece en la amplitud según
+De tal manera que en \eqref{eq:huygens_principle} podamos aproximar la distancia entre un punto de la imagen y un punto del objeto, que aparece en la amplitud según
 
 
 \begin{equation}
@@ -779,7 +779,7 @@ De tal manera que en \eqref{eq:huygens_principle} podamos aproximar la distancia
 
 
 
-El otro término $\|\mathbf{r}-\mathbf{r}'\|$ esta presente en la fase de la onda, y la fase es más sensible que la amplitud, al estar multiplicada por el número de onda $k = 2\pi/\lambda$ que relativiza la distancia entre los puntos objeto e imagen respecto a la longitud de onda, es el número de veces que la longitud de onda debe curbrir para llegar al valor númerico de la distancia mencionada. 
+El otro término $\|\mathbf{r}-\mathbf{r}'\|$ está presente en la fase de la onda, y la fase es más sensible que la amplitud, al estar multiplicada por el número de onda $k = 2\pi/\lambda$ que relativiza la distancia entre los puntos objeto e imagen respecto a la longitud de onda, es el número de veces que la longitud de onda debe cubrir para llegar al valor numérico de la distancia mencionada. 
 
 Con esto en mente, refinamos nuestra aproximación de la distancia entre los puntos objeto e imagen hasta orden $4$ 
 
@@ -841,9 +841,9 @@ Esta demostración conecta analíticamente la integral espacial de difracción c
 \section{Transformación que sufre el campo eléctrico al cambiar de medio} 
 
 
-Considerese dos medios dieléctricos $M_1$ \textit{\&} $M_2$  distintos separados por una superficie $\Sigma$ cuya normal en cada punto se considera positiva cuando apunta hacia el medio $M_1$. 
+Considérese dos medios dieléctricos $M_1$ \textit{\&} $M_2$  distintos separados por una superficie $\Sigma$ cuya normal en cada punto se considera positiva cuando apunta hacia el medio $M_1$. 
 
-Sean $n_1$ y $n_2$ los indices de refracción de $M_1$ y $M_2$ respectivamente, el campo eléctrico $\vb E_1$ en el medio $M_1$ y el campo eléctrico en el medio $M_2$ satisfacen
+Sean $n_1$ y $n_2$ los índices de refracción de $M_1$ y $M_2$ respectivamente, el campo eléctrico $\vb E_1$ en el medio $M_1$ y el campo eléctrico en el medio $M_2$ satisfacen
 
 
 \begin{equation}
@@ -861,31 +861,31 @@ con
 
 
 
-Como la ecuación de Helmholtz a satisfacer es distinta en cada medio, esto genera una discontunuidad que transforma el campo que incide en la interfaz que separa ambos medios.
+Como la ecuación de Helmholtz a satisfacer es distinta en cada medio, esto genera una discontinuidad que transforma el campo que incide en la interfaz que separa ambos medios.
 
 
 Escribiendo el campo por su espectro 
 
 \begin{equation*} 
-  \vb{E}(\vb r) = \frac{1}{(2\pi)^3} \int_{\mathbb K^3} \widehat{\vb{E}} (\vb{k}) e^{i\vb k \cdot \vb x} d^3x,
+  \vb{E}(\vb x) = \frac{1}{(2\pi)^3} \int_{\mathbb K^3} \widehat{\vb{E}} (\vb{k}) e^{i\vb k \cdot \vb x} d^3k,
 \end{equation*}
 
 
-que por cumplir la ecuación de Helmhotz, es equivalente a 
+que por cumplir la ecuación de Helmholtz, es equivalente a 
 
 
 
 \begin{equation*} 
-  \vb{E}(\vb r) = \frac{1}{(2\pi)^3} \int_{\tilde{S}^2} \widehat{\vb{E}} (\vb{k}) e^{ik \uvec k \cdot \vb x} d\tilde{\Omega},
+  \vb{E}(\vb x) = \frac{1}{(2\pi)^3} \int_{\tilde{S}^2} \widehat{\vb{E}} (\vb{k}) e^{ik \uvec k \cdot \vb x} d\tilde{\Omega},
 \end{equation*}
 
 donde $\tilde S^2:=\{\hat{\mathbf k}\in\mathbb R^3:\|\hat{\mathbf k}\|=1\}$ es la esfera unitaria en el espacio $\mathbf{k}$, y $d\tilde\Omega$ su elemento de superficie (ángulo sólido), con $d\tilde\Omega=\sin\tilde\theta\,d\tilde\theta\,d\tilde\varphi$ en coordenadas esféricas.
 
-al remplazarlo en las condiciones de frontera, se encuentra la ley de transformación para cada componente $\vb k$ del campo. 
+Al remplazarlo en las condiciones de frontera, se encuentra la ley de transformación para cada componente $\vb k$ del campo. 
 
 
 
-Dicha transformación puede ser efectuada de forma matemática mediante los coeficientes de Fresnel para una onda plana y monocromatica, o lo componente espectral de un campo general, la deducción de dicha transformación puede encontrarse en el apendice \ref{sec:boundary_conditions_in_dielectrics}.
+Dicha transformación puede ser efectuada de forma matemática mediante los coeficientes de Fresnel para una onda plana y monocromática, o la componente espectral de un campo general, la deducción de dicha transformación puede encontrarse en el apéndice \ref{sec:boundary_conditions_in_dielectrics}.
 
 
 El campo incidente $\widehat{\vb E}(\vb k)$ se transforma de forma diferente en cada punto de la interfaz, y de manera diferente en dos polarizaciones principales $\uvec s$ y $\uvec p$.
@@ -1046,7 +1046,7 @@ De forma explícita, el campo transmitido queda dado por
   \label{eq:Transmited_E_field_in_Sigma}
 \end{equation}
 
-\textit{(veáse \ref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
+\textit{(véase \ref{sec:appendix_maxwell_frontera_fresnel} para una deducción detallada de este resultado)}.
 
 
 
@@ -1071,7 +1071,7 @@ $$
 
 donde dirección($AQ$) es el vector unitario que va desde $A$ hasta $Q$. 
 
-Esto porque todos los rayos que emerguen de $A$ lo hacen radialmente, e igualmente radialmente converguen en $A'$. 
+Esto porque todos los rayos que emergen de $A$ lo hacen radialmente, e igualmente radialmente convergen en $A'$. 
 
 
 Tenemos pues, todo lo necesario para pasar al estudio del campo eléctrico en el plano focal en un sistema simple refractivo.

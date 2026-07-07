@@ -1,5 +1,6 @@
 \chapter*{Notación y convenciones}
 \addcontentsline{toc}{chapter}{Notación y convenciones}
+\markboth{Notación y convenciones}{Notación y convenciones}
 
 \begin{longtable}{p{0.28\textwidth} p{0.64\textwidth}}
 \caption{Convenciones de notación empleadas en el documento.}
@@ -34,9 +35,11 @@ $\mathbb E_0$ & Vector de amplitud del campo incidente (parte de polarización y
 $\mathscr E_\theta,\;\mathscr E_\phi$ & Amplitudes escalares del campo incidente en la base de Fresnel local $(\hat p, \hat s)$. \\
 $\mathbb E^{\mathscr G}$ & Campo sobre la esfera de referencia $\mathscr G$ centrada en el punto objeto $A$; satisface $\mathbb E^{\mathscr G} = \mathbb E_0/\ell_0$. \\
 \texorpdfstring{$\mathbb E^{\mathscr G'}$}{E\^{}G'} & Campo sobre la esfera de referencia $\mathscr G'$ centrada en el punto imagen $A'$, tangente al dioptrio. Función pupila vectorial generalizada; satisface $\mathbb E^{\mathscr G'} = \mathbb T\,\mathbb E^{\mathscr G}$. \\
-$\vb E^{\mathscr D}$ & Campo sobre la esfera $\mathscr D$ centrada en el vértice del dioptrio con radio $f$, es la esféra de Fourier de $\mathscr G'$. Proporcional a la transformada de Fourier de $\mathbb E^{\mathscr G'}$. \\
+$\vb E^{\mathscr D}$ & Campo sobre la esfera $\mathscr D$ centrada en el vértice del dioptrio con radio $f$, es la esfera de Fourier de $\mathscr G'$. Proporcional a la transformada de Fourier de $\mathbb E^{\mathscr G'}$. \\
 $\mathscr T$ & Operador de transmisión de Fresnel sobre la interfaz $\Sigma$. \\
 $\mathbb T$ & Matriz que representa el operador de transmisión en una base dada; aplica $t_p$ a la componente $p$ y $t_s$ a la componente $s$. \\
+$\mathbb T_{xy}$ & Matriz de transmisión en la representación cartesiana transversal. \\
+$\mathbb W(\varphi)$ & Operador de mezcla cartesiano de orden angular dos, evaluado en el azimut $\varphi$ del plano focal. \\
 $\Psi(\vb x)$ & Componente escalar del campo en el espacio tridimensional. \\
 $\Psi(\vb r,z)$ & Campo escalar en coordenadas transversales y longitudinal. \\
 \hline
@@ -45,6 +48,17 @@ $\Psi(\vb r,z)$ & Campo escalar en coordenadas transversales y longitudinal. \\
 $t_s,\,t_p$ & Coeficientes de transmisión de Fresnel para polarización $s$ y $p$. \\
 $t_+ = t_s+t_p$ & Combinación isótropa de los coeficientes de Fresnel. \\
 $t_- = t_p-t_s$ & Combinación anisotrópica; gobierna la mezcla de polarizaciones. \\
+\hline
+\multicolumn{2}{l}{\textit{Polarización}} \\
+\hline
+$\hat{\vb J}$ & Estado de Jones local normalizado, parametrizado por la fase global $\gamma$, el ángulo de amplitudes $\vartheta$ y la fase relativa $\delta$. \\
+$\sigma_0,\ldots,\sigma_3$ & Matrices de Pauli ($\sigma_0=\mathbb I_\perp$); base de la descomposición de $\mathbb T_{xy}$ con coeficientes $a_0,\ldots,a_3$ (aberración de polarización). \\
+$\vartheta,\;\delta$ & Parámetros del estado de Jones: $\tan\vartheta$ es la razón de amplitudes entre las componentes cartesianas y $\delta$ su fase relativa. \\
+$\zeta$ & Coordenada proyectiva compleja del estado de polarización: $\zeta=\mathscr E_y/\mathscr E_x=\tan\vartheta\,e^{i\delta}$. \\
+$\zeta_{\mathscr G'},\;\zeta_f$ & Estado de polarización tras la refracción (sobre $\mathscr G'$) y en el plano focal, respectivamente. \\
+$\vb s$ & Vector de Stokes normalizado, $\vb s=(s_1,s_2,s_3)$. \\
+$\psi$ & Orientación del eje mayor de la elipse de polarización: $\tan 2\psi=s_2/s_1$. \\
+$\chi$ & Ángulo de elipticidad de la elipse de polarización: $\sin 2\chi=s_3$. \\
 \hline
 \multicolumn{2}{l}{\textit{Operadores y transformadas}} \\
 \hline
@@ -59,7 +73,8 @@ $\mathscr R_{ASM}$ & Operador de propagación del método de espectro angular. \
 $f$ & Distancia focal del sistema; distancia axial hasta el plano focal de observación. \\
 $\nu$ & Frecuencia temporal de la onda, relacionada con la frecuencia angular mediante $\omega=2\pi\nu$. \\
 $\mathrm{NA}$ & Apertura numérica del sistema óptico. \\
-$F_c$ & Razón entre la intensidad central vectorial y la escalar: $I_\text{total}(0)/I_\text{escalar}(0)$. \\
+$R_\parallel,\,R_\perp$ & Radios principales del lóbulo focal central a mitad de altura, paralelo y perpendicular a la polarización incidente. \\
+$R_{\mathrm{esc}}$ & Radio del lóbulo central predicho por la referencia escalar. \\
 \end{longtable}
 
 % ======================

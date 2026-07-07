@@ -1,0 +1,127 @@
+\chapter{Algoritmo de cálculo del campo focal}
+\label{apx:numerical_algorithm}
+
+Los resultados numéricos presentados en el capítulo~\ref{ch:focal} se
+obtuvieron con una implementación en Python de la formulación desarrollada en
+esta tesis. Este apéndice describe el pseudocódigo esencial. Toda la
+implementación reproducible se encuentra en el paquete \texttt{vecdiff}
+distribuido junto a este trabajo; aquí se recogen únicamente los bloques
+mínimos necesarios para reproducir las figuras.
+
+\section{Discretización y estructuras}
+
+Se emplean dos discretizaciones según la simetría del problema. Cuando el
+campo incidente es axialmente simétrico se muestrea sobre una grilla radial
+uniforme $\{\rho_i'\}_{i=0}^{N_\rho-1}$ en la pupila y $\{q_j\}_{j=0}^{N_q-1}$
+en el plano focal, y se evalúa mediante transformadas de Hankel de orden
+$m\in\{0,1,2\}$. Cuando el campo no posee simetría axial se muestrea sobre
+una grilla cartesiana $\{(x_i,y_j)\}$ tanto en la pupila como en el plano
+focal, y la propagación se realiza mediante FFT bidimensional. Ambas grillas
+se convierten a la representación necesaria (cartesiana, cilíndrica o
+circular) mediante los operadores de cambio de base descritos en el
+capítulo~\ref{ch:focal}.
+
+\section{Refracción en un dioptrio estigmático}
+
+El núcleo del cálculo es la aplicación del operador de transmisión
+$\mathbb T$ sobre la esfera de referencia objeto y su posterior propagación
+al plano focal. El algoritmo~\ref{alg:single_diopter} lo resume para un
+dioptrio.
+
+\begin{algorithm}[H]
+\caption{Campo focal tras un dioptrio estigmático}
+\label{alg:single_diopter}
+\begin{algorithmic}[1]
+\Require Parámetros $(n_0,n_i,z_0,z_i,\lambda)$; superficie cartesiana
+$z(\rho')$; campo incidente $\mathbb E_0(\rho',\varphi')$; modo
+$\in\{\text{escalar},\text{vectorial}\}$.
+\Ensure Campo focal $\mathbb E'(r,\varphi,f)$ y su intensidad total
+$I(r,\varphi,f)$.
+\State Muestrear la superficie: $z(\rho'_i),\;dz/d\rho'|_{\rho'_i}$
+para cada nodo de pupila.
+\State Calcular los cosenos de incidencia y transmisión desde la geometría
+local y la ley de Snell.
+\State Evaluar los coeficientes de Fresnel $t_p(\rho'_i)$, $t_s(\rho'_i)$.
+\If{modo $=$ escalar}
+  \State $t_p\gets 1,\;t_s\gets 1$ \Comment{ver
+  \eqref{eq:t_plus_t_minus_def} y \eqref{eq:E_field_cartesian_paraxial}}
+\EndIf
+\State Construir el operador de transmisión en la base cartesiana
+transversal:
+$\mathbb T_{xy}=\tfrac{t_+}{2}\mathbb I_\perp-\tfrac{t_-}{2}\mathbb W(\varphi')$.
+\State Aplicar $\mathbb E^{\mathscr G'}\gets\mathbb T\,\mathbb E_0/\ell_0$ nodo a
+nodo sobre la pupila.
+\If{campo axialmente simétrico}
+  \State Calcular $\mathbb E'_\perp$ mediante transformadas de Hankel de
+  órdenes $\{0,1,2\}$, según la representación
+  \eqref{eq:E_field_cartesian_paraxial}, \eqref{eq:E_L_E_R_paraxial} o
+  \eqref{eq:E_cylindrical_paraxial}.
+\Else
+  \State Calcular $\mathbb E'_\perp$ mediante FFT bidimensional del campo
+  sobre la pupila, con normalización de Fresnel.
+\EndIf
+\State Reconstruir la componente longitudinal $E'_z$ mediante la condición
+de transversalidad
+$K_z\,E'_z=-(K_x E'_x+K_y E'_y)$ en el espacio de frecuencias.
+\State \Return $\mathbb E'=(E'_x,E'_y,E'_z)$ y $I=|\mathbb E'|^2$.
+\end{algorithmic}
+\end{algorithm}
+
+El paso~5 aísla la aberración vectorial: fijar $t_p=t_s=1$ suprime el
+canal $t_-$ y hace que $\mathbb T$ se reduzca a la identidad, con lo que el
+campo focal colapsa sobre la predicción escalar de la difracción. Ambos
+modos comparten la misma grilla y el mismo propagador, y sus resultados se
+comparan directamente punto a punto.
+
+\section{Composición de dos superficies}
+
+El sistema litográfico del capítulo~\ref{ch:focal} está formado por dos
+superficies cartesianas conjugadas separadas por un medio de sílice
+fundida. El campo se propaga por composición de operadores: cada superficie
+se trata mediante el algoritmo~\ref{alg:single_diopter}, y su salida se
+utiliza como campo incidente sobre la superficie siguiente.
+
+\begin{algorithm}[H]
+\caption{Sistema de dos superficies cartesianas conjugadas}
+\label{alg:two_diopter}
+\begin{algorithmic}[1]
+\Require Máscara de entrada $M(x,y)$; parámetros de cada superficie
+$(n_0^{(k)},n_i^{(k)},z_0^{(k)},z_i^{(k)})$ para $k=1,2$; modo.
+\Ensure Intensidad de imagen $I(x,y)$.
+\State $\mathbb E_0\gets$ iluminación coherente de la máscara $M(x,y)$.
+\State $\mathbb E_1\gets$ Algoritmo~\ref{alg:single_diopter} con parámetros
+de la superficie~$1$ y campo incidente $\mathbb E_0$.
+\State $\mathbb E_2\gets$ Algoritmo~\ref{alg:single_diopter} con parámetros
+de la superficie~$2$ y campo incidente $\mathbb E_1$ (propagado hasta la
+esfera de referencia de la superficie~$2$).
+\State \Return $I=|\mathbb E_2|^2$.
+\end{algorithmic}
+\end{algorithm}
+
+Este esquema se aplica dos veces —una en modo escalar, otra en modo
+vectorial— sobre la misma máscara y con los mismos parámetros geométricos.
+Los contrastes $C_H,\,C_V$ reportados en el capítulo~\ref{ch:focal} se
+extraen de cortes horizontales y verticales sobre la imagen $I(x,y)$
+resultante. La diferencia entre ambos modos aísla las manifestaciones de la
+aberración vectorial estudiadas en esta tesis.
+
+\section{Convergencia y verificaciones}
+
+Los resultados se validaron mediante tres comprobaciones. Primero, la
+consistencia entre las tres representaciones del capítulo~\ref{ch:focal}:
+los mismos parámetros y las mismas condiciones de iluminación producen la
+misma intensidad focal cuando se calculan en base cartesiana, cilíndrica y
+circular. Segundo, la reducción al límite escalar: fijando
+$t_p=t_s=1$ y anulando la reconstrucción longitudinal, el algoritmo
+reproduce el patrón de Airy hasta la precisión de la grilla, verificando
+que la modulación por $\mathbb T$ es la única fuente de la desviación
+vectorial. Tercero, el refinamiento de malla: los contrastes
+$C_H,\,C_V$ del ejemplo litográfico, así como los radios principales
+$R_\parallel,\,R_\perp$ del punto focal deformado, se calcularon sobre
+grillas cada vez más finas hasta que sus variaciones relativas quedaron por
+debajo del $0.5\,\%$; los valores reportados en el capítulo~\ref{ch:focal}
+corresponden a la primera grilla que satisface esta tolerancia. La misma
+tolerancia se usó para fijar el orden de truncamiento de las series
+paraxiales del apéndice~\ref{apx:ovoids_series}: los coeficientes de
+Fresnel se retuvieron hasta el orden a partir del cual la inclusión del
+siguiente cambiaba los observables medidos en menos de esa fracción.

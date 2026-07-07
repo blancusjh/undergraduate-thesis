@@ -9,13 +9,18 @@
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{lmodern}
+  \usepackage{textalpha}
+  \usepackage{textgreek}
+  \providecommand{\greekfont}{}
 \else
-  \usepackage[T1]{fontenc}
-  \usepackage{lmodern}
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \newfontfamily{\greekfont}[Script=Greek]{GFS Didot}
 \fi
-\usepackage{textalpha}
-\usepackage{textgreek}
-\providecommand{\greekfont}{}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{csquotes}
 
 
 
@@ -25,7 +30,7 @@
 % ======================
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage{fancyhdr}
-\setlength{\headheight}{14.5pt}
+\setlength{\headheight}{15pt}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\nouppercase{\leftmark}}
@@ -59,6 +64,19 @@
 
 
 \usepackage{lettrine}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Salida:}}
+\algrenewcommand{\algorithmicfor}{\textbf{para}}
+\algrenewcommand{\algorithmicdo}{\textbf{hacer}}
+\algrenewcommand{\algorithmicend}{\textbf{fin}}
+\algrenewcommand{\algorithmicif}{\textbf{si}}
+\algrenewcommand{\algorithmicthen}{\textbf{entonces}}
+\algrenewcommand{\algorithmicelse}{\textbf{si no}}
+\algrenewcommand{\algorithmicwhile}{\textbf{mientras}}
+\algrenewcommand{\algorithmicreturn}{\textbf{retornar}}
 
 
 % Numeración de ecuaciones por capítulo
@@ -124,30 +142,30 @@
 % ===== Title Page =====
 \begin{titlepage}
 \begin{center}
-\vspace*{2.0cm}
+\vspace*{1.0cm}
 {\LARGE \bfseries ESTUDIO DE LAS ABERRACIONES}\\[0.3cm]
 {\LARGE \bfseries VECTORIALES EN SISTEMAS}\\[0.3cm]
 {\LARGE \bfseries ESTIGMÁTICOS}\\[0.3cm]
 
-\vspace{3.5cm}
+\vspace{2.5cm}
 
 {\large Jhonatan S. Blanco}\\
 {\large Estudiante de pregrado en Física}
 
-\vspace{2cm}
+\vspace{1.5cm}
 {\large \textit{Trabajo de grado para optar el título de físico}}\\
 
-\vspace{2.5cm}
+\vspace{1.8cm}
 {\large \bfseries Director}\\
 {\large Rafael Ángel Torres Amarís}\\
 {\large Físico, Mg., Dr.}
 
-\vspace{1cm}
+\vspace{0.8cm}
 {\large \bfseries Codirector}\\
 {\large Cristian Hernández Celis}\\
 {\large Físico, Mg.}
 
-\vspace{2.5cm}
+\vspace{1.8cm}
 {\large Universidad Industrial de Santander}\\
 {\large Facultad de Ciencias}\\
 {\large Escuela de Física}\\
@@ -196,6 +214,8 @@
 \input{appendices/apen_ovoids_series}
 
 \input{appendices/apen_focal_field_explicit_forms}
+
+\input{appendices/apen_numerical_algorithm}
 
 
 

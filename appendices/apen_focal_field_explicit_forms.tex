@@ -12,7 +12,7 @@ donde $\mathscr H_m[f]$ denota el operador que multiplica por $f(r')$ y aplica l
 
 El término transformado por $\mathscr{H}_0$ es diagonal y deja la polarización entrante idéntica si una de las componentes es nula, salvo un escalamiento. Además, este término puede identificarse con el correspondiente a la teoría escalar de la difracción, salvo por la modulación por $t_p+t_s$; si esta se toma como uno, se obtiene exactamente el resultado escalar.
 
-Los términos en los que $\mathscr{H}_2$ transforma, acoplan $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$ y, dado que $J_2(0)=0$, su contribución es estrictamente fuera de eje, por lo que dicha constribución ensancha el tamaño de la macha focal de manera general y da lugar a un cambio en la polarización.
+Los términos en los que $\mathscr{H}_2$ transforma acoplan $\ket{L}\leftrightarrow\ket{R}$ con fase azimutal $e^{\pm 2i\varphi}$ y, dado que $J_2(0)=0$, su contribución es estrictamente fuera de eje, por lo que dicha contribución ensancha el tamaño de la mancha focal de manera general y da lugar a un cambio en la polarización.
 
 
 Para conectar con el desarrollo en series del apéndice, definimos
@@ -224,7 +224,7 @@ O equivalentemente, definiendo las funciones radiales
 la expresión anterior adopta la forma matricial
 
 \begin{equation}
-  \small
+  \resizebox{0.95\hsize}{!}{$
   \begin{pmatrix}
     E'_L(r,f) \\
     E'_R(r,f)
@@ -255,7 +255,7 @@ la expresión anterior adopta la forma matricial
   \begin{pmatrix}
     E_{L,0} \\
     E_{R,0}
-  \end{pmatrix},
+  \end{pmatrix}$},
   \label{eq:EL_ER_constant_E0_matrix}
 \end{equation}
 
@@ -458,24 +458,9 @@ del sistema
 
 Con esto quedaron establecidos los resultados de esta sección para campo
 incidente arbitrario $(\mathscr E_L(\rho',\phi'),\,\mathscr E_R(\rho',\phi'))$.
-
-
-\begin{figure}[htbp]
-  \centering
-  \thesisincludegraphics[width=\textwidth]
-    {figures/results_of_simulation/fc_analysis/circular_exact_ni2p60_a40_maps.png}
-    {figures/fast/circular_exact_ni2p60_a40_maps.jpg}
-  \caption{Comparación de intensidades para polarización circular, modelo exacto
-    ($n_i=2.6$, $\alpha=40^{\circ}$). De izquierda a derecha: intensidad escalar $I_\text{escalar}$,
-    intensidad vectorial total $I_\text{total}$, y diferencia absoluta $|\Delta I|$.
-    El centro del foco presenta la mayor discrepancia entre ambas descripciones.}
-  \label{fig:maps_circular_exact_ni2p60_a40}
-\end{figure}
-
-La diferencia $|\Delta I|$ se concentra en el centro de la mancha de Airy y decae
-hacia los anillos exteriores, lo que refleja que la corrección vectorial —gobernada
-por $t_-=t_p-t_s$— actúa principalmente sobre los modos de orden angular cero y dos,
-que son los que contribuyen al pico central.
+La corrección vectorial —gobernada por $t_-=t_p-t_s$— actúa principalmente
+sobre los modos de orden angular cero y dos, que son los que contribuyen al
+pico central.
 
 % -----------------------------------------------------------------------
 \section{Representación cilíndrica}
@@ -853,26 +838,7 @@ I(\vb r,f)
 \label{eq:I_total_cylindrical_homogeneous}
 \end{equation}
 
-Este resultado expresa una diferencia estructural con la representación circular: en la base circular aparecen naturalmente los órdenes \(0\) y \(2\), asociados respectivamente al término diagonal y al acoplamiento \(\ket L\leftrightarrow\ket R\). En cambio, para campos axialmente simétricos escritos directamente en la base cilíndrica, la dependencia angular de los propios vectores \(\uvec r(\phi')\) y \(\uvec\phi(\phi')\) impone el orden \(1\). Por eso los haces radial y azimutalmente polarizados presentan un cero axial en la componente transversal del campo focal.
-
-
-\begin{figure}[htbp]
-\centering
-\thesisincludegraphics[width=\textwidth]
-  {figures/results_of_simulation/fc_analysis/polar_exact_ni2p60_a40_maps.png}
-  {figures/fast/polar_exact_ni2p60_a40_maps.jpg}
-\caption{Comparación de intensidades para polarización cilíndrica, modelo exacto
-  ($n_i=2.6$, $\alpha=40^{\circ}$). La estructura anular de $I_\text{total}$ confirma el cero
-  axial predicho por la transformada de Hankel de orden uno para modos
-  radial o azimutalmente polarizados con simetría azimutal.}
-\label{fig:maps_polar_exact_ni2p60_a40}
-\end{figure}
-
-A diferencia de las bases circular y cartesiana, aquí la diferencia $|\Delta I|$ también
-presenta simetría anular: la ausencia de campo en el centro es un resultado puramente
-vectorial que la teoría escalar no puede describir, pues emerge de la estructura
-geométrica de los vectores $\hat{\mathbf r}(\varphi')$ y $\hat{\boldsymbol\varphi}(\varphi')$
-sobre la pupila, no de una modulación de amplitud.
+Este resultado expresa una diferencia estructural con la representación circular: en la base circular aparecen naturalmente los órdenes \(0\) y \(2\), asociados respectivamente al término diagonal y al acoplamiento \(\ket L\leftrightarrow\ket R\). En cambio, para campos axialmente simétricos escritos directamente en la base cilíndrica, la dependencia angular de los propios vectores \(\uvec r(\phi')\) y \(\uvec\phi(\phi')\) impone el orden \(1\). Por eso los haces radial y azimutalmente polarizados presentan un cero axial en la componente transversal del campo focal: la ausencia de campo en el centro es un resultado puramente vectorial que la teoría escalar no puede describir, pues emerge de la estructura geométrica de los vectores $\uvec r(\varphi')$ y $\uvec\phi(\varphi')$ sobre la pupila, no de una modulación de amplitud.
 
 
 La ecuación \eqref{eq:E_cylindrical_paraxial} escrita en forma matricial es
@@ -1478,26 +1444,6 @@ conserva la polarización, mientras que la parte de orden angular dos introduce
 mezcla polarizacional y estructura azimutal en el plano focal.
 
 
-\begin{figure}[htbp]
-\centering
-\thesisincludegraphics[width=\textwidth]
-  {figures/results_of_simulation/fc_analysis/cartesian_exact_ni2p60_a40_maps.png}
-  {figures/fast/cartesian_exact_ni2p60_a40_maps.jpg}
-\caption{Comparación de intensidades para polarización cartesiana, modelo exacto
-  ($n_i=2.6$, $\alpha=40^{\circ}$). La supresión central en $I_\text{total}$ respecto de
-  $I_\text{escalar}$ refleja el mismo efecto que en la representación circular:
-  la parte anisotrópica $\mathscr H_2$ redistribuye energía desde el centro hacia
-  el entorno azimutal de orden dos.}
-\label{fig:maps_cartesian_exact_ni2p60_a40}
-\end{figure}
-
-Las tres representaciones describen el mismo fenómeno físico: la transmisión en la interfaz
-impone una modulación no uniforme sobre la pupila que reduce la intensidad central respecto
-a la predicción escalar. La elección de base determina únicamente si esa modulación se
-manifiesta como mezcla de polarizaciones, como supresión anular o como anisotropía
-azimutal, pero el campo resultante es en todos los casos el mismo.
-
-
 La expresión compacta \eqref{eq:E_field_cartesian_paraxial} escrita por componentes es
 
 \begin{equation}
@@ -1619,3 +1565,237 @@ e^{i\frac{nk}{2f}r^2}
 \end{aligned}
 \label{eq:Ex_Ey_cartesian_homogeneous_AB}
 \end{equation}
+
+
+O en forma de series de las funciones de Bessel, agrupando por orden:
+
+\begin{equation}
+\begin{aligned}
+E'_x(\mathbf r,f)
+\simeq&\;
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+-\frac{2\alpha a^2}{q^2}\mathscr E_{x,0}
+-
+\frac{4\gamma_0}{q^2}
+\left(
+\cos2\varphi\,\mathscr E_{x,0}
++
+\sin2\varphi\,\mathscr E_{y,0}
+\right)
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+-\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)\mathscr E_{x,0}
++
+\frac{2\gamma_0 a}{q}
+\left(
+\cos2\varphi\,\mathscr E_{x,0}
++
+\sin2\varphi\,\mathscr E_{y,0}
+\right)
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\beta\frac{a^3}{q}
+\left(
+\cos2\varphi\,\mathscr E_{x,0}
++
+\sin2\varphi\,\mathscr E_{y,0}
+\right)
+\right]
+\\
+&\qquad
++
+\frac{4\gamma_0}{q^2}
+\left(
+\cos2\varphi\,\mathscr E_{x,0}
++
+\sin2\varphi\,\mathscr E_{y,0}
+\right)
+\Bigg\},
+\\[1em]
+E'_y(\mathbf r,f)
+\simeq&\;
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+-\frac{2\alpha a^2}{q^2}\mathscr E_{y,0}
+-
+\frac{4\gamma_0}{q^2}
+\left(
+\sin2\varphi\,\mathscr E_{x,0}
+-
+\cos2\varphi\,\mathscr E_{y,0}
+\right)
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+-\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)\mathscr E_{y,0}
++
+\frac{2\gamma_0 a}{q}
+\left(
+\sin2\varphi\,\mathscr E_{x,0}
+-
+\cos2\varphi\,\mathscr E_{y,0}
+\right)
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\beta\frac{a^3}{q}
+\left(
+\sin2\varphi\,\mathscr E_{x,0}
+-
+\cos2\varphi\,\mathscr E_{y,0}
+\right)
+\right]
+\\
+&\qquad
++
+\frac{4\gamma_0}{q^2}
+\left(
+\sin2\varphi\,\mathscr E_{x,0}
+-
+\cos2\varphi\,\mathscr E_{y,0}
+\right)
+\Bigg\}.
+\end{aligned}
+\label{eq:Ex_Ey_cartesian_bessel_series}
+\end{equation}
+
+Reemplazando las constantes auxiliares por los parámetros físicos del
+sistema, mediante \eqref{eq:alpha_beta_gamma_def},
+
+\begin{equation}
+\begin{aligned}
+E'_x(\mathbf r,f)
+\simeq&\;
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+-\frac{2\alpha a^2}{q^2}\mathscr E_{x,0}
+-
+\frac{8n_0}{(n_i-n_0)q^2}\mathcal C(\varphi)
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+-\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)\mathscr E_{x,0}
++
+\frac{4n_0 a}{(n_i-n_0)q}\mathcal C(\varphi)
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\frac{
+n_0(n_0+n_i)(z_0-z_i)^2a^3
+}{
+z_0^2z_i^2(n_0-n_i)^2 q
+}
+\mathcal C(\varphi)
+\right]
++
+\frac{8n_0}{(n_i-n_0)q^2}\mathcal C(\varphi)
+\Bigg\},
+\\[1em]
+E'_y(\mathbf r,f)
+\simeq&\;
+\frac{\pi n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\Bigg\{
+J_0(qa)
+\left[
+-\frac{2\alpha a^2}{q^2}\mathscr E_{y,0}
+-
+\frac{8n_0}{(n_i-n_0)q^2}\mathcal S(\varphi)
+\right]
+\\
+&\qquad
++
+J_1(qa)
+\left[
+-\alpha
+\left(
+\frac{a^3}{q}
+-
+\frac{4a}{q^3}
+\right)\mathscr E_{y,0}
++
+\frac{4n_0 a}{(n_i-n_0)q}\mathcal S(\varphi)
+\right]
+\\
+&\qquad
++
+J_3(qa)
+\left[
+\frac{
+n_0(n_0+n_i)(z_0-z_i)^2a^3
+}{
+z_0^2z_i^2(n_0-n_i)^2 q
+}
+\mathcal S(\varphi)
+\right]
++
+\frac{8n_0}{(n_i-n_0)q^2}\mathcal S(\varphi)
+\Bigg\},
+\end{aligned}
+\label{eq:Ex_Ey_cartesian_physical}
+\end{equation}
+
+donde los factores angulares se definieron como
+
+\begin{equation}
+\mathcal C(\varphi)
+\equiv
+\cos2\varphi\,\mathscr E_{x,0}+\sin2\varphi\,\mathscr E_{y,0},
+\qquad
+\mathcal S(\varphi)
+\equiv
+\sin2\varphi\,\mathscr E_{x,0}-\cos2\varphi\,\mathscr E_{y,0}.
+\label{eq:cartesian_angular_factors}
+\end{equation}
+
+Las tres representaciones describen el mismo fenómeno físico: la transmisión
+en la interfaz impone una modulación no uniforme sobre la pupila que reduce
+la intensidad central respecto a la predicción escalar. La elección de base
+determina únicamente si esa modulación se manifiesta como mezcla de
+polarizaciones, como supresión anular o como anisotropía azimutal, pero el
+campo resultante es en todos los casos el mismo.

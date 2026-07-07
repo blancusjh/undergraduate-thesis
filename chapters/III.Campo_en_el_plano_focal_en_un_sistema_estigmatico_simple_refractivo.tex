@@ -164,7 +164,7 @@ Y lo propagamos hasta el plano focal $z=f$:
 
 donde $\mathscr R_n[f]$ denota el operador de propagación que toma un campo en un plano dado y da el campo en otro plano paralelo y a una distancia $f$ al primero en un medio de índice de refracción $n$.
 
-Tomando como válida en nuestro estudio la aproximación de Fresnel, que hemos usado implícitamente cuando transferimos los campos del plano al dioptrío y viceversa, tenemos que el operador de propagación está dado por
+Tomando como válida en nuestro estudio la aproximación de Fresnel, que hemos usado implícitamente cuando transferimos los campos del plano al dioptrio y viceversa, tenemos que el operador de propagación está dado por
 
 \begin{equation}
     \mathscr{R}_n [f] \{ U(x,y) \}
@@ -321,10 +321,10 @@ Aquí $\uvec p'_\perp$ y $\uvec s$ denotan las proyecciones transversales de las
 \section{Caso particular: sistema estigmático cartesiano con fuente puntual en $A$}
 % ===========================================================================
 
-Para analizar nuestro sistema de interés ---un sistema estigmático formado de un único dioptrío---, la función $z(r)$ debe corresponder a la sagita de una superficie cartesiana, y el campo inicial debe corresponder a uno que se emita desde el punto estigmático $A$.
+Para analizar nuestro sistema de interés ---un sistema estigmático formado de un único dioptrio---, la función $z(r)$ debe corresponder a la sagita de una superficie cartesiana, y el campo inicial debe corresponder a uno que se emita desde el punto estigmático $A$.
 
 % ---------------------------------------------------------------------------
-\subsection{Geometría del dioptrío estigmático}
+\subsection{Geometría del dioptrio estigmático}
 % ---------------------------------------------------------------------------
 
 Partimos primero por escribir las cantidades geométricas relevantes de las superficies cartesianas para nuestro problema.
@@ -699,10 +699,11 @@ Reemplazando \eqref{cosines_ovoid_compact} en \eqref{eq:ts_app} y en \eqref{eq:t
   \label{eq:t_p_ovoid}
 \end{equation}
 
-Con esto, terminamos de proporcionar la forma exacta de las cantidades relevantes necesarias para el cálculo del campo eléctrico en el plano focal en función de la función sagita que define el dioptrío estigmático de interés.
+Con esto, terminamos de proporcionar la forma exacta de las cantidades relevantes necesarias para el cálculo del campo eléctrico en el plano focal en función de la función sagita que define el dioptrio estigmático de interés.
 
 % ---------------------------------------------------------------------------
 \subsection{Forma general del campo incidente cuya fuente es $A$}
+\label{subsec:campo_incidente_fuente_A}
 % ---------------------------------------------------------------------------
 
 El campo incidente es aquel que tiene como fuente el primer punto estigmático, el punto $A$. Asumiendo que el campo es uno esférico con centro en $A$, en general escribimos el campo incidente $\vb E$ en un punto $V$ cualquiera como
@@ -853,14 +854,14 @@ Identificamos
   \label{eq:E_G_def}
 \end{equation}
 
-donde $\mathbb E^{\mathscr G'}$ es el campo sobre la esfera $\mathscr G'$ centrada en el punto imagen $A'$ y tangente al dioptrío, y $\mathbb E^{\mathscr G}$ el campo sobre la esfera $\mathscr G$ centrada en el punto objeto $A$. Dado que la fase es constante sobre $\mathscr G'$, dicho campo es netamente real.
+donde $\mathbb E^{\mathscr G'}$ es el campo sobre la esfera $\mathscr G'$ centrada en el punto imagen $A'$ y tangente al dioptrio, y $\mathbb E^{\mathscr G}$ el campo sobre la esfera $\mathscr G$ centrada en el punto objeto $A$. Dado que la fase es constante sobre $\mathscr G'$, dicho campo es netamente real.
 
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.65\textwidth]
     {figures/geometrical_setups/EGs.pdf}
     {figures/fast/EGs.jpg}
-  \caption{Esferas de referencia $\mathscr G$ y $\mathscr G'$. $\mathscr G$ está centrada en el punto objeto $A$ y $\mathscr G'$ en el punto imagen $A'$; ambas son tangentes al dioptrío en el vértice. El campo $\mathbb E^{\mathscr G}$ es la amplitud incidente sobre $\mathscr G$, y $\mathbb E^{\mathscr G'}$ es el campo transmitido sobre $\mathscr G'$, sobre el que la fase es constante por la condición estigmática.}
+  \caption{Esferas de referencia $\mathscr G$ y $\mathscr G'$. $\mathscr G$ está centrada en el punto objeto $A$ y $\mathscr G'$ en el punto imagen $A'$; ambas son tangentes al dioptrio en el vértice. El campo $\mathbb E^{\mathscr G}$ es la amplitud incidente sobre $\mathscr G$, y $\mathbb E^{\mathscr G'}$ es el campo transmitido sobre $\mathscr G'$, sobre el que la fase es constante por la condición estigmática.}
   \label{fig:EGs}
 \end{figure}
 
@@ -1119,7 +1120,7 @@ Reemplazando la fase de pupila por una fase constante en la ecuación \eqref{eq:
   \label{eq:E_field_pupil_phase_and_TT}
 \end{equation}
 
-Llamamos $\mathscr{D}$ a la esfera centrada en el vértice del dioptrío con radio $f$. Su fase paraxial evaluada en el plano focal es precisamente el factor $e^{i\frac{nk}{2f}r^2}$ presente en \eqref{eq:E_field_pupil_phase_and_TT}. Definimos el campo sobre $\mathscr{D}$ como
+Llamamos $\mathscr{D}$ a la esfera centrada en el vértice del dioptrio con radio $f$. Su fase paraxial evaluada en el plano focal es precisamente el factor $e^{i\frac{nk}{2f}r^2}$ presente en \eqref{eq:E_field_pupil_phase_and_TT}. Definimos el campo sobre $\mathscr{D}$ como
 
 \begin{equation}
   \vb E^{\mathscr D}(\vb r)
@@ -1181,7 +1182,7 @@ que, usando $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E_0 / \ell_0$ y aproxim
 % ===============
 
 
-Que en la Esfera de Fourier $\mathscr D$ de $\mathscr G'$ el campo esta dado por
+Que en la Esfera de Fourier $\mathscr D$ de $\mathscr G'$ el campo está dado por
 
 
 
@@ -1208,11 +1209,83 @@ El campo eléctrico en el plano focal queda determinado por la transformada de F
   \label{eq:def_M_bb}
 \end{equation}
 
-Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió, como se sigue de la condición estigmática; no hay, pues, aberración de fase. Sin embargo, el campo en el plano focal es proporcional a $\mathscr F\{\mathbb T \mathbb E_0\} = \mathscr F\{\mathbb T\} * \mathscr F\{\mathbb E_0\}$, lo que hace que incluso cuando $\mathbb E_0$ es constante —y su transformada de Fourier es en consecuencia una delta de Dirac— la convolución con $\mathscr F\{\mathbb T\}$ reproduce $\mathscr F\{\mathbb T\}$ evaluada en el punto de observación, que no es en general una delta dado que $\mathbb T$ es diferente en cada punto considerado, pues depende de el coseno de incidencia. Esto produce un ensanchamiento del punto imagen, ademas de un acoplamiento entre las polarizaciones, efectos que pueden ser entendidos como una aberración de origen netamente vectorial, presentes incluso en sistemas libres de imperfecciones geométricas. 
+Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió, como se sigue de la condición estigmática; no hay, pues, aberración de fase. Sin embargo, el campo en el plano focal es proporcional a $\mathscr F\{\mathbb T \mathbb E_0\} = \mathscr F\{\mathbb T\} * \mathscr F\{\mathbb E_0\}$, lo que hace que incluso cuando $\mathbb E_0$ es constante —y su transformada de Fourier es en consecuencia una delta de Dirac— la convolución con $\mathscr F\{\mathbb T\}$ reproduce $\mathscr F\{\mathbb T\}$ evaluada en el punto de observación, que no es en general una delta dado que $\mathbb T$ es diferente en cada punto considerado, pues depende del coseno de incidencia. Esto produce un ensanchamiento del punto imagen, además de un acoplamiento entre las polarizaciones, efectos que pueden ser entendidos como una aberración de origen netamente vectorial, presentes incluso en sistemas libres de imperfecciones geométricas. 
 
 Dicho de forma breve, el origen de las aberraciones vectoriales se debe a que los coeficientes de Fresnel transforman el campo de manera no homogénea durante la refracción, y lo hacen de manera distinta para dos componentes "principales", a saber, las correspondientes a las polarizaciones $\uvec s$ y $\uvec p$.
 
-Si bien el caso de reflexión no es tratado en detalle en el presente trabajo, los resultados son en esencia los mismos, bastaría con remplazar los coeficientes de Fresnel de refracción por los de reflexión. 
+\medskip
+
+\noindent\textit{Relación con la formulación de Richards y Wolf.} El resultado
+\eqref{eq:E_prime_func_of_M_E0} tiene la misma estructura de la fórmula
+canónica del campo focal derivada por Richards y Wolf~\cite{RichardsWolf1959}
+para sistemas aplanáticos idealizados: una transformada de Fourier
+bidimensional sobre la esfera de referencia imagen, aplicada al producto de
+la función pupila escalar por un operador vectorial que gira los estados de
+polarización. La diferencia esencial es que en la formulación de Richards y
+Wolf el operador vectorial se postula desde la construcción aplanática
+—asume una lente ideal que satisface la condición de los senos de Abbe— y
+la amplitud sobre la pupila queda ponderada por el factor apodizador
+$\sqrt{\cos\theta}$ característico. En cambio, la función pupila vectorial
+$\mathbb E^{\mathscr G'}=\mathbb T\mathbb E_0/\ell_0$ derivada aquí se
+construye punto a punto desde la geometría exacta de la superficie
+cartesiana y desde la transmisión de Fresnel evaluada sobre ella, sin
+suponer ninguna lente ideal: la factorización $1/\ell_0$ absorbe la
+divergencia esférica sobre $\mathscr G$, y las variaciones angulares de
+$t_p$ y $t_s$ producen tanto la modulación de amplitud como el acoplamiento
+vectorial. En el límite en que la superficie cartesiana se aproxima por su
+esfera osculatriz y $t_p,t_s$ se toman constantes, la función pupila aquí
+obtenida colapsa sobre la de Richards y Wolf; la formulación presente es,
+por tanto, una generalización que incorpora la geometría real del sistema
+estigmático y la transmisión de Fresnel completa.
+
+\medskip
+
+\noindent\textit{Límite escalar y definición operativa de la aberración vectorial.}
+El resultado \eqref{eq:E_prime_func_of_M_E0} recupera la teoría escalar de
+la difracción de forma exacta al imponer $t_p=t_s=1$, en cuyo caso
+$\mathbb T$ se reduce a la identidad transversal y la función pupila se
+convierte en una amplitud escalar isótropa sobre $\mathscr G'$. Este límite
+no es un régimen físicamente accesible —los coeficientes $t_p$ y $t_s$
+solo coinciden con la unidad simultáneamente en el caso trivial de un mismo
+medio a ambos lados de la interfaz— sino un límite matemático de
+referencia: la desviación del campo focal completo respecto a él es lo que
+llamamos aberración vectorial. Adoptamos esta definición porque el
+propósito del trabajo es aislar la contribución de la refracción vectorial,
+sin mezclarla con otros efectos residuales (contraste de índice, apodización
+paraxial, etc.). La cantidad que la gobierna es la combinación anisotrópica
+$t_-=t_p-t_s$; el límite escalar corresponde a $t_-\equiv 0$.
+
+\medskip
+
+\noindent\textit{Propagación de Fresnel y régimen de apertura numérica alta.}
+El propagador \eqref{eq:E_prime_func_of_M_E0} corresponde al régimen de
+Fresnel en el espacio libre entre la esfera de referencia imagen y el plano
+focal (véase la subsección de aproximación de Fresnel del
+capítulo~\ref{ch:ondulatoria}). A pesar de que
+los ejemplos de aplicación al final de este capítulo incluyen aperturas
+elevadas ($\mathrm{NA}=0.94$), la aproximación de Fresnel se aplica sobre un
+tramo corto —el que va de $\mathscr G'$ al plano focal contiguo— y sobre el
+campo ya modulado por $\mathbb T$; los efectos vectoriales que estudiamos se
+localizan en el entorno del máximo focal, donde las diferencias respecto de
+un propagador exacto de espectro angular son subordinadas a la modulación
+introducida por $t_-$. Comparaciones numéricas realizadas durante el
+desarrollo del código —descrito en el apéndice~\ref{apx:numerical_algorithm}—
+muestran que las firmas discutidas
+—supresión del pico central, deformación anisótropa, componente cruzada
+de orden dos— son estables al reemplazar el propagador de Fresnel por el
+del espectro angular.
+
+Si bien el caso de reflexión no es tratado en detalle en el presente trabajo, los resultados son en esencia los mismos, bastaría con reemplazar los coeficientes de Fresnel de refracción por los de reflexión.
+
+
+
+
+
+
+
+
+
+
 
 
 % ---------------------------------------------------------------------------
@@ -1348,30 +1421,665 @@ o equivalentemente,
   |E_\phi(\vb r, f)|^2 .
 \end{equation}
 
-Queda evidenciado como la intensidad del campo en el plano focal depende unicamente de la parte transversal del campo electrico.
+Queda evidenciado cómo la intensidad del campo en el plano focal depende únicamente de la parte transversal del campo eléctrico.
 
-Como ejemplo de aplicación de la formulación general a un campo sin simetría
-axial, consideramos una máscara litográfica compuesta por estructuras con
-distintas orientaciones y escalas. La
-figura~\ref{fig:lithography-general-non-axisymmetric} compara la intensidad
-obtenida mediante los modelos escalar y vectorial, y muestra que las
-diferencias dependen de la geometría local del patrón.
+Como ejemplo de aplicación de la formulación general a un campo sin ninguna
+simetría, consideramos la formación de la imagen de una máscara litográfica de
+tipo circuito, con trazas rectas en ambas orientaciones cartesianas. El sistema
+formador de imagen es una lente formada por dos superficies cartesianas
+conjugadas (vacío $\to$ sílice fundida $\to$ vacío), con conjugación exacta y
+aumento unitario, de modo que está libre de aberración
+geométrica por construcción. Los parámetros corresponden al régimen de la
+litografía ultravioleta profunda: $\lambda=193\,\mathrm{nm}$,
+$\mathrm{NA}=0.94$, con trazas de anchura $0.64\lambda$ y paso fino de
+$1.23\lambda$, cercano al límite de resolución. La máscara es una transmisión
+binaria iluminada coherentemente, y se comparan dos modelos de propagación: el
+escalar, con $t_p=t_s=1$, y el vectorial completo, que aplica la matriz de
+transmisión $\mathbb T$ en cada dioptrio y reconstruye la componente
+longitudinal mediante la condición de transversalidad. En ambos casos se
+reporta la intensidad total \eqref{eq:Intensity_in_Focal_Plane}. El pipeline
+completo de la simulación —composición de operadores en las dos superficies,
+grilla, propagación de Fresnel y reconstrucción longitudinal— se detalla en
+el apéndice~\ref{apx:numerical_algorithm}.
+
+Para cuantificar la fidelidad de la imagen se mide el contraste
+$C=(\bar I_{\mathrm{pico}}-\bar I_{\mathrm{valle}})/(\bar
+I_{\mathrm{pico}}+\bar I_{\mathrm{valle}})$ sobre dos cortes que atraviesan
+grupos de trazas paralelas: un corte a través de trazas verticales, cuya
+modulación espacial es paralela a $\hat{\mathbf x}$ ($C_V$), y otro a través de
+trazas horizontales, con modulación paralela a $\hat{\mathbf y}$ ($C_H$). El
+modelo escalar predice una fidelidad esencialmente independiente de la
+orientación: $C_V=0.91$ y $C_H=0.98$, cuya pequeña diferencia es puramente
+geométrica (el grupo vertical es algo más denso). El modelo vectorial rompe
+esta equivalencia, como se observa en la
+figura~\ref{fig:lithography-general-non-axisymmetric}: con iluminación lineal
+$\hat{\mathbf x}$, las trazas alineadas con la polarización conservan la mayor
+parte del contraste ($C_H: 0.98\to 0.85$), mientras que las trazas ortogonales
+a ella se degradan mucho más severamente ($C_V: 0.91\to 0.67$). Con iluminación
+$\hat{\mathbf y}$ los papeles se intercambian ($C_V=0.81$, $C_H=0.68$): los
+patrones que se alinean con la polarización lineal incidente se resuelven
+mejor que los ortogonales.
+
+El mecanismo dominante en este régimen de apertura es la componente
+longitudinal: para las trazas cuya modulación es paralela a la polarización,
+las órdenes difractadas se separan en el plano que contiene al campo eléctrico,
+sus campos dejan de ser paralelos y la componente $E_z$ —que a
+$\mathrm{NA}=0.94$ transporta cerca de la mitad de la energía de la imagen—
+rellena los valles entre trazas. Las trazas ortogonales, en cambio, difractan
+en el plano perpendicular al campo y no sufren esta proyección. La mezcla de
+polarizaciones inducida por $t_-$ es aquí secundaria: la fracción de energía
+del canal cruzado es del orden de $0.1\,\%$.
 
 \begin{figure}[H]
   \centering
-  \thesisincludegraphics[width=\textwidth]
-    {figures/results_of_simulation/general/lithography_pattern_intensities.png}
-    {figures/fast/lithography_pattern_intensities.jpg}
-  \caption{Formación de un patrón litográfico para un campo incidente sin simetría axial. De izquierda a derecha: máscara de entrada, intensidad predicha por el modelo escalar, intensidad predicha por el modelo vectorial y diferencia absoluta entre ambas.}
+  \thesisincludegraphics[width=0.95\textwidth]
+    {figures/results_of_simulation/vecdiff_final/litografia/litografia_lineal_imagenes.png}
+    {figures/fast/litografia_lineal_imagenes.jpg}
+  \caption{Imagen de una máscara litográfica de tipo circuito formada por una
+  lente de dos superficies cartesianas conjugadas ($\lambda=193\,\mathrm{nm}$,
+  $\mathrm{NA}=0.94$, aumento unitario, trazas de $0.64\lambda$ con paso fino
+  de $1.23\lambda$). Arriba: máscara de entrada e intensidad predicha por el
+  modelo escalar. Abajo: intensidad total del modelo vectorial para
+  iluminación lineal $\hat{\mathbf x}$ (izquierda) y $\hat{\mathbf y}$
+  (derecha). En cada panel se indican los contrastes $C_V$ y $C_H$ medidos
+  sobre los cortes señalados (rojo: trazas verticales; azul: trazas
+  horizontales): las trazas alineadas con la polarización incidente se
+  resuelven mejor que las ortogonales.}
   \label{fig:lithography-general-non-axisymmetric}
 \end{figure}
+
+Por último, la iluminación circular reparte la pérdida de contraste entre ambas
+orientaciones ($C_V=0.73$, $C_H=0.74$, figura~\ref{fig:lithography-circular}):
+isotropiza el costo vectorial, pero no lo elimina. Este comportamiento —trazas
+nítidas en una orientación y degradadas en la ortogonal, en un sistema libre de
+aberración geométrica— es una aberración de origen netamente vectorial,
+invisible para el modelo escalar, y es el mismo fenómeno que obliga a la
+litografía de alta apertura numérica a controlar la polarización de la
+iluminación \cite{flagello1996, ruoff2009}.
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=0.85\textwidth]
+    {figures/results_of_simulation/vecdiff_final/litografia/litografia_circular_imagenes.png}
+    {figures/fast/litografia_circular_imagenes.jpg}
+  \caption{Imagen del mismo patrón de la
+  figura~\ref{fig:lithography-general-non-axisymmetric} con iluminación
+  circular: modelo escalar (izquierda) y vectorial con intensidad total
+  (derecha). La pérdida de contraste se reparte por igual entre ambas
+  orientaciones ($C_V=0.73$, $C_H=0.74$): la iluminación circular isotropiza
+  la aberración vectorial, pero no la elimina.}
+  \label{fig:lithography-circular}
+\end{figure}
+
+% ---------------------------------------------------------------------------
+\section{Transformación del estado de polarización tras la refracción}
+\label{subsec:polarizacion_refraccion}
+
+La ecuación \eqref{eq:def_M_bb} muestra que el campo sobre la esfera de
+referencia imagen $\mathscr{G}'$ se obtiene mediante la acción local de la
+matriz de transmisión $\mathbb{T}$ sobre el campo en la esfera incidente
+$\mathscr{G}$. Hasta este punto hemos enfatizado el efecto de esta matriz
+sobre la amplitud espacial del campo y, en consecuencia, sobre el campo
+difractado. Sin embargo, $\mathbb{T}$ también actúa como un operador de Jones
+local, por lo que modifica punto a punto el estado de polarización. En esta
+sección determinamos el estado de polarización sobre $\mathscr{G}'$
+conocido el estado sobre $\mathscr{G}$.
+
+Consideremos el estado de Jones incidente normalizado en cada punto
+$(\rho',\phi')$ de la pupila,
+
+\begin{equation}
+\hat{\vb J}(\rho',\phi')
+=
+e^{i\gamma(\rho',\phi')}
+\begin{pmatrix}
+\cos \vartheta(\rho',\phi') \\
+\sin \vartheta(\rho',\phi')\, e^{i\delta(\rho',\phi')}
+\end{pmatrix}.
+\label{eq:jones_state_pupila}
+\end{equation}
+
+Aquí $\gamma$ es una fase global, $\vartheta$ determina la razón de
+amplitudes entre las componentes cartesianas del campo, y $\delta$ es la fase
+relativa. Reservamos $\psi$ para el ángulo de orientación geométrica de la
+elipse de polarización y $\chi$ para su ángulo de elipticidad, cuya relación
+con el estado se dará al final de la sección en términos de los parámetros
+de Stokes.
+
+Para un sistema axialmente simétrico, la matriz de transmisión en la
+representación cartesiana transversal adopta la forma
+
+\begin{equation}
+\mathbb{T}_{xy}
+=
+\frac{t_+(\rho')}{2}\,\mathbb{I}_{\perp}
++
+\frac{t_-(\rho')}{2}
+\begin{pmatrix}
+\cos 2\phi' & \sin 2\phi' \\
+\sin 2\phi' & -\cos 2\phi'
+\end{pmatrix},
+\label{eq:T_xy_jones}
+\end{equation}
+
+donde $\mathbb{I}_{\perp}$ es la identidad en el plano transversal y hemos
+introducido las combinaciones
+
+\begin{equation}
+t_+
+=
+t_p+t_s,
+\qquad
+t_-
+=
+t_p-t_s.
+\label{eq:t_plus_t_minus_def}
+\end{equation}
+
+La deducción detallada de esta forma de $\mathbb{T}_{xy}$ a partir de
+\eqref{eq:def_M_bb} se presenta en la
+subsección~\ref{subsec:representacion_cartesiana},
+ecuación~\eqref{eq:M_in_cartesian_basis}. La dependencia en el ángulo azimutal
+$\phi'$ proviene de que los estados propios locales de transmisión son las
+polarizaciones $\hat{\vb p}$ y $\hat{\vb s}$, orientadas radial y
+azimutalmente respecto al eje óptico. Esta forma de $\mathbb{T}_{xy}$ requiere
+la simetría axial del sistema óptico, pero no requiere que el campo incidente
+sea axialmente simétrico.
+
+La estructura de \eqref{eq:T_xy_jones} se expone con claridad al descomponer
+la matriz en la base de Pauli,
+
+\begin{equation}
+\mathbb{T}_{xy}
+=
+a_0\,\sigma_0 + a_1\,\sigma_1 + a_2\,\sigma_2 + a_3\,\sigma_3,
+\label{eq:T_xy_pauli}
+\end{equation}
+
+donde $\sigma_0=\mathbb{I}_{\perp}$ y
+
+\begin{equation*}
+\sigma_1
+=
+\begin{pmatrix}
+1 & 0 \\ 0 & -1
+\end{pmatrix},
+\qquad
+\sigma_2
+=
+\begin{pmatrix}
+0 & 1 \\ 1 & 0
+\end{pmatrix},
+\qquad
+\sigma_3
+=
+\begin{pmatrix}
+0 & -i \\ i & 0
+\end{pmatrix},
+\end{equation*}
+
+con coeficientes
+
+\begin{equation}
+a_0=\frac{t_+(\rho')}{2},
+\qquad
+a_1=\frac{t_-(\rho')}{2}\cos 2\phi',
+\qquad
+a_2=\frac{t_-(\rho')}{2}\sin 2\phi',
+\qquad
+a_3=0.
+\label{eq:T_xy_pauli_coeffs}
+\end{equation}
+
+Esta descomposición corresponde a la manera en que Chipman y colaboradores
+proponen caracterizar la \emph{aberración de polarización} de un sistema
+óptico \cite{mcguire1994}. La analogía con la teoría de aberraciones de frente
+de onda es directa: así como la aberración escalar se define como una función
+de fase sobre la esfera de referencia de salida —y no sobre el campo en el
+plano focal—, la aberración vectorial se describe mediante la función
+matricial $\mathbb{T}_{xy}(\rho',\phi')$ definida sobre $\mathscr{G}'$, cuyos
+coeficientes de Pauli $a_j(\rho',\phi')$ desempeñan el papel de los
+coeficientes de aberración. En nuestro caso, $a_0$ describe la parte escalar
+de la transmisión —una apodización idéntica para ambas componentes—; el par
+$(a_1,a_2)$, de módulo $|t_-(\rho')|/2$ y dependencia azimutal $2\phi'$,
+describe una anisotropía lineal local equivalente a un diatenuador orientado
+radialmente en cada punto de la pupila; y $a_3=0$ expresa que la refracción en
+una superficie isótropa no introduce quiralidad. Sobre esta descomposición se
+construyen, por ejemplo, los polinomios de Zernike de orientación de Ruoff y
+Totzeck \cite{ruoff2009}, generalización vectorial de los polinomios de
+Zernike escalares empleada para expandir sistemáticamente
+$\mathbb{T}_{xy}(\rho',\phi')$.
+
+La acción local sobre el estado de polarización puede representarse de manera
+compacta mediante la coordenada proyectiva compleja
+
+\begin{equation}
+\zeta(\rho',\phi')
+=
+\frac{\mathscr E_y(\rho',\phi')}{\mathscr E_x(\rho',\phi')}
+=
+\tan \vartheta(\rho',\phi')\, e^{i\delta(\rho',\phi')},
+\label{eq:zeta_def}
+\end{equation}
+
+donde $\mathscr E_x$ y $\mathscr E_y$ son las componentes cartesianas
+transversales del campo sobre $\mathscr{G}$. Nótese que $\zeta$ es insensible
+a la fase global $\gamma$. Después de la transmisión, el estado sobre
+$\mathscr{G}'$ queda caracterizado por
+
+\begin{equation}
+\zeta_{\mathscr{G}'}(\rho',\phi')
+=
+\frac{E_y^{\mathscr{G}'}(\rho',\phi')}{E_x^{\mathscr{G}'}(\rho',\phi')}.
+\label{eq:zeta_Gp_def}
+\end{equation}
+
+Usando la matriz $\mathbb{T}_{xy}$ se obtiene la transformación fraccional
+
+\begin{equation}
+\boxed{
+\zeta_{\mathscr{G}'}(\rho',\phi')
+=
+\frac{
+t_-(\rho')\sin 2\phi'
++
+\left[t_+(\rho') - t_-(\rho')\cos 2\phi'\right]\zeta(\rho',\phi')
+}{
+t_+(\rho') + t_-(\rho')\cos 2\phi'
++
+t_-(\rho')\sin 2\phi'\,\zeta(\rho',\phi')
+}.
+}
+\label{eq:mobius_transformation}
+\end{equation}
+
+Esta expresión muestra que la transmisión vectorial induce una transformación
+de Möbius sobre el estado local de polarización, la cual es invertible siempre
+que $\det \mathbb{T}_{xy}=t_p t_s \neq 0$, condición que se satisface en
+transmisión. Los parámetros transmitidos se recuperan como
+
+\begin{equation}
+\vartheta_{\mathscr{G}'}(\rho',\phi')
+=
+\arctan \left|\zeta_{\mathscr{G}'}(\rho',\phi')\right|,
+\qquad
+\delta_{\mathscr{G}'}(\rho',\phi')
+=
+\arg \left[\zeta_{\mathscr{G}'}(\rho',\phi')\right].
+\label{eq:jones_params_transmitted}
+\end{equation}
+
+De forma equivalente, el estado puede representarse mediante el vector de
+Stokes normalizado
+
+\begin{equation}
+\vb s
+=
+\frac{1}{1+|\zeta|^2}
+\begin{pmatrix}
+1-|\zeta|^2 \\
+2\operatorname{Re}\zeta \\
+2\operatorname{Im}\zeta
+\end{pmatrix},
+\label{eq:stokes_from_zeta}
+\end{equation}
+
+de modo que la transmisión induce el mapa local
+$\vb s(\rho',\phi') \mapsto \vb s_{\mathscr{G}'}(\rho',\phi')$, que se obtiene
+al evaluar \eqref{eq:stokes_from_zeta} en $\zeta_{\mathscr{G}'}$. En términos
+de estas componentes, los ángulos de la elipse de polarización quedan
+determinados por
+
+\begin{equation}
+\tan 2\psi = \frac{s_2}{s_1},
+\qquad
+\sin 2\chi = s_3,
+\label{eq:psi_chi_from_stokes}
+\end{equation}
+
+relaciones válidas tanto para el estado incidente como para el transmitido.
+
+Por tanto, la matriz de transmisión no solo introduce una modulación espacial
+de amplitud, sino también una transformación local del estado de polarización.
+En el límite escalar $t_p=t_s$ se tiene $t_-=0$, y la
+ecuación~\eqref{eq:mobius_transformation} se reduce a
+$\zeta_{\mathscr{G}'}=\zeta$: la transmisión no modifica el estado local de
+polarización. En cambio, cuando $t_p\neq t_s$, la diferencia entre las
+transmisiones de las componentes $p$ y $s$ produce una redistribución espacial
+de la polarización sobre $\mathscr{G}'$.
+
+Cabe enfatizar que esta transformación describe el estado de polarización
+sobre la esfera de referencia $\mathscr{G}'$, es decir, inmediatamente después
+de la refracción. El estado de polarización en el plano focal no está dado por
+una transformación local de este tipo: de acuerdo con
+\eqref{eq:E_prime_func_of_M_E0}, el campo en el plano focal resulta de la
+síntesis de Fourier, que superpone coherentemente las contribuciones de todos
+los puntos de la pupila. El estudio del estado de polarización en el plano
+focal se desarrolla en la sección siguiente.
+
+% ---------------------------------------------------------------------------
+\section{Transformación del estado de polarización en el plano focal}
+\label{subsec:polarizacion_plano_focal}
+
+En la sección~\ref{subsec:polarizacion_refraccion} se determinó el estado
+de polarización sobre la esfera de referencia $\mathscr{G}'$, inmediatamente
+después de la refracción. Para determinar el estado en el plano focal,
+separamos el campo focal \eqref{eq:E_prime_func_of_M_E0} en sus dos
+componentes cartesianas,
+
+\begin{equation}
+\begin{aligned}
+E'_x(\vb r,f)
+&=
+\frac{n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\mathscr F\left\{(\mathbb{T}_{xy}\mathbb E_0)_x\right\}
+\left(\frac{n}{\lambda f}\vb r\right),
+\\[0.5em]
+E'_y(\vb r,f)
+&=
+\frac{n e^{inkf}}{i\lambda f z_0}
+e^{i\frac{nk}{2f}r^2}
+\mathscr F\left\{(\mathbb{T}_{xy}\mathbb E_0)_y\right\}
+\left(\frac{n}{\lambda f}\vb r\right),
+\end{aligned}
+\label{eq:Exy_focal_components}
+\end{equation}
+
+donde, de acuerdo con la descomposición \eqref{eq:T_xy_jones},
+
+\begin{equation}
+\begin{aligned}
+(\mathbb{T}_{xy}\mathbb E_0)_x
+&=
+\frac{1}{2}
+\left[
+t_+ \mathscr E_x
++
+t_-
+\left(
+\cos 2\phi'\, \mathscr E_x
++
+\sin 2\phi'\, \mathscr E_y
+\right)
+\right],
+\\[0.5em]
+(\mathbb{T}_{xy}\mathbb E_0)_y
+&=
+\frac{1}{2}
+\left[
+t_+ \mathscr E_y
++
+t_-
+\left(
+\sin 2\phi'\, \mathscr E_x
+-
+\cos 2\phi'\, \mathscr E_y
+\right)
+\right].
+\end{aligned}
+\label{eq:TxyE0_components}
+\end{equation}
+
+Las funciones \eqref{eq:TxyE0_components} no son otra cosa que las componentes
+cartesianas transversales del campo refractado sobre $\mathscr{G}'$, salvo el
+factor común $1/\ell_0 \approx 1/z_0$, pues
+$\mathbb E^{\mathscr{G}'}=\mathbb{T}\,\mathbb E_0/\ell_0$. En particular, su
+cociente reproduce el estado local tras la refracción,
+
+\begin{equation}
+\frac{
+(\mathbb{T}_{xy}\mathbb E_0)_y
+}{
+(\mathbb{T}_{xy}\mathbb E_0)_x
+}
+=
+\frac{
+E_y^{\mathscr{G}'}
+}{
+E_x^{\mathscr{G}'}
+}
+=
+\zeta_{\mathscr{G}'}(\rho',\phi'),
+\label{eq:zeta_Gp_ratio}
+\end{equation}
+
+dado por la transformación de Möbius \eqref{eq:mobius_transformation}. La
+síntesis de Fourier actúa, por tanto, sobre un campo cuyo estado de
+polarización ya fue transformado localmente por la refracción.
+
+Cada componente cartesiana del campo en el plano focal queda así expresada
+como una única transformada de Fourier escalar. Ahora bien, la transformada de
+Fourier es en general una función compleja, aun cuando la función transformada
+tenga fase constante. Escribimos entonces cada síntesis en forma polar,
+
+\begin{equation}
+\begin{aligned}
+\mathscr F\left\{(\mathbb{T}_{xy}\mathbb E_0)_x\right\}
+\left(\frac{n}{\lambda f}\vb r\right)
+&=
+A_x(\vb r)\,e^{i\Phi_x(\vb r)},
+\\[0.5em]
+\mathscr F\left\{(\mathbb{T}_{xy}\mathbb E_0)_y\right\}
+\left(\frac{n}{\lambda f}\vb r\right)
+&=
+A_y(\vb r)\,e^{i\Phi_y(\vb r)},
+\end{aligned}
+\label{eq:fourier_polar_form}
+\end{equation}
+
+con $A_x,A_y\geq 0$ y $\Phi_x,\Phi_y$ reales; es decir,
+
+\begin{equation}
+A_{x,y}(\vb r)
+=
+\left|
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_{x,y}
+\right\}
+\left(\frac{n}{\lambda f}\vb r\right)
+\right|,
+\qquad
+\Phi_{x,y}(\vb r)
+=
+\arg
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_{x,y}
+\right\}
+\left(\frac{n}{\lambda f}\vb r\right).
+\label{eq:Axy_Phixy_def}
+\end{equation}
+
+La difracción introduce de este modo, sobre cada componente cartesiana, una
+función de fase adicional propia, en general distinta para cada una. El
+prefactor común de \eqref{eq:Exy_focal_components} —incluida la fase
+cuadrática $e^{i\frac{nk}{2f}r^2}$— tiene el mismo módulo y la misma fase para
+ambas componentes, por lo que constituye una fase global y no interviene en el
+estado de polarización.
+
+En consecuencia, el estado de polarización en cada punto del plano focal queda
+completamente determinado por la razón entre las amplitudes y por la
+diferencia de fase entre las dos síntesis:
+
+\begin{equation}
+\tan \vartheta_f(\vb r)
+=
+\frac{A_y(\vb r)}{A_x(\vb r)},
+\qquad
+\delta_f(\vb r)
+=
+\Phi_y(\vb r)-\Phi_x(\vb r).
+\label{eq:theta_delta_focal}
+\end{equation}
+
+Esto es, en términos de las transformadas de Fourier de las componentes,
+
+\begin{equation}
+\tan \vartheta_f(\vb r)
+=
+\frac{
+\left|
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_y
+\right\}
+\right|
+}{
+\left|
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_x
+\right\}
+\right|
+},
+\qquad
+\delta_f(\vb r)
+=
+\arg
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_y
+\right\}
+-
+\arg
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_x
+\right\},
+\label{eq:theta_delta_focal_explicit}
+\end{equation}
+
+con ambas transformadas evaluadas en $\frac{n}{\lambda f}\vb r$.
+
+En términos de la coordenada proyectiva introducida en \eqref{eq:zeta_def}, el
+estado en el plano focal se escribe de forma compacta como
+
+\begin{equation}
+\boxed{
+\zeta_f(\vb r)
+=
+\tan \vartheta_f(\vb r)\,e^{i\delta_f(\vb r)}
+=
+\frac{
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_y
+\right\}
+}{
+\mathscr F
+\left\{
+(\mathbb{T}_{xy}\mathbb E_0)_x
+\right\}
+}
+\left(
+\frac{n}{\lambda f}\vb r
+\right),
+}
+\label{eq:zeta_focal}
+\end{equation}
+
+y los parámetros geométricos de la elipse de polarización —el vector de Stokes
+normalizado y los ángulos $\psi$ y $\chi$— se obtienen evaluando
+\eqref{eq:stokes_from_zeta} y \eqref{eq:psi_chi_from_stokes} en $\zeta_f$.
+
+La conexión con la transformación del estado de polarización al refractarse se
+hace explícita escribiendo, según \eqref{eq:zeta_Gp_ratio},
+
+\begin{equation*}
+(\mathbb{T}_{xy}\mathbb E_0)_y
+=
+\zeta_{\mathscr{G}'}(\rho',\phi')\,
+(\mathbb{T}_{xy}\mathbb E_0)_x.
+\end{equation*}
+
+Sustituyendo en \eqref{eq:zeta_focal}, junto con la forma explícita
+\eqref{eq:TxyE0_components} de $(\mathbb{T}_{xy}\mathbb E_0)_x$ —el factor
+común $1/2$ se cancela—,
+
+\begin{equation}
+\zeta_f(\vb r)
+=
+\frac{
+\mathscr F
+\left\{
+\zeta_{\mathscr{G}'}
+\left[
+t_+\mathscr E_x
++
+t_-
+\left(
+\cos 2\phi'\, \mathscr E_x
++
+\sin 2\phi'\, \mathscr E_y
+\right)
+\right]
+\right\}
+}{
+\mathscr F
+\left\{
+t_+\mathscr E_x
++
+t_-
+\left(
+\cos 2\phi'\, \mathscr E_x
++
+\sin 2\phi'\, \mathscr E_y
+\right)
+\right\}
+},
+\label{eq:zeta_focal_mobius}
+\end{equation}
+
+con ambas transformadas evaluadas en $\frac{n}{\lambda f}\vb r$.
+
+El estado de polarización en cada punto del plano focal es, pues, un promedio
+coherente de los estados locales $\zeta_{\mathscr{G}'}(\rho',\phi')$
+producidos por la refracción —dados por la transformación de Möbius
+\eqref{eq:mobius_transformation}—, con pesos complejos determinados por la
+amplitud $(\mathbb{T}_{xy}\mathbb E_0)_x$ y por el núcleo de Fourier. La
+transformación local del estado al refractarse queda así incorporada
+explícitamente en el resultado focal.
+
+Este resultado es completamente general: no requiere simetría azimutal de las
+amplitudes ni uniformidad del estado de polarización sobre la pupila. Nótese
+la diferencia esencial con la transformación local de la
+sección~\ref{subsec:polarizacion_refraccion}: las amplitudes $A_{x,y}$ y
+las fases $\Phi_{x,y}$ en un punto de observación son funcionales de la
+distribución completa del campo sobre la pupila, de modo que en general no
+existe una relación local entre el estado incidente $\zeta(\rho',\phi')$ y el
+estado focal $\zeta_f(\vb r)$.
+
+La lectura física de \eqref{eq:theta_delta_focal} es directa. Aunque el campo
+sobre la pupila tenga fase constante —como garantiza la condición
+estigmática—, las dos síntesis de Fourier adquieren fases de difracción
+$\Phi_x$ y $\Phi_y$ que son funciones distintas del punto de observación. La
+diferencia $\delta_f=\Phi_y-\Phi_x$ actúa entonces como un desfasador efectivo
+distribuido sobre el plano focal: allí donde toma valores distintos de $0$ y
+$\pi$ genera elipticidad, aun para iluminación incidente linealmente
+polarizada. La razón $A_y/A_x$, por su parte, redistribuye el peso entre las
+componentes y con ello la orientación de la elipse.
+
+Como caso ilustrativo, bajo las simetrías azimutales que se estudiarán en la
+subsección~\ref{subsec:representacion_cartesiana}, las síntesis se reducen a
+las transformadas de Hankel de \eqref{eq:Ex_Ey_Hankel_cartesian}. Si además el
+estado incidente es lineal, las componentes $\mathscr E_x$ y $\mathscr E_y$
+pueden tomarse reales, y ambas síntesis resultan funciones reales: las fases
+$\Phi_x$ y $\Phi_y$ solo toman los valores $0$ y $\pi$, con saltos de $\pi$ en
+los ceros anulares de las transformadas. En tal caso $\delta_f\in\{0,\pm\pi\}$
+y el estado permanece lineal en todo punto del plano focal, manifestándose la
+aberración vectorial como una rotación local de la orientación, como se
+observará en la figura~\ref{fig:lineal-plano-focal-mapa-polarizacion}. Fuera de
+estas condiciones de simetría las fases varían de manera continua y la
+difracción vectorial genera, en general, elipticidad espacialmente variable.
 
 % ---------------------------------------------------------------------------
 \section{Resultados especiales en las distintas bases de polarización}
 % ---------------------------------------------------------------------------
 
 
-Obtenida la expresión matemática para el campo transmitido en el plano focal en \eqref{eq:E_field_pupil_phase_and_TT} en función del campo incidente, procedemos a escribir el resultado en distintas representaciones. Estudiaremos la representación circular, la cilíndrica y, por último, la cartesiana; por representación en una base dada me refiero a que tanto el campo transmitido como el incidente se indican en dicha base.
+Obtenida la expresión matemática para el campo transmitido en el plano focal en \eqref{eq:E_field_pupil_phase_and_TT} en función del campo incidente, procedemos a escribir el resultado en distintas representaciones. Estudiaremos la representación circular, la cilíndrica y, por último, la cartesiana; por representación en una base dada nos referimos a que tanto el campo transmitido como el incidente se indican en dicha base.
 
 No será esto una cuestión únicamente de representación, sino que se estudiará qué sucede cuando las componentes de la representación correspondiente exhiben simetría azimutal,
 que no ha de confundirse con simetría azimutal absoluta, pues un campo cuya componente radial sea azimutalmente simétrica no significa que lo sea en el sentido absoluto (que el campo eléctrico sea realmente el mismo en magnitud y dirección, independiente del valor de la coordenada $\phi$), ya que por componente azimutalmente simétrica entendemos la función escalar que multiplica al campo vectorial radial $\vb r(\phi)$, el cual no es azimutalmente simétrico.
@@ -1379,7 +2087,7 @@ que no ha de confundirse con simetría azimutal absoluta, pues un campo cuya com
 
 Para proceder con los resultados en cada representación, se parte de la ecuación \eqref{eq:E_field_pupil_phase_and_TT} junto con la definición \eqref{eq:E_G_prime_def}, y escribiremos tanto $\mathscr E_\theta$, $\mathscr E_\phi$ como los vectores unitarios $\uvec s$  y $\uvec p'$ en la representación deseada.
 
-En la presente sección tendremos en cuenta las siguientes definiciones 
+En la presente sección tendremos en cuenta las siguientes definiciones.
 
 Definimos la transformada de Hankel de orden $m$ como
 
@@ -1393,18 +2101,8 @@ f(r')J_m(qr')r'\,dr',
 
 donde $q$ es la frecuencia radial conjugada a $r'$ en la transformada de Fourier bidimensional.
 
-También usaremos las combinaciones
-
-\begin{equation}
-t_+
-=
-t_p+t_s,
-\qquad
-t_-
-=
-t_p-t_s.
-\label{eq:t_plus_t_minus_def}
-\end{equation}
+También usaremos las combinaciones $t_\pm = t_p \pm t_s$ introducidas en
+\eqref{eq:t_plus_t_minus_def}.
 
 Para el caso de una pupila circular de radio $a$, definimos la función pupila
 
@@ -1419,7 +2117,7 @@ A_a(r')
 \end{equation}
 
 
-Procedemos a dar los resultados en las distintas representaciones
+Procedemos a dar los resultados en las distintas representaciones.
 
 
 %  ==== REPRESENTACIÓN CIRCULAR ====
@@ -1478,16 +2176,16 @@ Por lo tanto, los vectores $\uvec s_\perp$ y $\uvec p'_\perp$ en la base circula
 \end{align}
 
 
-las proyecciones perpendiculares de la base de Fresnel se expresan como
+Las proyecciones perpendiculares de la base de Fresnel se expresan como
 
 \begin{align}
 \uvec{s}_\perp
 &=
 \frac{i}{\sqrt{2}}
 \left(
-e^{i\phi}\ket{L}
+e^{i\phi}\ket{R}
 -
-e^{-i\phi}\ket{R}
+e^{-i\phi}\ket{L}
 \right),
 \\
 \uvec{p}'_\perp
@@ -1501,16 +2199,16 @@ e^{i\phi}\ket{R}
 \end{align}
 
 
-Reemplazando en \eqref{eq:E_G_def},
+Reemplazando en \eqref{eq:E_G_prime_def},
 
 \begin{equation}
-  \ell_0 \mathbb{E}^{\mathscr G}_\perp
+  \ell_0 \mathbb{E}^{\mathscr G'}_\perp
 =
 \frac{1}{\sqrt{2}}
 \Big\{
-(t_p \mathscr E_\theta + i t_s \mathscr E_\phi)e^{i\phi}\ket{L}
+(t_p \mathscr E_\theta - i t_s \mathscr E_\phi)e^{-i\phi}\ket{L}
 +
-(t_p \mathscr E_\theta - i t_s \mathscr E_\phi)e^{-i\phi}\ket{R}
+(t_p \mathscr E_\theta + i t_s \mathscr E_\phi)e^{i\phi}\ket{R}
 \Big\}.
 \end{equation}
 
@@ -1523,9 +2221,9 @@ E_r
 &=
 \frac{1}{\sqrt{2}}
 \left(
-e^{-i\phi}\mathscr E_L
+e^{i\phi}\mathscr E_L
 +
-e^{i\phi}\mathscr E_R
+e^{-i\phi}\mathscr E_R
 \right),
 \label{eq:Ep_in_LR_basis}
 \\
@@ -1533,9 +2231,9 @@ e^{i\phi}\mathscr E_R
 &=
 \frac{i}{\sqrt{2}}
 \left(
-e^{i\phi}\mathscr E_R
+e^{i\phi}\mathscr E_L
 -
-e^{-i\phi}\mathscr E_L
+e^{-i\phi}\mathscr E_R
 \right).
 \label{eq:Ephi_in_LR_basis}
 \end{align}
@@ -1547,9 +2245,9 @@ t_p\mathscr E_\theta+i t_s\mathscr E_\phi
 =
 \frac{1}{\sqrt2}
 \left[
-(t_p+t_s)e^{-i\phi}\mathscr E_L
+(t_p-t_s)e^{i\phi}\mathscr E_L
 +
-(t_p-t_s)e^{i\phi}\mathscr E_R
+(t_p+t_s)e^{-i\phi}\mathscr E_R
 \right],
 \end{equation}
 
@@ -1558,9 +2256,9 @@ t_p\mathscr E_\theta-i t_s\mathscr E_\phi
 =
 \frac{1}{\sqrt2}
 \left[
-(t_p-t_s)e^{-i\phi}\mathscr E_L
+(t_p+t_s)e^{i\phi}\mathscr E_L
 +
-(t_p+t_s)e^{i\phi}\mathscr E_R
+(t_p-t_s)e^{-i\phi}\mathscr E_R
 \right].
 \end{equation}
 
@@ -1569,7 +2267,7 @@ Definimos, en favor de la simple escritura
 \begin{equation}
   \vb E_t
   \equiv
-  \ell_0 \mathbb E^{\mathscr G}_\perp.
+  \ell_0 \mathbb E^{\mathscr G'}_\perp.
 \end{equation}
 
 De modo que,
@@ -1579,9 +2277,9 @@ De modo que,
 =
 \frac{1}{2}
 \Big\{
-\big[(t_p+t_s)\mathscr E_L+(t_p-t_s)e^{2i\phi}\mathscr E_R\big]\ket L
+\big[(t_p+t_s)\mathscr E_L+(t_p-t_s)e^{-2i\phi}\mathscr E_R\big]\ket L
 +
-\big[(t_p-t_s)e^{-2i\phi}\mathscr E_L+(t_p+t_s)\mathscr E_R\big]\ket R
+\big[(t_p-t_s)e^{2i\phi}\mathscr E_L+(t_p+t_s)\mathscr E_R\big]\ket R
 \Big\}.
 \label{eq:T_perp_circular_basis}
 \end{equation}
@@ -1592,15 +2290,21 @@ Por lo tanto,
 \begin{aligned}
 T_L
 &=
+\frac{1}{2}
+\big[
 (t_p+t_s)\mathscr E_L
 +
-(t_p-t_s)e^{2i\phi}\mathscr E_R,
+(t_p-t_s)e^{-2i\phi}\mathscr E_R
+\big],
 \\
 T_R
 &=
-(t_p-t_s)e^{-2i\phi}\mathscr E_L
+\frac{1}{2}
+\big[
+(t_p-t_s)e^{2i\phi}\mathscr E_L
 +
-(t_p+t_s)\mathscr E_R,
+(t_p+t_s)\mathscr E_R
+\big],
 \end{aligned}
 \label{eq:TL_TR_circular}
 \end{equation}
@@ -1627,17 +2331,18 @@ Es así que podemos escribir
 
 
 
-donde $\mathbb{M}$ para esta representación es 
+donde $\mathbb{T}$ para esta representación es
 
 \begin{equation}
 \mathbb T
 =
+\frac{1}{2}
 \begin{bmatrix}
 t_+
 &
-t_-\,e^{2i\phi'}
-\\
 t_-\,e^{-2i\phi'}
+\\
+t_-\,e^{2i\phi'}
 &
 t_+
 \end{bmatrix}_{LR}.
@@ -1656,13 +2361,13 @@ en la representación circular
 \begin{aligned}
 \mathbf{E}'_\perp(\mathbf r, f)
 =
-\frac{n e^{inkf}}{i\lambda f z_0}
+\frac{n e^{inkf}}{2i\lambda f z_0}
 e^{i\frac{nk}{2f}r^2}
 \Bigg\{
 & \mathscr F\!\left[
 t_+\mathscr E_L
 +
-t_-\,e^{2i\phi'}\mathscr E_R
+t_-\,e^{-2i\phi'}\mathscr E_R
 \right]
 \!\left(
 \frac{n}{\lambda f}\mathbf r
@@ -1672,7 +2377,7 @@ t_-\,e^{2i\phi'}\mathscr E_R
 \qquad\qquad
 +
 & \mathscr F\!\left[
-t_-\,e^{-2i\phi'}\mathscr E_L
+t_-\,e^{2i\phi'}\mathscr E_L
 +
 t_+\mathscr E_R
 \right]
@@ -1687,8 +2392,7 @@ t_+\mathscr E_R
 \end{equation}
 
 
-Este resultado da de manera general el campo transmitido evaluado en el plano focal, como función de las funciones escalares $\mathscr E_\theta$ y $\mathscr E_\phi$ que dependen de $r$ y $\phi$, de lo discutido en la sección (?)%NOTE: CITAR LA SECCIÓN O LUGAR DONDE SE ACLARO ESTO. 
-son funciones reales y definen el vector amplitud del campo en la esfera incidente.
+Este resultado da de manera general el campo transmitido evaluado en el plano focal, como función de las funciones escalares $\mathscr E_\theta$ y $\mathscr E_\phi$ que dependen de $r$ y $\phi$ y que, de acuerdo con lo discutido en la subsección~\ref{subsec:campo_incidente_fuente_A}, son funciones reales y definen el vector amplitud del campo en la esfera incidente.
 
 
 
@@ -1729,11 +2433,11 @@ de la cual se obtiene que
 
 
 \begin{equation}
-  \mathscr{F}_\phi\{\mathbb{M}\}(q, r', \varphi)
+  \mathscr{F}_\phi\{\mathbb{T}\}(q, r', \varphi)
   =
-  2\pi\,J_0(qr')\,t_+\,\mathbb{I}_\perp
+  \pi\,J_0(qr')\,t_+\,\mathbb{I}_\perp
   -
-  2\pi\,J_2(qr')\,t_-\,\mathbb{V}(\varphi),
+  \pi\,J_2(qr')\,t_-\,\mathbb{V}(\varphi),
   \label{eq:Fphi_M_circular}
 \end{equation}
 
@@ -1743,15 +2447,15 @@ donde
 \mathbb V(\varphi)
 =
 \begin{bmatrix}
-0 & e^{2i\varphi}
+0 & e^{-2i\varphi}
 \\
-e^{-2i\varphi} & 0
+e^{2i\varphi} & 0
 \end{bmatrix}.
 \label{eq:def_V_mixing}
 \end{equation}
 
 
-Quedando ahora las funciones de Bessel $J_0$ y $J_1$ bajo una integral respecto a la coordenada radial con peso la primera potensia de dicha coordenada, el campo transmitido al plano focal se escribe en terminos de las transformadas de Hankel de orden 0 y 2
+Quedando ahora las funciones de Bessel $J_0$ y $J_2$ bajo una integral respecto a la coordenada radial con peso la primera potencia de dicha coordenada, el campo transmitido al plano focal se escribe en términos de las transformadas de Hankel de orden 0 y 2
 
 
 \begin{equation}
@@ -1759,27 +2463,25 @@ Quedando ahora las funciones de Bessel $J_0$ y $J_1$ bajo una integral respecto 
 \begin{aligned}
 E'_L(\vb r,f)
 &=
-\frac{n}{i\lambda f}
+\frac{\pi n}{i\lambda f z_0}
 e^{inkf}
 e^{i\frac{nk}{2f}r^2}
 \Big[
-2\pi
-\mathscr H_0\{t_+E_L\}(q)
+\mathscr H_0\{t_+\mathscr E_L\}(q)
 -
-2\pi e^{2i\varphi}
-\mathscr H_2\{t_-E_R\}(q)
+e^{-2i\varphi}
+\mathscr H_2\{t_-\mathscr E_R\}(q)
 \Big],
 \\
 E'_R(\vb r,f)
 &=
-\frac{n}{i\lambda f}
+\frac{\pi n}{i\lambda f z_0}
 e^{inkf}
 e^{i\frac{nk}{2f}r^2}
 \Big[
--2\pi e^{-2i\varphi} \mathscr H_2\{t_-E_L\}(q)
+-e^{2i\varphi} \mathscr H_2\{t_-\mathscr E_L\}(q)
 +
-2\pi
-\mathscr H_0\{t_+E_R\}(q)
+\mathscr H_0\{t_+\mathscr E_R\}(q)
 \Big].
 \end{aligned}
 \label{eq:E_L_E_R_Hankel}
@@ -1792,13 +2494,13 @@ O de forma equivalente, en notación matricial,
 \boxed{
 \begin{pmatrix} E'_L \\ E'_R \end{pmatrix}
 =
-\frac{2\pi n}{i\lambda f}\,e^{inkf}\,e^{i\frac{nk}{2f}r^2}
+\frac{\pi n}{i\lambda f z_0}\,e^{inkf}\,e^{i\frac{nk}{2f}r^2}
 \left[
 \mathscr H_0[t_+]\,\mathbb I_\perp
 -
 \mathscr H_2[t_-]\,\mathbb V(\varphi)
 \right]
-\begin{pmatrix} E_L \\ E_R \end{pmatrix}.
+\begin{pmatrix} \mathscr E_L \\ \mathscr E_R \end{pmatrix}.
 }
 \label{eq:E_L_E_R_Hankel_matrix}
 \end{equation}
@@ -1834,45 +2536,33 @@ z_0^2z_i^2(n_0+n_i)^3
 
 Así, $t_+(0)=4n_0/(n_0+n_i)\neq 0$ mientras que $t_-(0)=0$: el coeficiente de mezcla es nulo sobre el eje y crece cuadráticamente alejándose de él. A esto se añade que $J_2(0)=0$, de modo que tanto el coeficiente $t_-$ como la función de Bessel $J_2$ se anulan simultáneamente en el origen, suprimiendo la conversión de helicidad en el eje. En contraste, $J_0(0)=1$ y $t_+(0)\neq 0$ garantizan que el término diagonal sí contribuye en el eje, generando un brillo central en el plano focal.
 
-Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-focal-componentes}. En el plano focal domina el canal de la misma helicidad, con centro brillante, mientras que en la componente de helicidad opuesta aparece la conversión parcial inducida por $t_-$. Los mapas de polarización de las figuras~\ref{fig:circular-incidente-mapa-polarizacion} y~\ref{fig:circular-plano-focal-mapa-polarizacion} muestran cómo esta conversión modifica espacialmente el estado local de polarización. Los ángulos de elipticidad y de orientación del eje mayor se presentan conjuntamente en la figura~\ref{fig:circular-plano-focal-mapas-escalares}.
+Esto se confirma para una entrada circular en la figura~\ref{fig:circular-plano-focal-componentes}. En el plano focal domina el canal de la misma helicidad, con centro brillante, mientras que en la componente de helicidad opuesta aparece la conversión parcial inducida por $t_-$: un anillo con centro oscuro, consecuencia directa de que $t_-(0)=0$ y $J_2(0)=0$ suprimen la conversión sobre el eje. El mapa de polarización de la figura~\ref{fig:circular-plano-focal-mapa-polarizacion} muestra cómo esta conversión modifica espacialmente el estado local de polarización, y la figura~\ref{fig:circular-plano-focal-mapas-escalares} separa dicha variación en los ángulos $\chi$ y $\psi$.
 
 \begin{figure}[H]
   \centering
-  \thesisincludegraphics[width=0.41\textwidth]
-    {figures/results_of_simulation/axial_symmetric/circular/circular_incidente_mapa_polarizacion.pdf}
-    {figures/fast/circular_incidente_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización del campo incidente circular. El fondo muestra $|E|^2$ y las elipses el estado local de polarización.}
-  \label{fig:circular-incidente-mapa-polarizacion}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.55\textwidth]
-    {figures/results_of_simulation/axial_symmetric/circular/circular_plano_focal_mapa_polarizacion.pdf}
-    {figures/fast/circular_plano_focal_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización en el plano focal para incidencia circular. El fondo muestra $|E|^2$ y las elipses la polarización local, incluyendo la modificación espacial de la helicidad.}
-  \label{fig:circular-plano-focal-mapa-polarizacion}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.42\textwidth]
-    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/circular_plano_focal_elipticidad.pdf}
-    {figures/fast/circular_plano_focal_elipticidad.jpg}\hfill
-  \thesisincludegraphics[width=0.42\textwidth]
-    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/circular_plano_focal_angulo_eje_mayor.pdf}
-    {figures/fast/circular_plano_focal_angulo_eje_mayor.jpg}
-  \caption{Mapas escalares en el plano focal para incidencia circular: ángulo de elipticidad $\chi$ (izquierda) y ángulo del eje mayor $\psi$ (derecha). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
-  \label{fig:circular-plano-focal-mapas-escalares}
+  \thesisincludegraphics[width=\textwidth]
+    {figures/results_of_simulation/vecdiff_final/circular/circular_componentes.png}
+    {figures/fast/circular_componentes.jpg}
+  \caption{Componentes circulares $|E_L|$, $|E_R|$ e intensidad para incidencia circular derecha: campo sobre la pupila (fila superior) y campo en el plano focal (fila inferior). Dioptrio estigmático con $n_0=1$, $n_i=1.5$, $z_0=-10\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, $\lambda=532\,\mathrm{nm}$ y pupila uniforme. La componente $E_L$ en el plano focal exhibe la conversión parcial de helicidad inducida por $t_-$, con estructura anular y centro oscuro.}
+  \label{fig:circular-plano-focal-componentes}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {figures/results_of_simulation/axial_symmetric/circular/circular_plano_focal_componentes.pdf}
-    {figures/fast/circular_plano_focal_componentes.jpg}
-  \caption{Campo en el plano focal para incidencia circular. La componente opuesta representa la conversión parcial de helicidad.}
-  \label{fig:circular-plano-focal-componentes}
+    {figures/results_of_simulation/vecdiff_final/circular/circular_mapa_polarizacion.png}
+    {figures/fast/circular_mapa_polarizacion.jpg}
+  \caption{Mapas de polarización para incidencia circular: campo sobre la pupila (izquierda) y campo en el plano focal (derecha). El fondo muestra $|E_x|^2+|E_y|^2$ y las elipses el estado local de polarización.}
+  \label{fig:circular-plano-focal-mapa-polarizacion}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=0.9\textwidth]
+    {figures/results_of_simulation/vecdiff_final/circular/circular_angulos_elipse.png}
+    {figures/fast/circular_angulos_elipse.jpg}
+  \caption{Ángulos de la elipse de polarización para incidencia circular: elipticidad $\chi$ (izquierda) y orientación del eje mayor $\psi$ (derecha), sobre la pupila (fila superior) y en el plano focal (fila inferior). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
+  \label{fig:circular-plano-focal-mapas-escalares}
 \end{figure}
 
 
@@ -2104,63 +2794,45 @@ e^{i\frac{nk}{2f}r^2}
 Los resultados para la pupila circular uniforme se desarrollan en el apéndice~\ref{apx:focal_forms}.
 
 
-Es claro como en esta representación la transformación que sufre el campo al refractarse en la interfaz $\Sigma$ es diagonal, esto es que los modos radiales y azimutales de la polarización son modos propios de este proceso de refracción a través de una superficie. La modulación radial está dada por la transformada de Hankel de orden 1 de los coeficientes de Fresnel; dado que la transformada de Hankel de orden uno es una integral ponderada por la función de Bessel $J_1$, no hay contribución central del campo en el eje óptico, como se observa en las figuras~\ref{fig:radial-plano-focal-componentes} y~\ref{fig:azimutal-plano-focal-componentes}. Esto es consecuencia de la homogeneidad del campo en la polarización radial y azimutal.
+Es claro cómo en esta representación la transformación que sufre el campo al refractarse en la interfaz $\Sigma$ es diagonal, esto es que los modos radiales y azimutales de la polarización son modos propios de este proceso de refracción a través de una superficie. La modulación radial está dada por la transformada de Hankel de orden 1 de los coeficientes de Fresnel; dado que la transformada de Hankel de orden uno es una integral ponderada por la función de Bessel $J_1$, no hay contribución central del campo en el eje óptico, como se observa en las figuras~\ref{fig:radial-plano-focal-componentes} y~\ref{fig:azimutal-plano-focal-componentes}. Esto es consecuencia de la homogeneidad del campo en la polarización radial y azimutal.
 
-Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialmente simétrico, en su propagación hasta el plano focal, da lugar a un campo sin contribución central}.
+Podemos decir que \textit{un campo radial o azimutal simétrico que sea axialmente simétrico, en su propagación hasta el plano focal, da lugar a un campo sin contribución central}.
 
 
 \begin{figure}[H]
   \centering
-  \thesisincludegraphics[width=0.41\textwidth]
-    {figures/results_of_simulation/axial_symmetric/cilindrico/radial_incidente_mapa_polarizacion.pdf}
-    {figures/fast/radial_incidente_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización del campo incidente radial. El centro se excluye por la singularidad de la base cilíndrica.}
-  \label{fig:radial-incidente-mapa-polarizacion}
+  \thesisincludegraphics[width=\textwidth]
+    {figures/results_of_simulation/vecdiff_final/cilindrico/radial_componentes.png}
+    {figures/fast/radial_componentes.jpg}
+  \caption{Componentes cilíndricas $|E_r|$, $|E_\phi|$ e intensidad para incidencia radial: campo sobre la pupila (fila superior) y campo en el plano focal (fila inferior). Dioptrio estigmático con $n_0=1$, $n_i=1.5$, $z_0=-10\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, $\lambda=532\,\mathrm{nm}$ y pupila uniforme. La transmisión es diagonal en esta base: no aparece componente azimutal, y la estructura de Hankel de orden uno produce el centro oscuro.}
+  \label{fig:radial-plano-focal-componentes}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \thesisincludegraphics[width=0.55\textwidth]
-    {figures/results_of_simulation/axial_symmetric/cilindrico/radial_plano_focal_mapa_polarizacion.pdf}
-    {figures/fast/radial_plano_focal_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización en el plano focal para incidencia radial, con muestreo polar y centro excluido.}
+  \thesisincludegraphics[width=\textwidth]
+    {figures/results_of_simulation/vecdiff_final/cilindrico/radial_mapa_polarizacion.png}
+    {figures/fast/radial_mapa_polarizacion.jpg}
+  \caption{Mapas de polarización para incidencia radial: campo sobre la pupila (izquierda) y campo en el plano focal (derecha). El fondo muestra $|E_x|^2+|E_y|^2$ y los glifos el estado local de polarización, que permanece radial punto a punto.}
   \label{fig:radial-plano-focal-mapa-polarizacion}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {figures/results_of_simulation/axial_symmetric/cilindrico/radial_plano_focal_componentes.pdf}
-    {figures/fast/radial_plano_focal_componentes.jpg}
-  \caption{Campo en el plano focal para incidencia radial, representado en base cilíndrica.}
-  \label{fig:radial-plano-focal-componentes}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.41\textwidth]
-    {figures/results_of_simulation/axial_symmetric/cilindrico/azimutal_incidente_mapa_polarizacion.pdf}
-    {figures/fast/azimutal_incidente_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización del campo incidente azimutal. El centro se excluye por la singularidad de la base cilíndrica.}
-  \label{fig:azimutal-incidente-mapa-polarizacion}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.55\textwidth]
-    {figures/results_of_simulation/axial_symmetric/cilindrico/azimutal_plano_focal_mapa_polarizacion.pdf}
-    {figures/fast/azimutal_plano_focal_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización en el plano focal para incidencia azimutal, con muestreo polar y centro excluido.}
-  \label{fig:azimutal-plano-focal-mapa-polarizacion}
+    {figures/results_of_simulation/vecdiff_final/cilindrico/azimutal_componentes.png}
+    {figures/fast/azimutal_componentes.jpg}
+  \caption{Componentes cilíndricas $|E_r|$, $|E_\phi|$ e intensidad para incidencia azimutal: campo sobre la pupila (fila superior) y campo en el plano focal (fila inferior), con los mismos parámetros de la figura~\ref{fig:radial-plano-focal-componentes}. La polarización azimutal es modo propio de la transmisión (coeficiente $t_s$) y el plano focal exhibe de nuevo el anillo con centro oscuro.}
+  \label{fig:azimutal-plano-focal-componentes}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {figures/results_of_simulation/axial_symmetric/cilindrico/azimutal_plano_focal_componentes.pdf}
-    {figures/fast/azimutal_plano_focal_componentes.jpg}
-  \caption{Campo en el plano focal para incidencia azimutal, representado en base cilíndrica.}
-  \label{fig:azimutal-plano-focal-componentes}
+    {figures/results_of_simulation/vecdiff_final/cilindrico/azimutal_mapa_polarizacion.png}
+    {figures/fast/azimutal_mapa_polarizacion.jpg}
+  \caption{Mapas de polarización para incidencia azimutal: campo sobre la pupila (izquierda) y campo en el plano focal (derecha). El estado local permanece azimutal punto a punto.}
+  \label{fig:azimutal-plano-focal-mapa-polarizacion}
 \end{figure}
 
 
@@ -2171,6 +2843,7 @@ Podemos decir que, \textit{un campo radial u azimutal simétrico que sea axialme
 
 % ···········································································
 \subsection{Campo eléctrico en el plano focal en la representación cartesiana}
+\label{subsec:representacion_cartesiana}
 % ···········································································
 
 Consideremos ahora el campo incidente escrito en la base cartesiana transversal,
@@ -2621,43 +3294,124 @@ El término $\mathscr{H}_0[t_+]\,\mathbb{I}_\perp$ es isótropo: preserva la dir
 
 Al igual que en la representación circular, la supresión axial de la mezcla queda garantizada por la aproximación paraxial \eqref{eq:t_plus_t_minus_paraxial_second_order}: $t_-(0)=0$ y $J_2(0)=0$ anulan simultáneamente la contribución de $\mathscr{H}_2[t_-]$ sobre el eje, mientras que $t_+(0)\neq 0$ y $J_0(0)=1$ aseguran un brillo central en el canal isótropo.
 
-La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una componente cruzada en el plano focal con dependencia azimutal de orden dos. Para una entrada puramente $\hat{\mathbf x}$, el término $-\sin 2\varphi\,\mathscr{H}_2[t_-\mathscr{E}_x]$ genera una componente $E_y'$ con patrón de cuatro lóbulos, varios órdenes de magnitud menor que $E_x'$, como se observa en la figura~\ref{fig:lineal-plano-focal-componentes}. El mapa de la figura~\ref{fig:lineal-plano-focal-mapa-polarizacion} evidencia la rotación local inducida por esta componente cruzada, y la figura~\ref{fig:lineal-plano-focal-mapas-escalares} separa dicha variación en los ángulos $\chi$ y $\psi$.
+La consecuencia más visible de $\mathbb{W}(\varphi)$ es la aparición de una componente cruzada en el plano focal con dependencia azimutal de orden dos. Para una entrada puramente $\hat{\mathbf x}$, el término $-\sin 2\varphi\,\mathscr{H}_2[t_-\mathscr{E}_x]$ genera una componente $E_y'$ con patrón de cuatro lóbulos, varios órdenes de magnitud menor que $E_x'$, como se observa en la figura~\ref{fig:lineal-plano-focal-componentes}. El mapa de la figura~\ref{fig:lineal-plano-focal-mapa-polarizacion} evidencia la rotación local inducida por esta componente cruzada, y la figura~\ref{fig:lineal-plano-focal-mapas-escalares} separa dicha variación en los ángulos $\chi$ y $\psi$: la elipticidad permanece nula en todo el plano focal y la aberración vectorial se manifiesta exclusivamente como una rotación local de la orientación, hecho que se justificó en la sección~\ref{subsec:polarizacion_plano_focal}.
 
 \begin{figure}[H]
   \centering
-  \thesisincludegraphics[width=0.41\textwidth]
-    {figures/results_of_simulation/axial_symmetric/lineal/lineal_incidente_mapa_polarizacion.pdf}
-    {figures/fast/lineal_incidente_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización del campo incidente lineal. El fondo muestra $|E|^2$ y las flechas la orientación local de la polarización.}
-  \label{fig:lineal-incidente-mapa-polarizacion}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.55\textwidth]
-    {figures/results_of_simulation/axial_symmetric/lineal/lineal_plano_focal_mapa_polarizacion.pdf}
-    {figures/fast/lineal_plano_focal_mapa_polarizacion.jpg}
-  \caption{Mapa de polarización en el plano focal para incidencia lineal. El fondo muestra $|E|^2$ y las flechas la orientación local, evidenciando la rotación inducida por la componente cruzada.}
-  \label{fig:lineal-plano-focal-mapa-polarizacion}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.42\textwidth]
-    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/lineal_plano_focal_elipticidad.pdf}
-    {figures/fast/lineal_plano_focal_elipticidad.jpg}\hfill
-  \thesisincludegraphics[width=0.42\textwidth]
-    {figures/results_of_simulation/axial_symmetric/analisis_polarizacion/lineal_plano_focal_angulo_eje_mayor.pdf}
-    {figures/fast/lineal_plano_focal_angulo_eje_mayor.jpg}
-  \caption{Mapas escalares en el plano focal para incidencia lineal: ángulo de elipticidad $\chi$ (izquierda) y ángulo del eje mayor $\psi$ (derecha). Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
-  \label{fig:lineal-plano-focal-mapas-escalares}
+  \thesisincludegraphics[width=\textwidth]
+    {figures/results_of_simulation/vecdiff_final/lineal/lineal_componentes.png}
+    {figures/fast/lineal_componentes.jpg}
+  \caption{Componentes cartesianas $|E_x|$, $|E_y|$ e intensidad para incidencia lineal $\hat{\mathbf x}$: campo sobre la pupila (fila superior) y campo en el plano focal (fila inferior). Dioptrio estigmático con $n_0=1$, $n_i=1.5$, $z_0=-10\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, $\lambda=532\,\mathrm{nm}$ y pupila uniforme. La componente $|E_y'|$ corresponde a la polarización cruzada, con el patrón de cuatro lóbulos $\sin 2\varphi$ predicho por \eqref{eq:Ex_Ey_Hankel_cartesian}.}
+  \label{fig:lineal-plano-focal-componentes}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=\textwidth]
-    {figures/results_of_simulation/axial_symmetric/lineal/lineal_plano_focal_componentes.pdf}
-    {figures/fast/lineal_plano_focal_componentes.jpg}
-  \caption{Campo en el plano focal para incidencia lineal. La componente $|E_y'|^2$ corresponde a la polarización cruzada.}
-  \label{fig:lineal-plano-focal-componentes}
+    {figures/results_of_simulation/vecdiff_final/lineal/lineal_mapa_polarizacion.png}
+    {figures/fast/lineal_mapa_polarizacion.jpg}
+  \caption{Mapas de polarización para incidencia lineal $\hat{\mathbf x}$: campo sobre la pupila (izquierda) y campo en el plano focal (derecha). El fondo muestra $|E_x|^2+|E_y|^2$ y las flechas la orientación local de la polarización, evidenciando la rotación inducida por la componente cruzada.}
+  \label{fig:lineal-plano-focal-mapa-polarizacion}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=0.9\textwidth]
+    {figures/results_of_simulation/vecdiff_final/lineal/lineal_angulos_elipse.png}
+    {figures/fast/lineal_angulos_elipse.jpg}
+  \caption{Ángulos de la elipse de polarización para incidencia lineal $\hat{\mathbf x}$: elipticidad $\chi$ (izquierda) y orientación del eje mayor $\psi$ (derecha), sobre la pupila (fila superior) y en el plano focal (fila inferior). La elipticidad es nula en todo el plano focal: el estado permanece lineal y la aberración vectorial se reduce a una rotación local de la orientación. Las regiones en blanco corresponden a zonas de intensidad demasiado baja, donde estos parámetros dejan de estar bien definidos.}
+  \label{fig:lineal-plano-focal-mapas-escalares}
+\end{figure}
+
+\subsubsection{Efecto del régimen vectorial sobre el tamaño del punto focal}
+\label{subsubsec:spot_vectorial}
+
+El resultado \eqref{eq:Ex_Ey_Hankel_cartesian} permite cuantificar de forma
+cerrada cómo el régimen vectorial modifica el tamaño del punto focal. Para
+incidencia lineal $\hat{\mathbf x}$ con amplitud axialmente simétrica
+($\mathscr E_y=0$, $\mathscr E_x=\mathscr E_x(\rho')$), y escribiendo por
+brevedad $H_0=\mathscr H_0\{t_+\mathscr E_x\}(q)$ y
+$H_2=\mathscr H_2\{t_-\mathscr E_x\}(q)$, la intensidad transversal en el
+plano focal resulta
+
+\begin{equation}
+  I_\perp(\vb r, f)
+  \propto
+  |H_0|^2
+  +
+  |H_2|^2
+  -
+  2\operatorname{Re}(H_0 H_2^*)\cos 2\varphi.
+\label{eq:I_spot_linear_deformation}
+\end{equation}
+
+Si la polarización incidente forma un ángulo $\psi_0$ con el eje $x$, el
+patrón es el mismo con $\varphi\to\varphi-\psi_0$: el punto focal rota
+rígidamente con la polarización, sin grados de libertad angulares adicionales.
+La estructura de \eqref{eq:I_spot_linear_deformation} implica que el lóbulo
+central deja de ser circular: sus ejes principales son las direcciones paralela
+y perpendicular a la polarización, con cortes $I_\parallel\propto|H_0-H_2|^2$ e
+$I_\perp^{(90°)}\propto|H_0+H_2|^2$, y el radio único del caso escalar se
+reemplaza por dos radios principales $R_\parallel$ y $R_\perp$, medidos a mitad
+de la altura del máximo central. Cerca del eje se tiene
+$\operatorname{Re}(H_0H_2^*)>0$, de modo que el término de interferencia
+sustrae intensidad del flanco del lóbulo a lo largo de la polarización y la
+agrega en la dirección ortogonal: respecto de la referencia escalar
+—$|H_0|^2$, con radio $R_{\mathrm{esc}}$— el punto se contrae a lo largo de la
+polarización y se expande en la dirección perpendicular,
+
+\begin{equation}
+  R_\parallel < R_{\mathrm{esc}} < R_\perp.
+\label{eq:spot_radii_ordering}
+\end{equation}
+
+La figura~\ref{fig:spot-cortes-principales} muestra los cortes por los ejes
+principales para el dioptrio de vidrio usado en los resultados anteriores, a
+apertura alta: la contracción es de $\sim 2.6\,\%$ y la expansión de
+$\sim 2.8\,\%$, con una elipticidad del contorno $e=R_\perp/R_\parallel\approx
+1.06$. La deformación crece con la apertura y con el contraste de índice, pues
+ambos incrementan el canal $H_2$. La figura~\ref{fig:spot-radios-anotados}
+presenta el caso de un dioptrio rápido de alto índice ($n_i=2.4$,
+$z_0=-2\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, semiapertura objeto
+$\approx 57°$): los radios medidos son $R_\parallel=0.245\lambda$ y
+$R_\perp=0.279\lambda$ frente a $R_{\mathrm{esc}}=0.260\lambda$, es decir,
+$e\approx 1.14$. Para incidencia circular la intensidad es
+$I\propto|H_0|^2+|H_2|^2$, el promedio azimutal del caso lineal: el punto
+permanece circular y solo se ensancha levemente ($R=0.261\lambda$ en el mismo
+dioptrio), pues el canal cruzado $|H_2|^2$ es un anillo nulo en el eje. Cabe
+señalar que estos resultados corresponden a la intensidad transversal; a
+aperturas muy altas la contribución longitudinal $I_z$, determinada por la
+condición de transversalidad, modifica adicionalmente la forma del lóbulo
+total.
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=0.75\textwidth]
+    {figures/results_of_simulation/vecdiff_final/spot/spot_cortes_principales.png}
+    {figures/fast/spot_cortes_principales.jpg}
+  \caption{Cortes de la intensidad focal por los ejes principales para
+  incidencia lineal en el dioptrio de vidrio ($n_0=1$, $n_i=1.5$,
+  $z_0=-10\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, $\lambda=532\,\mathrm{nm}$,
+  pupila uniforme a apertura alta). El corte paralelo a la polarización se
+  contrae y el perpendicular se expande respecto de la referencia escalar
+  apodizada ($t_-=0$); la referencia escalar ideal ($t_p=t_s=1$) muestra que la
+  apodización de Fresnel $t_+(\rho')$ también ensancha el punto.}
+  \label{fig:spot-cortes-principales}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=\textwidth]
+    {figures/results_of_simulation/vecdiff_final/spot/spot_radios_anotados.png}
+    {figures/fast/spot_radios_anotados.jpg}
+  \caption{Radios principales del lóbulo central, medidos a mitad de altura,
+  para un dioptrio rápido de alto índice ($n_i=2.4$, $z_0=-2\,\mathrm{mm}$,
+  $z_i=6\,\mathrm{mm}$, semiapertura objeto $\approx 57°$). Izquierda:
+  incidencia lineal con polarización a $20°$; el contorno medido (blanco) es
+  elíptico, con $R_\parallel=0.245\lambda$, $R_\perp=0.279\lambda$
+  ($e\approx1.14$) frente al radio escalar $R_{\mathrm{esc}}=0.260\lambda$
+  (cian, a trazos), y los ejes principales siguen a la polarización. Derecha:
+  incidencia circular; el punto permanece circular con $R=0.261\lambda$,
+  levemente mayor que el escalar.}
+  \label{fig:spot-radios-anotados}
 \end{figure}

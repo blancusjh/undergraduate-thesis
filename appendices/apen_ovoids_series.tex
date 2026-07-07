@@ -129,7 +129,7 @@ O(\rho^8).
 \label{eq:z_rho_series_expansion}
 \end{align}
 
-Sustituyendo \eqref{eq:cartesian_parameter_G}--\eqref{eq:cartesian_parameter_S} para obtener la expresión en terminos de los parametros físicos de la superficie cartesiana, se tiene que
+Sustituyendo \eqref{eq:cartesian_parameter_G}--\eqref{eq:cartesian_parameter_S} para obtener la expresión en términos de los parámetros físicos de la superficie cartesiana, se tiene que
 
 \begin{equation}
 z(\rho)
@@ -180,18 +180,18 @@ n_0n_i(z_0-z_i)^3
 
 
 
-Nos abstenemos a proporcionar una expresión general para el coeficiente $k-esímo$,
+Nos abstenemos de proporcionar una expresión general para el coeficiente $k$-ésimo,
 y nos limitamos a dar este resultado aproximado hasta orden 7.
 
 
-Pasamos entonces, a expandir en series la coordenada radial, partiendo del hecho que
+Pasamos entonces a expandir en series la coordenada radial, partiendo del hecho de que
 
 \begin{equation}
 r^2(\rho)+z^2(\rho)=\rho^2.
 \label{eq:identity_r2_z2_rho2}
 \end{equation}
 
-Remplazamos por las serie ya conocida de $z(\rho)$
+Remplazamos por la serie ya conocida de $z(\rho)$
 
 
 \begin{align}
@@ -747,38 +747,44 @@ En la representación circular, los canales transmitidos se escriben como
 \begin{align}
 T_L
 &=
+\frac{1}{2}
+\big[
 (t_p+t_s)\mathscr E_L
 +
-(t_p-t_s)e^{2i\phi'}\mathscr E_R,
+(t_p-t_s)e^{-2i\phi'}\mathscr E_R
+\big],
 \label{eq:TL_exact_circular}
 \\[6pt]
 T_R
 &=
-(t_p-t_s)e^{-2i\phi'}\mathscr E_L
+\frac{1}{2}
+\big[
+(t_p-t_s)e^{2i\phi'}\mathscr E_L
 +
-(t_p+t_s)\mathscr E_R.
+(t_p+t_s)\mathscr E_R
+\big].
 \label{eq:TR_exact_circular}
 \end{align}
 
-Si sólo se conserva el primer orden no trivial en la conversión vectorial, entonces
+Si solo se conserva el primer orden no trivial en la conversión vectorial, entonces
 
 \begin{align}
 T_L
 \simeq{}&
-\frac{4n_0}{n_0+n_i}\mathscr E_L
+\frac{2n_0}{n_0+n_i}\mathscr E_L
 +
-(n_0+n_i)\xi\,\rho'^2\mathscr E_L
+\frac{(n_0+n_i)\xi}{2}\,\rho'^2\mathscr E_L
 +
-(n_0-n_i)\xi\,\rho'^2e^{2i\phi'}\mathscr E_R,
+\frac{(n_0-n_i)\xi}{2}\,\rho'^2e^{-2i\phi'}\mathscr E_R,
 \label{eq:TL_second_order_corrected}
 \\[8pt]
 T_R
 \simeq{}&
-\frac{4n_0}{n_0+n_i}\mathscr E_R
+\frac{2n_0}{n_0+n_i}\mathscr E_R
 +
-(n_0+n_i)\xi\,\rho'^2\mathscr E_R
+\frac{(n_0+n_i)\xi}{2}\,\rho'^2\mathscr E_R
 +
-(n_0-n_i)\xi\,\rho'^2e^{-2i\phi'}\mathscr E_L.
+\frac{(n_0-n_i)\xi}{2}\,\rho'^2e^{2i\phi'}\mathscr E_L.
 \label{eq:TR_second_order_corrected}
 \end{align}
 
@@ -841,42 +847,42 @@ En particular,
 \label{eq:hankel_order_two_phase_factor}
 \end{equation}
 
-Si \(\mathscr E_L\) y \(\mathscr E_R\) son radialmente simétricos en la pupila y se retiene sólo el primer orden no trivial, entonces
+Si \(\mathscr E_L\) y \(\mathscr E_R\) son radialmente simétricos en la pupila y se retiene solo el primer orden no trivial, entonces
 
 \begin{align}
 \mathscr F\{T_L\}
 \simeq{}&
 2\pi
-\frac{4n_0}{n_0+n_i}
+\frac{2n_0}{n_0+n_i}
 \mathscr H_0[\mathscr E_L]
 +
-2\pi
+\pi
 (n_0+n_i)\xi
 \mathscr H_0[r'^2\mathscr E_L]
 \nonumber
 \\[4pt]
 &-
-2\pi
+\pi
 (n_0-n_i)\xi
-e^{2i\varphi}
+e^{-2i\varphi}
 \mathscr H_2[r'^2\mathscr E_R],
 \label{eq:FT_TL_paraxial_corrected}
 \\[10pt]
 \mathscr F\{T_R\}
 \simeq{}&
 2\pi
-\frac{4n_0}{n_0+n_i}
+\frac{2n_0}{n_0+n_i}
 \mathscr H_0[\mathscr E_R]
 +
-2\pi
+\pi
 (n_0+n_i)\xi
 \mathscr H_0[r'^2\mathscr E_R]
 \nonumber
 \\[4pt]
 &-
-2\pi
+\pi
 (n_0-n_i)\xi
-e^{-2i\varphi}
+e^{2i\varphi}
 \mathscr H_2[r'^2\mathscr E_L].
 \label{eq:FT_TR_paraxial_corrected}
 \end{align}
