@@ -45,6 +45,7 @@ preview "figures/results_of_simulation/vecdiff_final/lineal/lineal_mapa_polariza
 preview "figures/results_of_simulation/vecdiff_final/lineal/lineal_angulos_elipse.png"
 preview "figures/results_of_simulation/vecdiff_final/cilindrico/radial_componentes.png"
 preview "figures/results_of_simulation/vecdiff_final/cilindrico/radial_mapa_polarizacion.png"
+preview "figures/results_of_simulation/vecdiff_final/cilindrico/radial_componente_longitudinal.png"
 preview "figures/results_of_simulation/vecdiff_final/cilindrico/azimutal_componentes.png"
 preview "figures/results_of_simulation/vecdiff_final/cilindrico/azimutal_mapa_polarizacion.png"
 preview "figures/results_of_simulation/vecdiff_final/litografia/litografia_lineal_imagenes.png"
