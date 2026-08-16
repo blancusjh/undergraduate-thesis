@@ -20,6 +20,11 @@
   \newfontfamily{\greekfont}[Script=Greek]{GFS Didot}
 \fi
 \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+% babel-spanish redefine \% para insertar un espacio fino automático; en modo
+% matemático eso choca con el \, explícito ("Incompatible glue units").
+% Con \spanishplainpercent el \% vuelve a ser el signo simple y el espaciado
+% queda controlado por el \, del texto fuente.
+\spanishplainpercent
 \usepackage{csquotes}
 
 
@@ -92,6 +97,10 @@
 % ======================
 \usepackage{graphicx}
 \usepackage{tikz}
+% La librería babel desactiva los shorthands de babel-spanish (< > ") dentro de
+% los entornos tikzpicture, donde rompen la sintaxis de flechas (->, >=stealth)
+% y de la librería quotes ("$\alpha$").
+\usetikzlibrary{babel}
 \usetikzlibrary{calc,angles,quotes,shapes.geometric}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}

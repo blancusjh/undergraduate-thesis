@@ -9,86 +9,80 @@ homogéneos. El formalismo combina la geometría exacta de la superficie, la
 refracción vectorial dada por los coeficientes de Fresnel y la propagación de
 Fresnel hasta el plano focal, y produce el campo focal como transformada de
 Fourier de una función pupila vectorial generalizada
-$\mathbb E^{\mathscr G'}=\mathbb T\,\mathbb E_0/\ell_0$. Cuando la iluminación
-es azimutalmente simétrica, esta transformada de Fourier se reduce a
-combinaciones de transformadas de Hankel de órdenes cero, uno y dos. A
-diferencia del tratamiento canónico de Richards y
-Wolf~\cite{RichardsWolf1959} —formulado para sistemas aplanáticos idealizados—
-aquí la superficie refractora y su transmisión de Fresnel entran de forma
-explícita en la función pupila, punto a punto.
+$\mathbb E^{\mathscr G'}=\mathbb T\,\mathbb E_0/\ell_0$; bajo iluminación
+azimutalmente simétrica esta transformada se reduce a transformadas de Hankel
+de órdenes cero, uno y dos. A diferencia del tratamiento canónico de Richards
+y Wolf~\cite{RichardsWolf1959}, formulado para sistemas aplanáticos
+idealizados, aquí la superficie refractora y su transmisión de Fresnel entran
+de forma explícita en la función pupila, punto a punto.
 
 El resultado central es que un sistema geométricamente perfecto no está libre
 de aberraciones. La condición estigmática elimina la aberración de camino
 óptico, pero al cambiar de medio las condiciones de frontera de Maxwell
-inducen una transformación vectorial sobre el campo que es, en general,
-distinta en cada punto de la superficie —por variar allí el ángulo de
-incidencia— y anisótropa: sus modos principales son las direcciones radial y
-azimutal, sobre las que actúan respectivamente los coeficientes de Fresnel
-$t_p$ y $t_s$. Este formalismo recupera de forma exacta la teoría escalar de
-la difracción en el límite $t_s=t_p=1$, lo cual permite aislar y estudiar los
-efectos de origen puramente vectorial. Definimos la aberración vectorial como
-la desviación del campo focal respecto a ese límite; su agente cuantitativo es
-la combinación anisotrópica $t_-=t_p-t_s$, no nula y no uniforme para
-cualquier interfaz entre medios de distinto índice.
+inducen sobre el campo una transformación vectorial anisótropa y distinta en
+cada punto de la superficie. Sobre el plano transversal, esta transformación
+es la de un diatenuador orientado radialmente en cada punto de la pupila,
+cuyos modos propios son las polarizaciones radial y azimutal, moduladas
+respectivamente por $t_p$ y $t_s$. Las combinaciones $t_\pm=t_p\pm t_s$
+separan los dos efectos de la refracción: $t_+$ es una apodización común a
+ambas componentes, mientras que la aberración vectorial, definida como la
+desviación del campo focal respecto del límite escalar $t_s=t_p=1$ (en el
+cual el formalismo recupera exactamente la teoría escalar de la difracción),
+aparece siempre modulada por el factor $t_-$, no nulo y no uniforme para
+cualquier interfaz entre medios de distinto índice. En analogía con la teoría
+de aberraciones de frente de onda, la aberración queda así caracterizada
+sobre la propia pupila por la función matricial $\mathbb T$.
 
-Las manifestaciones observables de esta aberración dependen de la base en que
-se examine el campo, pero corresponden al mismo fenómeno. En la base
-cilíndrica —la de los modos propios— no hay mezcla de polarizaciones, sino
-una modulación diferencial de las componentes radial y azimutal por $t_p$ y
-$t_s$; para iluminación axialmente simétrica el campo transversal se anula en
-el eje y el patrón focal transversal es un anillo con centro oscuro,
-consecuencia de la estructura de Hankel de orden uno. Más en general, se
-observó que distintas polarizaciones incidentes uniformes producen distintos
-patrones de intensidad focal, algo que la teoría escalar —cuya predicción es
-única e independiente del estado de polarización de la iluminación— no puede
-describir. En
-bases que no coinciden con los modos propios, $t_-$ acopla polarizaciones
+Las manifestaciones observables dependen del estado de polarización
+incidente. En la base cilíndrica la transmisión es diagonal: las
+polarizaciones radial y azimutal no sufren mezcla, y bajo iluminación
+azimutalmente simétrica la estructura de Hankel de orden uno anula el campo
+transversal en el eje, produciendo un anillo con centro oscuro. En las bases
+que no coinciden con los modos propios, $t_-$ acopla polarizaciones
 ortogonales: en la circular genera un canal
-$\ket{L}\!\leftrightarrow\!\ket{R}$ con fase azimutal $e^{\pm2i\varphi}$; en
-la cartesiana genera una componente cruzada de orden angular dos, visible
-como un patrón de cuatro lóbulos en la polarización ortogonal a la
-incidente. Cuantitativamente, bajo simetría azimutal la contribución de $t_-$
-a través del canal $\mathscr H_2$ redistribuye energía del centro hacia
-lóbulos laterales y suprime el pico central respecto de la predicción escalar.
+$\ket{L}\!\leftrightarrow\!\ket{R}$ con fase azimutal $e^{\pm2i\varphi}$,
+suprimido sobre el eje donde $t_-$ y $J_2$ se anulan simultáneamente; en la
+cartesiana genera una componente cruzada de orden angular dos, visible como
+cuatro lóbulos en la polarización ortogonal a la incidente, que sobre el
+estado de polarización actúa como una rotación local de la orientación sin
+introducir elipticidad. Distintas polarizaciones incidentes producen así
+distintos patrones de intensidad focal, algo que la teoría escalar, cuya
+predicción es única e independiente de la polarización, no puede describir.
 
-El régimen vectorial modifica también la forma del punto focal. Para
-incidencia lineal la interferencia entre los canales de Hankel
-$\mathscr H_0$ y $\mathscr H_2$ rompe la simetría circular del lóbulo central,
-que deja de tener un radio único a mitad de altura: en su lugar aparecen dos
-radios principales, $R_\parallel$ medido a lo largo de la dirección de
-polarización incidente y $R_\perp$ medido en la dirección perpendicular a
-ella. Comparados con el radio $R_{\mathrm{esc}}$ predicho por la teoría
-escalar se tiene $R_\parallel<R_{\mathrm{esc}}<R_\perp$: el lóbulo se contrae en la dirección
-de la polarización incidente y se expande en la dirección perpendicular a
-ella, rotando rígidamente junto con la polarización. En el dioptrio de vidrio
-estudiado la deformación es del orden del $3\,\%$
-($e=R_\perp/R_\parallel\approx 1.06$) y crece con la apertura y el contraste
-de índice hasta $e\approx 1.14$ en un dioptrio rápido de alto índice; para
-incidencia circular el punto permanece circular por promedio azimutal del
-caso lineal y solo se ensancha levemente. La formación de imágenes exhibe la
-misma ruptura de isotropía: en una máscara litográfica formada por una
-lente de dos superficies cartesianas conjugadas a $\mathrm{NA}=0.94$, libre
-de aberración geométrica por construcción, las trazas alineadas con una
-iluminación linealmente polarizada conservan la mayor parte del contraste
+El régimen vectorial modifica también la forma del punto focal y la imagen de
+objetos extensos. Para incidencia lineal la interferencia entre los canales
+$\mathscr H_0$ y $\mathscr H_2$ rompe la simetría circular del lóbulo
+central: aparecen dos radios principales que satisfacen
+$R_\parallel<R_{\mathrm{esc}}<R_\perp$, de modo que el punto se contrae a lo
+largo de la polarización incidente, se expande en la dirección perpendicular
+y rota rígidamente con ella. En el dioptrio de vidrio estudiado la
+deformación es del orden del $3\,\%$ ($e=R_\perp/R_\parallel\approx1.06$) y
+crece con la apertura y el contraste de índice hasta $e\approx1.14$ en un
+dioptrio rápido de alto índice; con incidencia circular el punto permanece
+circular y solo se ensancha levemente. La misma ruptura de isotropía aparece
+en la imagen de una máscara litográfica formada por una lente de dos
+superficies cartesianas conjugadas a $\mathrm{NA}=0.94$, libre de aberración
+geométrica por construcción: las trazas alineadas con una iluminación
+linealmente polarizada conservan la mayor parte del contraste
 ($C_H:0.98\to0.85$) mientras que las ortogonales se degradan severamente
-($C_V:0.91\to0.67$); la iluminación circular reparte la pérdida entre ambas
-orientaciones sin eliminarla. Se trata de una desviación respecto del modelo
-escalar de origen netamente vectorial —el mismo fenómeno que obliga a la
-litografía de alta apertura numérica a controlar la polarización de la
-iluminación~\cite{flagello1996, ruoff2009}—, presente aun cuando el sistema
+($C_V:0.91\to0.67$), y la iluminación circular reparte la pérdida entre ambas
+orientaciones sin eliminarla. En este régimen de apertura el mecanismo
+dominante es la componente longitudinal $E_z$, determinada por la condición
+de transversalidad, que transporta cerca de la mitad de la energía de la
+imagen. Se trata del mismo fenómeno que obliga a la litografía de alta
+apertura numérica a controlar la polarización de la
+iluminación~\cite{flagello1996, ruoff2009}, presente aun cuando el sistema
 está libre de aberración geométrica.
 
-El formalismo admite extensiones naturales. El caso de reflexión se obtiene
+El formalismo admite extensiones naturales: la reflexión se obtiene
 reemplazando $t_p,t_s$ por $r_p,r_s$; los sistemas de varias superficies se
-tratan por composición de operadores, como ilustra la lente formada por dos
-superficies cartesianas conjugadas del ejemplo litográfico; y el dioptrio esférico en los puntos de
-Young--Weierstrass ofrece un caso de validación de especial interés por su
-realizabilidad práctica. La formulación se puede generalizar además a
-iluminaciones arbitrarias —no restringidas a un frente esférico centrado en
-el punto objeto estigmático— y a superficies dióptricas de forma arbitraria,
-no necesariamente estigmáticas, en cuyo caso a la aberración vectorial aquí
-identificada se le superpondría la aberración de camino óptico propia de la
-geometría de la superficie. La verificación experimental de las firmas aquí
-predichas —en particular la componente cruzada de cuatro lóbulos y la
-deformación anisótropa del punto focal— constituye la continuación natural de
-este trabajo.
+tratan por composición de operadores, como ilustra el ejemplo litográfico; y
+el dioptrio esférico en los puntos de Young--Weierstrass ofrece un caso de
+validación de especial interés por su realizabilidad práctica. La formulación
+se generaliza además a iluminaciones arbitrarias y a superficies dióptricas
+no necesariamente estigmáticas, en cuyo caso la aberración de camino óptico
+propia de la geometría se superpone a la aberración vectorial aquí
+identificada. La verificación experimental de las firmas predichas, en
+particular la componente cruzada de cuatro lóbulos y la deformación
+anisótropa del punto focal, constituye la continuación natural de este
+trabajo.
