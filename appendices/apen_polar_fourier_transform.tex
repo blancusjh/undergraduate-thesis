@@ -103,12 +103,7 @@ se obtiene
   \int_0^\infty f_m(r)J_m(kr)\,r\,dr.
 \end{equation}
 
-Que comparando con 
-
-\begin{equation} 
-  \hat f(k) = \sum_{m \in \mathbb Z} \hat f_m(k) e^{im\phi},
-\end{equation}
-
+Comparando con la expansión angular \eqref{eq:expansion_angular_fhat},
 se deduce la relación
 
 
@@ -153,27 +148,27 @@ y su inversa
 
 Las ecuaciones \eqref{eq:fourier_modal_directa} y \eqref{eq:fourier_modal_inversa} con esta definición se escriben como 
 
-\begin{equation} 
-  \hat f_m(k) = \frac{i^m}{2 \pi} \mathscr H_m \left\{f_m(r) \right\}(k),
+\begin{equation}
+  \hat f_m(k) = 2 \pi (-i)^m\, \mathscr H_m \left\{f_m(r) \right\}(k),
 \end{equation}
 
 
-\begin{equation} 
+\begin{equation}
   f_m(r) = \frac{i^m}{2 \pi} \mathscr H_m^{-1} \left\{ \hat f_m(k) \right\}(r).
 \end{equation}
 
 
 
-De modo que la función $f$ y su respectiva transformada de Fourier $\hat f$ quedan por suma de sus modos angulares, como 
+De modo que la función $f$ y su respectiva transformada de Fourier $\hat f$ quedan expresadas por la suma de sus modos angulares, como
 
 
 \begin{equation}
-  f(r) = \frac{i^m}{2 \pi} \sum_{m \in \mathbb Z} \mathscr H_m^{-1} \left\{ \hat f_m(k) \right\} e^{im\phi}
+  f(r,\theta) = \frac{1}{2 \pi} \sum_{m \in \mathbb Z} i^m\, \mathscr H_m^{-1} \left\{ \hat f_m(k) \right\}(r)\, e^{im\theta},
 \end{equation}
 
 
 \begin{equation}
-  \hat f(k) = \frac{i^m}{2 \pi} \sum_{m \in \mathbb Z} \mathscr H_m \left\{ f_m(r) \right\} e^{im\phi}
+  \hat f(k,\phi) = 2 \pi \sum_{m \in \mathbb Z} (-i)^m\, \mathscr H_m \left\{ f_m(r) \right\}(k)\, e^{im\phi}.
 \end{equation}
 
 

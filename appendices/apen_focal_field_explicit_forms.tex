@@ -67,9 +67,9 @@ con $\xi$ definida en \eqref{eq:xi_definition_fresnel_series},
 \xi
 =
 \frac{
-n_0(n_0-n_i)(z_0-z_i)^2
+n_0(z_0-z_i)^2
 }{
-z_0^2 z_i^2 (n_0+n_i)^3
+z_0^2 z_i^2 (n_0-n_i)(n_0+n_i)
 }.
 \label{eq:xi_focal_forms}
 \end{equation}
@@ -265,17 +265,17 @@ En términos de los parámetros físicos del sistema, las combinaciones que pesa
   (n_0+n_i)\,\xi
   =
   \frac{
-    n_0(n_0-n_i)(z_0-z_i)^2
+    n_0(z_0-z_i)^2
   }{
-    z_0^2 z_i^2 (n_0+n_i)^2
+    z_0^2 z_i^2 (n_0-n_i)
   },
   \qquad
   (n_0-n_i)\,\xi
   =
   \frac{
-    n_0(n_0-n_i)^2(z_0-z_i)^2
+    n_0(z_0-z_i)^2
   }{
-    z_0^2 z_i^2 (n_0+n_i)^3
+    z_0^2 z_i^2 (n_0+n_i)
   }.
   \label{eq:xi_combinations_physical}
 \end{equation}
@@ -550,9 +550,9 @@ Para el caso uniforme sobre la pupila,
 \\[0.3em]
 &+
 \frac{
-n_0^2(n_0-n_i)(z_0-z_i)^2
+n_0^2(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 }
 \frac{
 (qa)^3J_2(qa)
@@ -576,9 +576,9 @@ z_0^2z_i^2(n_0+n_i)^3
 \\[0.3em]
 &+
 \frac{
-n_0n_i(n_0-n_i)(z_0-z_i)^2
+n_0n_i(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 }
 \frac{
 (qa)^3J_2(qa)
@@ -695,9 +695,9 @@ E_{r,0}
 &\qquad\qquad
 +
 \frac{
-n_0^2(n_0-n_i)(z_0-z_i)^2
+n_0^2(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 }
 \frac{
 (qa)^3J_2(qa)
@@ -723,9 +723,9 @@ E_{\phi,0}
 &\qquad\qquad
 +
 \frac{
-n_0n_i(n_0-n_i)(z_0-z_i)^2
+n_0n_i(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 }
 \frac{
 (qa)^3J_2(qa)
@@ -755,7 +755,7 @@ E_{r,0}
 \left(
 \frac{2n_0}{n_0+n_i}\frac{1}{q^2}
 -
-\frac{3n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{1}{q^4}
+\frac{3n_0^2(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{1}{q^4}
 \right)\mathcal I(x)
 \\
 &\qquad
@@ -763,17 +763,17 @@ E_{r,0}
 \left(
 -\frac{2n_0}{n_0+n_i}\frac{x}{q^2}
 +
-\frac{3n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x}{q^4}
+\frac{3n_0^2(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{x}{q^4}
 \right)J_0(x)
 +
 \left(
-\frac{n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^2}{q^4}
+\frac{n_0^2(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{x^2}{q^4}
 \right)J_1(x)
 \\
 &\qquad
 +
 \left(
-\frac{n_0^2(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^3}{q^4}
+\frac{n_0^2(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{x^3}{q^4}
 \right)J_2(x)
 \Bigg],
 \\[0.6em]
@@ -787,7 +787,7 @@ E_{\phi,0}
 \left(
 \frac{2n_0}{n_0+n_i}\frac{1}{q^2}
 -
-\frac{3n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{1}{q^4}
+\frac{3n_0n_i(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{1}{q^4}
 \right)\mathcal I(x)
 \\
 &\qquad
@@ -795,17 +795,17 @@ E_{\phi,0}
 \left(
 -\frac{2n_0}{n_0+n_i}\frac{x}{q^2}
 +
-\frac{3n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x}{q^4}
+\frac{3n_0n_i(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{x}{q^4}
 \right)J_0(x)
 +
 \left(
-\frac{n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^2}{q^4}
+\frac{n_0n_i(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{x^2}{q^4}
 \right)J_1(x)
 \\
 &\qquad
 +
 \left(
-\frac{n_0n_i(n_0-n_i)(z_0-z_i)^2}{z_0^2z_i^2(n_0+n_i)^3}\frac{x^3}{q^4}
+\frac{n_0n_i(z_0-z_i)^2}{z_0^2z_i^2(n_0-n_i)(n_0+n_i)}\frac{x^3}{q^4}
 \right)J_2(x)
 \Bigg].
 \end{aligned}

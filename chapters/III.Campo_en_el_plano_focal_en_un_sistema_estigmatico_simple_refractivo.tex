@@ -748,8 +748,6 @@ que asegura que se cumpla la condición de transversalidad. De forma equivalente
   \label{eq:mathbb_E_0_definition_ps}
 \end{equation}
 
-% Nótese que $\mathbb E_0 = \ell_0\,\mathbb E^{\mathscr G}$, en términos de la esfera de referencia definida en \eqref{eq:E_G_def}.
-
 De la relación \eqref{eq:Ep_from_E_Sigma},
 
 \begin{equation}
@@ -859,8 +857,8 @@ donde $\mathbb E^{\mathscr G'}$ es el campo sobre la esfera $\mathscr G'$ centra
 \begin{figure}[H]
   \centering
   \thesisincludegraphics[width=0.65\textwidth]
-    {figures/geometrical_setups/EGs.pdf}
-    {figures/fast/EGs.jpg}
+    {figures/geometrical_setups/esferas_GGp.pdf}
+    {figures/fast/esferas_GGp.jpg}
   \caption{Esferas de referencia $\mathscr G$ y $\mathscr G'$. $\mathscr G$ está centrada en el punto objeto $A$ y $\mathscr G'$ en el punto imagen $A'$; ambas son tangentes al dioptrio en el vértice. El campo $\mathbb E^{\mathscr G}$ es la amplitud incidente sobre $\mathscr G$, y $\mathbb E^{\mathscr G'}$ es el campo transmitido sobre $\mathscr G'$, sobre el que la fase es constante por la condición estigmática.}
   \label{fig:EGs}
 \end{figure}
@@ -1026,12 +1024,12 @@ Procedemos reemplazando la forma de la sagita $z(r)$ en la aproximación paraxia
     \mathcal{O}(r^4),
 \end{equation}
 
-donde $O$ es uno de los parámetros de la parametrización GOTS de las superficies cartesianas que se desarrolló en \cite{singlet2020}, cuyas definiciones escribimos en el presente trabajo en el apéndice \ref{apx:ovoid_implicit_deduction}, y el desarrollo en series de la sagita, $\ell_0$, entre otras cantidades relevantes, se realiza con más detalle en \ref{apx:ovoids_series}. Asumiendo que el índice inicial es $n_i=n$, el índice de salida es $n_o=1$, y la posición de la imagen estigmática es $z_i=f$, el parámetro $O$ está dado por
+donde $O$ es uno de los parámetros de la parametrización GOTS de las superficies cartesianas que se desarrolló en \cite{singlet2020}, cuyas definiciones escribimos en el presente trabajo en el apéndice \ref{apx:ovoid_implicit_deduction}, y el desarrollo en series de la sagita, $\ell_0$, entre otras cantidades relevantes, se realiza con más detalle en el apéndice \ref{apx:ovoids_series}. Asumiendo que el índice de incidencia es $n_0=1$, el índice de salida es $n_i=n$, y la posición de la imagen estigmática es $z_i=f$, el parámetro $O$ está dado por
 
 \begin{equation}
     O
     =
-    \frac{n_i z_0 - n_o z_i}{z_i z_0 (n_i - n_o)}
+    \frac{n_i z_0 - n_0 z_i}{z_i z_0 (n_i - n_0)}
     =
     \frac{1}{n - 1}
     \left(
@@ -1143,7 +1141,6 @@ de modo que \eqref{eq:E_field_pupil_phase_and_TT} se reescribe compactamente com
 
 En síntesis, los resultados centrales del capítulo en términos de $\mathbb E^{\mathscr G'}$ son
 
-
 \begin{equation}
   \vb E'(\vb r, f)
   =
@@ -1152,24 +1149,16 @@ En síntesis, los resultados centrales del capítulo en términos de $\mathbb E^
   \label{eq:E_field_in_EGp}
 \end{equation}
 
+y, sobre la esfera de Fourier $\mathscr D$ de $\mathscr G'$, libre del factor de fase cuadrático,
 
-
-
-% === BOXED EQ ===
 \begin{equation}
-\boxed{
   \vb E'^{\mathscr D}(\vb r)
   =
-  \frac{n e^{inkf}}{i\lambda f}  \,\mathscr F\!\left\{\mathbb E^{\mathscr G'}\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
-}
+  \frac{n e^{inkf}}{i\lambda f}  \,\mathscr F\!\left\{\mathbb E^{\mathscr G'}\right\}\!\left(\frac{n}{\lambda f}\vb r\right).
   \label{eq:E_D_in_EGp}
 \end{equation}
-% ===============
 
-que, usando $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E_0 / \ell_0$ y aproximando $\ell_0 \approx z_0$ en la amplitud, se leen equivalentemente como
-
-
-% === BOXED EQ ===
+Usando $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E_0 / \ell_0$ y aproximando $\ell_0 \approx z_0$ en la amplitud, estas se leen equivalentemente como
 
 \begin{equation}
 \boxed{
@@ -1179,23 +1168,17 @@ que, usando $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E_0 / \ell_0$ y aproxim
 }
   \label{eq:E_prime_func_of_M_E0}
 \end{equation}
-% ===============
 
-
-Que en la Esfera de Fourier $\mathscr D$ de $\mathscr G'$ el campo está dado por
-
-
+y
 
 \begin{equation}
+\boxed{
   \vb E'^{\mathscr D}(\vb r)
   =
-  \frac{ne^{inkf}
-}{i\lambda f z_0}  \,\mathscr F\!\left\{\mathbb T\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right)
+  \frac{ne^{inkf}}{i\lambda f z_0}  \,\mathscr F\!\left\{\mathbb T\mathbb E_0\right\}\!\left(\frac{n}{\lambda f}\vb r\right).
+}
   \label{eq:E_prime_D_function_of_M_E0}
 \end{equation}
-
-
-
 
 
 El campo eléctrico en el plano focal queda determinado por la transformada de Fourier de $\mathbb E^{\mathscr G'} = \mathbb T \mathbb E^{\mathscr G}$, donde
@@ -1227,7 +1210,7 @@ Wolf el operador vectorial se postula desde la construcción aplanática
 la amplitud sobre la pupila queda ponderada por el factor apodizador
 $\sqrt{\cos\theta}$ característico. En cambio, la función pupila vectorial
 $\mathbb E^{\mathscr G'}=\mathbb T\mathbb E_0/\ell_0$ derivada aquí se
-construye punto a punto desde la geometría exacta de la superficie
+construye punto a punto desde la geometría de la superficie
 cartesiana y desde la transmisión de Fresnel evaluada sobre ella, sin
 suponer ninguna lente ideal: la factorización $1/\ell_0$ absorbe la
 divergencia esférica sobre $\mathscr G$, y las variaciones angulares de
@@ -1271,16 +1254,6 @@ un propagador exacto de espectro angular son subordinadas a la modulación
 introducida por $t_-$.
 
 Si bien el caso de reflexión no es tratado en detalle en el presente trabajo, los resultados son en esencia los mismos, bastaría con reemplazar los coeficientes de Fresnel de refracción por los de reflexión.
-
-
-
-
-
-
-
-
-
-
 
 
 % ---------------------------------------------------------------------------
@@ -1381,7 +1354,7 @@ de modo que
   |E_r(\vb r, f)|^2 .
 \end{equation}
 
-La intensidad total en la pantalla focal no se obtiene sumando cuadráticamente las intensidades, sino sumando las contribuciones ortogonales del campo eléctrico. Por tanto,
+La intensidad total en la pantalla focal es el módulo cuadrado del campo eléctrico completo; al ser ortogonales las contribuciones transversal y longitudinal, se obtiene como la suma de sus intensidades. Por tanto,
 
 \begin{equation}
   I(\vb r, f)
@@ -2125,8 +2098,6 @@ Procedemos a dar los resultados en las distintas representaciones.
 %\eqref{eq:E_field_pupil_phase_and_TT}
 
 
-
-
 Definiendo los vectores unitarios de polarización circular izquierda y polarización circular derecha, que son las bases de la representación circular como
 
 
@@ -2349,8 +2320,6 @@ Reemplazando en \eqref{eq:E_prime_func_of_M_E0} obtenemos el campo transmitido e
 en la representación circular
 
 
-
-
 \begin{equation}
 \boxed{
 \begin{aligned}
@@ -2514,17 +2483,17 @@ t_+(\rho')
 \frac{4n_0}{n_0+n_i}
 +
 \frac{
-n_0(n_0-n_i)(z_0-z_i)^2
+n_0(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^2
+z_0^2z_i^2(n_0-n_i)
 }\,\rho'^2,
 \qquad
 t_-(\rho')
 \approx
 \frac{
-n_0(n_0-n_i)^2(z_0-z_i)^2
+n_0(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0+n_i)
 }\,\rho'^2,
 \label{eq:t_plus_t_minus_paraxial_second_order}
 \end{equation}
@@ -2640,11 +2609,11 @@ Por tanto, reemplazando en la expresión general del campo en el plano focal,
 \label{eq:E_prime_cylindrical_general}
 \end{equation}
 
-Este resultado es todav\'ia general: no se ha supuesto que las componentes escalares \(\mathscr E_r\) y \(\mathscr E_\phi\) sean axialmente sim\'etricas.
+Este resultado es todavía general: no se ha supuesto que las componentes escalares $\mathscr E_r$ y $\mathscr E_\phi$ sean axialmente simétricas.
 
 \subsubsection{Reducción del problema a componentes axialmente simétricas}
 
-Supongamos ahora que las componentes cil\'indricas del campo incidente no dependen de \(\phi'\), es decir,
+Supongamos ahora que las componentes cilíndricas del campo incidente no dependen de $\phi'$, es decir,
 
 \begin{equation}
   \mathscr E_r=\mathscr E_r(\rho'),
@@ -2684,7 +2653,7 @@ Para efectuar la integral angular usamos la identidad de Jacobi--Anger
   \label{eq:jacobi_anger_cylindrical}
 \end{equation}
 
-De ella se deducen, para \(m=1\),
+De ella se deducen, para $m=1$,
 
 \begin{equation}
   \int_0^{2\pi}
@@ -2713,7 +2682,7 @@ Por lo tanto,
   \label{eq:Fphi_rhat}
 \end{equation}
 
-y, de manera an\'aloga,
+y, de manera análoga,
 
 \begin{equation}
   \mathscr F_\phi\{\uvec\phi(\phi')\}
@@ -2722,7 +2691,7 @@ y, de manera an\'aloga,
   \label{eq:Fphi_phihat}
 \end{equation}
 
-N\'otese que lo que se transforma de esta forma no es el operador dy\'adico \(\mathbb T\) por s\'i solo, sino el campo transmitido \(\mathbb T\mathbb E_0\). Sustituyendo \eqref{eq:Fphi_rhat} y \eqref{eq:Fphi_phihat} en \eqref{eq:E_prime_cylindrical_general}, se obtiene
+Nótese que lo que se transforma de esta forma no es el operador diádico $\mathbb T$ por sí solo, sino el campo transmitido $\mathbb T\mathbb E_0$. Sustituyendo \eqref{eq:Fphi_rhat} y \eqref{eq:Fphi_phihat} en \eqref{eq:E_prime_cylindrical_general}, se obtiene
 
 \begin{equation}
 \boxed{
@@ -2740,7 +2709,7 @@ N\'otese que lo que se transforma de esta forma no es el operador dy\'adico \(\m
 \label{eq:E_field_cylindrical_Hankel}
 \end{equation}
 
-Aqu\'i
+Aquí
 
 \begin{equation}
   \mathscr H_m\{g\}(q)
@@ -2750,9 +2719,9 @@ Aqu\'i
   \label{eq:Hankel_definition_cylindrical}
 \end{equation}
 
-denota la transformada de Hankel de orden \(m\).
+denota la transformada de Hankel de orden $m$.
 
-Equivalentemente, si escribimos el resultado en la base cil\'indrica del plano focal,
+Equivalentemente, si escribimos el resultado en la base cilíndrica del plano focal,
 
 \begin{equation}
   \vb E'_\perp
@@ -2829,8 +2798,6 @@ Podemos decir que \textit{un campo radial o azimutal simétrico que sea axialmen
   \caption{Mapas de polarización para incidencia azimutal: campo sobre la pupila (izquierda) y campo en el plano focal (derecha). El estado local permanece azimutal punto a punto.}
   \label{fig:azimutal-plano-focal-mapa-polarizacion}
 \end{figure}
-
-
 
 
 % ==== REPRESENTACIÓN CARTESIANA === 
@@ -3277,8 +3244,6 @@ e^{i\frac{nk}{2f}r^2}
 \end{equation}
 
 
-
-
 En esta expresión, $\mathscr H_m[t_\pm]$ denota el operador que primero
 multiplica por $t_\pm(\rho')$ y luego aplica la transformada de Hankel de
 orden $m$.
@@ -3360,39 +3325,33 @@ polarización y se expande en la dirección perpendicular,
 \label{eq:spot_radii_ordering}
 \end{equation}
 
-La figura~\ref{fig:spot-cortes-principales} muestra los cortes por los ejes
-principales para el dioptrio de vidrio usado en los resultados anteriores, a
-apertura alta: la contracción es de $\sim 2.6\,\%$ y la expansión de
-$\sim 2.8\,\%$, con una elipticidad del contorno $e=R_\perp/R_\parallel\approx
-1.06$. La deformación crece con la apertura y con el contraste de índice, pues
-ambos incrementan el canal $H_2$. La figura~\ref{fig:spot-radios-anotados}
+La figura~\ref{fig:spot-cortes-principales} compara el perfil focal
+vectorial con la referencia escalar ideal ($t_p=t_s=1$) para el dioptrio de
+vidrio usado en los resultados anteriores, a apertura alta: la transmisión
+vectorial de Fresnel ensancha el lóbulo central respecto de la predicción
+escalar. La deformación anisótropa crece con la apertura y con el contraste
+de índice, pues ambos incrementan el canal $H_2$.
+
+\begin{figure}[H]
+  \centering
+  \thesisincludegraphics[width=0.7\textwidth]
+    {figures/results_of_simulation/vecdiff_final/spot/spot_cortes_principales.png}
+    {figures/fast/spot_cortes_principales.jpg}
+  \caption{Corte radial de la intensidad en el plano focal para incidencia
+  lineal en el dioptrio de vidrio ($n_0=1$, $n_i=1.5$, $z_0=-10\,\mathrm{mm}$,
+  $z_i=6\,\mathrm{mm}$, $\lambda=532\,\mathrm{nm}$, pupila uniforme a apertura
+  alta). La transmisión vectorial de Fresnel ensancha el punto focal respecto
+  de la referencia escalar ideal ($t_p=t_s=1$); a esta escala los cortes por
+  los dos ejes principales son indistinguibles.}
+  \label{fig:spot-cortes-principales}
+\end{figure}
+
+La figura~\ref{fig:spot-radios-anotados}
 presenta el caso de un dioptrio rápido de alto índice ($n_i=2.4$,
 $z_0=-2\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, semiapertura objeto
 $\approx 57°$): los radios medidos son $R_\parallel=0.245\lambda$ y
 $R_\perp=0.279\lambda$ frente a $R_{\mathrm{esc}}=0.260\lambda$, es decir,
-$e\approx 1.14$. Para incidencia circular la intensidad es
-$I\propto|H_0|^2+|H_2|^2$, el promedio azimutal del caso lineal: el punto
-permanece circular y solo se ensancha levemente ($R=0.261\lambda$ en el mismo
-dioptrio), pues el canal cruzado $|H_2|^2$ es un anillo nulo en el eje. Cabe
-señalar que estos resultados corresponden a la intensidad transversal; a
-aperturas muy altas la contribución longitudinal $I_z$, determinada por la
-condición de transversalidad, modifica adicionalmente la forma del lóbulo
-total.
-
-\begin{figure}[H]
-  \centering
-  \thesisincludegraphics[width=0.75\textwidth]
-    {figures/results_of_simulation/vecdiff_final/spot/spot_cortes_principales.png}
-    {figures/fast/spot_cortes_principales.jpg}
-  \caption{Cortes de la intensidad focal por los ejes principales para
-  incidencia lineal en el dioptrio de vidrio ($n_0=1$, $n_i=1.5$,
-  $z_0=-10\,\mathrm{mm}$, $z_i=6\,\mathrm{mm}$, $\lambda=532\,\mathrm{nm}$,
-  pupila uniforme a apertura alta). El corte paralelo a la polarización se
-  contrae y el perpendicular se expande respecto de la referencia escalar
-  apodizada ($t_-=0$); la referencia escalar ideal ($t_p=t_s=1$) muestra que la
-  apodización de Fresnel $t_+(\rho')$ también ensancha el punto.}
-  \label{fig:spot-cortes-principales}
-\end{figure}
+$e\approx 1.14$.
 
 \begin{figure}[H]
   \centering
@@ -3410,3 +3369,11 @@ total.
   levemente mayor que el escalar.}
   \label{fig:spot-radios-anotados}
 \end{figure}
+
+Para incidencia circular la intensidad es $I\propto|H_0|^2+|H_2|^2$, el
+promedio azimutal del caso lineal: el punto permanece circular y solo se
+ensancha levemente ($R=0.261\lambda$ en el mismo dioptrio), pues el canal
+cruzado $|H_2|^2$ es un anillo nulo en el eje. Cabe señalar que estos
+resultados corresponden a la intensidad transversal; a aperturas muy altas la
+contribución longitudinal $I_z$, determinada por la condición de
+transversalidad, modifica adicionalmente la forma del lóbulo total.

@@ -1,9 +1,10 @@
-\section{Condiciones de frontera y coeficientes de Fresnel en dieléctricos}
+\chapter{Condiciones de frontera y coeficientes de Fresnel en dieléctricos}
 \label{sec:appendix_maxwell_frontera_fresnel}
+\label{sec:boundary_conditions_in_dielectrics}
 
 En este apéndice se deducen las condiciones de frontera de Maxwell en una interfaz dieléctrica y las expresiones de reflexión/transmisión para ondas planas en polarizaciones $s$ y $p$.
 
-\subsection{Condiciones de frontera en una interfaz dieléctrica}
+\section{Condiciones de frontera en una interfaz dieléctrica}
 \label{subsec:apx_condiciones_frontera}
 
 Partimos de las ecuaciones de Maxwell en medios materiales,
@@ -65,15 +66,15 @@ Descomponemos fuentes volumétricas y superficiales como
 Sustituyendo \eqref{eq:apx_div_partida}, \eqref{eq:apx_rot_partida} y \eqref{eq:apx_fuentes_partidas} en \eqref{eq:apx_maxwell_materiales}, y agrupando términos proporcionales a $\delta(z)$, se obtienen las condiciones de frontera:
 \begin{equation}
 \begin{aligned}
-\hat{\mathbf n}\cdot(\mathbf D_2-\mathbf D_1) &= \sigma_f,\\
-\hat{\mathbf n}\cdot(\mathbf B_2-\mathbf B_1) &= 0,\\
-\hat{\mathbf n}\times(\mathbf E_2-\mathbf E_1) &= 0,\\
-\hat{\mathbf n}\times(\mathbf H_2-\mathbf H_1) &= \mathbf K_f.
+\text{(i)}\quad &\hat{\mathbf n}\cdot(\mathbf D_2-\mathbf D_1) = \sigma_f,\\
+\text{(ii)}\quad &\hat{\mathbf n}\cdot(\mathbf B_2-\mathbf B_1) = 0,\\
+\text{(iii)}\quad &\hat{\mathbf n}\times(\mathbf E_2-\mathbf E_1) = 0,\\
+\text{(iv)}\quad &\hat{\mathbf n}\times(\mathbf H_2-\mathbf H_1) = \mathbf K_f.
 \end{aligned}
 \label{eq:apx_condiciones_frontera_finales}
 \end{equation}
 
-\subsection{Ondas planas y relaciones de dispersión}
+\section{Ondas planas y relaciones de dispersión}
 \label{subsec:apx_ondas_planas}
 
 En ausencia de fuentes libres ($\rho=0$, $\mathbf J=0$):
@@ -119,7 +120,7 @@ v = \frac{\omega}{k}.
 \label{eq:apx_dispersion}
 \end{equation}
 
-\subsection{Interfaz plana y coeficientes de Fresnel}
+\section{Interfaz plana y coeficientes de Fresnel}
 \label{subsec:apx_fresnel}
 
 Consideramos tres ondas planas en la interfaz $\Sigma$: incidente, reflejada y transmitida,

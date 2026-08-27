@@ -5,8 +5,9 @@
 \lettrine[lines=2]{E}{n} este trabajo se desarrolló un formalismo vectorial para
 calcular el campo electromagnético en el plano focal de un sistema estigmático
 simple, formado por una única superficie cartesiana que separa dos medios
-homogéneos. El formalismo combina la geometría exacta de la superficie, la
-refracción vectorial dada por los coeficientes de Fresnel y la propagación de
+homogéneos. El formalismo combina la geometría de la superficie, descrita
+por su radio de curvatura y la propiedad estigmática, la refracción
+vectorial dada por los coeficientes de Fresnel y la propagación de
 Fresnel hasta el plano focal, y produce el campo focal como transformada de
 Fourier de una función pupila vectorial generalizada
 $\mathbb E^{\mathscr G'}=\mathbb T\,\mathbb E_0/\ell_0$; bajo iluminación
@@ -16,11 +17,14 @@ y Wolf~\cite{RichardsWolf1959}, formulado para sistemas aplanáticos
 idealizados, aquí la superficie refractora y su transmisión de Fresnel entran
 de forma explícita en la función pupila, punto a punto.
 
-El resultado central es que un sistema geométricamente perfecto no está libre
-de aberraciones. La condición estigmática elimina la aberración de camino
-óptico, pero al cambiar de medio las condiciones de frontera de Maxwell
-inducen sobre el campo una transformación vectorial anisótropa y distinta en
-cada punto de la superficie. Sobre el plano transversal, esta transformación
+El resultado central de este trabajo es que aun en los sistemas libres de
+aberraciones geométricas están presentes, además de la aberración por
+difracción, aberraciones de origen vectorial. La condición estigmática
+elimina la aberración de camino óptico, asegurando fase constante en la
+esfera convergente al punto imagen, pero al cambiar de medio las condiciones
+de frontera de Maxwell inducen sobre el campo una transformación vectorial
+anisótropa y distinta en cada punto de la superficie, transformación que
+localmente está caracterizada por los coeficientes de Fresnel. Sobre el plano transversal, esta transformación
 es la de un diatenuador orientado radialmente en cada punto de la pupila,
 cuyos modos propios son las polarizaciones radial y azimutal, moduladas
 respectivamente por $t_p$ y $t_s$. Las combinaciones $t_\pm=t_p\pm t_s$
@@ -49,40 +53,32 @@ introducir elipticidad. Distintas polarizaciones incidentes producen así
 distintos patrones de intensidad focal, algo que la teoría escalar, cuya
 predicción es única e independiente de la polarización, no puede describir.
 
-El régimen vectorial modifica también la forma del punto focal y la imagen de
-objetos extensos. Para incidencia lineal la interferencia entre los canales
-$\mathscr H_0$ y $\mathscr H_2$ rompe la simetría circular del lóbulo
-central: aparecen dos radios principales que satisfacen
+El régimen vectorial modifica también la forma del punto focal y, con ella,
+la formación de imágenes. Para incidencia lineal la interferencia entre los
+canales $\mathscr H_0$ y $\mathscr H_2$ rompe la simetría circular del lóbulo
+central: la PSF queda caracterizada por dos radios principales que satisfacen
 $R_\parallel<R_{\mathrm{esc}}<R_\perp$, de modo que el punto se contrae a lo
 largo de la polarización incidente, se expande en la dirección perpendicular
-y rota rígidamente con ella. En el dioptrio de vidrio estudiado la
-deformación es del orden del $3\,\%$ ($e=R_\perp/R_\parallel\approx1.06$) y
-crece con la apertura y el contraste de índice hasta $e\approx1.14$ en un
-dioptrio rápido de alto índice; con incidencia circular el punto permanece
-circular y solo se ensancha levemente. La misma ruptura de isotropía aparece
-en la imagen de una máscara litográfica formada por una lente de dos
-superficies cartesianas conjugadas a $\mathrm{NA}=0.94$, libre de aberración
-geométrica por construcción: las trazas alineadas con una iluminación
-linealmente polarizada conservan la mayor parte del contraste
-($C_H:0.98\to0.85$) mientras que las ortogonales se degradan severamente
-($C_V:0.91\to0.67$), y la iluminación circular reparte la pérdida entre ambas
-orientaciones sin eliminarla. En este régimen de apertura el mecanismo
-dominante es la componente longitudinal $E_z$, determinada por la condición
-de transversalidad, que transporta cerca de la mitad de la energía de la
-imagen. Se trata del mismo fenómeno que obliga a la litografía de alta
-apertura numérica a controlar la polarización de la
+y rota rígidamente con ella. La deformación crece con la apertura numérica y
+con el contraste de índice, mientras que la incidencia circular restaura la
+simetría del punto por promedio azimutal. Esta anisotropía de la PSF tiene
+consecuencias directas sobre la imagen de objetos extensos, como mostró el
+ejemplo litográfico: los detalles alineados con la polarización incidente se
+resuelven mejor que los ortogonales, y la iluminación circular reparte la
+pérdida de contraste entre ambas orientaciones sin eliminarla. A aperturas
+altas contribuye además la componente longitudinal $E_z$, determinada por la
+condición de transversalidad, que llega a transportar una fracción importante
+de la energía de la imagen. Se trata del mismo fenómeno que obliga a la
+litografía de alta apertura numérica a controlar la polarización de la
 iluminación~\cite{flagello1996, ruoff2009}, presente aun cuando el sistema
 está libre de aberración geométrica.
 
 El formalismo admite extensiones naturales: la reflexión se obtiene
 reemplazando $t_p,t_s$ por $r_p,r_s$; los sistemas de varias superficies se
-tratan por composición de operadores, como ilustra el ejemplo litográfico; y
-el dioptrio esférico en los puntos de Young--Weierstrass ofrece un caso de
-validación de especial interés por su realizabilidad práctica. La formulación
-se generaliza además a iluminaciones arbitrarias y a superficies dióptricas
-no necesariamente estigmáticas, en cuyo caso la aberración de camino óptico
-propia de la geometría se superpone a la aberración vectorial aquí
-identificada. La verificación experimental de las firmas predichas, en
-particular la componente cruzada de cuatro lóbulos y la deformación
-anisótropa del punto focal, constituye la continuación natural de este
-trabajo.
+tratan por composición de operadores, como ilustra el ejemplo litográfico. La
+formulación del operador de transferencia como un operador espectral puede
+usarse para generalizar el cálculo de difracción vectorial a iluminaciones
+arbitrarias y a superficies dióptricas no necesariamente estigmáticas. La
+verificación experimental de los resultados predichos, en particular la
+componente cruzada de cuatro lóbulos y la deformación anisótropa del punto
+focal bajo iluminación uniformemente lineal, serían extensiones naturales de este trabajo.

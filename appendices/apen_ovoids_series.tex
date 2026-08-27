@@ -4,36 +4,29 @@
 
 Con el propósito de estudiar el comportamiento local del sistema óptico en las cercanías del eje óptico, desarrollamos en series de potencias la superficie cartesiana y las magnitudes geométricas y electromagnéticas derivadas de ella. Este procedimiento permite identificar la estructura paraxial del sistema, así como las primeras correcciones no paraxiales responsables de los efectos vectoriales que aparecen en la formación de imagen.
 
-En este apéndice se adopta la convención
-
-\begin{equation}
-z_0>0,
-\qquad
-z_i>0,
-\qquad
-n_0>0,
-\qquad
-n_i>0,
-\label{eq:positive_axial_convention}
-\end{equation}
-
-y los puntos conjugados se escriben como
+En este apéndice las coordenadas axiales llevan signo, con el vértice de la
+superficie en el origen, y los puntos conjugados se escriben como
 
 \begin{equation}
 A=(0,0,z_0),
 \qquad
-A'=(0,0,z_i).
+A'=(0,0,z_i),
 \label{eq:conjugate_points_correct_convention}
 \end{equation}
 
-Las cantidades \(z_0\) y \(z_i\) se toman, por tanto, como coordenadas axiales positivas. Con esta convención, la condición estigmática de la superficie cartesiana se escribe como
+de modo que en la configuración de conjugados reales $z_0<0<z_i$. No se
+impone ninguna restricción de signo adicional: la convención queda fijada por
+la propia condición estigmática de la superficie cartesiana,
 
 \begin{equation}
 n_0\ell_0+n_i\ell_i
 =
-\text{constante}.
+n_iz_i-n_0z_0,
 \label{eq:stigmatic_condition_correct_convention}
 \end{equation}
+
+cuyo valor constante es el del invariante evaluado en el vértice (véase el
+apéndice~\ref{apx:ovoid_implicit_deduction}).
 
 La superficie dióptrica \(\Sigma\) se describe mediante la parametrización
 
@@ -50,46 +43,44 @@ r(\rho)
 \label{eq:cartesian_surface_parametrization_r}
 \end{align}
 
-Para la convención \eqref{eq:positive_axial_convention}--\eqref{eq:conjugate_points_correct_convention}, los parámetros \(G\), \(O\), \(T\) y \(S\) quedan dados por
+Para la convención \eqref{eq:conjugate_points_correct_convention}, los parámetros \(G\), \(O\), \(T\) y \(S\) quedan dados por
 
 \begin{align}
 G
 &=
--
 \frac{
 (n_i^2z_i-n_0^2z_0)^2
 }{
 n_in_0
-(n_iz_i+n_0z_0)
-(n_iz_0+n_0z_i)
+(n_iz_i-n_0z_0)
+(n_iz_0-n_0z_i)
 },
 \label{eq:cartesian_parameter_G}
 \\[6pt]
 O
 &=
 \frac{
-n_iz_0+n_0z_i
+n_iz_0-n_0z_i
 }{
-z_0z_i(n_0+n_i)
+z_0z_i(n_i-n_0)
 },
 \label{eq:cartesian_parameter_O}
 \\[6pt]
 T
 &=
--
 \frac{
-(n_0+n_i)(n_i-n_0)^2
+(n_i-n_0)(n_0+n_i)^2
 }{
-4n_in_0z_0z_i(n_iz_i+n_0z_0)
+4n_in_0z_0z_i(n_iz_i-n_0z_0)
 },
 \label{eq:cartesian_parameter_T}
 \\[6pt]
 S
 &=
 \frac{
-(n_0-n_i)(n_i^2z_i-n_0^2z_0)
+(n_0+n_i)(n_i^2z_i-n_0^2z_0)
 }{
-2n_in_0z_0z_i(n_iz_i+n_0z_0)
+2n_in_0z_0z_i(n_iz_i-n_0z_0)
 }.
 \label{eq:cartesian_parameter_S}
 \end{align}
@@ -150,30 +141,30 @@ donde
 \zeta_2
 &=
 \frac{
-n_0z_i+n_iz_0
+n_0z_i-n_iz_0
 }{
-2z_0z_i(n_0+n_i)
+2z_0z_i(n_0-n_i)
 },
 \label{eq:zeta_2_definition}
 \\[6pt]
 \zeta_4
 &=
--
 \frac{
-n_0n_i(z_0-z_i)^2(n_0z_0+n_iz_i)
+n_0n_i(z_0-z_i)^2(n_0z_0-n_iz_i)
 }{
-8z_0^3z_i^3(n_0+n_i)^3
+8z_0^3z_i^3(n_0-n_i)^3
 },
 \label{eq:zeta_4_definition}
 \\[6pt]
 \zeta_6
 &=
+-
 \frac{
 n_0n_i(z_0-z_i)^3
-(n_0z_0+n_iz_i)
+(n_0z_0-n_iz_i)
 (n_0^2z_0-n_i^2z_i)
 }{
-16z_0^5z_i^5(n_0+n_i)^5
+16z_0^5z_i^5(n_0-n_i)^5
 }.
 \label{eq:zeta_6_definition}
 \end{align}
@@ -297,10 +288,11 @@ r^2(\rho)+\bigl(z(\rho)-z_i\bigr)^2
 \label{eq:li_squared_exact}
 \end{align}
 
-Puesto que \(z_0,z_i>0\), las ramas axiales son
+Las distancias son positivas por definición, de modo que para la
+configuración de conjugados reales ($z_0<0<z_i$) las ramas axiales son
 
 \begin{equation}
-\ell_0(0)=z_0,
+\ell_0(0)=-z_0,
 \qquad
 \ell_i(0)=z_i.
 \label{eq:l0_li_axis_branches}
@@ -312,12 +304,12 @@ Sustituyendo \eqref{eq:z_rho_series_substituted} en \eqref{eq:l0_squared_exact} 
 \ell_0(\rho)
 =
 {}&
-z_0
+-z_0
 -
 \frac{
 n_i(z_0-z_i)
 }{
-2z_0z_i(n_0+n_i)
+2z_0z_i(n_0-n_i)
 }
 \rho^2
 \nonumber
@@ -328,7 +320,7 @@ n_i(z_0-z_i)
 n_i(z_0-z_i)^2
 (n_0^2z_0-n_i^2z_i)
 }{
-8z_0^3z_i^3(n_0+n_i)^3
+8z_0^3z_i^3(n_0-n_i)^3
 }
 \rho^4
 +
@@ -347,7 +339,7 @@ z_i
 \frac{
 n_0(z_0-z_i)
 }{
-2z_0z_i(n_0+n_i)
+2z_0z_i(n_0-n_i)
 }
 \rho^2
 \nonumber
@@ -358,7 +350,7 @@ n_0(z_0-z_i)
 n_0(z_0-z_i)^2
 (n_0^2z_0-n_i^2z_i)
 }{
-8z_0^3z_i^3(n_0+n_i)^3
+8z_0^3z_i^3(n_0-n_i)^3
 }
 \rho^4
 +
@@ -380,7 +372,7 @@ En efecto,
 \begin{equation}
 n_0\ell_0+n_i\ell_i
 =
-n_0z_0+n_iz_i
+n_iz_i-n_0z_0
 +
 O(\rho^6).
 \label{eq:optical_path_constant_local}
@@ -393,9 +385,9 @@ Para escribir los coeficientes de Fresnel en términos geométricos, introducimo
 \begin{align}
 \mathcal A_0(\rho)
 &=
-z'\left(\rho^2-zz_0\right)
+\rho\left(z-z_0\right)
 -
-\rho\left(z-z_0\right),
+z'\left(\rho^2-zz_0\right),
 \label{eq:A0_geometrical_factor}
 \\[6pt]
 \mathcal A_i(\rho)
@@ -411,15 +403,17 @@ Con la convención adoptada,
 \begin{equation}
 \frac{\mathcal A_0(\rho)}{\rho}
 \longrightarrow
-z_0,
+-z_0,
 \qquad
 \frac{\mathcal A_i(\rho)}{\rho}
 \longrightarrow
 z_i,
 \qquad
-\rho\to0.
+\rho\to0,
 \label{eq:A0_Ai_axis_limits}
 \end{equation}
+
+ambos límites positivos para la configuración de conjugados reales.
 
 Definimos también
 
@@ -451,9 +445,9 @@ Al orden cuadrático,
 1
 -
 \frac{
-n_i^2(n_0-n_i)^2(z_0-z_i)^2
+n_i^2(z_0-z_i)^2
 }{
-2z_0^2z_i^2(n_0+n_i)^4
+2z_0^2z_i^2(n_0-n_i)^2
 }
 \rho^2
 +
@@ -465,9 +459,9 @@ O(\rho^4),
 1
 -
 \frac{
-n_0^2(n_0-n_i)^2(z_0-z_i)^2
+n_0^2(z_0-z_i)^2
 }{
-2z_0^2z_i^2(n_0+n_i)^4
+2z_0^2z_i^2(n_0-n_i)^2
 }
 \rho^2
 +
@@ -565,18 +559,18 @@ Los coeficientes de segundo orden son
 t_{s,2}
 &=
 \frac{
-n_0n_i(n_0-n_i)(z_0-z_i)^2
+n_0n_i(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 },
 \label{eq:ts2_coefficient}
 \\[6pt]
 t_{p,2}
 &=
 \frac{
-n_0^2(n_0-n_i)(z_0-z_i)^2
+n_0^2(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 }.
 \label{eq:tp2_coefficient}
 \end{align}
@@ -587,9 +581,9 @@ Por conveniencia, definimos
 \xi
 =
 \frac{
-n_0(n_0-n_i)(z_0-z_i)^2
+n_0(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0-n_i)(n_0+n_i)
 }.
 \label{eq:xi_definition_fresnel_series}
 \end{equation}
@@ -622,10 +616,9 @@ donde
 \kappa_s
 &=
 \frac{
-(n_0z_0+n_iz_i)
-(3n_0z_0-2n_0z_i-2n_iz_0+3n_iz_i)
+Q_s
 }{
-4z_0^2z_i^2(n_0+n_i)^2
+4z_0^2z_i^2(n_0-n_i)^2
 },
 \label{eq:kappa_s_definition}
 \\[8pt]
@@ -634,7 +627,7 @@ donde
 \frac{
 Q_p
 }{
-4z_0^2z_i^2(n_0+n_i)^2
+4z_0^2z_i^2(n_0-n_i)^2
 },
 \label{eq:kappa_p_definition}
 \end{align}
@@ -642,26 +635,46 @@ Q_p
 con
 
 \begin{align}
-Q_p
+Q_s
 ={}&
-n_0^2z_0^2
-+
-2n_0^2z_0z_i
+3n_0^2z_0^2
 -
-2n_0^2z_i^2
-+
 2n_0n_iz_0^2
 -
-2n_0n_iz_0z_i
+2n_0^2z_0z_i
 +
-2n_0n_iz_i^2
+2n_0n_iz_0z_i
+-
+2n_i^2z_0z_i
 \nonumber
 \\
 &\quad
 -
+2n_0n_iz_i^2
++
+3n_i^2z_i^2,
+\label{eq:Qs_definition}
+\\[8pt]
+Q_p
+={}&
+n_0^2z_0^2
++
+2n_0n_iz_0^2
+-
 2n_i^2z_0^2
 +
+2n_0^2z_0z_i
+-
+6n_0n_iz_0z_i
++
 2n_i^2z_0z_i
+\nonumber
+\\
+&\quad
+-
+2n_0^2z_i^2
++
+2n_0n_iz_i^2
 +
 n_i^2z_i^2.
 \label{eq:Qp_definition}
@@ -730,9 +743,9 @@ Al orden dominante no trivial,
 t_p-t_s
 =
 \frac{
-n_0(n_0-n_i)^2(z_0-z_i)^2
+n_0(z_0-z_i)^2
 }{
-z_0^2z_i^2(n_0+n_i)^3
+z_0^2z_i^2(n_0+n_i)
 }
 \rho^2
 +

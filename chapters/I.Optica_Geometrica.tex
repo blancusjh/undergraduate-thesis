@@ -234,9 +234,9 @@ La manera de referirse a un punto $Q$ de $\Sigma$ desde el punto $O$, se hace me
 
 Las leyes de la óptica geométrica permiten determinar, a partir de la dirección del rayo incidente y el punto de intersección del rayo con la superficie, la dirección del rayo transmitido o reflejado en dicho punto. Y no depende del punto en sí, sino de la normal de la superficie en ese punto, como es manifiesto de la ley vectorial~\eqref{eq:vectorial_law_of_snell_descartes} deducida desde el \emph{principio de Fermat}~\cite{bornwolf1999}.
 
-Así, procedemos a escribir el vector normal de incidencia para un punto cualquiera $Q \in \Sigma$ parametrizado por $(\rho, \phi)$. 
+Así, procedemos a escribir el vector unitario de incidencia para un punto cualquiera $Q \in \Sigma$ parametrizado por $(\rho, \phi)$. 
 
-Sea $P$ el origen del rayo incidente y $Q(\rho, \phi)$ el punto de intersección del rayo con la superficie $\Sigma$, es manifiesto que el vector unitario de incidencia $\uvec{u}$ es el vector unitario de $\lvec{AQ}$, es decir 
+Sea $P$ el origen del rayo incidente y $Q(\rho, \phi)$ el punto de intersección del rayo con la superficie $\Sigma$, es manifiesto que el vector unitario de incidencia $\uvec{u}$ es el vector unitario de $\lvec{PQ}$, es decir
 
 
 
@@ -253,7 +253,7 @@ Sean $(z_0, r_0, \varphi_0)$ las coordenadas de $P$, de modo que
 \end{equation}
 
 
-Construimos pues el vector $\lvec{OQ}$, 
+Construimos pues el vector $\lvec{PQ}$,
 
 \begin{equation}
   \lvec{PQ} = \lvec{OQ} - \lvec{OP}
@@ -278,10 +278,7 @@ Calculamos la norma de $\lvec{PQ}$
 + r_0^2 - 2 r(\rho) r_0 \cos\Delta\varphi,
 \end{equation}
 
-y finalmente obtenemos el vector normal de incidencia
-
-
-% Vecotres u y u'.
+y finalmente obtenemos el vector unitario de incidencia
 
 \begin{equation}
    \uvec{u}
@@ -314,22 +311,16 @@ y finalmente obtenemos el vector normal de incidencia
 Si los puntos $P$ y $P'$ viven en el eje óptico, la expresión para $\uvec{u}$ se simplifica como: 
 
 \begin{equation}
-  \uvec{u} = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}  
+  \uvec{u} = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}}
   \label{eq:u_for_P_in_optical_axis}
 \end{equation}
 
 
 
 \begin{equation}
-  \uvec{u}' = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}}  
+  \uvec{u}' = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}
   \label{eq:u_prime_for_P_in_optical_axis}
 \end{equation}
-
-
-Cuando $P$ está en el plano $(z, r)$, se cumple que $\Delta \varphi = 0$, de tal manera que $\uvec{u}$ toma la forma 
-
-
-
 
 
 Procedemos ahora con el cálculo de la normal, en un punto $Q$ parametrizado por  $(\rho, \phi)$, denotemos al vector normal en el punto $Q=Q(\rho, \varphi)$ como $\uvec{N}$, y construyamos un vector $\vec{N}$ proporcional a $\uvec{N}$ 
