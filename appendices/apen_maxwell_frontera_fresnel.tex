@@ -2,7 +2,7 @@
 \label{sec:appendix_maxwell_frontera_fresnel}
 \label{sec:boundary_conditions_in_dielectrics}
 
-En este apéndice se deducen las condiciones de frontera de Maxwell en una interfaz dieléctrica y las expresiones de reflexión/transmisión para ondas planas en polarizaciones $s$ y $p$.
+En este apéndice se deducen las condiciones de frontera de Maxwell en una interfaz dieléctrica y las expresiones de reflexión/transmisión para ondas planas en polarizaciones $s$ y $p$ \cite{jackson1999,zangwill2013}.
 
 \section{Condiciones de frontera en una interfaz dieléctrica}
 \label{subsec:apx_condiciones_frontera}
@@ -77,7 +77,7 @@ Sustituyendo \eqref{eq:apx_div_partida}, \eqref{eq:apx_rot_partida} y \eqref{eq:
 \section{Ondas planas y relaciones de dispersión}
 \label{subsec:apx_ondas_planas}
 
-En ausencia de fuentes libres ($\rho=0$, $\mathbf J=0$):
+Obtenidas las condiciones de frontera, caracterizamos ahora las ondas que habrán de empalmarse en la interfaz. En el interior de cada dieléctrico simple, en ausencia de fuentes libres ($\rho=0$, $\mathbf J=0$), las ecuaciones de Maxwell se reducen a
 \begin{equation}
 \begin{aligned}
 \nabla \cdot \mathbf E &= 0, & \nabla \cdot \mathbf B &= 0,\\
@@ -123,7 +123,7 @@ v = \frac{\omega}{k}.
 \section{Interfaz plana y coeficientes de Fresnel}
 \label{subsec:apx_fresnel}
 
-Consideramos tres ondas planas en la interfaz $\Sigma$: incidente, reflejada y transmitida,
+Consideramos tres ondas planas en la interfaz $\Sigma$ \cite{bornwolf1999}: incidente, reflejada y transmitida,
 \begin{equation}
 \mathbf{E}_j = \mathbf{E}_j^0\, e^{i(\mathbf{k}_j\cdot\mathbf{r} - \omega t)},
 \qquad j\in\{i,R,T\}.
@@ -215,17 +215,17 @@ T_p &= \frac{2Z\cos\theta_i}{Z'\cos\theta_i + Z\cos\theta_T}.
 
 \paragraph{Expresión en términos de índices de refracción y campo transmitido.}
 
-Para medios no magnéticos ($\mu = \mu' = \mu_0$) se tiene $Z_j = n_j/Z_0$ con $Z_0 = \sqrt{\mu_0/\epsilon_0}$, y los factores $Z_0$ se cancelan. Los coeficientes de transmisión quedan
+Para medios no magnéticos ($\mu = \mu' = \mu_0$) se tiene $Z = n/Z_0$ y $Z' = n'/Z_0$, con $Z_0 = \sqrt{\mu_0/\epsilon_0}$ y $n$, $n'$ los índices de refracción de cada medio; los factores $Z_0$ se cancelan. Los coeficientes de transmisión quedan
 \begin{align}
-t_s &= \frac{2n_1\cos\theta_i}{n_1\cos\theta_i + n_2\cos\theta_t},
+t_s &= \frac{2n\cos\theta_i}{n\cos\theta_i + n'\cos\theta_T},
 \label{eq:apx_fresnel_ts_n}\\
-t_p &= \frac{2n_1\cos\theta_i}{n_2\cos\theta_i + n_1\cos\theta_t},
+t_p &= \frac{2n\cos\theta_i}{n'\cos\theta_i + n\cos\theta_T},
 \label{eq:apx_fresnel_tp_n}
 \end{align}
 y el campo eléctrico transmitido sobre la interfaz resulta
 \begin{equation}
-\vb{E}'_\Sigma
-= t_p\,(\vb{E}_\Sigma\cdot\uvec{p})\,\uvec{p}'
-+ t_s\,(\vb{E}_\Sigma\cdot\uvec{s})\,\uvec{s}'.
+\mathbf{E}'_\Sigma
+= t_p\,(\mathbf{E}_\Sigma\cdot\hat{\mathbf{p}})\,\hat{\mathbf{p}}'
++ t_s\,(\mathbf{E}_\Sigma\cdot\hat{\mathbf{s}})\,\hat{\mathbf{s}}'.
 \label{eq:apx_E_transmitido_Sigma}
 \end{equation}

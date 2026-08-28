@@ -4,21 +4,11 @@
 
 La óptica geométrica fue la primera imagen conceptual que la humanidad elaboró para comprender la naturaleza de la luz. En esta concepción, la luz se entiende como compuesta de rayos luminosos que se propagan en línea recta a gran velocidad, —incluso llegándose a creer infinita—, rayos que se dividen y desvían al cambiar de medio en uno reflejado y uno transmitido, fenómenos ampliamente conocidos como reflexión y refracción respectivamente.
 
-Fue entonces menester de la óptica geométrica el dar a conocer la ley que determina, a partir de un rayo incidente la dirección de los correspondientes rayo reflejado y transmitido. La ley de la reflexión fue dada a conocer desde mucho antes que se conociese la ley para la refracción. Un registro formal de la formulación de la ley para la reflexión con distintas aplicaciones fue tratado por el matemático griego Euclides en su trabajo {\greekfont Κατοπτρικά} (Catoptrica) \cite{euclides1895catoptrica} obra que se estima data de alrededor de los años 300 A.C, mas la ley de la refracción fue conocida por W. Snellius y dada a conocer públicamente por R. Descartes \cite{dioptrique}.
-Leyes que ya son ampliamente conocidas, que versan que los ángulos de incidencia y de reflexión son iguales, y que el ángulo de incidencia y de refracción siguen la ley de los senos \cite{bornwolf1999}.
+Fue entonces menester de la óptica geométrica el dar a conocer la ley que determina, a partir de un rayo incidente, la dirección de los correspondientes rayo reflejado y transmitido. La ley de la reflexión fue dada a conocer desde mucho antes que se conociese la ley para la refracción: un registro formal de su formulación, con distintas aplicaciones, fue tratado por el matemático griego Euclides en su trabajo {\greekfont Κατοπτρικά} (Catoptrica) \cite{euclides1895catoptrica}, obra que se estima data de alrededor de los años 300~A.C.; la ley de la refracción, en cambio, fue conocida por W. Snellius y dada a conocer públicamente por R. Descartes \cite{dioptrique}. Ambas leyes son hoy ampliamente conocidas: versan que los ángulos de incidencia y de reflexión son iguales, y que los ángulos de incidencia y de refracción siguen la ley de los senos \cite{bornwolf1999}.
 
-Junto a estas dos leyes se le adiciona que la luz tiene una cierta velocidad $c$ en el vacío y que esta se retarda en los medios materiales conforme a su densidad. 
+Junto a estas dos leyes se adiciona el hecho de que la luz tiene una cierta velocidad $c$ en el vacío y que esta se retarda en los medios materiales conforme a su densidad. Que la luz tuviese cierta velocidad y no una infinita, como muchos llegaron a creer, fue un importante cambio de paradigma que ayudó a entender mejor su naturaleza; la finitud de la velocidad de la luz fue demostrada a partir de las observaciones de los eclipses de Júpiter \cite{Romer1676} y de numerosos experimentos posteriores por otros científicos como Fizeau \cite{Fizeau1849}. Este hecho ayudó en gran manera a entender el fenómeno de la refracción.
 
-Que la luz tuviese cierta velocidad y no una infinita, como muchos llegaron a creer, fue un importante cambio de paradigma que ayudó a entender mejor la naturaleza de la luz, el hecho de la finitud de la velocidad de la luz fue demostrado a partir de las observaciones de los eclipses de Júpiter \cite{Romer1676} y de numerosos experimentos posteriores por otros científicos como Fizeau \cite{Fizeau1849}. Hecho que ayudó en gran manera a entender el fenómeno de la refracción.
-
-
-
-Estas leyes, derivadas de las observaciones, se sentían puestas \textit{ad hoc} por lo aparentemente inconexas, en falta de un principio común del cual estas leyes se derivasen por necesidad lógica.
- 
-
- 
-
-Las investigaciones de P. Fermat dieron como resultado un principio natural por el cual se deducían las ya conocidas leyes de reflexión y refracción, como la propagación rectilínea de la luz, reduciendo la óptica geométrica a este único principio.
+Estas leyes, derivadas de las observaciones, se sentían puestas \textit{ad hoc} por lo aparentemente inconexas, en falta de un principio común del cual se derivasen por necesidad lógica. Fueron las investigaciones de P. Fermat las que dieron como resultado un principio natural del cual se deducen las ya conocidas leyes de reflexión y refracción, así como la propagación rectilínea de la luz, reduciendo la óptica geométrica a este único principio \cite{fermat1891oeuvres, bornwolf1999}.
 
 
 
@@ -47,14 +37,12 @@ de recorrido sobre la trayectoria $\Phi$ que une $A$ con $B$.
 
 
 Ciertamente, este principio natural evoca lo que los filósofos querrían decir con\footnote{La naturaleza no obra en vano.}
-
 %
 \vspace{0.5em}
 %
 \begin{center}
-    \textit{``Natura nihil agit frustra''},
+    \textit{``Natura nihil agit frustra''}.
 \end{center}
-
 
 Aplicando el principio de Fermat a dos medios separados por una interfaz $\Sigma$, y tomando
 $Q \in \Sigma$ como punto de incidencia, se tiene
@@ -70,30 +58,32 @@ De esta expresión se deducen las leyes de reflexión y refracción, como se dem
 
 \section{Ley Vectorial de Snell–Descartes} 
 
-Partimos de la condición estigmática local escrita en \eqref{eq:maxwell_condition_of_stigmatism_ovoid},
+En esta sección deducimos, a partir del principio de Fermat, la forma vectorial de la ley de Snell--Descartes, siguiendo el tratamiento variacional canónico de la óptica geométrica \cite{bornwolf1999}. Partimos de la condición estigmática local escrita en \eqref{eq:maxwell_condition_of_stigmatism_ovoid},
 %
 \begin{equation}
     n_0\ || AQ || + n' || QA' || = k,
 \end{equation}
 %
 donde $Q$ es el punto de incidencia sobre la superficie refractante.
-Al variar $Q \mapsto Q + \delta Q$ con $\delta Q$ tangente a la superficie, la estacionariedad del camino óptico exige
+Al variar $Q \mapsto Q + \delta \vb{Q}$, con $\delta \vb{Q}$ un desplazamiento vectorial tangente a la superficie, la estacionariedad del camino óptico exige
 %
 \begin{equation}
     \delta \left(n_0\ || AQ || + n' || QA' ||\right)=0.
 \end{equation}
 %
-Usando la derivada de la norma,
+Usando la derivada de la norma, esta condición se escribe como
 %
 \begin{equation}
     \left(
       n_0\frac{\lvec{QA}}{\|\lvec{QA}\|}
       -
       n'\frac{\lvec{A'Q}}{\|\lvec{A'Q}\|}
-    \right)\cdot \delta Q = 0.
+    \right)\cdot \delta \vb{Q} = 0,
 \end{equation}
 %
-Definimos los vectores unitarios de incidencia y transmisión en $Q$ por
+donde el punto denota el producto escalar entre el vector entre paréntesis y el desplazamiento tangencial $\delta \vb{Q}$.
+
+Para escribir esta condición en forma más compacta, definimos los vectores unitarios de incidencia y transmisión en $Q$ por
 %
 \begin{equation}
   \uvec{u} = \frac{\lvec{AQ}}{\|\lvec{AQ}\|},
@@ -105,11 +95,11 @@ y denotamos por $\uvec{N}$ la normal unitaria local de la superficie en $Q$.
 Entonces la condición variacional se escribe como
 %
 \begin{equation}
-    (n_0\uvec{u} - n'\uvec{u}')\cdot \delta Q = 0,
-    \qquad \forall\, \delta Q \perp \uvec{N}.
+    (n_0\uvec{u} - n'\uvec{u}')\cdot \delta \vb{Q} = 0,
+    \qquad \forall\, \delta \vb{Q} \perp \uvec{N},
 \end{equation}
 %
-Por lo tanto, $n_0\uvec{u} - n'\uvec{u}'$ no tiene componente tangencial y debe ser paralelo a $\uvec{N}$, lo cual equivale a
+y, por lo tanto, el vector $n_0\uvec{u} - n'\uvec{u}'$ no tiene componente tangencial y debe ser paralelo a $\uvec{N}$, lo cual equivale a
 %
 \begin{equation}
   n_0\left[\uvec{u} - (\uvec{u}\cdot\uvec{N})\uvec{N}\right]
@@ -123,7 +113,7 @@ Tomando norma en ambos lados y usando que
   \left\|\uvec{u} - (\uvec{u}\cdot\uvec{N})\uvec{N}\right\|=\sin\theta_i
 \end{equation}
 %
-y
+y que
 %
 \begin{equation}
   \left\|\uvec{u}' - (\uvec{u}'\cdot\uvec{N})\uvec{N}\right\|=\sin\theta_t,
@@ -135,15 +125,13 @@ se obtiene inmediatamente
   n_0\sin\theta_i = n'\sin\theta_t,
 \end{equation}
 %
-que es la ley de los senos de Snell para la refracción.
-%
-Para la reflexión, si $n'=n_0$, la ley anterior se reduce a
+que es la ley de los senos de Snell para la refracción. Para la reflexión, si $n'=n_0$, la ley anterior se reduce a
 %
 \begin{equation}
   \theta_r=\theta_i.
 \end{equation}
-%
-Despejando el vector unitario transmitido $\uvec{u}'$ se obtiene la forma explícita
+
+Finalmente, despejando el vector unitario transmitido $\uvec{u}'$ se obtiene la forma explícita
 %
 \begin{equation}
   \uvec{u}'
@@ -171,22 +159,9 @@ Esta forma es particularmente útil en \emph{ray tracing}, pues entrega directam
 
 \section{Ovoides de Descartes} 
 
-Las superficies cartesianas fueron introducidas por primera vez por el filósofo francés René Descartes en la \emph{DIOPTRIQUE} \cite{dioptrique}, como solución al problema del estigmatismo. 
+Las superficies cartesianas fueron introducidas por primera vez por el filósofo francés René Descartes en la \emph{Dioptrique} \cite{dioptrique}, como solución al problema del estigmatismo, y por ello son conocidas ampliamente en la literatura como \emph{ovoides de Descartes} \cite{ovoids2023}. Para que los rayos luminosos que emergen desde un punto $A$ converjan a otro punto $A'$, el tiempo que le toma a los rayos recorrer el trayecto de $A$ hasta $A'$ ha de ser el mismo, para que coincidan en lugar y tiempo. Cuando esta condición se cumple, al par $(A, A')$ se le conoce como \emph{par conjugado}; en general, a la condición de que los rayos luminosos converjan todos simultáneamente en un mismo punto se le conoce como \emph{condición estigmática}~\cite{bornwolf1999}.
 
-Para que los rayos luminosos que emergen desde un punto $A$ converjan a otro punto $A'$, 
-el tiempo que le toma a los rayos recorrer el trayecto de $A$ hasta $A'$ ha de ser el mismo, 
-para que coincidan en lugar y tiempo. 
-Cuando esta condición se cumple, al par $(A, A')$ se le conoce como \emph{par conjugado}. 
-
-En general, la condición de que los rayos luminosos converjan todos simultáneamente en un mismo punto, se le conoce como \emph{condición estigmática}~\cite{bornwolf1999}.
-
-Considerando los rayos que emergiendo de $A$ se refractan o se reflejan en cierta superficie $\Sigma$, y convergen todos al mismo punto $A'$, denotamos $\overline{AIA'}$ como el trayecto que realizan los rayos, siendo $I$ un punto de la superficie $\Sigma$.  Con $A$ y $A'$ fijos, solo los puntos de la superficie $\Sigma$ pueden ser seleccionados para cumplir la condición estigmática. 
-
-De tal manera, que exigiendo matemáticamente la condición estigmática para los rayos que siguen el trayecto anteriormente mencionado, se determina la familia de superficies $\Sigma$ que la satisfacen.  
-
-
-
-Tales superficies son conocidas ampliamente en la literatura como \emph{ovoides de Descartes}, en atribución al filósofo francés René Descartes, quien escribió sobre ellas en la \emph{Dioptrique}.
+Consideremos los rayos que, emergiendo de $A$, se refractan o se reflejan en cierta superficie $\Sigma$ y convergen todos al mismo punto $A'$; denotamos por $\overline{AIA'}$ el trayecto que realizan los rayos, siendo $I$ un punto de la superficie $\Sigma$. Con $A$ y $A'$ fijos, solo los puntos de la superficie $\Sigma$ pueden ser seleccionados para cumplir la condición estigmática, de modo que, exigiendo matemáticamente dicha condición para los rayos que siguen el trayecto anterior, se determina la familia de superficies $\Sigma$ que la satisfacen.
 
 La condición de estigmatismo exige que el camino óptico entre los puntos conjugados $A$ y $A'$ sea independiente del punto de incidencia $Q\in\Sigma$:
 \begin{equation}
@@ -196,90 +171,60 @@ La condición de estigmatismo exige que el camino óptico entre los puntos conju
 Las superficies que satisfacen esta condición constituyen los dioptrios estigmáticos cartesianos. La deducción de su ecuación implícita a partir de \eqref{eq:maxwell_condition_of_stigmatism} se desarrolla en el apéndice~\ref{apx:ovoid_implicit_deduction}.
 
 En la parametrización GOTS, dicha ecuación implícita toma la forma
-
 \begin{equation}
   f_{\Sigma}(z,\rho) = OGz^2 - 2(1 + S\rho^2)z + (O + T\rho^2)\rho^2 = 0,
   \label{eq:implicit_ovoid_GOTS}
 \end{equation}
-
 donde los parámetros $G$, $O$, $T$ y $S$ dependen de los índices de refracción y de las posiciones de los puntos conjugados; sus expresiones explícitas se dan en el apéndice~\ref{apx:ovoid_implicit_deduction}.
 
 La rama de interés de \eqref{eq:implicit_ovoid_GOTS} se escribe como
-
 \begin{equation}
   z(\rho) = \frac{(O + T\rho^2)\rho^2}{1 + S\rho^2 + \sqrt{1 + (2S - O^2G)\rho^2}},
   \label{eq:parametrical_ovoid_z}
 \end{equation}
-
-
 y el radio correspondiente es
-
-
 \begin{equation}
   r(\rho) = \sqrt{\rho^2 - z^2(\rho)}.
   \label{eq:parametrical_ovoid_r}
 \end{equation}
 
-
-
-
-La manera de referirse a un punto $Q$ de $\Sigma$ desde el punto $O$, se hace mediante el vector $\lvec{OQ}$, que junto con las ecuaciones paramétricas \ref{eq:parametrical_ovoid_z} y \ref{eq:parametrical_ovoid_r} se puede expresar en la forma: 
-
-
+La manera de referirse a un punto $Q$ de $\Sigma$ desde el punto $O$ es mediante el vector $\lvec{OQ}$, que junto con las ecuaciones paramétricas \eqref{eq:parametrical_ovoid_z} y \eqref{eq:parametrical_ovoid_r} se puede expresar en la forma
 \begin{equation}
-  \lvec{OQ} = z(\rho)\uvec{z} + r(\rho)\uvec{r}(\varphi),
+  \lvec{OQ} = z(\rho)\uvec{z} + r(\rho)\uvec{r}(\varphi).
   \label{eq:OQ_vector}
 \end{equation}
 
+Las leyes de la óptica geométrica permiten determinar, a partir de la dirección del rayo incidente y el punto de intersección del rayo con la superficie, la dirección del rayo transmitido o reflejado en dicho punto. Esta dirección no depende del punto en sí, sino de la normal de la superficie en ese punto, como es manifiesto de la ley vectorial~\eqref{eq:vectorial_law_of_snell_descartes} deducida desde el \emph{principio de Fermat}~\cite{bornwolf1999}. Procedemos, así, a escribir el vector unitario de incidencia para un punto cualquiera $Q \in \Sigma$ parametrizado por $(\rho, \varphi)$.
 
-Las leyes de la óptica geométrica permiten determinar, a partir de la dirección del rayo incidente y el punto de intersección del rayo con la superficie, la dirección del rayo transmitido o reflejado en dicho punto. Y no depende del punto en sí, sino de la normal de la superficie en ese punto, como es manifiesto de la ley vectorial~\eqref{eq:vectorial_law_of_snell_descartes} deducida desde el \emph{principio de Fermat}~\cite{bornwolf1999}.
-
-Así, procedemos a escribir el vector unitario de incidencia para un punto cualquiera $Q \in \Sigma$ parametrizado por $(\rho, \phi)$. 
-
-Sea $P$ el origen del rayo incidente y $Q(\rho, \phi)$ el punto de intersección del rayo con la superficie $\Sigma$, es manifiesto que el vector unitario de incidencia $\uvec{u}$ es el vector unitario de $\lvec{PQ}$, es decir
-
-
-
+Sean $P$ el origen del rayo incidente y $Q(\rho, \varphi)$ el punto de intersección del rayo con la superficie $\Sigma$; es manifiesto que el vector unitario de incidencia $\uvec{u}$ es el vector unitario de $\lvec{PQ}$, es decir,
 \begin{equation}
   \uvec{u} = \frac{\lvec{PQ}}{\lVert \lvec{PQ} \rVert}.
   \label{eq:def_of_u}
 \end{equation}
-
-Sean $(z_0, r_0, \varphi_0)$ las coordenadas de $P$, de modo que 
-
+Sean $(z_0, r_0, \varphi_0)$ las coordenadas de $P$, de modo que
 \begin{equation}
-  \lvec{OP} = z_0\uvec{z} + r_0 \uvec{r}(\varphi_0)
+  \lvec{OP} = z_0\uvec{z} + r_0 \uvec{r}(\varphi_0).
   \label{eq:def_OP_where_P_is_any_point_of_space}
 \end{equation}
-
-
-Construimos pues el vector $\lvec{PQ}$,
-
+Construimos pues el vector $\lvec{PQ}$ como la diferencia
 \begin{equation}
-  \lvec{PQ} = \lvec{OQ} - \lvec{OP}
+  \lvec{PQ} = \lvec{OQ} - \lvec{OP},
 \end{equation}
-
+que en la base cilíndrica local se escribe
 \begin{equation}
  \lvec{PQ} = (z(\rho) - z_0)\,\uvec{z}
 + \bigl(r(\rho) - r_0 \cos\Delta\varphi\bigr)\,\uvec{r}(\varphi)
-+ r_0 \sin\Delta\varphi\,\uvec{\varphi}(\varphi), 
++ r_0 \sin\Delta\varphi\,\uvec{\varphi}(\varphi),
   \label{eq:explicit_PQ}
 \end{equation}
-
-donde $\Delta \varphi$ es la diferencia $\varphi - \varphi_0$. 
-
-
-Calculamos la norma de $\lvec{PQ}$
-
-
+donde $\Delta \varphi$ es la diferencia $\varphi - \varphi_0$.
+Calculamos la norma de $\lvec{PQ}$,
 \begin{equation}
   \lVert \lvec{PQ} \rVert^2
 = \rho^2 - 2 z(\rho) z_0 + z_0^2
 + r_0^2 - 2 r(\rho) r_0 \cos\Delta\varphi,
 \end{equation}
-
 y finalmente obtenemos el vector unitario de incidencia
-
 \begin{equation}
    \uvec{u}
   =
@@ -292,8 +237,7 @@ y finalmente obtenemos el vector unitario de incidencia
   }.
   \label{eq:u_for_any_P}
 \end{equation}
-
-
+De manera análoga, si el rayo transmitido converge al punto $P'$ de coordenadas $(z_i, r_i, \varphi_0)$, el vector unitario de transmisión resulta
 \begin{equation}
    \uvec{u}'
   =
@@ -307,42 +251,24 @@ y finalmente obtenemos el vector unitario de incidencia
   \label{eq:u_prime_for_any_P}
 \end{equation}
 
-
-Si los puntos $P$ y $P'$ viven en el eje óptico, la expresión para $\uvec{u}$ se simplifica como: 
-
+Si los puntos $P$ y $P'$ viven en el eje óptico, las expresiones anteriores se simplifican como
 \begin{equation}
   \uvec{u} = \frac{(z(\rho) - z_0)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_0 + z_0^2}}
   \label{eq:u_for_P_in_optical_axis}
 \end{equation}
-
-
-
+y
 \begin{equation}
-  \uvec{u}' = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}
+  \uvec{u}' = \frac{(z(\rho) - z_i)\uvec{z} + r(\rho)\uvec{r}(\varphi)}{\sqrt{\rho^2 - 2z(\rho)z_i + z_i^2}}.
   \label{eq:u_prime_for_P_in_optical_axis}
 \end{equation}
 
-
-Procedemos ahora con el cálculo de la normal, en un punto $Q$ parametrizado por  $(\rho, \phi)$, denotemos al vector normal en el punto $Q=Q(\rho, \varphi)$ como $\uvec{N}$, y construyamos un vector $\vec{N}$ proporcional a $\uvec{N}$ 
-
-
-
-
-\[ 
-  \vec{N} = \frac{\partial \vb{r}_\Sigma}{\partial \rho} \times \frac{\partial \vb{r}_\Sigma}{\partial \phi}
-\]
-
-
+Procedemos ahora con el cálculo de la normal en un punto $Q$ parametrizado por $(\rho, \varphi)$. Denotemos al vector normal unitario en el punto $Q=Q(\rho, \varphi)$ como $\uvec{N}$, y construyamos un vector $\vb{N}$ proporcional a $\uvec{N}$ mediante el producto vectorial de los vectores tangentes coordenados,
 \[
-\vec{N}(\rho,\varphi)
-=\frac{\partial \lvec{OQ}}{\partial \rho}\times \frac{\partial \lvec{OQ}}{\partial \varphi}
+  \vb{N} = \frac{\partial \lvec{OQ}}{\partial \rho} \times \frac{\partial \lvec{OQ}}{\partial \varphi}
 = r(\rho)\,r'(\rho)\,\uvec{z}-r(\rho)\,z'(\rho)\,\uvec{r}(\varphi)
 = r(\rho)\Bigl(r'(\rho)\,\uvec{z}-z'(\rho)\,\uvec{r}(\varphi)\Bigr),
 \]
-
 donde hemos usado el hecho de que
-
-
 \[
 \frac{\partial \lvec{OQ}}{\partial \rho}
 = z'(\rho)\,\uvec{z}+r'(\rho)\,\uvec{r}(\varphi),
@@ -350,24 +276,16 @@ donde hemos usado el hecho de que
 \frac{\partial \lvec{OQ}}{\partial \varphi}
 = r(\rho)\,\uvec{\varphi}(\varphi).
 \]
-
-La norma de $\vec{N}$ está dada por
-
+La norma de $\vb{N}$ está dada por
 \[
-|\lvec{N}|
-= r(\rho)\sqrt{(r'(\rho))^2+(z'(\rho))^2}
+\|\vb{N}\|
+= r(\rho)\sqrt{(r'(\rho))^2+(z'(\rho))^2},
 \]
-
-
-
-De esta manera, obtenemos el vector unitario $\uvec{N}$, desde la definición:
-
+de manera que, normalizando,
 \[
-\uvec{N}(\rho,\varphi)=\frac{\lvec{N}}{|\lvec{N}|},
+\uvec{N}(\rho,\varphi)=\frac{\vb{N}}{\|\vb{N}\|},
 \]
-
-por lo tanto,
-
+obtenemos
 \begin{equation}
 \uvec{N}(\rho,\varphi) = \frac{r'(\rho)\,\uvec{z}-z'(\rho)\,\uvec{r}(\varphi)}{\sqrt{(r'(\rho))^2+(z'(\rho))^2}}.
   \label{eq:N_ovoid_rho_and_phi}
