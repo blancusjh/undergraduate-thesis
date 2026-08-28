@@ -240,7 +240,7 @@ La figura~\ref{fig:sphere_theta_phi_fields} ilustra esta identificación: sobre 
 
 \begin{figure}[H]
   \centering
-  \thesisincludegraphics[width=\textwidth]
+  \thesisincludegraphics[width=0.65\textwidth]
     {figures/geometrical_setups/esfera_polarizacion_rotada.pdf}
     {figures/fast/esfera_polarizacion_rotada.png}
   \caption{Campos vectoriales tangentes sobre la esfera de referencia centrada en el foco $A'$: (a)~parametrización de la dirección $\uvec{k}(\theta,\varphi)$; (b)~campo meridional $\uvec{\theta}$; (c)~campo azimutal $\uvec{\phi}$. El modo de polarización $p$ corresponde al campo meridional $\uvec{\theta}_{A'}$ y el modo $s$ al campo azimutal $\uvec{\phi}$.}
@@ -283,7 +283,7 @@ Aquí $\uvec p'_\perp$ y $\uvec s$ denotan las proyecciones transversales de las
 \section{Caso particular: sistema estigmático cartesiano con fuente puntual en $A$}
 % ===========================================================================
 
-Para analizar nuestro sistema de interés ---un sistema estigmático formado de un único dioptrio---, la función $z(r)$ debe corresponder a la sagita de una superficie cartesiana, y el campo inicial debe corresponder a uno que se emita desde el punto estigmático $A$.
+Para analizar nuestro sistema de interés, un sistema estigmático formado de un único dioptrio, la función $z(r)$ debe corresponder a la sagita de una superficie cartesiana, y el campo inicial debe corresponder a uno que se emita desde el punto estigmático $A$.
 
 % ---------------------------------------------------------------------------
 \subsection{Geometría del dioptrio estigmático}
@@ -1052,7 +1052,7 @@ El campo eléctrico en el plano focal queda determinado por la transformada de F
   \label{eq:def_M_bb}
 \end{equation}
 
-Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió, como se sigue de la condición estigmática; no hay, pues, aberración de fase. Sin embargo, el campo en el plano focal es proporcional a $\mathscr F\{\mathbb T \mathbb E_0\} = \mathscr F\{\mathbb T\} * \mathscr F\{\mathbb E_0\}$, lo que hace que incluso cuando $\mathbb E_0$ es constante —y su transformada de Fourier es en consecuencia una delta de Dirac— la convolución con $\mathscr F\{\mathbb T\}$ reproduce $\mathscr F\{\mathbb T\}$ evaluada en el punto de observación, que no es en general una delta dado que $\mathbb T$ es diferente en cada punto considerado, pues depende del coseno de incidencia. Esto produce un ensanchamiento del punto imagen, además de un acoplamiento entre las polarizaciones, efectos que pueden ser entendidos como una aberración de origen netamente vectorial, presentes incluso en sistemas libres de imperfecciones geométricas. Dicho de forma breve, el origen de las aberraciones vectoriales se debe a que los coeficientes de Fresnel transforman el campo de manera no homogénea durante la refracción, y lo hacen de manera distinta para dos componentes "principales", a saber, las correspondientes a las polarizaciones $\uvec s$ y $\uvec p$.
+Dado que en el frente de onda inicial la fase es constante, era de esperar que el frente de onda transmitido también tuviese fase constante, pues el mismo camino óptico se recorrió, como se sigue de la condición estigmática; no hay, pues, aberración de fase. Sin embargo, el campo en el plano focal es proporcional a $\mathscr F\{\mathbb T \mathbb E_0\} = \mathscr F\{\mathbb T\} * \mathscr F\{\mathbb E_0\}$, lo que hace que incluso cuando $\mathbb E_0$ es constante (y su transformada de Fourier es en consecuencia una delta de Dirac) la convolución con $\mathscr F\{\mathbb T\}$ reproduce $\mathscr F\{\mathbb T\}$ evaluada en el punto de observación, que no es en general una delta dado que $\mathbb T$ es diferente en cada punto considerado, pues depende del coseno de incidencia. Esto produce un ensanchamiento del punto imagen, además de un acoplamiento entre las polarizaciones, efectos que pueden ser entendidos como una aberración de origen netamente vectorial, presentes incluso en sistemas libres de imperfecciones geométricas. Dicho de forma breve, el origen de las aberraciones vectoriales se debe a que los coeficientes de Fresnel transforman el campo de manera no homogénea durante la refracción, y lo hacen de manera distinta para dos componentes "principales", a saber, las correspondientes a las polarizaciones $\uvec s$ y $\uvec p$.
 
 \medskip
 
@@ -1064,8 +1064,8 @@ para sistemas aplanáticos idealizados: una transformada de Fourier
 bidimensional sobre la esfera de referencia imagen, aplicada al producto de
 la función pupila escalar por un operador vectorial que gira los estados de
 polarización. La diferencia esencial es que en la formulación de Richards y
-Wolf el operador vectorial se postula desde la construcción aplanática
-—asume una lente ideal que satisface la condición de los senos de Abbe~\cite{Abbe1873}— y
+Wolf el operador vectorial se postula desde la construcción aplanática, pues
+asume una lente ideal que satisface la condición de los senos de Abbe~\cite{Abbe1873}, y
 la amplitud sobre la pupila queda ponderada por el factor apodizador
 $\sqrt{\cos\theta}$ característico. En cambio, la función pupila vectorial
 $\mathbb E^{\mathscr G'}=\mathbb T\mathbb E_0/\ell_0$ derivada aquí se
@@ -1087,9 +1087,9 @@ El resultado \eqref{eq:E_prime_func_of_M_E0} recupera la teoría escalar de
 la difracción de forma exacta al imponer $t_p=t_s=1$, en cuyo caso
 $\mathbb T$ se reduce a la identidad transversal y la función pupila se
 convierte en una amplitud escalar isótropa sobre $\mathscr G'$. Este límite
-no es un régimen físicamente accesible —los coeficientes $t_p$ y $t_s$
+no es un régimen físicamente accesible (los coeficientes $t_p$ y $t_s$
 solo coinciden con la unidad simultáneamente en el caso trivial de un mismo
-medio a ambos lados de la interfaz— sino un límite matemático de
+medio a ambos lados de la interfaz), sino un límite matemático de
 referencia: la desviación del campo focal completo respecto a él es lo que
 llamamos aberración vectorial. Adoptamos esta definición porque el
 propósito del trabajo es aislar la contribución de la refracción vectorial,
@@ -1106,7 +1106,7 @@ focal (véase la subsección de aproximación de Fresnel del
 capítulo~\ref{ch:ondulatoria}). A pesar de que
 los ejemplos de aplicación al final de este capítulo incluyen aperturas
 elevadas ($\mathrm{NA}=0.94$), la aproximación de Fresnel se aplica sobre un
-tramo corto —el que va de $\mathscr G'$ al plano focal contiguo— y sobre el
+tramo corto (el que va de $\mathscr G'$ al plano focal contiguo) y sobre el
 campo ya modulado por $\mathbb T$; los efectos vectoriales que estudiamos se
 localizan en el entorno del máximo focal, donde las diferencias respecto de
 un propagador exacto de espectro angular son subordinadas a la modulación
@@ -1234,8 +1234,8 @@ escalar, con $t_p=t_s=1$, y el vectorial completo, que aplica la matriz de
 transmisión $\mathbb T$ en cada dioptrio y reconstruye la componente
 longitudinal mediante la condición de transversalidad. En ambos casos se
 reporta la intensidad total \eqref{eq:Intensity_in_Focal_Plane}. El pipeline
-completo de la simulación —composición de operadores en las dos superficies,
-grilla, propagación de Fresnel y reconstrucción longitudinal— se detalla en
+completo de la simulación (composición de operadores en las dos superficies,
+grilla, propagación de Fresnel y reconstrucción longitudinal) se detalla en
 el apéndice~\ref{apx:numerical_algorithm}.
 
 Para cuantificar la fidelidad de la imagen se mide el contraste
@@ -1259,8 +1259,8 @@ mejor que los ortogonales.
 El mecanismo dominante en este régimen de apertura es la componente
 longitudinal: para las trazas cuya modulación es paralela a la polarización,
 las órdenes difractadas se separan en el plano que contiene al campo eléctrico,
-sus campos dejan de ser paralelos y la componente $E_z$ —que a
-$\mathrm{NA}=0.94$ transporta cerca de la mitad de la energía de la imagen—
+sus campos dejan de ser paralelos y la componente $E_z$, que a
+$\mathrm{NA}=0.94$ transporta cerca de la mitad de la energía de la imagen,
 rellena los valles entre trazas. Las trazas ortogonales, en cambio, difractan
 en el plano perpendicular al campo y no sufren esta proyección. La mezcla de
 polarizaciones inducida por $t_-$ es aquí secundaria: la fracción de energía
@@ -1286,9 +1286,9 @@ del canal cruzado es del orden de $0.1\,\%$.
 
 Por último, la iluminación circular reparte la pérdida de contraste entre ambas
 orientaciones ($C_V=0.73$, $C_H=0.74$, figura~\ref{fig:lithography-circular}):
-isotropiza el costo vectorial, pero no lo elimina. Este comportamiento —trazas
+isotropiza el costo vectorial, pero no lo elimina. Este comportamiento (trazas
 nítidas en una orientación y degradadas en la ortogonal, en un sistema libre de
-aberración geométrica— es una aberración de origen netamente vectorial,
+aberración geométrica) es una aberración de origen netamente vectorial,
 invisible para el modelo escalar, y es el mismo fenómeno que obliga a la
 litografía de alta apertura numérica a controlar la polarización de la
 iluminación \cite{flagello1996, ruoff2009}.
@@ -1420,14 +1420,13 @@ a_3=0.
 
 Esta descomposición corresponde a la manera en que Chipman y colaboradores
 proponen caracterizar la \emph{aberración de polarización} de un sistema
-óptico \cite{mcguire1994}. La analogía con la teoría de aberraciones de frente
+óptico \cite{mcguire1994}. Que se basa en escribir la matriz que caracteriza la transformalción del campo incidente en el campo sobre la esféra gaussiana de referencia centrada en el punto imagén como una combinación lineal de las matrices de Pauli. La analogía con la teoría de aberraciones de frente
 de onda es directa: así como la aberración escalar se define como una función
-de fase sobre la esfera de referencia de salida —y no sobre el campo en el
-plano focal—, la aberración vectorial se describe mediante la función
+de fase sobre la esfera de referencia de salida, la aberración vectorial se describe mediante la función
 matricial $\mathbb{T}_{xy}(\rho',\phi')$ definida sobre $\mathscr{G}'$, cuyos
 coeficientes de Pauli $a_j(\rho',\phi')$ desempeñan el papel de los
 coeficientes de aberración. En nuestro caso, $a_0$ describe la parte escalar
-de la transmisión —una apodización idéntica para ambas componentes—; el par
+de la transmisión, una apodización idéntica para ambas componentes; el par
 $(a_1,a_2)$, de módulo $|t_-(\rho')|/2$ y dependencia azimutal $2\phi'$,
 describe una anisotropía lineal local equivalente a un diatenuador orientado
 radialmente en cada punto de la pupila; y $a_3=0$ expresa que la refracción en
@@ -1438,7 +1437,7 @@ Zernike escalares empleada para expandir sistemáticamente
 $\mathbb{T}_{xy}(\rho',\phi')$.
 
 La acción local sobre el estado de polarización puede representarse de manera
-compacta mediante la coordenada proyectiva compleja
+compacta mediante la coordenada proyectiva compleja \cite{azzam1977}
 \begin{equation}
 \zeta(\rho',\phi')
 =
@@ -1448,7 +1447,13 @@ compacta mediante la coordenada proyectiva compleja
 \label{eq:zeta_def}
 \end{equation}
 donde $\mathscr E_x$ y $\mathscr E_y$ son las componentes cartesianas
-transversales del campo sobre $\mathscr{G}$. Nótese que $\zeta$ es insensible
+transversales del campo sobre $\mathscr{G}$. El ángulo de amplitudes
+$\vartheta$, definido por $\tan\vartheta=|\mathscr E_y|/|\mathscr E_x|$, mide
+la razón entre las amplitudes de las dos componentes cartesianas, mientras que
+$\delta=\arg\mathscr E_y-\arg\mathscr E_x$ es la fase relativa entre ellas.
+Estos dos parámetros determinan por completo la elipse de polarización local:
+$\vartheta$ fija el reparto de amplitud entre las componentes y $\delta$ la
+elipticidad y el sentido de recorrido. Nótese que $\zeta$ es insensible
 a la fase global $\gamma$. Después de la transmisión, el estado sobre
 $\mathscr{G}'$ queda caracterizado por
 \begin{equation}
@@ -1457,7 +1462,7 @@ $\mathscr{G}'$ queda caracterizado por
 \frac{E_y^{\mathscr{G}'}(\rho',\phi')}{E_x^{\mathscr{G}'}(\rho',\phi')}.
 \label{eq:zeta_Gp_def}
 \end{equation}
-Usando la matriz $\mathbb{T}_{xy}$ se obtiene la transformación fraccional
+Usando la matriz $\mathbb{T}_{xy}$ se obtiene la ley de transformación
 \begin{equation}
 \boxed{
 \zeta_{\mathscr{G}'}(\rho',\phi')
@@ -1477,7 +1482,8 @@ t_-(\rho')\sin 2\phi'\,\zeta(\rho',\phi')
 Esta expresión muestra que la transmisión vectorial induce una transformación
 de Möbius sobre el estado local de polarización, la cual es invertible siempre
 que $\det \mathbb{T}_{xy}=t_p t_s \neq 0$, condición que se satisface en
-transmisión. Los parámetros transmitidos se recuperan como
+transmisión. De $\zeta_{\mathscr{G}'}$ se obtienen el ángulo de amplitudes y
+la fase relativa del estado transmitido,
 \begin{equation}
 \vartheta_{\mathscr{G}'}(\rho',\phi')
 =
@@ -1488,6 +1494,10 @@ transmisión. Los parámetros transmitidos se recuperan como
 \arg \left[\zeta_{\mathscr{G}'}(\rho',\phi')\right].
 \label{eq:jones_params_transmitted}
 \end{equation}
+Esta ley de transformación es suficiente para determinar el campo transmitido:
+conocida la componente $E_x^{\mathscr{G}'}$, la componente restante queda dada
+por $E_y^{\mathscr{G}'}=\zeta_{\mathscr{G}'}\,E_x^{\mathscr{G}'}$, con lo que
+el campo sobre $\mathscr{G}'$ queda completamente caracterizado.
 
 De forma equivalente, el estado puede representarse mediante el vector de
 Stokes normalizado
@@ -1661,8 +1671,8 @@ A_{x,y}(\vb r)
 
 La difracción introduce de este modo, sobre cada componente cartesiana, una
 función de fase adicional propia, en general distinta para cada una. El
-prefactor común de \eqref{eq:Exy_focal_components} —incluida la fase
-cuadrática $e^{i\frac{nk}{2f}r^2}$— tiene el mismo módulo y la misma fase para
+prefactor común de \eqref{eq:Exy_focal_components}, incluida la fase
+cuadrática $e^{i\frac{nk}{2f}r^2}$, tiene el mismo módulo y la misma fase para
 ambas componentes, por lo que constituye una fase global y no interviene en el
 estado de polarización.
 
@@ -1741,8 +1751,8 @@ estado en el plano focal se escribe de forma compacta como
 }
 \label{eq:zeta_focal}
 \end{equation}
-y los parámetros geométricos de la elipse de polarización —el vector de Stokes
-normalizado y los ángulos $\psi$ y $\chi$— se obtienen evaluando
+y los parámetros geométricos de la elipse de polarización (el vector de Stokes
+normalizado y los ángulos $\psi$ y $\chi$) se obtienen evaluando
 \eqref{eq:stokes_from_zeta} y \eqref{eq:psi_chi_from_stokes} en $\zeta_f$.
 
 La conexión con la transformación del estado de polarización al refractarse se
@@ -1753,9 +1763,9 @@ hace explícita escribiendo, según \eqref{eq:zeta_Gp_ratio},
 \zeta_{\mathscr{G}'}(\rho',\phi')\,
 (\mathbb{T}_{xy}\mathbb E_0)_x.
 \end{equation*}
-Sustituyendo en \eqref{eq:zeta_focal}, junto con la forma explícita
-\eqref{eq:TxyE0_components} de $(\mathbb{T}_{xy}\mathbb E_0)_x$ —el factor
-común $1/2$ se cancela—,
+Sustituyendo en \eqref{eq:zeta_focal} la forma explícita
+\eqref{eq:TxyE0_components} de $(\mathbb{T}_{xy}\mathbb E_0)_x$, donde el
+factor común $1/2$ se cancela, se obtiene
 \begin{equation}
 \zeta_f(\vb r)
 =
@@ -1791,13 +1801,12 @@ t_-
 \end{equation}
 con ambas transformadas evaluadas en $\frac{n}{\lambda f}\vb r$.
 
-El estado de polarización en cada punto del plano focal es, pues, un promedio
-coherente de los estados locales $\zeta_{\mathscr{G}'}(\rho',\phi')$
-producidos por la refracción —dados por la transformación de Möbius
-\eqref{eq:mobius_transformation}—, con pesos complejos determinados por la
-amplitud $(\mathbb{T}_{xy}\mathbb E_0)_x$ y por el núcleo de Fourier. La
-transformación local del estado al refractarse queda así incorporada
-explícitamente en el resultado focal.
+La ecuación \eqref{eq:zeta_focal_mobius} incorpora de manera explícita la
+transformación local \eqref{eq:mobius_transformation} en el resultado focal.
+De ella se recuperan, en cada punto de observación, la razón entre las
+amplitudes y la fase relativa,
+$\tan\vartheta_f=|\zeta_f|$ y $\delta_f=\arg\zeta_f$, y con ellas, junto con
+la componente $E'_x$, el campo en el plano focal.
 
 Este resultado es completamente general: no requiere simetría azimutal de las
 amplitudes ni uniformidad del estado de polarización sobre la pupila. Nótese
@@ -1809,8 +1818,8 @@ existe una relación local entre el estado incidente $\zeta(\rho',\phi')$ y el
 estado focal $\zeta_f(\vb r)$.
 
 La lectura física de \eqref{eq:theta_delta_focal} es directa. Aunque el campo
-sobre la pupila tenga fase constante —como garantiza la condición
-estigmática—, las dos síntesis de Fourier adquieren fases de difracción
+sobre la pupila tenga fase constante, como garantiza la condición
+estigmática, las dos síntesis de Fourier adquieren fases de difracción
 $\Phi_x$ y $\Phi_y$ que son funciones distintas del punto de observación. La
 diferencia $\delta_f=\Phi_y-\Phi_x$ actúa entonces como un desfasador efectivo
 distribuido sobre el plano focal: allí donde toma valores distintos de $0$ y
@@ -2954,7 +2963,7 @@ de la altura del máximo central. Cerca del eje se tiene
 $\operatorname{Re}(H_0H_2^*)>0$, de modo que el término de interferencia
 sustrae intensidad del flanco del lóbulo a lo largo de la polarización y la
 agrega en la dirección ortogonal: respecto de la referencia escalar
-—$|H_0|^2$, con radio $R_{\mathrm{esc}}$— el punto se contrae a lo largo de la
+($|H_0|^2$, con radio $R_{\mathrm{esc}}$) el punto se contrae a lo largo de la
 polarización y se expande en la dirección perpendicular,
 \begin{equation}
   R_\parallel < R_{\mathrm{esc}} < R_\perp.
